@@ -1,0 +1,2 @@
+sudo rm /etc/hosts
+sudo ln -s /hosts /etc/hosts

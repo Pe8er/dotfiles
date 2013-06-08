@@ -1,0 +1,24 @@
+# install brew
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+# install git
+brew install git
+
+# generate ssh key
+ssh-keygen -t rsa -C "piotr@sourcebits.com"
+pbcopy < ~/.ssh/id_rsa.pub
+
+# add ssh key to github
+open https://github.com/settings/ssh
+
+# shortcut the config
+ln -s ~/Dropbox/Library/gitconfig ~/.gitconfig
+ln -s ~/Dropbox/Library/bash_profile ~/.bash_profile
+
+# clone repository
+git clone git@github.com:sourcebitsllc/top-secret-berries-ios-v2.git ~/Code
+# może coś jeszcze, git init niepotrzebny?
+
+# let's go!
+code
+

@@ -15,5 +15,8 @@ fi
 
 # Install homebrew packages
 brew install grc coreutils spark
+brew tap homebrew/dupes
+brew install nano
+sudo mv /usr/bin/nano /usr/bin/nano~
 
 exit 0

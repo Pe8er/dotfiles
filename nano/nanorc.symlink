@@ -1,0 +1,56 @@
+## Settings
+
+set backup
+set backupdir /tmp
+set mouse
+set tabsize 4    # Insert 4 spaces per tab
+set multibuffer  # Allow opening multiple files (Alt+< and Alt+> to switch)
+set undo         # Enable undo/redo features
+set smooth       # Scroll one line at a time
+set const        # Show cursor position at the bottom of the screen
+set nowrap
+
+## Shortcuts
+
+bind ^Z undo main
+bind ^Y redo main
+bind ^S mark main
+
+## HTML
+include "~/.nano/html.nanorc"
+
+## Patch files
+include "~/.nano/patch.nanorc"
+
+## Manpages
+include "~/.nano/man.nanorc"
+
+## Perl
+include "~/.nano/perl.nanorc"
+
+## Python
+include "~/.nano/python.nanorc"
+
+## reST
+include "~/.nano/reST.nanorc"
+
+## Ruby
+include "~/.nano/ruby.nanorc"
+
+## Bourne shell scripts
+include "~/.nano/sh.nanorc"
+
+## makefile .am
+include "~/.nano/gentoo.nanorc"
+
+## CSS
+include "~/.nano/css.nanorc"
+
+## php
+include "~/.nano/php.nanorc"
+
+## XML
+include "~/.nano/xml.nanorc"
+
+## Markdown
+include "~/.nano/markdown.nanorc"
