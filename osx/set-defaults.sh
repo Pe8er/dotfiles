@@ -12,6 +12,22 @@
 # Finder                  # 
 ###########################
 
+# Enable smooth animations
+defaults write -g NSScrollAnimationEnabled -bool true
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Disable the warning before emptying the Trash
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
+
+# Set sidebar icon size to small
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+# Dark menubar in full screen
+defaults write -g NSFullScreenDarkMenu -bool TRUE
+
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
@@ -63,7 +79,7 @@ defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # Menu bar: hide the useless Time Machine and Volume icons
-defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.2
@@ -116,6 +132,13 @@ defaults write NSGlobalDomain -int 3
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+# Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+defaults write NSGlobalDomain AppleLanguages -array "en" "pl"
+defaults write NSGlobalDomain AppleLocale -string "en_PL@currency=PLN"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 ###########################
 # Dock                    # 
@@ -199,10 +222,19 @@ defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\\U21a9"
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
+# Use a modified version of the Pro theme by default in Terminal.app
+open "$HOME/.dotfiles/system/Piotr.terminal"
+sleep 1 # Wait a bit to make sure the theme is loaded
+defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
+defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
+
 
 ###########################
 # Other                   # 
 ###########################
+
+# Don't save Preview windows on quit
+defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -boolean false
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -278,8 +310,17 @@ defaults write com.apple.screencapture location -string "$HOME/Desktop"
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
 
-# Make menubar clock white
-open $HOME/Customizing/WhiteUIServer.menu
+# Disable auto-termination of idle applications
+defaults write -g NSDisableAutomaticTermination -bool true
+
+# Open a Finder window after extracting an archive
+defaults write com.apple.archiveutility dearchive-reveal-after -bool true
+
+# Add iOS Simulator to Launchpad
+ln -s /Applications/Xcode.app/Contents/Applications/iPhone Simulator.app /Applications/iOS Simulator.app
+
+# Enable the MacBook Air SuperDrive on any Mac
+sudo nvram boot-args="mbasd=1"
 
 # Restart Stuff
 
@@ -289,3 +330,6 @@ for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
 	killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+# Make menubar clock white
+open $HOME/Customizing/WhiteUIServer.menu
