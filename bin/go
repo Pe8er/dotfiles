@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ $# = 0 ]
+then
+  echo " "
+  echo "Please provide search string. Usage: $0 [string]"
+  echo " "
+else
+  F=`echo $@ | sed 's/ /+/g' | sed 's/"/%22/g'`
+  open "http://google.com/search?q=$F"
+fi

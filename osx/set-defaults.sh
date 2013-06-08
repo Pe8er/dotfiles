@@ -153,11 +153,11 @@ defaults write com.apple.dock mru-spaces -bool false
 # Safari                  # 
 ###########################
 
-# Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+# Set Safari’s home page to 'Top Sites'
+defaults write com.apple.Safari HomePage -string "topsites://"
 
-# Hide Safari's bookmark bar.
-defaults write com.apple.Safari ShowFavoritesBar -bool false
+# Show Safari's bookmark bar.
+defaults write com.apple.Safari ShowFavoritesBar -bool true
 
 # Set up Safari for development.
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
@@ -168,8 +168,6 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 # Allow hitting the Backspace key to go to the previous page in history
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
-
-defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 
 ###########################
@@ -252,7 +250,6 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
-
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
