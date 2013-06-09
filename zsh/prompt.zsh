@@ -48,7 +48,7 @@ need_push() {
 }
 
 battery_charge() {
-	echo `~/.dotfiles/bin/batcharge.py` 2>/dev/null
+	echo `[ ~/.dotfiles/bin/batcharge.py ]` 2>/dev/null
 }
 
 uptime_() {
@@ -57,7 +57,7 @@ uptime_() {
 
 export PROMPT=$'\n██  [%{$fg_bold[green]%} ${PWD/#$HOME/~} %{$reset_color%}] $(git_dirty)$(need_push)\n██  '
 set_prompt () {
-export RPROMPT="%{$fg_bold[green]%}[ Uptime: $(uptime_) ] [ $(battery_charge) ]%{$reset_color%}"
+export RPROMPT="%{$fg_bold[green]%}[ Uptime: $(uptime_) ] $(battery_charge)%{$reset_color%}"
 }
 
 precmd() {
