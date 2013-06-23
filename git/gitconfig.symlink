@@ -8,7 +8,7 @@
 [core]
         editor = nano
         autocrlf = input
-        excludesfile = /Users/Piotr/.gitignore
+	excludesfile = /Users/Piotr/.gitignore
 [apply]
         whitespace = nowarn
 [format]
