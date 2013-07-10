@@ -1,0 +1,86 @@
+#!/bin/sh
+
+function ask {
+    while true; do
+        if [ "${2:-}" = "Y" ]; then
+            prompt="Y/n"
+            default=Y
+        elif [ "${2:-}" = "N" ]; then
+            prompt="y/N"
+            default=N
+        else
+            prompt="y/n"
+            default=
+        fi
+ 
+        # Ask the question
+        read -p "$1 [$prompt] " REPLY
+ 
+        # Default?
+        if [ -z "$REPLY" ]; then
+            REPLY=$default
+        fi
+ 
+        # Check if the reply is valid
+        case "$REPLY" in
+            Y*|y*) return 0 ;;
+            N*|n*) return 1 ;;
+        esac 
+    done
+}
+
+SOUR="$HOME/Dropbox/works/PSG/Twine/Visual Design/Slices/Android/"
+DEST="$HOME/Code/Twine-Android/Twine/Slices/"
+
+OPT="n"
+
+HELP="
+STATUS INFO
+===========
+
+< = item is sent.
+> = is received.
+. = item is not being updated.
+c = a local change/creation is occurring for the item (such as
+the creation of a directory or the changing of a symlink, etc.).
+h = item is a hard link to another item (requires --hard-links).
+* = rest of the itemized-output area contains a message (e.g. "deleting").
+
+File types:
+===========
+
+f for a file
+d for a directory
+L for symlink 
+D for a device
+S for a special file\n"
+
+echo "$HELP"
+
+rsync -"$OPT"avzWhi --size-only --exclude=".DS_Store" --delete "$SOUR" "$DEST" | grep -v "^\."
+
+echo '\n'
+
+if ask "Do you want to sync the slices?" Y; then
+	unset OPT
+	OPT=""
+else
+	exit
+fi
+
+rsync -"$OPT"avzWhi --size-only --exclude=".DS_Store" --delete "$SOUR" "$DEST" | grep -v "^\."
+
+echo '\n'
+
+if ask "Do you want to commit these slices?" Y; then
+	cd ~/Code/Twine-Android
+	git pl
+	git add .
+	git commit -a
+	exit
+else
+	echo '\n'	
+	cd ~/Code/Twine-Android
+	git st    
+	exit
+fi
