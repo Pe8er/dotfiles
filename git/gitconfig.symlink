@@ -1,0 +1,39 @@
+[user]
+        name = Piotr Gajos
+        email = piotr@sourcebits.com
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+[core]
+        editor = nano
+        autocrlf = input
+	excludesfile = /Users/Piotr/.gitignore
+[apply]
+        whitespace = nowarn
+[format]
+        pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[alias]
+        shift = !$HOME/bin/git-shift
+        co = checkout
+        plre = pull --rebase
+        pl = pull
+        ps = push
+        ca = commit -a
+        ci = commit
+        lg = log --pretty=full
+        ln = log --no-merges
+        lno = log --no-merges --pretty=oneline
+        st = status
+        br = branch
+        unstage = reset HEAD --
+        last = log -1 HEAD --pretty=full
+        mylog = log --author="Piotr" --since="yesterday" --name-status --pretty=full
+        find = log --all --
+        check = fetch; git log HEAD.. --oneline
+[rerere]
+        enabled = 1
+[heroku]
+        account = personal
+[push]
+        default = simple

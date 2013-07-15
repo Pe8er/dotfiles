@@ -3,18 +3,15 @@
 *~
 *.swp
 *.rbc
-
 sublime2/User/Package\ Control.sublime-settings
 sublime2/User/Package Control.last-run
-git/gitconfig.symlink
-
 *~.nib
-
 build/
-
 *.mode1v3
 *.mode2v3
-
 xcuserdata
-
 .xcodeproj/ !*.xcodeproj/project.pbxproj
+
+# Android shiz
+.classpath
+project.properties

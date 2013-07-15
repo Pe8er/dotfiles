@@ -1,3 +1,6 @@
+# More info:
+# http://www.nparikh.org/unix/prompt.php
+
 autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
@@ -47,17 +50,13 @@ need_push() {
   fi
 }
 
-battery_charge() {
-	echo `[ ~/.dotfiles/bin/batcharge.py ]` 2>/dev/null
-}
+# battery_charge() {
+#	echo `~/.dotfiles/bin/batcharge.py` 2>/dev/null
+# }
 
-uptime_() {
-    uptime | awk '{print $3,$4;}' | tr ',' '\n'
- }
-
-export PROMPT=$'\n██  [%{$fg_bold[green]%} ${PWD/#$HOME/~} %{$reset_color%}] $(git_dirty)$(need_push)\n██  '
+export PROMPT=$'\n██  [%{$fg_bold[blue]%} ${PWD/#$HOME/~} %{$reset_color%}] $(git_dirty)$(need_push)\n██  '
 set_prompt () {
-export RPROMPT="%{$fg_bold[green]%}[ Uptime: $(uptime_) ] $(battery_charge)%{$reset_color%}"
+export RPROMPT="[ %{$fg_bold[green]%} ]%{$reset_color%}"
 }
 
 precmd() {
