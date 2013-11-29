@@ -1,64 +1,3 @@
-# This hosts file is brought to you by Dan Pollock and can be found at
-# http://someonewhocares.org/hosts/
-# You are free to copy and distribute this file, as long the original 
-# URL is included. See below for acknowledgements.
-
-# Please forward any additions, corrections or comments by email to
-# hosts@someonewhocares.org
-
-# Last updated: Jun 3th, 2013 at 11:35
-
-# Use this file to prevent your computer from connecting to selected
-# internet hosts. This is an easy and effective way to protect you from 
-# many types of spyware, reduces bandwidth use, blocks certain pop-up 
-# traps, prevents user tracking by way of "web bugs" embedded in spam,
-# provides partial protection to IE from certain web-based exploits and
-# blocks most advertising you would otherwise be subjected to on the 
-# internet. 
-
-# There is a version of this file that uses 0.0.0.0 instead of 127.0.0.1 
-# available at http://someonewhocares.org/hosts/zero/.
-# On some machines this may run minutely faster, however the zero version
-# may not be compatible with all systems. 
-
-# This file must be saved as a text file with no extension. (This means it
-# that the file name should be exactly as below, without a ".txt" appended.)
-
-# Let me repeat, the file should be named "hosts" NOT "hosts.txt".
-
-# For Windows 9x and ME place this file at "C:\Windows\hosts"
-# For NT, Win2K and XP use "C:\windows\system32\drivers\etc\hosts"
-#                       or "C:\winnt\system32\drivers\etc\hosts"
-# For Windows 7 and Vista use "C:\windows\system32\drivers\etc\hosts"
-#			or "%systemroot%\system32\drivers\etc\hosts"
-# You may have to use Notepad and "Run as Administrator"
-# For Linux, Unix, or OS X place this file at "/etc/hosts". You will 
-#    require root access to do this. Saving this file to "~/hosts" will
-#    allow you to run something like "sudo cp ~/hosts /etc/hosts".
-# Ubuntu users who experience trouble with apt-get should consult
-#    http://ubuntuforums.org/archive/index.php/t-613521.html
-# For OS/2 copy the file to "%ETC%\HOSTS" and in the CONFIG.SYS file,
-#    ensure that the line "SET USE_HOSTS_FIRST=1" is included.
-# For BeOS place it at "/boot/beos/etc/hosts"
-# On a Netware system, the location is System\etc\hosts"
-# For Macintosh (pre OS X) place it in the Mac System Folder or Preferences
-#    folder and reboot. (something like HD:System Folder:Preferences:Hosts)
-#    Alternatively you can save it elsewhere on your machine, then go to the 
-#    TCP/IP control panel and click on "Select hosts file" to read it in.
-#    ------------------
-#    | As well, note that the format is different on old macs, so
-#    | please visit http://someonewhocares.org/hosts/mac/ for mac format
-#    ------------------
-# To convert the hosts file to a set of Cisco IOS commands for Cisco routers
-#   use this script by Jesse Baird:
-#   http://jebaird.com/blog/hosts-ip-host-generating-blocked-hosts-host-file-cisco-router
-
-# If there is a domain name you would rather never see, simply add a line
-# that reads "127.0.0.1 machine.domain.tld". This will have the effect of
-# redirecting any requests to that host to your own computer. For example
-# this will prevent your browser from downloading banner ads, or sending
-# your information back to a company.
-
 #<localhost>
 127.0.0.1 	localhost
 127.0.0.1 	localhost.localdomain
@@ -67,6 +6,12 @@
 127.0.0.1 	local
 fe80::1%lo0     localhost
 #</localhost>
+
+#Youtube ads
+127.0.0.1 ads.youtube.com
+127.0.0.1 s0.2mdn.net
+127.0.0.1 s1.2mdn.net
+127.0.0.1 googleads.g.doubleclick.net
 
 #<shock-sites>
 # For example, to block unpleasant pages, try:
