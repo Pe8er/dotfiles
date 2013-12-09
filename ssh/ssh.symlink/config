@@ -1,4 +1,4 @@
-Host stasislocal
+Host stasis
 User Stasis
 HostName Stasis.local
 Protocol 2
