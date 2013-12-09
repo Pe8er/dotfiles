@@ -30,7 +30,7 @@ function ask {
 }
 
 SOUR="$HOME/Dropbox/works/PSG/Twine/Visual Design/Slices/iOS/"
-DEST="$HOME/Code/Twine-iOS/Twine/Newest/"
+DEST="$HOME/Code/Twine-iOS7/Twine/Assets/"
 
 OPT="n"
 
@@ -73,13 +73,13 @@ rsync -"$OPT"avzWhi --size-only --exclude=".DS_Store" --delete "$SOUR" "$DEST" |
 echo '\n'
 
 if ask "Do you want to commit these slices?" Y; then
-	cd ~/Code/Twine-iOS
+	cd ~/Code/Twine-iOS7
 	git add .
 	git commit -a
 	exit
 else
 	echo '\n'	
-	cd ~/Code/Twine-iOS
+	cd ~/Code/Twine-iOS7
 	git st    
 	exit
 fi

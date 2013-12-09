@@ -206,6 +206,9 @@ defaults write com.apple.Dock itunes-notifications -bool true
 # Point Store links to the library
 defaults write com.apple.iTunes invertStoreLinks -bool YES
 
+# Link Scripts menu
+ln -s ~/Library/Scripts/Applications/iTunes ~/Library/iTunes/Scripts
+
 
 ###########################
 # Mail                    # 
