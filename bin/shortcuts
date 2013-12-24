@@ -1,0 +1,60 @@
+defaults write -g NSUserKeyEquivalents '{
+"Show Previous Tab" = "@$Z";
+"Show Next Tab" = "@$X";
+"Previous Conversation" = "@$Z";
+"Next Conversation" = "@$X";
+"Select Previous Tab" = "@$Z";
+"Select Next Tab" = "@$X";
+"Export" = "@e";
+"Guide Lines" = "@'\''";
+"Show Guides" = "@'\''";
+"Hide Guides" = "@'\''";
+}'
+
+defaults write -app Safari NSUserKeyEquivalents '{
+"Reopen Last Closed Window" = "@~r";
+"Move Tab to New Window" = "@~n";
+"Merge All Windows" = "@$m";
+}'
+
+defaults write -app Mail NSUserKeyEquivalents '{
+"Clear Flag" = "@$L";
+"Archive" = "@\\";
+"Send" = "@\\U21a9";
+}'
+
+echo "Shortcuts added successfuly!"
+
+comment="
+Reference: http://www.hcs.harvard.edu/~jrus/site/cocoa-text.html
+
+@t = Command-t 
+^t = Control-t 
+~t = Option-t 
+@^$T = Command-Control-Shift-t 
+~  = Option-space
+~\\$ = Option-$ -- escape!
+
+Escape:	\U001B
+Tab:	\U0009
+Backtab:	\U0019
+Return:	\U000A
+Enter:	\U000D
+Delete:	\U007F
+Up Arrow:	\UF700
+Down Arrow:	\UF701
+Left Arrow:	\UF702
+Right Arrow:	\UF703
+Help:	\UF746
+Forward Delete:	\UF728
+Home:	\UF729
+End:	\UF72B
+Page Up:	\UF72C
+Page Down:	\UF72D
+Clear:	\UF739
+F1:	\UF704
+F2:	\UF705
+F3:	\UF706
+…	
+F35	\UF726
+"
