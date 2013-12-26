@@ -220,6 +220,7 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Enable plugins (https://github.com/nompute/GMailinator)
 defaults write com.apple.mail EnableBundles -bool true
+mkdir ~/Library/Mail/Bundles
 
 ###########################
 # Terminal                # 
