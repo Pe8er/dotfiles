@@ -218,6 +218,9 @@ ln -s ~/Library/Scripts/Applications/iTunes ~/Library/iTunes/Scripts
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
+# Enable plugins (https://github.com/nompute/GMailinator)
+defaults write com.apple.mail EnableBundles -bool true
+
 ###########################
 # Terminal                # 
 ###########################
