@@ -9,6 +9,8 @@ defaults write -g NSUserKeyEquivalents '{
 "Guide Lines" = "@'\''";
 "Show Guides" = "@'\''";
 "Hide Guides" = "@'\''";
+"Copy Animation" = "@^C";
+"Paste Animation" = "@^V";
 }'
 
 defaults write -app Safari NSUserKeyEquivalents '{
@@ -21,6 +23,10 @@ defaults write -app Mail NSUserKeyEquivalents '{
 "Clear Flag" = "@$L";
 "Archive" = "@\\";
 "Send" = "@\\U21a9";
+}'
+
+defaults write com.apple.finder NSUserKeyEquivalents '{
+"Show Package Contents" = "^r";
 }'
 
 echo "Shortcuts added successfuly!"

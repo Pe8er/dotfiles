@@ -57,7 +57,16 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Disable press-and-hold for keys in favor of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool false
+
+# New window points to home
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+
+# Expand the "Open with" and "Sharing & Permissions" panes
+defaults write com.apple.finder FXInfoPanesExpanded -dict OpenWith -bool true Privileges -bool true
+
+# Set keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Use AirDrop over every interface. srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
@@ -151,6 +160,9 @@ defaults write -g com.apple.scrollwheel.scaling 3
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
+# Double-click a window's title bar to minimize
+defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
+
 # Make Dock icons of hidden applications translucent
 # defaults write com.apple.Dock showhidden -bool YES
 
@@ -185,6 +197,15 @@ defaults write com.apple.Safari HomePage -string "topsites://"
 
 # Show Safari's bookmark bar.
 defaults write com.apple.Safari ShowFavoritesBar -bool true
+
+# Show tab bar
+defaults write com.apple.Safari AlwaysShowTabBar -bool true
+
+# Do not track
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+# Update extensions automatically
+defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
 # Set up Safari for development.
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
@@ -221,6 +242,20 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 # Enable plugins (https://github.com/nompute/GMailinator)
 defaults write com.apple.mail EnableBundles -bool true
 mkdir ~/Library/Mail/Bundles
+
+###########################
+# Contacts                # 
+###########################
+
+# Address format
+defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "fi"
+
+# Display format "Last, First"
+defaults write com.apple.AddressBook ABNameDisplay -int 1
+
+# Sort by last name
+defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
+
 
 ###########################
 # Terminal                # 
