@@ -231,7 +231,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Pro theme by default in Terminal.app
 open "$HOME/.dotfiles/system/Piotr.terminal"
-sleep 1 # Wait a bit to make sure the theme is loaded
+sleep 2 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
 defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 
