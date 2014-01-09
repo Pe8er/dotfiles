@@ -384,4 +384,4 @@ done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 
 # Make menubar clock white
-open $HOME/Customizing/WhiteUIServer.menu
+# open $HOME/Customizing/WhiteUIServer.menu

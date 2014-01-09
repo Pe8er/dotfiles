@@ -4,6 +4,6 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 
 brew cask install adobe-air calibre dropbox fantastical google-chrome \
-	imageoptim launch-bar menu-bar-filter moom mplayer-osx-extended \
+	imageoptim launch-bar mplayer-osx-extended \
 	simple-comic slicy spotify sublime-text skype transmission transmit \
 	xld xscope
