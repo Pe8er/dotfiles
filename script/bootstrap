@@ -128,5 +128,7 @@ then
   fi
 fi
 
+crontab ~/.dotfiles/system/Piotr.crontab
+
 echo ''
 echo '  All installed!'
