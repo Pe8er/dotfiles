@@ -13,3 +13,8 @@ build/
 xcuserdata
 
 .xcodeproj/ !*.xcodeproj/project.pbxproj
+
+# SSH Stuff
+id_rsa
+id_rsa.pub
+known_hosts
