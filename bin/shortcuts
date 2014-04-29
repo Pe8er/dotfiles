@@ -11,6 +11,8 @@ defaults write -g NSUserKeyEquivalents '{
 "Hide Guides" = "@'\''";
 "Copy Animation" = "@^C";
 "Paste Animation" = "@^V";
+"Increase Quote Level" = "@]";
+"Decrease Quote Level" = "@[";
 }'
 
 defaults write -app Safari NSUserKeyEquivalents '{

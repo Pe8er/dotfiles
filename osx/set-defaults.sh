@@ -278,8 +278,6 @@ defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 defaults write com.apple.iCal "TimeZone support enabled" -bool true
 # show event times
 defaults write com.apple.iCal "Show time in Month View" -bool true
-# show week numbers by default
-defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 ###########################
 # Other                   #

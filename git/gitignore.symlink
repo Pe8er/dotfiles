@@ -15,3 +15,8 @@ xcuserdata
 # Android shiz
 .classpath
 project.properties
+
+# SSH Stuff
+id_rsa
+id_rsa.pub
+known_hosts
