@@ -9,7 +9,7 @@
 
 
 ###########################
-# Finder                  # 
+# Finder                  #
 ###########################
 
 # Enable smooth animations
@@ -68,7 +68,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict OpenWith -bool true Pr
 # Set keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-# Use AirDrop over every interface. srsly this should be a default.
+# Use AirDrop over every interface. Srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 # Show the ~/Library folder.
@@ -86,7 +86,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1
 
 # Menu bar: disable transparency
-# defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # Menu bar: hide the useless Time Machine and Volume icons
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
@@ -154,7 +154,7 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 defaults write -g com.apple.scrollwheel.scaling 3
 
 ###########################
-# Dock                    # 
+# Dock                    #
 ###########################
 
 # Remove the auto-hiding Dock delay
@@ -189,7 +189,7 @@ defaults write com.apple.dock mru-spaces -bool false
 
 
 ###########################
-# Safari                  # 
+# Safari                  #
 ###########################
 
 # Set Safari’s home page to 'Top Sites'
@@ -219,7 +219,7 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 
 ###########################
-# iTunes                  # 
+# iTunes                  #
 ###########################
 
 # Enable cool iTunes dock notifications
@@ -233,7 +233,7 @@ ln -s ~/Library/Scripts/Applications/iTunes ~/Library/iTunes/Scripts
 
 
 ###########################
-# Mail                    # 
+# Mail                    #
 ###########################
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
@@ -244,7 +244,7 @@ defaults write com.apple.mail EnableBundles -bool true
 mkdir ~/Library/Mail/Bundles
 
 ###########################
-# Contacts                # 
+# Contacts                #
 ###########################
 
 # Address format
@@ -258,7 +258,7 @@ defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastNam
 
 
 ###########################
-# Terminal                # 
+# Terminal                #
 ###########################
 
 # Only use UTF-8 in Terminal.app
@@ -271,7 +271,7 @@ defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
 defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 
 ###########################
-# Calendar                # 
+# Calendar                #
 ###########################
 
 # timezone support active by default
@@ -282,7 +282,7 @@ defaults write com.apple.iCal "Show time in Month View" -bool true
 defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 ###########################
-# Other                   # 
+# Other                   #
 ###########################
 
 # Don't save Preview windows on quit
