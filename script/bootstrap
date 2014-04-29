@@ -27,18 +27,25 @@ fail () {
 }
 
 setup_gitconfig () {
-   if ! [ -f git/gitconfig.symlink ]
-   then
-     info 'setup gitconfig'
+  if ! [ -f git/gitconfig.symlink ]
+  then
+    info 'setup gitconfig'
 
-     user ' - What is your github author name?'
-     read -e git_authorname
-     user ' - What is your github author email?'
-     read -e git_authoremail
-     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" git/gitconfig.symlink.example > git/gitconfig.symlink
+    git_credential='cache'
+    if [ "$(uname -s)" == "Darwin" ]
+    then
+      git_credential='osxkeychain'
+    fi
 
-     success 'gitconfig'
-   fi
+    user ' - What is your github author name?'
+    read -e git_authorname
+    user ' - What is your github author email?'
+    read -e git_authoremail
+
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.symlink.example > git/gitconfig.symlink
+
+    success 'gitconfig'
+  fi
 }
 
 link_files () {
@@ -116,19 +123,17 @@ install_dotfiles () {
 setup_gitconfig
 install_dotfiles
 
-# If we are on a mac, lets install and setup homebrew
+# If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if . bin/dot > /tmp/dotfiles-dot 2>&1
+  if source bin/dot > /tmp/dotfiles-dot 2>&1
   then
     success "dependencies installed"
   else
     fail "error installing dependencies"
   fi
 fi
-
-crontab ~/.dotfiles/system/Piotr.crontab
 
 echo ''
 echo '  All installed!'
