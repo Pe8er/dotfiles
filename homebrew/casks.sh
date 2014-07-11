@@ -3,7 +3,7 @@
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
-brew cask install adobe-air airfoil calibre daisydisk dropbox fantastical \
-    google-chrome hazel imageoptim launch-bar mplayer-osx-extended omnigraffle \
-	sparrow simple-comic slicy steam spotify sublime-text skype transmission \
-    the-unarchiver transmit xee xld xscope
+brew cask install adobe-air calibre daisydisk fantastical \
+    google-chrome hazel imageoptim mplayer-osx-extended omnigraffle \
+	sparrow simple-comic slicy steam sublime-text skype transmission \
+    transmit xee xld xscope
