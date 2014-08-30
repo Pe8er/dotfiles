@@ -1,7 +1,7 @@
 # http://en.wikipedia.org/wiki/Cron
 
-0	13	*	*	1	osascript ~/Library/Scripts/Reminders/Weekly\ Standup.scpt
-0	18	*	*	1	osascript ~/Library/Scripts/Reminders/Agenda\ Reminder.scpt
-0	11	*	*	5	osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
+# 0	13	*	*	1	osascript ~/Library/Scripts/Reminders/Weekly\ Standup.scpt
+# 0	18	*	*	1	osascript ~/Library/Scripts/Reminders/Agenda\ Reminder.scpt
+# 0	11	*	*	5	osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
 
 
