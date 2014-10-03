@@ -36,10 +36,10 @@ echo "Shortcuts added successfuly!"
 comment="
 Reference: http://www.hcs.harvard.edu/~jrus/site/cocoa-text.html
 
-@t = Command-t 
-^t = Control-t 
-~t = Option-t 
-@^$T = Command-Control-Shift-t 
+@t = Command-t
+^t = Control-t
+~t = Option-t
+@^$T = Command-Control-Shift-t
 ~  = Option-space
 ~\\$ = Option-$ -- escape!
 
@@ -63,6 +63,6 @@ Clear:	\UF739
 F1:	\UF704
 F2:	\UF705
 F3:	\UF706
-…	
+…
 F35	\UF726
 "
