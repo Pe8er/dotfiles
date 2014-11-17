@@ -14,6 +14,6 @@ then
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark xmlstarlet terminal-notifier node 
+brew install grc coreutils spark xmlstarlet terminal-notifier node switchaudio-osx
 
 exit 0
