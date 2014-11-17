@@ -9,7 +9,7 @@
 if test ! $(which brew)
 then
   echo "  x You should probably install Homebrew first:"
-  echo "    https://github.com/mxcl/homebrew/wiki/installation"
+  echo "    http://brew.sh"
   exit
 fi
 
