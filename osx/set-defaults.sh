@@ -17,16 +17,16 @@ defaults write -g NSScrollAnimationEnabled -bool true
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
-# Set sidebar icon size to small
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+# Set sidebar icon size to medium
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Dark menubar in full screen
-defaults write -g NSFullScreenDarkMenu -bool TRUE
+# defaults write -g NSFullScreenDarkMenu -bool TRUE
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -58,6 +58,10 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool false
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Set keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
 
 # New window points to home
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -65,18 +69,11 @@ defaults write com.apple.finder NewWindowTarget -string "PfHm"
 # Expand the "Open with" and "Sharing & Permissions" panes
 defaults write com.apple.finder FXInfoPanesExpanded -dict OpenWith -bool true Privileges -bool true
 
-# Set keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
-
 # Use AirDrop over every interface. Srsly this should be a default.
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 # Show the ~/Library folder.
 chflags nohidden ~/Library
-
-# Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 0
-defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set the Finder prefs for showing a few different volumes on the Desktop.
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
@@ -84,9 +81,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Show unsupported Time Machine volumes.
 defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1
-
-# Menu bar: disable transparency
-defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 
 # Menu bar: hide the useless Time Machine and Volume icons
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
@@ -248,10 +242,10 @@ mkdir ~/Library/Mail/Bundles
 ###########################
 
 # Address format
-defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "fi"
+# defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "fi"
 
 # Display format "Last, First"
-defaults write com.apple.AddressBook ABNameDisplay -int 1
+# defaults write com.apple.AddressBook ABNameDisplay -int 1
 
 # Sort by last name
 defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
@@ -268,6 +262,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 open "$HOME/.dotfiles/system/Piotr.terminal"
 sleep 2 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
+sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 
 ###########################
@@ -276,6 +271,7 @@ defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 
 # timezone support active by default
 defaults write com.apple.iCal "TimeZone support enabled" -bool true
+
 # show event times
 defaults write com.apple.iCal "Show time in Month View" -bool true
 
@@ -375,11 +371,8 @@ sudo nvram boot-args="mbasd=1"
 # Restart Stuff
 
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-	"Mail" "Safari" "SystemUIServer" "Terminal" "Transmission" \
+	"Mail" "Safari" "SystemUIServer" "Transmission" \
 	"Twitter" "iCal" "iTunes"; do
 	killall "$app" > /dev/null 2>&1
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-# Make menubar clock white
-# open $HOME/Customizing/WhiteUIServer.menu
