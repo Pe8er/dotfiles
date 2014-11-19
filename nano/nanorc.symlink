@@ -5,14 +5,14 @@ set backupdir /tmp
 set mouse
 set tabsize 4    # Insert 4 spaces per tab
 set multibuffer  # Allow opening multiple files (Alt+< and Alt+> to switch)
-set undo         # Enable undo/redo features
+# set undo         # Enable undo/redo features
 set smooth       # Scroll one line at a time
 set const        # Show cursor position at the bottom of the screen
 set nowrap
 
 ## Shortcuts
 
-bind ^Z undo main
+# bind ^Z undo main
 bind ^Y redo main
 bind ^S mark main
 
