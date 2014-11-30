@@ -46,11 +46,6 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
-
 # Automatically open a new Finder window when a volume is mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
@@ -274,6 +269,21 @@ defaults write com.apple.iCal "TimeZone support enabled" -bool true
 
 # show event times
 defaults write com.apple.iCal "Show time in Month View" -bool true
+
+###########################
+# Disk Utility            #
+###########################
+
+# Enable additional formats
+defaults write com.apple.DiskUtility advanced-image-options -bool true
+
+# Enable debug menu
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+
+# Disable disk image verification
+defaults write com.apple.frameworks.diskimages skip-verify -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 ###########################
 # Other                   #
