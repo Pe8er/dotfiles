@@ -8,12 +8,13 @@
 # Check for Homebrew
 if test ! $(which brew)
 then
-  echo "  x You should probably install Homebrew first:"
-  echo "    http://brew.sh"
-  exit
+  echo "  Installing Homebrew for you."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  brew update
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark xmlstarlet terminal-notifier node switchaudio-osx jq
+brew install grc coreutils spark
 
 exit 0

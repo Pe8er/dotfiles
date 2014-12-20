@@ -1,38 +1,25 @@
 #!/bin/bash
 
-# Script Debugger
-
-SCRIPT_DEBUG=true
-#SCRIPT_DEBUG=false
-
 # https://github.com/phinze/homebrew-cask/blob/master/USAGE.md
 
-echo "Installing Cask…"
+echo "\nInstalling Cask…\n"
 
 if ! brew cask &> /dev/null
   then
-    if $SCRIPT_DEBUG
-      then
-        echo "...Cask not installed. Installing."
-        brew install caskroom/cask/brew-cask
-      else
-        brew install caskroom/cask/brew-cask > /dev/null
-    fi
-
-    if $SCRIPT_DEBUG; then echo -e "...Finished installing Cask."; fi
-
+    echo "\n...Cask not installed. Installing.\n"
+    brew install caskroom/cask/brew-cask
+    echo -e "\n...Finished installing Cask.\n"
   else
-    if $SCRIPT_DEBUG; then echo -e "Cask already installed."; fi
-
+    echo -e "\nCask already installed.\n"
 fi
 
-echo "Preparing Brew…"
+echo -e "\nPreparing Brew…\n"
 
 brew tap caskroom/versions
 brew update
 brew doctor
 
-echo "Installing apps…"
+echo -e "\nInstalling apps…\n"
 
 brew cask install calibre
 brew cask install github
@@ -55,12 +42,20 @@ brew cask install skype
 brew cask install the-unarchiver
 brew cask install transmission
 brew cask install transmit
+brew cask install ubersicht
+
+echo -e "\nInstalling Ubersicht Widgets…\n"
+
+git clone https://github.com/Pe8er/Ubersicht-Widgets.git "/Users/piotrgajos/Library/Application Support/Übersicht/widgets/"
+
 brew cask install xee
 brew cask install xld
 
-echo "Cleaning up…"
+echo -e "\nCleaning up…\n"
 
 brew cask cleanup
 brew cleanup
 
-echo "Done! Thank you and thank you."
+echo -e "\nDone! Thank you and thank you.\nNow link this folder in Launchbar preferences.\n"
+
+open /opt/homebrew-cask/Caskroom/
