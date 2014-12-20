@@ -1,7 +1,23 @@
-# http://en.wikipedia.org/wiki/Cron
+# *     *     *   *    *        command to be executed
+# -     -     -   -    -
+# |     |     |   |    |
+# |     |     |   |    +----- day of week (0 - 6) (Sunday=0)
+# |     |     |   +------- month (1 - 12)
+# |     |     +--------- day of        month (1 - 31)
+# |     +----------- hour (0 - 23)
+# +------------- min (0 - 59)
 
-# 0	13	*	*	1	osascript ~/Library/Scripts/Reminders/Weekly\ Standup.scpt
-# 0	18	*	*	1	osascript ~/Library/Scripts/Reminders/Agenda\ Reminder.scpt
-# 0	11	*	*	5	osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
+# @reboot Run once, at startup.
+# @yearly Run once a year, "0 0 1 1 *".
+# @annually (same as @yearly)
+# @monthly Run once a month, "0 0 1 * *".
+# @weekly Run once a week, "0 0 * * 0".
+# @daily Run once a day, "0 0 * * *".
+# @midnight (same as @daily)
+# @hourly Run once an hour, "0 * * * *".
+
+
+@monthly ~/.dotfiles/bin/update
+0 11 * * 5 osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
 
 
