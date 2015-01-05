@@ -16,8 +16,9 @@
 # @midnight (same as @daily)
 # @hourly Run once an hour, "0 * * * *".
 
+# Setup
+# crontab ~/.dotfiles/system/Piotr.crontab
+# crontab -l
 
 @monthly ~/.dotfiles/bin/update
 0 11 * * 5 osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
-
-
