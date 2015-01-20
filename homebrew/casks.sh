@@ -44,9 +44,14 @@ brew cask install transmission
 brew cask install transmit
 brew cask install ubersicht
 
+echo -e "\nInstalling Fonts…\n"
+brew tap caskroom/fonts
+brew cask install font-inconsolata
+
 echo -e "\nInstalling Ubersicht Widgets…\n"
 
-git clone https://github.com/Pe8er/Ubersicht-Widgets.git "/Users/piotrgajos/Library/Application Support/Übersicht/widgets/"
+rm -rf "$HOME/Library/Application Support/Übersicht/widgets/"
+git clone https://github.com/Pe8er/Ubersicht-Widgets.git "$HOME/Library/Application Support/Übersicht/widgets/"
 
 brew cask install xee
 brew cask install xld
