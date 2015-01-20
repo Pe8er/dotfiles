@@ -43,10 +43,11 @@ brew cask install the-unarchiver
 brew cask install transmission
 brew cask install transmit
 brew cask install ubersicht
+brew cask install karabiner
 
 echo -e "\nInstalling Ubersicht Widgets…\n"
 
-git clone https://github.com/Pe8er/Ubersicht-Widgets.git "/Users/piotrgajos/Library/Application Support/Übersicht/widgets/"
+git clone https://github.com/Pe8er/Ubersicht-Widgets.git "/Users/piotrgajos/Library/Application Support/Übersicht/widgets/"
 
 brew cask install xee
 brew cask install xld
