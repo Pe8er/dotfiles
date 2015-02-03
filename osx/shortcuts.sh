@@ -47,6 +47,7 @@ defaults write -app OmniGraffle NSUserKeyEquivalents '{
 defaults write -app Sketch NSUserKeyEquivalents '{
 "Round to Nearest Pixel Edge" = "@\\";
 "Insert Image…" = "@$I";
+"Better Paste" = "@V";
 }'
 
 echo "\nShortcuts added successfuly!\n"
