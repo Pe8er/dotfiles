@@ -21,4 +21,4 @@
 # crontab -l
 
 @monthly ~/.dotfiles/bin/update
-0 11 * * 3 osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
+0 15 * * 2 osascript ~/Library/Scripts/Reminders/Weekly\ Report.scpt
