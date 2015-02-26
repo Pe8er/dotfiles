@@ -49,6 +49,7 @@ brew cask install ubersicht
 brew cask install karabiner
 brew cask install xee
 brew cask install xld
+brew cask install controplane
 
 ############################################
 echo -e "\nInstalling Fonts…\n"

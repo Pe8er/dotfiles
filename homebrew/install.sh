@@ -15,6 +15,6 @@ else
 fi
 
 # Install homebrew packages
-brew install grc coreutils spark node
+brew install grc coreutils spark node terminal-notifier
 
 exit 0

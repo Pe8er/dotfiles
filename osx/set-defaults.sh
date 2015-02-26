@@ -387,14 +387,16 @@ sudo rm /etc/hosts
 sudo ln -s ~/.dotfiles/osx/hosts /etc/hosts
 
 # Setup shortcuts
-
 ~/.dotfiles/osx/shortcuts.sh
 
-# Restart Stuff
+# Link Quicklook Plugins folder
+ln -s $HOME/Dropbox/Library/QuickLook $HOME/Library/QuickLook
+qlmanage -r
 
+# Restart Stuff
 for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
 	"Mail" "Safari" "SystemUIServer" "Transmission" \
 	"Twitter" "iCal" "iTunes"; do
 	killall "$app" > /dev/null 2>&1
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+echo "Done. Note that some of these changes require a logout or restart to take effect."
