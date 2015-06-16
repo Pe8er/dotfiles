@@ -25,6 +25,8 @@ defaults write -app Safari NSUserKeyEquivalents '{
 
 defaults write -app Mail NSUserKeyEquivalents '{
 "Clear Flag" = "@$L";
+"Insert Bulleted List" = "@$U";
+"Insert Numbered List" = "@$O";
 "Archive" = "@\\";
 "Send" = "@\\U21a9";
 }'
