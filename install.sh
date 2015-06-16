@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# RUN ME FROM TERMINAL, SON
+# source <(curl -s https://raw.githubusercontent.com/Pe8er/dotfiles/master/install.sh)
+
+
 # Install Brew
 if test ! $(which brew)
 then
