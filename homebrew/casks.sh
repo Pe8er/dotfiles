@@ -27,22 +27,18 @@ echo -e "\nInstalling apps…\n"
 brew cask install calibre
 brew cask install github
 brew cask install google-chrome
-brew cask install google-drive
-brew cask install hipchat
+brew cask install slack
 brew cask install imageoptim
 brew cask install launchbar
 brew cask install mailbox
 brew cask install moom
 brew cask install mplayerx
 brew cask install omnigraffle
-brew cask install simple-comic
 brew cask install sketch-toolbox
 brew cask install skype
 brew cask install steam
 brew cask install sublime-text3
 brew cask install spotify
-brew cask install skype
-brew cask install the-unarchiver
 brew cask install transmission
 brew cask install transmit
 brew cask install ubersicht
@@ -51,6 +47,8 @@ brew cask install xee
 brew cask install xld
 brew cask install controplane
 brew cask install techstoreclub-simple-comic
+brew cask install onyx
+brew cask install sketch
 
 ############################################
 echo -e "\nInstalling Fonts…\n"
