@@ -50,6 +50,7 @@ brew cask install karabiner
 brew cask install xee
 brew cask install xld
 brew cask install controplane
+brew cask install techstoreclub-simple-comic
 
 ############################################
 echo -e "\nInstalling Fonts…\n"
