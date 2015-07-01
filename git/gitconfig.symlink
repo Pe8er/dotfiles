@@ -31,6 +31,7 @@
         mylog = log --author="Piotr" --since="yesterday" --name-status --pretty=full
         find = log --all --
         check = fetch; git log HEAD.. --oneline
+		bigreset = fetch origin; git reset --hard origin/master
 [rerere]
         enabled = 1
 [heroku]
