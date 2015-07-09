@@ -17,7 +17,7 @@ fi
 echo "\nInstalling some packages…\n"
 brew tap homebrew/dupes
 sudo mv /usr/bin/nano /usr/bin/nano~
-brew install grc coreutils spark git nano node
+brew install grc coreutils spark git nano node terminal-notifier
 
 # Add SSH keys
 echo "Do you want to add SSH keys? \c"
