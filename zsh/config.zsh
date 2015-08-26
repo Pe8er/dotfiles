@@ -4,6 +4,10 @@ else
   export PS1='%3~$(git_info_for_prompt)%# '
 fi
 
+# export PROMPT="$PROMPT$(git-radar --zsh --fetch) "
+
+# export PS1="$PS1\$(git-radar --bash --fetch)"
+
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true
 

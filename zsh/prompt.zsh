@@ -50,9 +50,9 @@ need_push() {
   fi
 }
 
-# battery_charge() {
-#	echo `~/.dotfiles/bin/batcharge.py` 2>/dev/null
-# }
+ battery_charge() {
+	echo `~/.dotfiles/bin/batcharge.py` 2>/dev/null
+ }
 
 export PROMPT=$'\n██  [%{$fg_bold[blue]%} ${PWD/#$HOME/~} %{$reset_color%}] $(git_dirty)$(need_push)\n██  '
 set_prompt () {
