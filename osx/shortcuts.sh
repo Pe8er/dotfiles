@@ -28,7 +28,9 @@ defaults write -app Mail NSUserKeyEquivalents '{
 "Insert Bulleted List" = "@$U";
 "Insert Numbered List" = "@$O";
 "Archive" = "@\\";
-"Send" = "@\\U21a9";
+"As Unread" = "@$U";
+"Need Reply" = "^R";
+"Follow Up" = "^F";
 }'
 
 defaults write com.apple.finder NSUserKeyEquivalents '{
