@@ -7,7 +7,6 @@ defaults write -g NSUserKeyEquivalents '{
 "Select Next Conversation" = "@$X";
 "Select Previous Tab" = "@$Z";
 "Select Next Tab" = "@$X";
-"Export" = "@e";
 "Guide Lines" = "@'\''";
 "Show Guides" = "@'\''";
 "Hide Guides" = "@'\''";
@@ -28,9 +27,9 @@ defaults write -app Mail NSUserKeyEquivalents '{
 "Insert Bulleted List" = "@$U";
 "Insert Numbered List" = "@$O";
 "Archive" = "@\\";
-"As Unread" = "@$U";
 "Need Reply" = "^R";
 "Follow Up" = "^F";
+"Stash" = "^S";
 }'
 
 defaults write com.apple.finder NSUserKeyEquivalents '{
@@ -48,9 +47,10 @@ defaults write -app OmniGraffle NSUserKeyEquivalents '{
 "Fit in Window" = "@0";
 }'
 
-defaults write -app Sketch NSUserKeyEquivalents '{
+defaults write com.bohemiancoding.sketch3 NSUserKeyEquivalents '{
 "Round to Nearest Pixel Edge" = "@\\";
 "Insert Image…" = "@$I";
+"Edit Constraints" = "@E";
 }'
 
 echo "\nShortcuts added successfuly!\n"
