@@ -30,6 +30,7 @@ defaults write -app Mail NSUserKeyEquivalents '{
 "Need Reply" = "^R";
 "Follow Up" = "^F";
 "Stash" = "^S";
+"Leads" = "^L";
 }'
 
 defaults write com.apple.finder NSUserKeyEquivalents '{
@@ -48,7 +49,7 @@ defaults write -app OmniGraffle NSUserKeyEquivalents '{
 }'
 
 defaults write com.bohemiancoding.sketch3 NSUserKeyEquivalents '{
-"Round to Nearest Pixel Edge" = "@\\";
+"Round to Pixel" = "@\\";
 "Insert Image…" = "@$I";
 "Edit Constraints" = "@E";
 }'
