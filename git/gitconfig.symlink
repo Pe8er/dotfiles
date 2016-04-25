@@ -1,18 +1,8 @@
-[user]
-        name = Piotr Gajos
-        email = piotr@sourcebits.com
-[color]
-        diff = auto
-        status = auto
-        branch = auto
-[core]
-        editor = nano
-        autocrlf = input
-	excludesfile = /Users/Piotr/.gitignore
-[apply]
-        whitespace = nowarn
-[format]
-        pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+# Local/private config goes in the include
+[include]
+        path = ~/.gitconfig.local
+[hub]
+        protocol = https
 [alias]
         shift = !$HOME/bin/git-shift
         co = checkout
@@ -31,22 +21,30 @@
         mylog = log --author="Piotr" --since="yesterday" --name-status --pretty=full
         find = log --all --
         check = fetch; git log HEAD.. --oneline
-		bigreset = fetch origin; git reset --hard origin/master
-[rerere]
-        enabled = 1
-[heroku]
-        account = personal
+        bigreset = fetch origin; git reset --hard origin/master
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
 [push]
+        # See `git help config` (search for push.default)
+        # for more information on different options of the below setting.
+        #
+        # Setting to git 2.0 default to suppress warning message
         default = simple
-[filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
 	required = true
