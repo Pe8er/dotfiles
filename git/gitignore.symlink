@@ -1,22 +1,23 @@
-.DS_Store
-.svn
-*~
-*.swp
-*.rbc
-sublime2/User/Package\ Control.sublime-settings
-sublime2/User/Package Control.last-run
-*~.nib
+# Xcode #
+#########
+*.xcuserdata
+*.xcuserdatad/
+*.xcworkspace
+!default.xcworkspace
+*.pbxuser
+DerivedData
 build/
+*.ipa
+*.moved-aside
 *.mode1v3
 *.mode2v3
-xcuserdata
-.xcodeproj/ !*.xcodeproj/project.pbxproj
+*.perspectivev3
 
-# Android shiz
-.classpath
-project.properties
-
-# SSH Stuff
-id_rsa
-id_rsa.pub
-known_hosts
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+thumbs.db
+Thumbs.db
