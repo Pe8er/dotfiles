@@ -37,13 +37,6 @@ defaults write com.apple.finder NSUserKeyEquivalents '{
 "Show Package Contents" = "^r";
 }'
 
-defaults write -app HipChat NSUserKeyEquivalents '{
-"Previous Tab" = "@$Z";
-"Next Tab" = "@$X";
-"Close Tab" = "@$W";
-"Close Window" = "@W";
-}'
-
 defaults write -app OmniGraffle NSUserKeyEquivalents '{
 "Fit in Window" = "@0";
 }'
