@@ -7,11 +7,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 
-# cask options
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
 
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
 if [[ -a ~/.localrc ]]
 then
   source ~/.localrc

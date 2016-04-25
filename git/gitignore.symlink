@@ -21,3 +21,5 @@ build/
 .Trashes
 thumbs.db
 Thumbs.db
+*~
+*.swp
