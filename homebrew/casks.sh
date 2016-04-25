@@ -30,11 +30,10 @@ brew cask install google-chrome
 brew cask install slack
 brew cask install imageoptim
 brew cask install launchbar
-brew cask install mailbox
 brew cask install moom
 brew cask install mplayerx
 brew cask install omnigraffle
-brew cask install sketch-toolbox
+# brew cask install sketch-toolbox
 brew cask install skype
 brew cask install steam
 brew cask install sublime-text3
@@ -43,9 +42,9 @@ brew cask install transmission
 brew cask install transmit
 brew cask install ubersicht
 brew cask install karabiner
-brew cask install xee
+# brew cask install xee
 brew cask install xld
-brew cask install controplane
+# brew cask install controplane
 brew cask install techstoreclub-simple-comic
 brew cask install onyx
 brew cask install sketch
