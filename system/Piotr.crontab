@@ -20,4 +20,4 @@
 # crontab ~/.dotfiles/system/Piotr.crontab
 # crontab -l
 
-@monthly ~/.dotfiles/bin/update
+@monthly ~/.dotfiles/bin/dot
