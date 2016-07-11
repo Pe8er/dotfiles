@@ -48,3 +48,6 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[user]
+	name = Piotr Gajos
+	email = pgajos@icloud.com
