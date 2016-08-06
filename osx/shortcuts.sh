@@ -31,6 +31,8 @@ defaults write -app Mail NSUserKeyEquivalents '{
 "Follow Up" = "^F";
 "Stash" = "^S";
 "Leads" = "^L";
+"Send" = "@\U000D";
+"Reply" = "r";
 }'
 
 defaults write com.apple.finder NSUserKeyEquivalents '{
