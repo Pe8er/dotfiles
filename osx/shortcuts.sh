@@ -18,8 +18,10 @@ defaults write -g NSUserKeyEquivalents '{
 
 defaults write -app Safari NSUserKeyEquivalents '{
 "Reopen Last Closed Window" = "@~r";
+"Reopen Last Closed Tab" = "@z";
 "Move Tab to New Window" = "@~n";
 "Merge All Windows" = "@$m";
+"Minimize All" = "@~,";
 }'
 
 defaults write -app Mail NSUserKeyEquivalents '{
@@ -43,13 +45,44 @@ defaults write -app OmniGraffle NSUserKeyEquivalents '{
 "Fit in Window" = "@0";
 }'
 
-defaults write com.bohemiancoding.sketch3 NSUserKeyEquivalents '{
-"Round to Pixel" = "@\\";
-"Insert Image…" = "@$I";
-"Edit Constraints" = "@E";
+defaults write com.guidedways.TodoMac NSUserKeyEquivalents '{
+  // Start Date
+  // "Remove Start Date" = "~=";
+  // "Add a Day" = "=";
+  // "Add a Week" = "$=";
+  // "Subtract a Day" = "-";
+  // "Subtract a Week" = "$-";
+
+  // Navigation
+  "Inbox" = "@1";
+  "Today" = "@2";
+  "All" = "@3";
+  "Scheduled" = "@4";
+  "Starred" = "@5";
+  "Done" = "@6";
+  "2Do" = "@0";
+
+  // Task Actions
+  // "New Task" = "\U000D"; // macOs blocks it.
+  // "As Completed" = "\U0020"; // macOs blocks it.
+  "Edit Note" = "@\U0027";
+  "Open Links" = "v";
+  "Edit Tags" = "/";
+  "Edit Recurrence" = "@r";
+  "Edit List" = "f";
+  // "Delete" = "\U007F"; // macOs blocks it.
+  "Start Today" = "t";
+  "Due Today" = "$t";
+  "Move Up" = "w";
+  "Move Down" = "s";
+  "Star" = "^s";
+
+  // Other
+  "List Jump Bar…" = "g";
+
 }'
 
-echo "\nShortcuts added successfuly!\n"
+echo "Shortcuts added successfuly!"
 
 comment="
 Reference: http://www.hcs.harvard.edu/~jrus/site/cocoa-text.html
