@@ -127,7 +127,6 @@ install_dotfiles () {
     then
       success "skipped $src"
     fi
-  fi
 
   if [ "$skip" != "true" ]  # "false" or empty
   then
