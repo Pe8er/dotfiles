@@ -1,17 +1,82 @@
-# Sets reasonable OS X defaults.
+#!/usr/bin/env bash
+
+# Sets reasonable macOS defaults.
 #
-# Or, in other words, set shit how I like in OS X.
+# Or, in other words, set shit how I like in macos.
 #
 # The original idea (and a couple settings) were grabbed from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
-###########################
-# Finder                  #
-###########################
+# Ask for the administrator password upfront
+sudo -v
 
-# Enable smooth animations
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+###############################################################################
+echo "SSD-specific tweaks"
+###############################################################################
+
+# Disable hibernation (speeds up entering sleep mode)
+sudo pmset -a hibernatemode 0
+
+# Remove the sleep image file to save disk space
+sudo rm /private/var/vm/sleepimage
+# Create a zero-byte file instead…
+sudo touch /private/var/vm/sleepimage
+# …and make sure it can’t be rewritten
+sudo chflags uchg /private/var/vm/sleepimage
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
+
+###############################################################################
+echo "Finder"
+###############################################################################
+
+# Link Quicklook Plugins folder
+ln -s $HOME/Dropbox/Library/QuickLook $HOME/Library/QuickLook
+qlmanage -r
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "$HOME/Desktop"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+
+# Disable auto-termination of idle applications
+defaults write -g NSDisableAutomaticTermination -bool true
+
+# Open a Finder window after extracting an archive
+defaults write com.apple.archiveutility dearchive-reveal-after -bool true
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# Restart automatically if the computer freezes
+systemsetup -setrestartfreeze on
+
+# Enable access for assistive desktopservices
+echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
+sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
+
+# Disable Resume system-wide
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+
+# Don't save Preview windows on quit
+defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -boolean false
+
+# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+
+# Enable smooth scrolling
 defaults write -g NSScrollAnimationEnabled -bool true
 
 # Use list view in all Finder windows by default
@@ -23,9 +88,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
-
-# Dark menubar in full screen
-# defaults write -g NSFullScreenDarkMenu -bool TRUE
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -51,11 +113,10 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Disable press-and-hold for keys in favor of key repeat.
-defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool false
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 2
 
 # New window points to home
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -76,8 +137,18 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Show unsupported Time Machine volumes.
 defaults write com.apple.systempreferences TMShowUnsupportedNetworkVolumes 1
 
-# Menu bar: hide the useless Time Machine and Volume icons
-defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
+# Menu bar: hide the Time Machine, Volume, and User icons
+for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
+  defaults write "${domain}" dontAutoLoad -array \
+    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+    "/System/Library/CoreServices/Menu Extras/User.menu"
+done
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.2
@@ -146,9 +217,9 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Speed up mouse scrolling
 defaults write -g com.apple.scrollwheel.scaling 300
 
-###########################
-# Dock                    #
-###########################
+###############################################################################
+echo "Dock"
+###############################################################################
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
@@ -157,7 +228,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
 
 # Make Dock icons of hidden applications translucent
-# defaults write com.apple.Dock showhidden -bool YES
+defaults write com.apple.Dock showhidden -bool YES
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -181,15 +252,19 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 defaults write com.apple.dock mru-spaces -bool false
 
 
-###########################
-# Safari                  #
-###########################
+###############################################################################
+echo "Safari"
+###############################################################################
 
-# Set Safari’s home page to 'Top Sites'
-defaults write com.apple.Safari HomePage -string "topsites://"
+# Setup my Hosts file
+sudo rm /etc/hosts
+sudo ln -s ~/.dotfiles/osx/hosts /etc/hosts
 
-# Show Safari's bookmark bar.
-defaults write com.apple.Safari ShowFavoritesBar -bool true
+# Set Safari’s home page to empty.
+defaults write com.apple.Safari HomePage -string "about:blank"
+
+# Hide Safari’s bookmarks bar by default
+defaults write com.apple.Safari ShowFavoritesBar -bool false
 
 # Show tab bar
 defaults write com.apple.Safari AlwaysShowTabBar -bool true
@@ -211,9 +286,9 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 
-###########################
-# iTunes                  #
-###########################
+###############################################################################
+echo "iTunes"
+###############################################################################
 
 # Enable cool iTunes dock notifications
 defaults write com.apple.Dock itunes-notifications -bool true
@@ -225,9 +300,9 @@ defaults write com.apple.iTunes invertStoreLinks -bool YES
 ln -s ~/Library/Scripts/Applications/iTunes ~/Library/iTunes/Scripts
 
 
-###########################
-# Mail                    #
-###########################
+###############################################################################
+echo "Mail"
+###############################################################################
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
@@ -236,9 +311,9 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.mail EnableBundles -bool true
 mkdir ~/Library/Mail/Bundles
 
-###########################
-# Contacts                #
-###########################
+###############################################################################
+echo "Contacts"
+###############################################################################
 
 # Address format
 # defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "fi"
@@ -250,9 +325,9 @@ mkdir ~/Library/Mail/Bundles
 defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
 
 
-###########################
-# Terminal                #
-###########################
+###############################################################################
+echo "Terminal"
+###############################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -264,9 +339,9 @@ defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 
-###########################
-# Calendar                #
-###########################
+###############################################################################
+echo "Calendar"
+###############################################################################
 
 # timezone support active by default
 defaults write com.apple.iCal "TimeZone support enabled" -bool true
@@ -274,9 +349,9 @@ defaults write com.apple.iCal "TimeZone support enabled" -bool true
 # show event times
 defaults write com.apple.iCal "Show time in Month View" -bool true
 
-###########################
-# Disk Utility            #
-###########################
+###############################################################################
+echo "Disk Utility"
+###############################################################################
 
 # Enable additional formats
 defaults write com.apple.DiskUtility advanced-image-options -bool true
@@ -289,12 +364,59 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-###########################
-# Other                   #
-###########################
+###############################################################################
+echo "Photos"
+###############################################################################
 
-# Don't save Preview windows on quit
-defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -boolean false
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
+echo "Transmission.app"
+###############################################################################
+
+# Don’t prompt for confirmation before downloading
+defaults write org.m0k.transmission DownloadAsk -bool false
+defaults write org.m0k.transmission MagnetOpenAsk -bool false
+
+# Trash original torrent files
+defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+
+# Hide the donate message
+defaults write org.m0k.transmission WarningDonate -bool false
+# Hide the legal disclaimer
+defaults write org.m0k.transmission WarningLegal -bool false
+
+# IP block list.
+# Source: https://giuliomac.wordpress.com/2014/02/19/best-blocklist-for-transmission/
+defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+
+###############################################################################
+echo "Mac App Store"
+###############################################################################
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Download newly available updates in background
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+# Install System data files & security updates
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+# Automatically download apps purchased on other Macs
+defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
+
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
+
+###############################################################################
+echo "Misc"
+###############################################################################
+
+# Setup keyboard shortcuts
+~/.dotfiles/osx/shortcuts.sh
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -303,36 +425,9 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
-# Don’t prompt for confirmation before downloading
-defaults write org.m0k.transmission DownloadAsk -bool false
-
-# Trash original torrent files
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-# Hide the donate message
-defaults write org.m0k.transmission WarningDonate -bool false
-
-# Hide the legal disclaimer
-defaults write org.m0k.transmission WarningLegal -bool false
-
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen 1
 defaults write com.apple.ical CalUIUseSystemHighlightColorForToday -bool TRUE
 sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
-
-# Show the app window when clicking the menu icon
-defaults write com.twitter.twitter-mac MenuItemBehavior -int 1
-
-# Enable the hidden ‘Develop’ menu
-defaults write com.twitter.twitter-mac ShowDevelopMenu -bool true
-
-# Open links in the background
-defaults write com.twitter.twitter-mac openLinksInBackground -bool true
-
-# Allow closing the ‘new tweet’ window by pressing `Esc`
-defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
-
-# Show full names rather than Twitter handles
-defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true
@@ -340,63 +435,23 @@ defaults write com.apple.helpviewer DevMode -bool true
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Disable Resume system-wide
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
-
-# Reveal IP address, hostname, OS version, etc. when clicking the clock
-# in the login window
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Restart automatically if the computer freezes
-systemsetup -setrestartfreeze on
-
-# Enable access for assistive devices
-echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
-sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
-
 # Automatically illuminate built-in MacBook keyboard in low light
 defaults write com.apple.BezelServices kDim -bool true
 
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
-# Require password immediately after sleep or screen saver begins
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-# Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "$HOME/Desktop"
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
-# Disable auto-termination of idle applications
-defaults write -g NSDisableAutomaticTermination -bool true
-
-# Open a Finder window after extracting an archive
-defaults write com.apple.archiveutility dearchive-reveal-after -bool true
-
-# Add iOS Simulator to Launchpad
-ln -s /Applications/Xcode.app/Contents/Applications/iPhone Simulator.app /Applications/iOS Simulator.app
-
 # Enable the MacBook Air SuperDrive on any Mac
 sudo nvram boot-args="mbasd=1"
 
-# Setup my Hosts file
-sudo rm /etc/hosts
-sudo ln -s ~/.dotfiles/osx/hosts /etc/hosts
+###############################################################################
+echo "Kill affected applications"
+###############################################################################
 
-# Setup shortcuts
-~/.dotfiles/osx/shortcuts.sh
-
-# Link Quicklook Plugins folder
-ln -s $HOME/Dropbox/Library/QuickLook $HOME/Library/QuickLook
-qlmanage -r
-
-# Restart Stuff
-for app in "Address Book" "Calendar" "Contacts" "Dashboard" "Dock" "Finder" \
-	"Mail" "Safari" "SystemUIServer" "Transmission" \
-	"Twitter" "iCal" "iTunes"; do
-	killall "$app" > /dev/null 2>&1
+for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
+  "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
+  "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+  "Transmission" "Tweetbot" "Twitter" "iCal"; do
+  killall "${app}" &> /dev/null
 done
-echo "Done. Note that some of these changes require a logout or restart to take effect."
+echo "Done. Note that some of these changes require a logout/restart to take effect."

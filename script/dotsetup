@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+script/bootstrap
