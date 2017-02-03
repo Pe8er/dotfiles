@@ -1,15 +1,11 @@
 #<localhost>
-127.0.0.1 	localhost
-127.0.0.1 	localhost.localdomain
-255.255.255.255	broadcasthost
-::1		localhost
-127.0.0.1 	local
-fe80::1%lo0     localhost
+127.0.0.1 localhost
+127.0.0.1 localhost.localdomain
+255.255.255.255 broadcasthost
+::1 localhost
+127.0.0.1 local
+fe80::1%lo0 localhost
 #</localhost>
-
-#Self-censorship
-127.0.0.1 reddit.com
-127.0.0.1 www.reddit.com
 
 #Youtube ads
 127.0.0.1 ads.youtube.com
@@ -9993,40 +9989,6 @@ fe80::1%lo0     localhost
 127.0.0.1 zyrtec.4.p2l.info
 #</wiki-spam-sites>
 
-# Acknowledgements
-# I'd like to thank the following people for submitting sites, and
-# helping promote the site.
-
-# Bill Allison, Harj Basi, Lance Russhing, Marshall Drew-Brook, 
-#  Leigh Brasington, Scott Terbush, Cary Newfeldt, Kaye, Jeff
-#  Scrivener, Mark Hudson, Matt Bells, T. Kim Nguyen, Lino Demasi,
-#  Marcelo Volmaro, Troy Martin, Donald Kerns, B.Patten-Walsh,
-#  bobeangi, Chris Maniscalco, George Gilbert, Kim Nilsson, zeromus,
-#  Robert Petty, Rob Morrison, Clive Smith, Cecilia Varni, OleKing 
-#  Cole, William Jones, Brian Small, Raj Tailor, Richard Heritage,
-#  Alan Harrison, Ordorica, Crimson, Joseph Cianci, sirapacz, 
-#  Dvixen, Matthew Craig, Tobias Hessem, Kevin F. Quinn, Thomas 
-#  Corthals, Chris McBee, Jaime A. Guerra, Anders Josefson, 
-#  Simon Manderson, Spectre Ghost, Darren Tay, Dallas Eschenauer, Cecilia
-#  Varni, Adam P. Cole, George Lefkaditis, grzesiek, Adam Howard, Mike 
-#  Bizon, Samuel P. Mallare, Leinweber, Walter Novak, Stephen Genus, 
-#  Zube, Johny Provoost, Peter Grafton, Johann Burkard, Magus, Ron Karner,
-#  Fredrik Dahlman, Michele Cybula, Bernard Conlu, Riku B, Twillers, 
-#  Shaika-Dzari, Vartkes Goetcherian, Michael McCown, Garth, Richard Nairn,
-#  Exzar Reed, Robert Gauthier, Floyd Wilder, Mark Drissel, Kenny Lyons,
-#  Paul Dunne, Tirath Pannu, Mike Lambert, Dan Kolcun, Daniel Aleksandersen,
-#  Chris Heegard, Miles Golding, Daniel Bisca, Frederic Begou, Charles 
-#  Fordyce, Mark Lehrer, Sebastien Nadeau-Jean, Russell Gordon, Alexey 
-#  Gopachenko, Stirling Pearson, Alan Segal, Bobin Joseph, Chris Wall, Sean
-#  Flesch, Brent Getz, Jerry Cain, Brian Micek, Lee Hancock, Kay Thiele,
-#  Kwan Ting Chan, Wladimir Labeikovsky, Lino Demasi, Bowie Bailey, Andreas 
-#  Marschall, Michael Tompkins, Michael O'Donnell, and Jos&eacute; Lucas Teixeira
-#  de Oliveira for helping to build the hosts file.
-# Russell O'Connor for OS/2 information
-# kwadronaut for Windows 7 and Vista information
-# John Mueller and Lawrence H Smith for Mac Pre-OSX information
-# Jesse Baird for the Cisco IOS script
-
 #Adobe Activation Block#
 
 # 127.0.0.1 192.150.14.69
@@ -10080,3 +10042,89 @@ fe80::1%lo0     localhost
 # 127.0.0.1 wip4.adobe.com
 # 127.0.0.1 wwis-dubc1-vip60.adobe.com
 # 127.0.0.1 lm.licenses.adobe.com
+
+# AceStream
+127.0.0.1 a4.acestream.net
+127.0.0.1 acestream.net
+127.0.0.1 ads.adfox.ru
+127.0.0.1 ad.adfox.ru
+127.0.0.1 www.ads.adfox.ru
+127.0.0.1 cdn.admixer.net
+127.0.0.1 admixer.net
+127.0.0.1 ru.dragonsmobile.com
+127.0.0.1 dragonsmobile.com
+127.0.0.1 otvetim-vopros.net
+127.0.0.1 ad.doubleclick.net
+127.0.0.1 a1.torrentstream.org
+127.0.0.1 e1.acestream.net
+127.0.0.1 e2.acestream.net
+127.0.0.1 ad.admixer.net
+127.0.0.1 a3.torrentstream.net
+127.0.0.1 ylerht-dunkj.info
+127.0.0.1 ads.adfox.ru
+127.0.0.1 overlay.acestream.tv
+127.0.0.1 www.ad.admixer.net
+127.0.0.1 zirihala.ru
+127.0.0.1 www.zirihala.ru
+127.0.0.1 ad.adriver.ru
+127.0.0.1 www.ad.adriver.ru
+127.0.0.1 test.torrentstream.org
+
+127.0.0.1       localhost
+
+127.0.0.1 ad.admixer.net
+127.0.0.1 a4.acestream.net
+127.0.0.1 acestream.net
+127.0.0.1 ads.adfox.ru
+127.0.0.1 ad.adfox.ru
+127.0.0.1 www.ads.adfox.ru
+127.0.0.1 cdn.admixer.net
+127.0.0.1 admixer.net
+127.0.0.1 ru.dragonsmobile.com
+127.0.0.1 dragonsmobile.com
+127.0.0.1 otvetim-vopros.net
+127.0.0.1 ad.doubleclick.net
+127.0.0.1 a1.torrentstream.org
+127.0.0.1 e1.acestream.net
+127.0.0.1 e2.acestream.net
+127.0.0.1 ad.admixer.net
+127.0.0.1 a3.torrentstream.net
+127.0.0.1 ylerht-dunkj.info
+127.0.0.1 ads.adfox.ru
+127.0.0.1 overlay.acestream.tv
+127.0.0.1 www.ad.admixer.net
+127.0.0.1 zirihala.ru
+127.0.0.1 www.zirihala.ru
+127.0.0.1 ad.adriver.ru
+127.0.0.1 www.ad.adriver.ru
+127.0.0.1 test.torrentstream.org
+
+
+127.0.0.1       localhost
+
+127.0.0.1 ad.admixer.net
+127.0.0.1 a4.acestream.net
+127.0.0.1 acestream.net
+127.0.0.1 ads.adfox.ru
+127.0.0.1 ad.adfox.ru
+127.0.0.1 www.ads.adfox.ru
+127.0.0.1 cdn.admixer.net
+127.0.0.1 admixer.net
+127.0.0.1 ru.dragonsmobile.com
+127.0.0.1 dragonsmobile.com
+127.0.0.1 otvetim-vopros.net
+127.0.0.1 ad.doubleclick.net
+127.0.0.1 a1.torrentstream.org
+127.0.0.1 e1.acestream.net
+127.0.0.1 e2.acestream.net
+127.0.0.1 ad.admixer.net
+127.0.0.1 a3.torrentstream.net
+127.0.0.1 ylerht-dunkj.info
+127.0.0.1 ads.adfox.ru
+127.0.0.1 overlay.acestream.tv
+127.0.0.1 www.ad.admixer.net
+127.0.0.1 zirihala.ru
+127.0.0.1 www.zirihala.ru
+127.0.0.1 ad.adriver.ru
+127.0.0.1 www.ad.adriver.ru
+127.0.0.1 test.torrentstream.org

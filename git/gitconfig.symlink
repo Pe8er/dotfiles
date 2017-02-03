@@ -36,6 +36,9 @@
         keepBackup = false
 [difftool]
         prompt = false
+[diff "applescript"]
+    	textconv = osadecompile
+    	binary=true
 [help]
         autocorrect = 1
 [push]
