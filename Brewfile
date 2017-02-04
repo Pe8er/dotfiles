@@ -38,11 +38,7 @@ cask 'vlc'
 cask 'xld'
 cask 'launchcontrol'
 cask 'flixtools'
-<<<<<<< HEAD
-cask 'icons8'
-=======
 cask 'icons8'
 cask 'webtorrent'
 cask '2do'
 cask 'alfred'
->>>>>>> 6e51083bad6d0b6b50e67093af530a72a78942de

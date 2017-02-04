@@ -15,9 +15,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-###############################################################################
+echo "###################################"
 echo "SSD-specific tweaks"
-###############################################################################
+echo "###################################"
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
@@ -32,9 +32,9 @@ sudo chflags uchg /private/var/vm/sleepimage
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
-###############################################################################
+echo "###################################"
 echo "Finder"
-###############################################################################
+echo "###################################"
 
 # Link Quicklook Plugins folder
 ln -s $HOME/Dropbox/Library/QuickLook $HOME/Library/QuickLook
@@ -217,9 +217,9 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Speed up mouse scrolling
 defaults write -g com.apple.scrollwheel.scaling 300
 
-###############################################################################
+echo "###################################"
 echo "Dock"
-###############################################################################
+echo "###################################"
 
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
@@ -252,9 +252,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 defaults write com.apple.dock mru-spaces -bool false
 
 
-###############################################################################
+echo "###################################"
 echo "Safari"
-###############################################################################
+echo "###################################"
 
 # Setup my Hosts file
 sudo rm /etc/hosts
@@ -286,9 +286,9 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 
-###############################################################################
+echo "###################################"
 echo "iTunes"
-###############################################################################
+echo "###################################"
 
 # Enable cool iTunes dock notifications
 defaults write com.apple.Dock itunes-notifications -bool true
@@ -300,9 +300,9 @@ defaults write com.apple.iTunes invertStoreLinks -bool YES
 ln -s ~/Library/Scripts/Applications/iTunes ~/Library/iTunes/Scripts
 
 
-###############################################################################
+echo "###################################"
 echo "Mail"
-###############################################################################
+echo "###################################"
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
@@ -311,9 +311,9 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.mail EnableBundles -bool true
 mkdir ~/Library/Mail/Bundles
 
-###############################################################################
+echo "###################################"
 echo "Contacts"
-###############################################################################
+echo "###################################"
 
 # Address format
 # defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "fi"
@@ -325,9 +325,9 @@ echo "Contacts"
 defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
 
 
-###############################################################################
+echo "###################################"
 echo "Terminal"
-###############################################################################
+echo "###################################"
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -339,9 +339,9 @@ defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
 
-###############################################################################
+echo "###################################"
 echo "Calendar"
-###############################################################################
+echo "###################################"
 
 # timezone support active by default
 defaults write com.apple.iCal "TimeZone support enabled" -bool true
@@ -349,9 +349,9 @@ defaults write com.apple.iCal "TimeZone support enabled" -bool true
 # show event times
 defaults write com.apple.iCal "Show time in Month View" -bool true
 
-###############################################################################
+echo "###################################"
 echo "Disk Utility"
-###############################################################################
+echo "###################################"
 
 # Enable additional formats
 defaults write com.apple.DiskUtility advanced-image-options -bool true
@@ -364,16 +364,16 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-###############################################################################
+echo "###################################"
 echo "Photos"
-###############################################################################
+echo "###################################"
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-###############################################################################
+echo "###################################"
 echo "Transmission.app"
-###############################################################################
+echo "###################################"
 
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
@@ -392,9 +392,9 @@ defaults write org.m0k.transmission WarningLegal -bool false
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 
-###############################################################################
+echo "###################################"
 echo "Mac App Store"
-###############################################################################
+echo "###################################"
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -411,9 +411,9 @@ defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
 
-###############################################################################
+echo "###################################"
 echo "Misc"
-###############################################################################
+echo "###################################"
 
 # Setup keyboard shortcuts
 ~/.dotfiles/osx/shortcuts.sh
@@ -444,9 +444,9 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Enable the MacBook Air SuperDrive on any Mac
 sudo nvram boot-args="mbasd=1"
 
-###############################################################################
+echo "###################################"
 echo "Kill affected applications"
-###############################################################################
+echo "###################################"
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
