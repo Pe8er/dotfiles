@@ -418,6 +418,9 @@ echo "###################################"
 # Setup keyboard shortcuts
 ~/.dotfiles/osx/shortcuts.sh
 
+# Setup hosts file
+~/.dotfiles/osx/setuphosts.sh
+
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
 
