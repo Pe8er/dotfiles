@@ -1,2 +1,0 @@
-sudo rm /etc/hosts
-sudo ln -s ~/.dotfiles/osx/hosts /etc/hosts
