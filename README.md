@@ -10,10 +10,6 @@ This installs:
 1. Homebrew
 1. Apps
 
-# Misc Crap
-
-1. Confirm iCloud settings
-
 # Dropbox Sync
 
 Wait for it…especially:
@@ -29,31 +25,39 @@ Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`
 
 # Apps Setup
 
+### The Clock
+
+Restore backup from Dropbox.
+
 ### Mail
 
-1. Enable signatures
-2. Enable rules
-2. Preferences > Viewing > Show most recent message at the top
+1. Enable signatures.
+2. Enable rules.
 
 ### 1Password
 
-Preferences > Sync > Enable iCloud
+1. Preferences > Sync > Enable iCloud.
+2. Preferences > Advanced > Enable 3rd party integrations.
 
 ### Alfred
 
-Preferences > Advanced > Set Sync Folder
+1. Preferences > Advanced > Set Sync Folder.
+2. Change shortcut.
+2. Set theme.
+3. Enable clipboard history.
+4. Enable 1Password.
 
 ### Sublime Text
 
-#### Install Package Control
+##### 1. Install Package Control
 
 `import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)`
 
-#### Activate Material Theme
+##### 2. Activate Material Theme
 
 Cmd + Shift + P > Material Theme: Activate
 
-#### Enable Material Theme for Markdown
+##### 3. Enable Material Theme for Markdown
     
 1. Preferences > Package Settings > Markdown Editing > Markdown (Standard) Settings - User.
 2. Paste `"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",`
@@ -65,7 +69,7 @@ Cmd + Shift + P > Material Theme: Activate
 
 ### Chrome
 
-#### Enable YouTube Dark Theme
+##### Enable YouTube Dark Theme
 
 1. Open [YouTube](www.youtube.com).
 2. Cmd + Shift + I > switch to Console
@@ -76,6 +80,16 @@ document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTStr
 3. Refresh YouTube.
 4. Choose Dark Theme from user menu.
 
+### CandyBar
+
+Preferences > select icon library.
+
+### Misc Crap
+
+1. Confirm iCloud settings.
+2. Modify screenshot shortcuts.
+3. Import Hazel rules.
+
 # Troubleshooting
 
 ##### Uninstall Homebrew
@@ -84,5 +98,7 @@ document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTStr
 
 # Todo
 
-1. Improve `Replace Home Folders` script. It needs to create new folders for Sublime, Sketch etc. if they don't exist.
 2. Fix `gitconfig.local` bullshit.
+3. Automate Hazel rules import?
+4. Update Finder icon display preferences.
+5. Automate all other app settings.
