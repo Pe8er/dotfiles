@@ -453,7 +453,7 @@ echo "###################################"
 
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-  "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
+  "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" \
   "Transmission" "Tweetbot" "Twitter" "iCal"; do
   killall "${app}" &> /dev/null
 done
