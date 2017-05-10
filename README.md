@@ -2,7 +2,7 @@ This is my humble and impossibly broken fork of [@holman's dotfiles](https://git
 
 # Install Dotfiles
 
-`git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles; cd ~/.dotfiles; script/bootstrap`
+- [ ] `git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles; cd ~/.dotfiles; script/bootstrap`
 
 This installs:
 
@@ -12,7 +12,7 @@ This installs:
 
 # Misc Crap
 
-1. Confirm iCloud settings
+- [ ] Confirm iCloud settings
 
 # Dropbox Sync
 
@@ -25,43 +25,56 @@ Wait for it…especially:
 
 # Replace Home Folders
 
-Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`
+- [ ] Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`
 
 # Apps Setup
 
 ### Mail
 
-1. Enable signatures
-2. Enable rules
-2. Preferences > Viewing > Show most recent message at the top
+- [ ] Enable signatures
+- [ ] Enable rules
+- [ ] Preferences > Viewing > Show most recent message at the top
 
 ### 1Password
 
-Preferences > Sync > Enable iCloud
+- [ ] Preferences > Sync > Enable iCloud
 
 ### Alfred
 
-Preferences > Advanced > Set Sync Folder
+- [ ] Preferences > Advanced > Set Sync Folder
 
 ### Sublime Text
 
-1. __Install Package Control__
+#### Install Package Control
 
-    `import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)`
+- [ ] `import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)`
 
-2. __Activate Material Theme__
+#### Activate Material Theme
 
-    Cmd + Shift + P > Material Theme: Activate
+- [ ] Cmd + Shift + P > Material Theme: Activate
 
-3. __Enable Material Theme for Markdown
+#### Enable Material Theme for Markdown
     
-    1. Preferences > Package Settings > Markdown Editing > Markdown (Standard) Settings - User.
-    2. Paste `"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",`
+- [ ] Preferences > Package Settings > Markdown Editing > Markdown (Standard) Settings - User.
+- [ ] Paste `"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",`
 
 ### Terminal
 
-1. Preferences > General > Change shell to `/bin/zsh`
-2. Preferences > Profiles > Font > `Roboto Mono, 13 pt`
+- [ ] Preferences > General > Change shell to `/bin/zsh`
+- [ ] Preferences > Profiles > Font > `Roboto Mono, 13 pt`
+
+### Chrome
+
+- [ ] Enable YouTube Dark Theme
+
+    1. Open [YouTube](www.youtube.com).
+    2. Cmd + Shift + I > switch to Console
+    3. Paste
+      `var cookieDate = new Date();
+    cookieDate.setFullYear(cookieDate.getFullYear( ) + 1);
+    document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTString( ) + "; path=/";`
+    3. Refresh YouTube.
+    4. Choose Dark Theme from user menu.
 
 # Troubleshooting
 
