@@ -147,8 +147,12 @@ done
 defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+  "/System/Library/CoreServices/Menu Extras/Battery.menu"
+
+  # "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+
+# Show date in menu bar.
+# defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d  H.mm"
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.2
@@ -306,6 +310,9 @@ echo "###################################"
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+# In threads, show most recent message at the top.
+defaults write com.apple.mail ConversationViewSortDescending -bool true
 
 # Enable plugins (https://github.com/nompute/GMailinator)
 defaults write com.apple.mail EnableBundles -bool true
