@@ -43,7 +43,7 @@ setup_gitconfig () {
     user ' - What is your github author email?'
     read -e git_authoremail
 
-    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink > git/gitconfig.local.symlink
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
 
     success 'gitconfig'
   fi
@@ -111,22 +111,12 @@ link_file () {
       mv "$dst" "${dst}.backup"
       success "moved $dst to ${dst}.backup"
     fi
-  fi
-
-  if [ "$skip" != "true" ]  # "false" or empty
-  then
-    ln -s "$1" "$2"
-    success "linked $1 to $2"
-  fi
-}
-
-install_dotfiles () {
-  info 'installing dotfiles'
 
     if [ "$skip" == "true" ]
     then
       success "skipped $src"
     fi
+  fi
 
   if [ "$skip" != "true" ]  # "false" or empty
   then
@@ -141,7 +131,6 @@ install_dotfiles () {
   local overwrite_all=false backup_all=false skip_all=false
 
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
-
   do
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
@@ -155,7 +144,7 @@ install_dotfiles
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if source bin/dot > /tmp/dotfiles-dot 2>&1
+  if source bin/dot | while read -r data; do info "$data"; done
   then
     success "dependencies installed"
   else
