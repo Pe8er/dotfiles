@@ -92,7 +92,7 @@ Preferences > select icon library.
 
 ### Time Machine
 
-1. `cd /Volumes/Time\ Machine`
+1. `cd /Volumes/Media2/Time\ Machine`
 2. `hdiutil create -size 500g -type SPARSEBUNDLE -fs "HFS+J" Backup-Piotr.sparsebundle`
 3. open `Backup-Piotr.sparsebundle.`
 4. Name the new volume "Time Machine".
