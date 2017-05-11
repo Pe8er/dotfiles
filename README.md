@@ -90,6 +90,16 @@ Preferences > select icon library.
 2. Modify screenshot shortcuts.
 3. Import Hazel rules.
 
+### Time Machine
+
+1. `cd /Volumes/Time\ Machine`
+2. `hdiutil create -size 500g -type SPARSEBUNDLE -fs "HFS+J" Backup-Piotr.sparsebundle`
+3. open `Backup-Piotr.sparsebundle.`
+4. Name the new volume "Time Machine".
+5. `diskutil list`
+6. `sudo diskutil enableOwnership /dev/disk2s2`
+7. `sudo tmutil setdestination '/Volumes/Time Machine' `
+
 # Troubleshooting
 
 ##### Uninstall Homebrew
