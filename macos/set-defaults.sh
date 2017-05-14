@@ -316,10 +316,6 @@ echo "###################################"
 echo "Safari"
 echo "###################################"
 
-# Setup my Hosts file
-sudo rm /etc/hosts
-sudo ln -s ~/.dotfiles/macos/hosts /etc/hosts
-
 # Set Safari’s home page to empty.
 defaults write com.apple.Safari HomePage -string "about:blank"
 
