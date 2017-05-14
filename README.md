@@ -1,8 +1,8 @@
-This is my humble and impossibly broken fork of [@holman's dotfiles](https://github.com/holman/dotfiles). Here's some instructions because I never know what to do:
+This is probably impossibly broken fork of [@holman's dotfiles](https://github.com/holman/dotfiles). Here's some instructions because I never know what to do:
 
 # 1. Install Dotfiles
 
-`git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles; cd ~/.dotfiles; script/bootstrap`
+Run `git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles; cd ~/.dotfiles; script/bootstrap`.
 
 This installs:
 
@@ -12,19 +12,24 @@ This installs:
 
 # 2. Dropbox Sync
 
-Wait for it…especially:
+Wait for it… especially:
 
 1. 1Password Vault.
 2. AppleScripts.
 3. Sublime Text `User` folder.
-4. App preferences and data (Alfred, The Clock, Candybar).
+4. App preferences and data (Alfred, The Clock, Candybar etc).
 
 # 3. Replace Home Folders
 
-Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`
+Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`.
 
 # 4. Apps Setup
 
+### 1Password
+
+1. Preferences > Sync > Enable iCloud.
+2. Preferences > Advanced > Enable 3rd party integrations.
+ 
 ### Alfred
 
 1. Change shortcut.
@@ -32,11 +37,6 @@ Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`
 3. Enable clipboard history.
 4. Enable 1Password.
  
-### 1Password
-
-1. Preferences > Sync > Enable iCloud.
-2. Preferences > Advanced > Enable 3rd party integrations.
-
 ### Mail
 
 1. Enable signatures.
@@ -44,13 +44,13 @@ Run `~/Dropbox/Library/Scripts/Replace Home Folders.scpt`
 
 ### The Clock
 
-Restore backup from Dropbox.
+Restore backup from `~/Dropbox/Apps/The Clock`.
 
 ### Sublime Text
 
 ##### 1. Activate Material Theme
 
-Cmd + Shift + P > Material Theme: Activate
+Cmd + Shift + P > Material Theme: Activate.
 
 ##### 2. Enable Material Theme for Markdown
     
@@ -81,8 +81,3 @@ document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTStr
 ##### Uninstall Homebrew
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"`
-
-# Todo
-
-2. Fix `gitconfig.local` bullshit.
-3. Automate Hazel rules import?
