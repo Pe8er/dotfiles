@@ -56,13 +56,6 @@ defaults write -g NSDisableAutomaticTermination -bool true
 # Open a Finder window after extracting an archive
 defaults write com.apple.archiveutility dearchive-reveal-after -bool true
 
-# Reveal IP address, hostname, OS version, etc. when clicking the clock
-# in the login window
-# sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Restart automatically if the computer freezes
-# systemsetup -setrestartfreeze on
-
 # Enable access for assistive desktopservices
 echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
 sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
@@ -81,7 +74,49 @@ defaults write -g NSScrollAnimationEnabled -bool true
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-# defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXPreferredViewStyle -string "icnv"
+
+# Set icon view settings on desktop and in icon views
+for view in 'Desktop' 'FK_Standard' 'Standard'; do
+
+    # Item info near icons
+    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:showItemInfo bool false" ~/Library/Preferences/com.apple.finder.plist
+
+    # Item info to right of icons
+    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:labelOnBottom bool false" ~/Library/Preferences/com.apple.finder.plist
+
+    # Arrange by name
+    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:arrangeBy string name" ~/Library/Preferences/com.apple.finder.plist
+
+    # Grid spacing for icons
+    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:gridSpacing integer 100" ~/Library/Preferences/com.apple.finder.plist
+
+    # Icon size
+    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:iconSize integer 32" ~/Library/Preferences/com.apple.finder.plist
+
+    # Text size
+    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:textSize integer 10" ~/Library/Preferences/com.apple.finder.plist
+done
+
+# View Options
+# ColumnShowIcons    : Show preview column
+# ShowPreview        : Show icons
+# ShowIconThumbnails : Show icon preview
+# ArrangeBy          : Sort by
+#   dnam : Name
+#   kipl : Kind
+#   ludt : Date Last Opened
+#   pAdd : Date Added
+#   modd : Date Modified
+#   ascd : Date Created
+#   logs : Size
+#   labl : Tags
+/usr/libexec/PlistBuddy \
+    -c "Set :StandardViewSettings:ListViewSettings:iconSize           integer 32"    \
+    -c "Set :StandardViewSettings:ListViewSettings:textSize           integer 12"    \
+    -c "Set :StandardViewSettings:ListViewSettings:ShowIconPreview    bool    true"  \
+    -c "Set :StandardViewSettings:ListViewSettings:sortColumn         string  name"  \
+    ~/Library/Preferences/com.apple.finder.plist
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
@@ -93,6 +128,8 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 defaults write com.apple.finder QLEnableXRayFolders -boolean yes
+
+# Allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # When performing a search, search the current folder by default
@@ -130,8 +167,10 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # Show the ~/Library folder.
 chflags nohidden ~/Library
 
-# Set the Finder prefs for showing a few different volumes on the Desktop.
+# Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Show unsupported Time Machine volumes.
@@ -257,12 +296,29 @@ defaults write com.apple.dock mru-spaces -bool false
 
 
 echo "###################################"
+echo "Google Chrome"
+echo "###################################"
+
+
+# Allow installing user scripts via GitHub Gist or Userscripts.org
+defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+
+# Use the system-native print preview dialog
+defaults write com.google.Chrome DisablePrintPreview -bool true
+defaults write com.google.Chrome.canary DisablePrintPreview -bool true
+
+# Expand the print dialog by default
+defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
+defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
+
+echo "###################################"
 echo "Safari"
 echo "###################################"
 
 # Setup my Hosts file
 sudo rm /etc/hosts
-sudo ln -s ~/.dotfiles/osx/hosts /etc/hosts
+sudo ln -s ~/.dotfiles/macos/hosts /etc/hosts
 
 # Set Safari’s home page to empty.
 defaults write com.apple.Safari HomePage -string "about:blank"
@@ -318,6 +374,25 @@ defaults write com.apple.mail ConversationViewSortDescending -bool true
 defaults write com.apple.mail EnableBundles -bool true
 mkdir ~/Library/Mail/Bundles
 
+
+echo "###################################"
+echo "Messages"
+echo "###################################"
+
+# Test size
+# 1: Small
+# 7: Large
+defaults write com.apple.iChat TextSize -int 5
+
+# Enable automatic emoji substitution (i.e. use plain text smileys)
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool true
+
+# Enable continuous spell checking
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool true
+
+# Save history when conversations are closed
+defaults write com.apple.iChat SaveConversationsOnClose -bool true
+
 echo "###################################"
 echo "Contacts"
 echo "###################################"
@@ -330,6 +405,17 @@ echo "###################################"
 
 # Sort by last name
 defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
+
+LOCAL_PATH='apps/sublime'
+
+
+echo "###################################"
+echo "Sublime Text 3"
+echo "###################################"
+
+# Install Package Control
+mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages && { curl -sLO https://packagecontrol.io/Package\ Control.sublime-package ; cd -; }
 
 
 echo "###################################"
@@ -345,6 +431,11 @@ sleep 2 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Piotr"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Startup Window Settings" -string "Piotr"
+
+# Shell opens with: /bin/zsh
+defaults write com.apple.Terminal Shell -string "/bin/zsh"
+
+
 
 echo "###################################"
 echo "Calendar"
@@ -422,11 +513,20 @@ echo "###################################"
 echo "Misc"
 echo "###################################"
 
+# Set Alfred sync folder
+defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Dropbox/Library/Alfred"
+
+# Set Candybar Library folder
+defaults write com.panic.CandyBar3 LibraryFolder -string "~/Dropbox/Library/Candybar"
+
+# Screen Saver: Flurry
+defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName -string "Flurry" path -string "/System/Library/Screen Savers/Flurry.saver" type -int 0
+
 # Setup keyboard shortcuts
-~/.dotfiles/osx/shortcuts.sh
+~/.dotfiles/macos/shortcuts.sh
 
 # Setup hosts file
-~/.dotfiles/osx/setuphosts.sh
+~/.dotfiles/macos/setuphosts.sh
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
