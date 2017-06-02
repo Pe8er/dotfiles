@@ -22,18 +22,81 @@ echo "###################################"
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
 
-# Remove the sleep image file to save disk space
-sudo rm /private/var/vm/sleepimage
-# Create a zero-byte file instead…
-sudo touch /private/var/vm/sleepimage
-# …and make sure it can’t be rewritten
-sudo chflags uchg /private/var/vm/sleepimage
-
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
+
 echo "###################################"
-echo "Finder"
+echo "Appearance"
+echo "###################################"
+
+# Use a dark menu bar / dock
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
+# Turn off text smoothing for font sizes
+defaults write NSGlobalDomain AppleAntiAliasingThreshold -int 4
+
+# Enable smooth scrolling
+defaults write -g NSScrollAnimationEnabled -bool true
+
+# Don't show Siri in the menu bar
+defaults write com.apple.Siri StatusMenuVisible -bool false
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "icnv"
+
+# Set icon view settings on desktop and in icon views
+# for view in 'Desktop' 'FK_Standard' 'Standard'; do
+
+#     # Item info near icons
+#     /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:showItemInfo bool false" ~/Library/Preferences/com.apple.finder.plist
+
+#     # Item info to right of icons
+#     /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:labelOnBottom bool false" ~/Library/Preferences/com.apple.finder.plist
+
+#     # Arrange by name
+#     /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:arrangeBy string name" ~/Library/Preferences/com.apple.finder.plist
+
+#     # Grid spacing for icons
+#     /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:gridSpacing integer 100" ~/Library/Preferences/com.apple.finder.plist
+
+#     # Icon size
+#     /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:iconSize integer 32" ~/Library/Preferences/com.apple.finder.plist
+
+#     # Text size
+#     /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:textSize integer 10" ~/Library/Preferences/com.apple.finder.plist
+# done
+
+# View Options
+# ColumnShowIcons    : Show preview column
+# ShowPreview        : Show icons
+# ShowIconThumbnails : Show icon preview
+# ArrangeBy          : Sort by
+#   dnam : Name
+#   kipl : Kind
+#   ludt : Date Last Opened
+#   pAdd : Date Added
+#   modd : Date Modified
+#   ascd : Date Created
+#   logs : Size
+#   labl : Tags
+/usr/libexec/PlistBuddy \
+    -c "Set :StandardViewSettings:ListViewSettings:iconSize           integer 32"    \
+    -c "Set :StandardViewSettings:ListViewSettings:textSize           integer 12"    \
+    -c "Set :StandardViewSettings:ListViewSettings:ShowIconPreview    bool    true"  \
+    -c "Set :StandardViewSettings:ListViewSettings:sortColumn         string  name"  \
+    ~/Library/Preferences/com.apple.finder.plist
+
+# Set sidebar icon size to medium
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+
+# Increase window resize speed for Cocoa applications
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.2
+
+
+echo "###################################"
+echo "System Stuff"
 echo "###################################"
 
 # Link Quicklook Plugins folder
@@ -69,60 +132,8 @@ defaults write com.apple.Preview NSQuitAlwaysKeepsWindows -boolean false
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
-# Enable smooth scrolling
-defaults write -g NSScrollAnimationEnabled -bool true
-
-# Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "icnv"
-
-# Set icon view settings on desktop and in icon views
-for view in 'Desktop' 'FK_Standard' 'Standard'; do
-
-    # Item info near icons
-    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:showItemInfo bool false" ~/Library/Preferences/com.apple.finder.plist
-
-    # Item info to right of icons
-    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:labelOnBottom bool false" ~/Library/Preferences/com.apple.finder.plist
-
-    # Arrange by name
-    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:arrangeBy string name" ~/Library/Preferences/com.apple.finder.plist
-
-    # Grid spacing for icons
-    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:gridSpacing integer 100" ~/Library/Preferences/com.apple.finder.plist
-
-    # Icon size
-    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:iconSize integer 32" ~/Library/Preferences/com.apple.finder.plist
-
-    # Text size
-    /usr/libexec/PlistBuddy -c "Set :${view}ViewSettings:IconViewSettings:textSize integer 10" ~/Library/Preferences/com.apple.finder.plist
-done
-
-# View Options
-# ColumnShowIcons    : Show preview column
-# ShowPreview        : Show icons
-# ShowIconThumbnails : Show icon preview
-# ArrangeBy          : Sort by
-#   dnam : Name
-#   kipl : Kind
-#   ludt : Date Last Opened
-#   pAdd : Date Added
-#   modd : Date Modified
-#   ascd : Date Created
-#   logs : Size
-#   labl : Tags
-/usr/libexec/PlistBuddy \
-    -c "Set :StandardViewSettings:ListViewSettings:iconSize           integer 32"    \
-    -c "Set :StandardViewSettings:ListViewSettings:textSize           integer 12"    \
-    -c "Set :StandardViewSettings:ListViewSettings:ShowIconPreview    bool    true"  \
-    -c "Set :StandardViewSettings:ListViewSettings:sortColumn         string  name"  \
-    ~/Library/Preferences/com.apple.finder.plist
-
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Set sidebar icon size to medium
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -154,6 +165,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # New window points to home
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -192,9 +204,6 @@ defaults write com.apple.systemuiserver menuExtras -array \
 
 # Show date in menu bar.
 # defaults write com.apple.menuextra.clock "DateFormat" "EEE MMM d  H.mm"
-
-# Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.2
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -264,6 +273,12 @@ echo "###################################"
 echo "Dock"
 echo "###################################"
 
+# Double-click a window's title bar to:
+# None
+# Minimize
+# Maximize (zoom)
+defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Minimize"
+
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 
@@ -271,7 +286,7 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
 
 # Make Dock icons of hidden applications translucent
-defaults write com.apple.Dock showhidden -bool YES
+# defaults write com.apple.Dock showhidden -bool YES
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
@@ -351,9 +366,6 @@ defaults write com.apple.Dock itunes-notifications -bool true
 
 # Point Store links to the library
 defaults write com.apple.iTunes invertStoreLinks -bool YES
-
-# Link Scripts menu
-ln -s ~/Library/Scripts/Applications/iTunes ~/Library/iTunes/Scripts
 
 
 echo "###################################"
@@ -504,6 +516,35 @@ defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
 
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
+
+echo "###################################"
+echo "Things"
+echo "###################################"
+
+# Quick entry shortcuts - empty panel
+defaults write com.culturedcode.thingsmac QuickEntryHotkeyEmpty -dict-add "characters" -string "⌃\`"
+defaults write com.culturedcode.thingsmac QuickEntryHotkeyEmpty -dict-add "keyCode" -int 50
+defaults write com.culturedcode.thingsmac QuickEntryHotkeyEmpty -dict-add "keyModifiers" -int 4096
+
+# Quick entry shortcuts - filled panel
+defaults write com.culturedcode.thingsmac QuickEntryHotkeyAutofill -dict-add "characters" -string "⌃⎋"
+defaults write com.culturedcode.thingsmac QuickEntryHotkeyAutofill -dict-add "keyCode" -int 53
+defaults write com.culturedcode.thingsmac QuickEntryHotkeyAutofill -dict-add "keyModifiers" -int 4096
+
+# No need for the tutorial
+defaults write com.culturedcode.ThingsMac OnboardingDidComplete -bool true
+
+# The widget can launch the app
+defaults write com.culturedcode.ThingsMac TodayWidgetCanLaunchThings -bool true
+
+# Dismiss T&C dialog
+defaults write com.culturedcode.ThingsMac UserDidAcceptTermsAndConditions -bool true
+
+# Enable calendar events
+defaults write com.culturedcode.ThingsMac AppleEventsEnabled -bool true
+
+# Enable reminders import
+defaults write com.culturedcode.ThingsMac AppleRemindersImportEnabled -bool true
 
 echo "###################################"
 echo "Misc"
