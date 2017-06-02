@@ -2,7 +2,8 @@ This is my probably impossibly broken fork of [@holman's dotfiles](https://githu
 
 # 1. Install Dotfiles
 
-Run `git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles; cd ~/.dotfiles; script/bootstrap`.
+1. Install Xcode Developer tools: `xcode-select --install`
+1. Run `git clone https://github.com/Pe8er/dotfiles.git ~/.dotfiles; cd ~/.dotfiles; script/bootstrap`.
 
 This installs:
 
