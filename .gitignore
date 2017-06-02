@@ -25,5 +25,3 @@ ruby/irbrc.symlink
 ruby/gemrc.symlink
 
 ruby/aliases.zsh
-
-git/gitconfig.local.symlink.example
