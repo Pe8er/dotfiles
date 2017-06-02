@@ -16,6 +16,10 @@ defaults write -g NSUserKeyEquivalents '{
 "Decrease Quote Level" = "@[";
 }'
 
+defaults write -app Sketch NSUserKeyEquivalents '{
+  "Round to Pixel" = "@\\";
+}'
+
 defaults write -app Safari NSUserKeyEquivalents '{
 "Reopen Last Closed Window" = "@~r";
 "Reopen Last Closed Tab" = "@z";

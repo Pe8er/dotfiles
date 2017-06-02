@@ -554,7 +554,7 @@ echo "###################################"
 echo "Kill affected applications"
 echo "###################################"
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
+for app in "Alfred" "Candybar" "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
   "Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" \
   "Transmission" "Tweetbot" "Twitter" "iCal"; do

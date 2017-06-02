@@ -25,7 +25,7 @@ fe80::1%lo0 localhost
 
 # Blocking mobile ad providers and some analytics providers
 
-# 
+#
 
 # Contribute:
 
@@ -45,7 +45,7 @@ fe80::1%lo0 localhost
 
 # 2013-03-14 Back from the dead
 
-# 
+#
 
 # License:
 
@@ -658,7 +658,7 @@ fe80::1%lo0 localhost
 0.0.0.0 trackersimulator.org
 0.0.0.0 eviltracker.net
 0.0.0.0 do-not-tracker.org
-### Extra rules for @StevenBlack 's hosts project 
+### Extra rules for @StevenBlack 's hosts project
 
 ### https://github.com/FadeMind/hosts.extras
 
@@ -1778,7 +1778,7 @@ fe80::1%lo0 localhost
 0.0.0.0 ziffdavisglobal.112.2o7.net
 0.0.0.0 ziffdavispennyarcade.112.2o7.net
 0.0.0.0 zipzoomfly.122.2o7.net
-### Extra rules for @StevenBlack 's hosts project 
+### Extra rules for @StevenBlack 's hosts project
 
 ### https://github.com/FadeMind/hosts.extras
 
@@ -1902,7 +1902,7 @@ fe80::1%lo0 localhost
 0.0.0.0 www.winmediaplayerplus.com
 0.0.0.0 www.wwwfacebook.com
 0.0.0.0 wwwfacebook.com
-### Extra rules for @StevenBlack 's hosts project 
+### Extra rules for @StevenBlack 's hosts project
 
 ### https://github.com/FadeMind/hosts.extras
 
@@ -5061,7 +5061,7 @@ fe80::1%lo0 localhost
 0.0.0.0 ztb.cztv.tv
 0.0.0.0 zuverink.net
 0.0.0.0 zzz.clickbank.net
-### Extra rules for @StevenBlack 's hosts project 
+### Extra rules for @StevenBlack 's hosts project
 
 ### https://github.com/FadeMind/hosts.extras
 
@@ -5341,7 +5341,7 @@ fe80::1%lo0 localhost
 
 # You are free to copy and distribute this file for non-commercial uses,
 
-# as long the original URL and attribution is included. 
+# as long the original URL and attribution is included.
 
 
 
@@ -5355,7 +5355,7 @@ fe80::1%lo0 localhost
 
 # and forms the basis of the bad referrers domain lists for
 
-# The Nginx Ultimate Bad Bot Blocker at: 
+# The Nginx Ultimate Bad Bot Blocker at:
 
 # https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
 
@@ -5375,11 +5375,11 @@ fe80::1%lo0 localhost
 
 # Use this file to prevent your computer or server from connecting to selected
 
-# internet hosts. This is an easy and effective way to protect you from 
+# internet hosts. This is an easy and effective way to protect you from
 
-# many types of spyware, adware, malware, click-jacking and porn sites and reduces 
+# many types of spyware, adware, malware, click-jacking and porn sites and reduces
 
-# bandwidth use. 
+# bandwidth use.
 
 
 
@@ -27382,9 +27382,9 @@ fe80::1%lo0 localhost
 
 # You are free to copy and distribute this file for non-commercial uses,
 
-# as long the original URL and attribution is included. 
+# as long the original URL and attribution is included.
 
-# 
+#
 
 # See below for acknowledgements.
 
@@ -27402,27 +27402,27 @@ fe80::1%lo0 localhost
 
 # Use this file to prevent your computer from connecting to selected
 
-# internet hosts. This is an easy and effective way to protect you from 
+# internet hosts. This is an easy and effective way to protect you from
 
-# many types of spyware, reduces bandwidth use, blocks certain pop-up 
+# many types of spyware, reduces bandwidth use, blocks certain pop-up
 
 # traps, prevents user tracking by way of "web bugs" embedded in spam,
 
 # provides partial protection to IE from certain web-based exploits and
 
-# blocks most advertising you would otherwise be subjected to on the 
+# blocks most advertising you would otherwise be subjected to on the
 
-# internet. 
+# internet.
 
 
 
-# There is a version of this file that uses 127.0.0.1 instead of 0.0.0.0 
+# There is a version of this file that uses 127.0.0.1 instead of 0.0.0.0
 
 # available at http://someonewhocares.org/hosts/.
 
 # On some machines this may run minutely faster, however the zero version
 
-# may not be compatible with all systems. 
+# may not be compatible with all systems.
 
 
 
@@ -27476,7 +27476,7 @@ fe80::1%lo0 localhost
 
 #    folder and reboot. (something like HD:System Folder:Preferences:Hosts)
 
-#    Alternatively you can save it elsewhere on your machine, then go to the 
+#    Alternatively you can save it elsewhere on your machine, then go to the
 
 #    TCP/IP control panel and click on "Select hosts file" to read it in.
 
@@ -27739,17 +27739,17 @@ fe80::1%lo0 localhost
 
 #<hijack-sites>
 
-# The sites ads234.com and ads345.com -- These sites hijack internet explorer 
+# The sites ads234.com and ads345.com -- These sites hijack internet explorer
 
-# and redirect all requests through their servers. You may need to use spyware 
+# and redirect all requests through their servers. You may need to use spyware
 
-# removal programs such as SpyBotS&amp;D, AdAware or HijackThis to remove this 
+# removal programs such as SpyBotS&amp;D, AdAware or HijackThis to remove this
 
-# nasty parasite. It's possible that blocking these sites using a hosts file 
+# nasty parasite. It's possible that blocking these sites using a hosts file
 
 # may not work, in which case you should remove the following lines from this
 
-# file and try the tools listed above immediately. Don't forget to reboot 
+# file and try the tools listed above immediately. Don't forget to reboot
 
 # after a scan.
 
@@ -27773,11 +27773,11 @@ fe80::1%lo0 localhost
 
 # necessarily serve ads, instead some are used by certain products to
 
-# "phone home". Others use web cookies to gather statistics on surfing 
+# "phone home". Others use web cookies to gather statistics on surfing
 
-# habits. Among other uses, this is a common tactic by spammers, to 
+# habits. Among other uses, this is a common tactic by spammers, to
 
-# let them know that you have read your mail. 
+# let them know that you have read your mail.
 
 # Uncomment (remove the #) the lines that you wish to block, as some
 
@@ -27793,23 +27793,23 @@ fe80::1%lo0 localhost
 
                                 # log all such errors.
 
-#0.0.0.0 sitefinder.verisign.com	# Verisign has joined the game 
+#0.0.0.0 sitefinder.verisign.com	# Verisign has joined the game
 
 #0.0.0.0 sitefinder-idn.verisign.com	# of trying to hijack mistyped
 
-					# URLs to their site. 
+					# URLs to their site.
 
 					# May break iOS Game Center.
 
 
 
-#0.0.0.0 s0.2mdn.net		# This may interfere with some streaming 
+#0.0.0.0 s0.2mdn.net		# This may interfere with some streaming
 
 				# video on sites such as cbc.ca
 
 #0.0.0.0 ad.doubleclick.net   # This may interefere with www.sears.com
 
-				# and potentially other sites. 
+				# and potentially other sites.
 
 0.0.0.0 media.fastclick.net
 #0.0.0.0 ebay.doubleclick.net		# may interfere with ebay
@@ -27820,11 +27820,11 @@ fe80::1%lo0 localhost
 
 #0.0.0.0 www.google-analytics.l.google.com
 
-#0.0.0.0 stat.livejournal.com		# There are reports that this may mess 
+#0.0.0.0 stat.livejournal.com		# There are reports that this may mess
 
  					# up CSS on livejournal
 
-#0.0.0.0 stats.surfaid.ihost.com	# This has been known cause 
+#0.0.0.0 stats.surfaid.ihost.com	# This has been known cause
 
 					# problems with NPR.org
 
@@ -27856,7 +27856,7 @@ fe80::1%lo0 localhost
 0.0.0.0 adelogs.adobe.com
 0.0.0.0 ademails.com
 0.0.0.0 adlog.com.com
-  # ads and track users across 
+  # ads and track users across
 
   # the com.com family of sites
 
@@ -37731,7 +37731,7 @@ fe80::1%lo0 localhost
 
 
 
-# malicious e-card -- these sites send out mass quantities of spam 
+# malicious e-card -- these sites send out mass quantities of spam
 
 	# and some distribute adware and spyware
 
@@ -37783,7 +37783,7 @@ fe80::1%lo0 localhost
 
 
 
-# message board and wiki spam -- these sites are linked in 
+# message board and wiki spam -- these sites are linked in
 
 	# message board spam and are unlikely to be real sites
 
@@ -38602,7 +38602,7 @@ fe80::1%lo0 localhost
 
 
 
-# Windows 10 reporting domains. 
+# Windows 10 reporting domains.
 
 0.0.0.0 adnexus.net
 0.0.0.0 a-msedge.net
@@ -38642,7 +38642,7 @@ fe80::1%lo0 localhost
 
 
 
-# Bill Allison, Harj Basi, Lance Russhing, Marshall Drew-Brook, 
+# Bill Allison, Harj Basi, Lance Russhing, Marshall Drew-Brook,
 
 #  Leigh Brasington, Scott Terbush, Cary Newfeldt, Kaye, Jeff
 
@@ -38652,25 +38652,25 @@ fe80::1%lo0 localhost
 
 #  bobeangi, Chris Maniscalco, George Gilbert, Kim Nilsson, zeromus,
 
-#  Robert Petty, Rob Morrison, Clive Smith, Cecilia Varni, OleKing 
+#  Robert Petty, Rob Morrison, Clive Smith, Cecilia Varni, OleKing
 
 #  Cole, William Jones, Brian Small, Raj Tailor, Richard Heritage,
 
-#  Alan Harrison, Ordorica, Crimson, Joseph Cianci, sirapacz, 
+#  Alan Harrison, Ordorica, Crimson, Joseph Cianci, sirapacz,
 
-#  Dvixen, Matthew Craig, Tobias Hessem, Kevin F. Quinn, Thomas 
+#  Dvixen, Matthew Craig, Tobias Hessem, Kevin F. Quinn, Thomas
 
-#  Corthals, Chris McBee, Jaime A. Guerra, Anders Josefson, 
+#  Corthals, Chris McBee, Jaime A. Guerra, Anders Josefson,
 
 #  Simon Manderson, Spectre Ghost, Darren Tay, Dallas Eschenauer, Cecilia
 
-#  Varni, Adam P. Cole, George Lefkaditis, grzesiek, Adam Howard, Mike 
+#  Varni, Adam P. Cole, George Lefkaditis, grzesiek, Adam Howard, Mike
 
-#  Bizon, Samuel P. Mallare, Leinweber, Walter Novak, Stephen Genus, 
+#  Bizon, Samuel P. Mallare, Leinweber, Walter Novak, Stephen Genus,
 
 #  Zube, Johny Provoost, Peter Grafton, Johann Burkard, Magus, Ron Karner,
 
-#  Fredrik Dahlman, Michele Cybula, Bernard Conlu, Riku B, Twillers, 
+#  Fredrik Dahlman, Michele Cybula, Bernard Conlu, Riku B, Twillers,
 
 #  Shaika-Dzari, Vartkes Goetcherian, Michael McCown, Garth, Richard Nairn,
 
@@ -38678,19 +38678,19 @@ fe80::1%lo0 localhost
 
 #  Paul Dunne, Tirath Pannu, Mike Lambert, Dan Kolcun, Daniel Aleksandersen,
 
-#  Chris Heegard, Miles Golding, Daniel Bisca, Frederic Begou, Charles 
+#  Chris Heegard, Miles Golding, Daniel Bisca, Frederic Begou, Charles
 
-#  Fordyce, Mark Lehrer, Sebastien Nadeau-Jean, Russell Gordon, Alexey 
+#  Fordyce, Mark Lehrer, Sebastien Nadeau-Jean, Russell Gordon, Alexey
 
 #  Gopachenko, Stirling Pearson, Alan Segal, Bobin Joseph, Chris Wall, Sean
 
 #  Flesch, Brent Getz, Jerry Cain, Brian Micek, Lee Hancock, Kay Thiele,
 
-#  Kwan Ting Chan, Wladimir Labeikovsky, Lino Demasi, Bowie Bailey, Andreas 
+#  Kwan Ting Chan, Wladimir Labeikovsky, Lino Demasi, Bowie Bailey, Andreas
 
 #  Marschall, Michael Tompkins, Michael O'Donnell, Jos&eacute; Lucas Teixeira
 
-#  de Oliveira, M. &Ouml;mer G&ouml;lgeli, and Anthony Gelibert for helping to build 
+#  de Oliveira, M. &Ouml;mer G&ouml;lgeli, and Anthony Gelibert for helping to build
 
 #  the hosts file.
 
@@ -38702,7 +38702,7 @@ fe80::1%lo0 localhost
 
 # Jesse Baird for the Cisco IOS script
 
-### Extra rules for @StevenBlack 's hosts project 
+### Extra rules for @StevenBlack 's hosts project
 
 ### https://github.com/FadeMind/hosts.extras
 
@@ -40374,14 +40374,11 @@ fe80::1%lo0 localhost
 #
 
 # The contents of this file (containing a listing of additional domains in
-
 # 'hosts' file format) are appended to the unified hosts file during the
-
 # update process. For example, uncomment the following line to block
 
 # 'example.com':
 
 
 
-# 0.0.0.0 example.com
-
+31.13.77.6 facebook.com

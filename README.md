@@ -75,6 +75,7 @@ document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTStr
 1. Confirm iCloud settings.
 2. Modify screenshot shortcuts.
 3. Sync Hazel rules from Dropbox.
+4. Run `~/.dotfiles/macos/set-defaults.sh` again.
 
 # Troubleshooting
 
