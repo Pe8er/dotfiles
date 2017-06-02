@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'caskroom/fonts'
+tap 'caskroom/drivers'
 
 brew 'ack'
 brew 'bchunk'
