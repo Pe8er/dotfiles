@@ -17,6 +17,7 @@ id_rsa.pub
 known_hosts
 git/gitconfig.local.symlink
 bin/update
+macos/hosts
 
 ruby/rbenv.zsh
 
