@@ -52,9 +52,10 @@ document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTStr
 
 1. Download and run.
 2. Enable Things Cloud.
-3. Customize Quick Entry shortcuts (Ctrl + ~ and Ctrl + Esc)
-4. Enable calendar events.
-5. Enable reminders.
+3. Check:
+    3. Quick Entry shortcuts (Ctrl + ~ and Ctrl + Esc)
+    4. Calendar events.
+    5. Reminders.
 
 ### Reeder
 
