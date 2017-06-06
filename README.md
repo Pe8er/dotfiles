@@ -19,6 +19,10 @@ As soon as Dropbox is installed, launch it and start the sync.
 
 # 3. Apps Setup #1
 
+### Alfred
+
+Launch and activate to enable PowerPack.
+
 ### 1Password
 
 1. Preferences > Sync > Enable iCloud.
@@ -35,7 +39,7 @@ As soon as Dropbox is installed, launch it and start the sync.
 ##### Enable YouTube Dark Theme
 
 1. Open [YouTube](www.youtube.com).
-2. Cmd + Shift + I > switch to Console
+2. Cmd + Alt + J > switch to Console
 3. Paste
   `var cookieDate = new Date();
 cookieDate.setFullYear(cookieDate.getFullYear( ) + 1);
