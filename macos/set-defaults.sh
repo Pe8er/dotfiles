@@ -99,6 +99,19 @@ echo "###################################"
 echo "System Stuff"
 echo "###################################"
 
+# Enable screensharing
+sudo defaults write /var/db/launchd.db/com.apple.launchd/overrides.plist com.apple.screensharing -dict Disabled -bool false
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.screensharing.plist
+
+# Enable file sharing
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist EnabledServices -array disk
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
 # Link Quicklook Plugins folder
 ln -s $HOME/Dropbox/Library/QuickLook $HOME/Library/QuickLook
 qlmanage -r
@@ -166,6 +179,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # Set keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Enable full keyboard access for all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # New window points to home
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -266,6 +282,12 @@ defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
+# Set first day of week to Monday
+defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
+
+# Set temperature units to Celsius
+defaults write NSGlobalDomain AppleTemperatureUnit -string "Celsius"
+
 # Speed up mouse scrolling
 defaults write -g com.apple.scrollwheel.scaling 300
 
@@ -304,7 +326,10 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock expose-animation-duration -float 0.3
 
 # Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
+# defaults write com.apple.dock dashboard-in-overlay -bool true
+
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -424,7 +449,8 @@ echo "###################################"
 # Install Package Control
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages && { curl -sLO https://packagecontrol.io/Package\ Control.sublime-package ; cd -; }
-
+sudo chown -R ~/Library/Application\ Support/Sublime\ Text\ 3
+sudo chmod -R 755 ~/Library/Application\ Support/Sublime\ Text\ 3
 
 echo "###################################"
 echo "Terminal"
