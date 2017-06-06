@@ -57,9 +57,9 @@ document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTStr
 1. Download and run.
 2. Enable Things Cloud.
 3. Check:
-    3. Quick Entry shortcuts (Ctrl + ~ and Ctrl + Esc)
-    4. Calendar events.
-    5. Reminders.
+    1. Quick Entry shortcuts (Ctrl + ~ and Ctrl + Esc)
+    2. Calendar events.
+    3. Reminders.
 
 ### Reeder
 
@@ -77,9 +77,9 @@ Wait for it… especially:
 
 # 5. Replace Home Folders 📦
 
-Run `osascript ~/Dropbox/Library/Scripts/Replace Home Folders.scpt`.
+Run `osascript ~/Dropbox/Library/Scripts/Replace\ Home\ Folders.scpt`.
 
-# 5. Apps Setup #2
+# 6. Apps Setup #2
  
 ### Alfred 📦
 
