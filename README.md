@@ -114,3 +114,17 @@ Cmd + Shift + P > Material Theme: Activate.
 ##### Uninstall Homebrew
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"`
+
+defaults write com.apple.dock persistent-apps -array-add '
+<dict>
+    <key>tile-data</key>
+    <dict>
+        <key>file-data</key>
+        <dict>
+            <key>_CFURLString</key>
+            <string>/Applications/Safari.app</string>
+            <key>_CFURLStringType</key>
+            <integer>0</integer>
+        </dict>
+    </dict>
+</dict>'

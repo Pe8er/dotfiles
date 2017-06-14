@@ -295,6 +295,13 @@ echo "###################################"
 echo "Dock"
 echo "###################################"
 
+# Set up the Dock
+defaults delete com.apple.dock persistent-apps
+for app in "Google Chrome" "Mail" "Messages" "Slack" "Fantastical 2" "Things3" "iTunes" "Reeder" "Photos" "Notes" ; do
+  defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/'"${app}"'.app</string><key>_CFURLStringType</key>
+<integer>0</integer></dict></dict></dict>' &> /dev/null
+done
+
 # Double-click a window's title bar to:
 # None
 # Minimize
