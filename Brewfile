@@ -58,6 +58,8 @@ cask 'torbrowser'
 cask 'transmit'
 cask 'ubersicht'
 cask 'vlc'
+cask 'vox'
+cask 'vox-preferences-pane'
 cask 'webtorrent'
 cask 'xld'
 

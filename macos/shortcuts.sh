@@ -16,6 +16,10 @@ defaults write -g NSUserKeyEquivalents '{
 "Decrease Quote Level" = "@[";
 }'
 
+defaults write com.tsst.simplecomic NSUserKeyEquivalents '{
+  "Full Screen" = "f";
+}'
+
 defaults write -app Sketch NSUserKeyEquivalents '{
   "Round to Pixel" = "@\\";
 }'
