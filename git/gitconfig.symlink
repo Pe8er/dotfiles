@@ -52,3 +52,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[user]
+	name = Piotr Gajos
+	email = pgajos@icloud.com
