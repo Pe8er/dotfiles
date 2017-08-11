@@ -20,7 +20,7 @@ defaults write com.tsst.simplecomic NSUserKeyEquivalents '{
   "Full Screen" = "f";
 }'
 
-defaults write -app Sketch NSUserKeyEquivalents '{
+defaults write com.bohemiancoding.sketch3 NSUserKeyEquivalents '{
   "Round to Pixel" = "@\\";
 }'
 
