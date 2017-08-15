@@ -1,4 +1,0 @@
-language: c
-before_install:
-    - sudo apt-get install bc
-script: make test
