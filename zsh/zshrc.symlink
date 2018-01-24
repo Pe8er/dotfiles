@@ -62,4 +62,4 @@ do
   source $file
 done
 
-unset config_filessource "`brew --prefix grc`/etc/grc.bashrc"
+unset config_files

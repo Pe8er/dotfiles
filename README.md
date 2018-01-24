@@ -34,7 +34,7 @@ Launch and activate to enable PowerPack.
 2. Enable signatures.
 3. Enable rules.
 
-### Chrome
+### Web Browsers
 
 ##### Enable YouTube Dark Theme
 
@@ -109,6 +109,7 @@ Cmd + Shift + P > Material Theme: Activate.
 
 2. Modify screenshot shortcuts.
 3. Sync Hazel rules from Dropbox.
+4. `cp ~/Dropbox/Apps/instalki/Slowniki/* ~/Library/Dictionaries/`
 4. Run `~/.dotfiles/macos/set-defaults.sh` again.
 
 # Troubleshooting
