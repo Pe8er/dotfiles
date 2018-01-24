@@ -624,6 +624,9 @@ defaults write com.apple.BezelServices kDimTime -int 300
 # Enable the MacBook Air SuperDrive on any Mac
 sudo nvram boot-args="mbasd=1"
 
+# Copy Polish dictionaries to where they should be
+cp ~/Dropbox/Apps/instalki/Slowniki/* ~/Library/Dictionaries/
+
 echo "###################################"
 echo "Kill affected applications"
 echo "###################################"
