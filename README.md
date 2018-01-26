@@ -34,21 +34,6 @@ Launch and activate to enable PowerPack.
 2. Enable signatures.
 3. Enable rules.
 
-### Web Browsers
-
-##### Enable YouTube Dark Theme
-
-1. Open [YouTube](www.youtube.com).
-2. Cmd + Alt + J > switch to Console
-3. Make sure there is no `VISITOR_INFO1` for www.youtube.com.
-3. Paste
-    1. Chrome: `var cookieDate = new Date();
-cookieDate.setFullYear(cookieDate.getFullYear( ) + 1);
-document.cookie="VISITOR_INFO1_LIVE=fPQ4jCL6EiE; expires=" + cookieDate.toGMTString( ) + "; path=/";`
-    1. Safari: `document.cookie='VISITOR_INFO1_LIVE=fPQ4jCL6EiE;domain=.youtube.com;path=/;max-age='+100*365*24*60*60+';';`
-3. Refresh YouTube.
-4. Choose Dark Theme from user menu.
-
 ### Fantastical 2
 
 1. [Download from App Store](https://itunes.apple.com/us/app/fantastical-2-calendar-and-reminders/id975937182?mt=12).
@@ -79,7 +64,7 @@ Wait for it… especially:
 
 # 5. Replace Home Folders 📦
 
-Run `osascript ~/Dropbox/Library/Scripts/Replace\ Home\ Folders.scpt`.
+Run `osascript ~/Dropbox/Library/Scripts/Tools/Replace\ Home\ Folders.scpt`.
 
 # 6. Apps Setup #2
  
