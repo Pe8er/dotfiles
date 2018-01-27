@@ -84,7 +84,6 @@ defaults write com.apple.finder FXPreferredViewStyle -string "icnv"
 /usr/libexec/PlistBuddy \
     -c "Set :StandardViewSettings:ListViewSettings:iconSize           integer 32"    \
     -c "Set :StandardViewSettings:ListViewSettings:textSize           integer 12"    \
-    -c "Set :StandardViewSettings:ListViewSettings:ShowIconPreview    bool    true"  \
     -c "Set :StandardViewSettings:ListViewSettings:sortColumn         string  name"  \
     ~/Library/Preferences/com.apple.finder.plist
 
@@ -297,7 +296,7 @@ echo "###################################"
 
 # Set up the Dock
 defaults delete com.apple.dock persistent-apps
-for app in "Google Chrome" "Mail" "Messages" "Slack" "Fantastical 2" "Things3" "iTunes" "Reeder" "Photos" "Notes" ; do
+for app in "Safari" "Mail" "Messages" "Slack" "Calendar" "Things3" "iTunes" "Reeder" "Photos" "Notes" ; do
   defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/'"${app}"'.app</string><key>_CFURLStringType</key>
 <integer>0</integer></dict></dict></dict>' &> /dev/null
 done
@@ -326,7 +325,7 @@ defaults write com.apple.dock tilesize -int 32
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
-# Show indicator lights for open applications in the Dock
+# Hide indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
 # Speed up Mission Control animations
@@ -456,7 +455,7 @@ echo "###################################"
 # Install Package Control
 mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
 cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages && { curl -sLO https://packagecontrol.io/Package\ Control.sublime-package ; cd -; }
-sudo chown -R ~/Library/Application\ Support/Sublime\ Text\ 3
+sudo chown -R piotr ~/Library/Application\ Support/Sublime\ Text\ 3
 sudo chmod -R 755 ~/Library/Application\ Support/Sublime\ Text\ 3
 
 echo "###################################"
@@ -622,10 +621,15 @@ defaults write com.apple.BezelServices kDim -bool true
 defaults write com.apple.BezelServices kDimTime -int 300
 
 # Enable the MacBook Air SuperDrive on any Mac
-sudo nvram boot-args="mbasd=1"
+# sudo nvram boot-args="mbasd=1"
 
 # Copy Polish dictionaries to where they should be
-cp ~/Dropbox/Apps/instalki/Slowniki/* ~/Library/Dictionaries/
+FILES=/Users/piotr/Dropbox/Library/Dictionaries/*
+for f in $FILES
+do
+  cp -R "$f" ~/Library/Dictionaries/
+done
+
 
 echo "###################################"
 echo "Kill affected applications"
