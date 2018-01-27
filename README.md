@@ -60,41 +60,40 @@ Wait for it… especially:
 
 1. AppleScripts.
 2. Sublime Text `User` folder.
-3. App preferences and data (Alfred, The Clock, Candybar etc).
+3. App preferences and data (Alfred, The Clock etc).
 
 # 5. Replace Home Folders 📦
 
 Run `osascript ~/Dropbox/Library/Scripts/Tools/Replace\ Home\ Folders.scpt`.
 
 # 6. Apps Setup #2
- 
+
 ### Alfred 📦
 
 1. Change shortcut.
 2. Set theme.
 3. Enable clipboard history.
 4. Enable 1Password.
- 
+
 ### The Clock 📦
 
 Restore backup from `~/Dropbox/Apps/The Clock`.
 
 ### Sublime Text 📦
 
-##### 1. Activate Material Theme
-
-Cmd + Shift + P > Material Theme: Activate.
-
-##### 2. Enable Material Theme for Markdown
-    
-1. Preferences > Package Settings > Markdown Editing > Markdown (Standard) Settings - User.
-2. Paste `"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",`
+1. Wait for all packages to install.
+1. Activate Material Theme: ⌘ + ⇧ + P > Material Theme: Activate.
+2. Enable Material Theme for Markdown:
+    1. Preferences > Package Settings > Markdown Editing > Markdown (Standard) Settings - User.
+    2. Paste `"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",`
 
 ### Misc Crap
 
+4. Run `~/.dotfiles/script/bootstrap` again.
+4. Run `~/.dotfiles/macos/set-defaults.sh`.
 2. Modify screenshot shortcuts.
 3. Sync Hazel rules from Dropbox.
-4. Enable Polish dictionaries.
+4. Enable Polish dictionaries in Dictionary.app.``
 4. Run `~/.dotfiles/macos/set-defaults.sh` again.
 
 # Troubleshooting
