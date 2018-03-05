@@ -131,10 +131,6 @@ defaults write -g NSDisableAutomaticTermination -bool true
 # Open a Finder window after extracting an archive
 defaults write com.apple.archiveutility dearchive-reveal-after -bool true
 
-# Enable access for assistive desktopservices
-echo -n 'a' | sudo tee /private/var/db/.AccessibilityAPIEnabled > /dev/null 2>&1
-sudo chmod 444 /private/var/db/.AccessibilityAPIEnabled
-
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
@@ -150,8 +146,6 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-defaults write com.apple.finder QLEnableXRayFolders -boolean yes
-
 # Allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
@@ -166,11 +160,6 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-# Automatically open a new Finder window when a volume is mounted
-defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -313,9 +302,6 @@ defaults write com.apple.dock autohide-delay -float 0
 # Double-click a window's title bar to minimize
 defaults write NSGlobalDomain AppleMiniaturizeOnDoubleClick -bool true
 
-# Make Dock icons of hidden applications translucent
-# defaults write com.apple.Dock showhidden -bool YES
-
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
@@ -331,9 +317,6 @@ defaults write com.apple.dock show-process-indicators -bool true
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.3
 
-# Don’t show Dashboard as a Space
-# defaults write com.apple.dock dashboard-in-overlay -bool true
-
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -boolean YES
 
@@ -344,7 +327,6 @@ defaults write com.apple.dock mru-spaces -bool false
 echo "###################################"
 echo "Google Chrome"
 echo "###################################"
-
 
 # Allow installing user scripts via GitHub Gist or Userscripts.org
 defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
@@ -595,7 +577,7 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName -s
 ~/.dotfiles/macos/shortcuts.sh
 
 # Setup hosts file
-~/.dotfiles/macos/setuphosts.sh
+# ~/.dotfiles/macos/setuphosts.sh
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
