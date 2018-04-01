@@ -56,6 +56,7 @@ cask 'transmit'
 cask 'ubersicht'
 cask 'vlc'
 cask 'webtorrent'
+cask 'wineskin-winery'
 cask 'xld'
 
 # Quicklook plugins (https://github.com/sindresorhus/quick-look-plugins#install-all)
