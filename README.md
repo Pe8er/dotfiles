@@ -70,14 +70,14 @@ Run `osascript ~/Dropbox/Library/Scripts/Tools/Replace\ Home\ Folders.scpt`.
 
 ### Alfred 📦
 
-1. Change shortcut.
+1. Change shortcut to `⌥ + Tab`.
 2. Set theme.
 3. Enable clipboard history.
 4. Enable 1Password.
 
 ### The Clock 📦
 
-Restore backup from `~/Dropbox/Apps/The Clock`.
+Restore backup from iCloud.
 
 ### Sublime Text 📦
 
@@ -93,7 +93,7 @@ Restore backup from `~/Dropbox/Apps/The Clock`.
 4. Run `~/.dotfiles/macos/set-defaults.sh`.
 2. Modify screenshot shortcuts.
 3. Sync Hazel rules from Dropbox.
-4. Enable Polish dictionaries in Dictionary.app.``
+4. Enable Polish dictionaries in Dictionary.app.
 4. Run `~/.dotfiles/macos/set-defaults.sh` again.
 
 # Troubleshooting
