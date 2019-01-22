@@ -3,6 +3,8 @@
 defaults write -g NSUserKeyEquivalents '{
 "Show Previous Tab" = "@$Z";
 "Show Next Tab" = "@$X";
+"Select Previous Tab" = "@$Z";
+"Select Next Tab" = "@$X";
 "Select Previous Conversation" = "@$Z";
 "Select Next Conversation" = "@$X";
 "Select Previous Tab" = "@$Z";
@@ -32,62 +34,17 @@ defaults write -app Safari NSUserKeyEquivalents '{
 "Minimize All" = "@~,";
 }'
 
-defaults write -app Mail NSUserKeyEquivalents '{
+defaults write com.apple.mail NSUserKeyEquivalents '{
 "Clear Flag" = "@$L";
 "Insert Bulleted List" = "@$U";
 "Insert Numbered List" = "@$O";
-"Archive" = "@\\";
-"Need Reply" = "^R";
-"Follow Up" = "^F";
-"Stash" = "^S";
-"Leads" = "^L";
+"Archive" = "\U007F";
 "Send" = "@\U000D";
 "Reply" = "r";
 }'
 
 defaults write com.apple.finder NSUserKeyEquivalents '{
 "Show Package Contents" = "^r";
-}'
-
-defaults write -app OmniGraffle NSUserKeyEquivalents '{
-"Fit in Window" = "@0";
-}'
-
-defaults write com.guidedways.TodoMac NSUserKeyEquivalents '{
-  // Start Date
-  // "Remove Start Date" = "~=";
-  // "Add a Day" = "=";
-  // "Add a Week" = "$=";
-  // "Subtract a Day" = "-";
-  // "Subtract a Week" = "$-";
-
-  // Navigation
-  "Inbox" = "@1";
-  "Today" = "@2";
-  "All" = "@3";
-  "Scheduled" = "@4";
-  "Starred" = "@5";
-  "Done" = "@6";
-  "2Do" = "@0";
-
-  // Task Actions
-  // "New Task" = "\U000D"; // macOs blocks it.
-  // "As Completed" = "\U0020"; // macOs blocks it.
-  "Edit Note" = "@\U0027";
-  "Open Links" = "v";
-  "Edit Tags" = "/";
-  "Edit Recurrence" = "@r";
-  "Edit List" = "f";
-  // "Delete" = "\U007F"; // macOs blocks it.
-  "Start Today" = "t";
-  "Due Today" = "$t";
-  "Move Up" = "w";
-  "Move Down" = "s";
-  "Star" = "^s";
-
-  // Other
-  "List Jump Bar…" = "g";
-
 }'
 
 echo "Shortcuts added successfuly!"

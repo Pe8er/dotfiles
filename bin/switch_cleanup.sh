@@ -1,0 +1,52 @@
+#!/bin/bash
+# this needs bash version 3.2 (homebrew for quick install of recent version)
+
+# this is super finnicky. Seems to return multiple values unexpectedly when using different shells
+function getMountPoint() {
+    # drives=$(diskutil list | grep "Windows_NTFS")
+    # partition=$(grep -Eo "(disk[0-9]s[0-9])" <<< $drives)
+    # details=$(diskutil info $partition)
+    # uglymountpoint=$(grep "Mount Point" <<< $details)
+    # grep -Eo "\/\S+" <<< $uglymountpoint
+    diskutil info $(diskutil list | grep "Windows_NTFS" | grep -Eo "(disk[0-9]s[0-9])") | grep "Mount Point" | grep -Eo "\/\S+"
+}
+function cleanup() {
+    echo "Removing Spotlight index"
+    sudo mdutil -X $1 > /dev/null
+    echo "Removing filesystem logging"
+    sudo rm -rf "$1/.fseventsd/" 2>/dev/null
+    echo "Removing dot files from $1/"
+    sudo dot_clean $1/ 2>/dev/null
+    echo "Emptying trash on $1/"
+    sudo rm -rf "$1/.Trashes/" 2>/dev/null
+
+    # Get all dirs from SD card
+    dirarray=($(ls -d1 $1/*/))
+    for dir in ${dirarray[@]};
+        do
+            # if NOT Nintendo dir...
+            if [ "$dir" != "$1/Nintendo/" ]
+                then
+                    echo "Setting archive bit: $dir"
+                    sudo chflags -R arch $dir
+            fi
+    done
+}
+
+MountPoint=$(getMountPoint)
+
+# check for both ./atmosphere and ./Nintendo
+if ! [ -d "$MountPoint/atmosphere" -a -d "$MountPoint/Nintendo" ]
+    then
+        echo "Either '$MountPoint/atmosphere' or '$MountPoint/Nintendo' don't exist."
+        echo "Stopping, this may not be the right volume"
+        exit 1
+    else
+        # needless decoration
+        toilet -f smblock -w $(tput cols) "Switch CFW SD card cleaner" 2>/dev/null
+        toilet -f smblock -w $(tput cols) "'$MountPoint'" 2>/dev/null
+        # clean it
+        cleanup $MountPoint
+        # kick it
+        sudo diskutil unmount $MountPoint
+fi
