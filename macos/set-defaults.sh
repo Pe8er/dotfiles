@@ -240,7 +240,7 @@ defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 # 12: Notification Center
 
 # Top left screen corner → put display to sleep
-defaults write com.apple.dock wvous-tl-corner -int 10
+defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
 
 # Top right screen corner → Desktop
@@ -284,11 +284,11 @@ echo "Dock"
 echo "###################################"
 
 # Set up the Dock
-defaults delete com.apple.dock persistent-apps
-for app in "Safari" "Mail" "Messages" "Slack" "Calendar" "Things3" "iTunes" "Reeder" "Photos" "Notes" ; do
-  defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/'"${app}"'.app</string><key>_CFURLStringType</key>
-<integer>0</integer></dict></dict></dict>' &> /dev/null
-done
+# defaults delete com.apple.dock persistent-apps
+# for app in "Safari" "Mail" "Messages" "Slack" "Calendar" "Things3" "iTunes" "Reeder" "Photos" "Notes" ; do
+#   defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/'"${app}"'.app</string><key>_CFURLStringType</key>
+# <integer>0</integer></dict></dict></dict>' &> /dev/null
+# done
 
 # Double-click a window's title bar to:
 # None
@@ -568,7 +568,7 @@ echo "###################################"
 defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Dropbox/Library/Alfred"
 
 # Set Candybar Library folder
-defaults write com.panic.CandyBar3 LibraryFolder -string "~/Dropbox/Library/Candybar"
+# defaults write com.panic.CandyBar3 LibraryFolder -string "~/Dropbox/Library/Candybar"
 
 # Screen Saver: Flurry
 defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName -string "Flurry" path -string "/System/Library/Screen Savers/Flurry.saver" type -int 0
