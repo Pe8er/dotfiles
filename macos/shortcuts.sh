@@ -16,6 +16,10 @@ defaults write -g NSUserKeyEquivalents '{
 "Paste Animation" = "@^V";
 "Increase Quote Level" = "@]";
 "Decrease Quote Level" = "@[";
+"Insert Bulleted List" = "@$U";
+"Insert Numbered List" = "@$O";
+"Bulleted List" = "@$U";
+"Numbered List" = "@$O";
 }'
 
 defaults write com.tsst.simplecomic NSUserKeyEquivalents '{
@@ -26,7 +30,7 @@ defaults write com.bohemiancoding.sketch3 NSUserKeyEquivalents '{
   "Round to Pixel" = "@\\";
 }'
 
-defaults write -app Safari NSUserKeyEquivalents '{
+defaults write com.apple.safari NSUserKeyEquivalents '{
 "Reopen Last Closed Window" = "@~r";
 "Reopen Last Closed Tab" = "@z";
 "Move Tab to New Window" = "@~n";
@@ -36,8 +40,6 @@ defaults write -app Safari NSUserKeyEquivalents '{
 
 defaults write com.apple.mail NSUserKeyEquivalents '{
 "Clear Flag" = "@$L";
-"Insert Bulleted List" = "@$U";
-"Insert Numbered List" = "@$O";
 "Archive" = "\U007F";
 "Send" = "@\U000D";
 "Reply" = "r";

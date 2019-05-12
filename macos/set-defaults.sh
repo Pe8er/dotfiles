@@ -427,18 +427,17 @@ echo "###################################"
 # Sort by last name
 defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
 
-LOCAL_PATH='apps/sublime'
+# LOCAL_PATH='apps/sublime'
 
-
-echo "###################################"
-echo "Sublime Text 3"
-echo "###################################"
-
-# Install Package Control
-mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages && { curl -sLO https://packagecontrol.io/Package\ Control.sublime-package ; cd -; }
-sudo chown -R piotr ~/Library/Application\ Support/Sublime\ Text\ 3
-sudo chmod -R 755 ~/Library/Application\ Support/Sublime\ Text\ 3
+# echo "###################################"
+# echo "Sublime Text 3"
+# echo "###################################"
+#
+# # Install Package Control
+# mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+# cd ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages && { curl -sLO https://packagecontrol.io/Package\ Control.sublime-package ; cd -; }
+# sudo chown -R piotr ~/Library/Application\ Support/Sublime\ Text\ 3
+# sudo chmod -R 755 ~/Library/Application\ Support/Sublime\ Text\ 3
 
 echo "###################################"
 echo "Terminal"
