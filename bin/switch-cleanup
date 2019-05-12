@@ -8,7 +8,7 @@ function getMountPoint() {
     # details=$(diskutil info $partition)
     # uglymountpoint=$(grep "Mount Point" <<< $details)
     # grep -Eo "\/\S+" <<< $uglymountpoint
-    diskutil info $(diskutil list | grep "Windows_NTFS" | grep -Eo "(disk[0-9]s[0-9])") | grep "Mount Point" | grep -Eo "\/\S+"
+    diskutil info $(diskutil list | grep "DOS_FAT_32" | grep -Eo "(disk[0-9]s[0-9])") | grep "Mount Point" | grep -Eo "\/\S+"
 }
 function cleanup() {
     echo "Removing Spotlight index"
