@@ -1,0 +1,4 @@
+#!/bin/sh
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+python3 $DIR/switch/fusee-launcher.py $DIR/switch/fusee-primary.bin

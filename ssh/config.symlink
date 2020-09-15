@@ -5,8 +5,9 @@ Host *
 
 Host pi
  User pi
- Hostname retropie.local
+ Hostname pi.local
 
-Host mini
- User Stasis
- Hostname Mini.local
+Host spizarnia
+ User piotr
+ Hostname spizarnia.local
+ Port 666

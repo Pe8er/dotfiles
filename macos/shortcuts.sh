@@ -20,6 +20,7 @@ defaults write -g NSUserKeyEquivalents '{
 "Insert Numbered List" = "@$O";
 "Bulleted List" = "@$U";
 "Numbered List" = "@$O";
+"Archive" = "@\\";
 }'
 
 defaults write com.tsst.simplecomic NSUserKeyEquivalents '{
