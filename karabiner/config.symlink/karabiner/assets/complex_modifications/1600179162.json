@@ -1,55 +1,91 @@
 {
-  "title": "HHKB Escape",
-  "rules": [
+  "title": "PG Personal",
+  "rules":
+  [
     {
-      "description": "Command + Escape to Command + grave_accent_and_tilde",
-      "manipulators": [
+      "description": "HHKB: Command + Escape to Command + grave_accent_and_tilde",
+      "manipulators":
+      [
         {
           "type": "basic",
           "from": {
             "key_code": "escape",
-            "modifiers": {
-              "mandatory": ["command"]
-            }
+            "modifiers": "command"
           },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde",
-              "modifiers": ["command"]
-            }
-          ]
+          "to":
+          {
+            "key_code": "grave_accent_and_tilde",
+            "modifiers": "command"
+          }
         }
       ]
     },
     {
-      "description": "Swap tilde and backslash 1",
-      "manipulators": [
+      "description": "Razer Basilisk: Mouse 3 to Mission Control",
+      "manipulators":
+      [
         {
           "type": "basic",
           "from": {
-            "key_code": "backslash"
+            "pointing_button": "button3"
           },
-          "to": [
-            {
-              "key_code": "grave_accent_and_tilde"
-            }
-          ]
+          "to":
+          {
+            "key_code": "mission_control"
+          }
         }
       ]
     },
     {
-      "description": "Swap tilde and backslash 2",
-      "manipulators": [
+      "description": "Razer Basilisk: Command + Mouse 3 to Show Desktop",
+      "manipulators":
+      [
         {
           "type": "basic",
           "from": {
-            "key_code": "grave_accent_and_tilde"
-          },
-          "to": [
+            "pointing_button": "button3",
+            "modifiers":
             {
-              "key_code": "backslash"
-            }
-          ]
+              "mandatory": "command"
+              }
+          },
+          "to":
+          {
+            "key_code": "f11"
+          }
+        }
+      ]
+    },
+    {
+      "description": "Razer Basilisk: Mouse 4 to Back",
+      "manipulators":
+      [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4"
+          },
+          "to": {
+            "key_code": "open_bracket",
+            "modifiers": "command"
+          }
+        }
+      ]
+    },
+    {
+      "description": "Razer Basilisk: Mouse 5 to Forward",
+      "manipulators":
+      [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button5"
+          },
+          "to":
+          {
+            "key_code": "close_bracket",
+            "modifiers": "command"
+          }
         }
       ]
     }
