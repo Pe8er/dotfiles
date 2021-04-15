@@ -124,24 +124,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Mouse: CMD + Mouse 4 to Forward",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": "command"
-                                    },
-                                    "pointing_button": "button4"
-                                },
-                                "to": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": "command"
-                                },
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },

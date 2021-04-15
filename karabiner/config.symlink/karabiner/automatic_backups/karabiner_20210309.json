@@ -32,7 +32,7 @@
                         ]
                     },
                     {
-                        "description": "Mouse: Mouse 3 to Mission Control",
+                        "description": "Razer Basilisk: Mouse 3 to Mission Control",
                         "manipulators": [
                             {
                                 "from": {
@@ -46,72 +46,7 @@
                         ]
                     },
                     {
-                        "description": "Mouse: Command + Mouse 3 to Show Desktop",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": "command"
-                                    },
-                                    "pointing_button": "button3"
-                                },
-                                "to": {
-                                    "key_code": "f11"
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Mouse: Mouse 5 to Play/Pause",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "pointing_button": "button5"
-                                },
-                                "to": {
-                                    "key_code": "play_or_pause"
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Mouse: CMD + Mouse 5 to Next Track",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": "command"
-                                    },
-                                    "pointing_button": "button5"
-                                },
-                                "to": {
-                                    "key_code": "fastforward"
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Mouse: OPT + Mouse 5 to Previous Track",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": "option"
-                                    },
-                                    "pointing_button": "button5"
-                                },
-                                "to": {
-                                    "key_code": "rewind"
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Mouse: Mouse 4 to Back",
+                        "description": "Razer Basilisk: Mouse 4 to Back",
                         "manipulators": [
                             {
                                 "from": {
@@ -126,18 +61,32 @@
                         ]
                     },
                     {
-                        "description": "Mouse: CMD + Mouse 4 to Forward",
+                        "description": "Razer Basilisk: Mouse 5 to Forward",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": "command"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Razer Basilisk: Command + Mouse 3 to Show Desktop",
                         "manipulators": [
                             {
                                 "from": {
                                     "modifiers": {
                                         "mandatory": "command"
                                     },
-                                    "pointing_button": "button4"
+                                    "pointing_button": "button3"
                                 },
                                 "to": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": "command"
+                                    "key_code": "f11"
                                 },
                                 "type": "basic"
                             }
@@ -310,7 +259,18 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "pointing_button": "button5"
+                            },
+                            "to": [
+                                {
+                                    "consumer_key_code": "play_or_pause"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
