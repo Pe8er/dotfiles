@@ -3,7 +3,7 @@
   "rules":
   [
     {
-      "description": "HHKB: Command + Escape to Command + grave_accent_and_tilde",
+      "description": "HHKB: CMD + Escape to CMD + grave_accent_and_tilde",
       "manipulators":
       [
         {
@@ -21,7 +21,43 @@
       ]
     },
     {
-      "description": "Razer Basilisk: Mouse 3 to Mission Control",
+      "description": "Mouse: Mouse 4 to Back",
+      "manipulators":
+      [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4"
+          },
+          "to": {
+            "key_code": "open_bracket",
+            "modifiers": "command"
+          }
+        }
+      ]
+    },
+    {
+      "description": "Mouse: CMD + Mouse 4 to Forward",
+      "manipulators":
+      [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4",
+            "modifiers":
+            {
+              "mandatory": "command"
+              }
+          },
+          "to": {
+            "key_code": "close_bracket",
+            "modifiers": "command"
+          }
+        }
+      ]
+    },
+    {
+      "description": "Mouse: Mouse 3 to Mission Control",
       "manipulators":
       [
         {
@@ -37,7 +73,7 @@
       ]
     },
     {
-      "description": "Razer Basilisk: Command + Mouse 3 to Show Desktop",
+      "description": "Mouse: CMD + Mouse 3 to Show Desktop",
       "manipulators":
       [
         {
@@ -57,23 +93,7 @@
       ]
     },
     {
-      "description": "Razer Basilisk: Mouse 4 to Back",
-      "manipulators":
-      [
-        {
-          "type": "basic",
-          "from": {
-            "pointing_button": "button4"
-          },
-          "to": {
-            "key_code": "open_bracket",
-            "modifiers": "command"
-          }
-        }
-      ]
-    },
-    {
-      "description": "Razer Basilisk: Mouse 5 to Forward",
+      "description": "Mouse: Mouse 5 to Play/Pause",
       "manipulators":
       [
         {
@@ -83,8 +103,47 @@
           },
           "to":
           {
-            "key_code": "close_bracket",
-            "modifiers": "command"
+            "key_code": "play_or_pause"
+          }
+        }
+      ]
+    },
+    {
+      "description": "Mouse: CMD + Mouse 5 to Next Track",
+      "manipulators":
+      [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button5",
+            "modifiers":
+            {
+              "mandatory": "command"
+            }
+          },
+          "to":
+          {
+            "key_code": "fastforward"
+          }
+        }
+      ]
+    },
+    {
+      "description": "Mouse: OPT + Mouse 5 to Previous Track",
+      "manipulators":
+      [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button5",
+            "modifiers":
+            {
+              "mandatory": "option"
+            }
+          },
+          "to":
+          {
+            "key_code": "rewind"
           }
         }
       ]
