@@ -53,5 +53,5 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-	name = 
-	email = 
+	name = Piotr Gajos
+	email = pgajos@icloud.com
