@@ -3,6 +3,7 @@
 *~.nib
 songMeta.plist
 password.txt
+.plextoken
 
 build/
 
