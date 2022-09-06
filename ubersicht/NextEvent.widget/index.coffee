@@ -5,7 +5,7 @@
 options =
   # Choose color theme.
   verticalPosition    : "bottom"        # top | bottom | center
-  horizontalPosition    : "right"        # left | right | center
+  horizontalPosition    : "left"        # left | right | center
 
 command: "osascript NextEvent.widget/NextEvent.applescript"
 
@@ -34,7 +34,7 @@ style: """
     #{options.horizontalPosition} margin
     margin-bottom margin
 
-  bottom 24pt
+  bottom 24pt*2
 
   *, *:before, *:after
     box-sizing border-box
