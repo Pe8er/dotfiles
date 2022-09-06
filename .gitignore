@@ -2,6 +2,7 @@
 *.swp
 *~.nib
 songMeta.plist
+password.txt
 
 build/
 
