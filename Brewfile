@@ -1,8 +1,8 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
-tap 'caskroom/fonts'
-tap 'caskroom/drivers'
+tap 'caskroom/cask-fonts'
+tap 'caskroom/cask-drivers'
 
 brew 'ack'
 brew 'bchunk'
@@ -16,11 +16,8 @@ brew 'locateme'
 brew 'node'
 brew 'openssl'
 brew 'shellcheck'
-brew 'spark'
 brew 'switchaudio-osx'
 brew 'terminal-notifier'
-brew 'tvnamer'
-brew 'unrar'
 brew 'wget'
 brew 'youtube-dl'
 
