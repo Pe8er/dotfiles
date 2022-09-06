@@ -5,13 +5,13 @@
 	<key>albumName</key>
 	<string>Blue Lines</string>
 	<key>artistName</key>
-	<string>Massive Attack</string>
+	<string>Gyu</string>
 	<key>audioCodec</key>
-	<string>alac</string>
+	<string>NA</string>
 	<key>coverURL</key>
 	<string>http://192.168.1.200:32400/library/metadata/30425/thumb/1653817804</string>
 	<key>currentPosition</key>
-	<string>0</string>
+	<string>100</string>
 	<key>isLoved</key>
 	<string>false</string>
 	<key>oldFilename</key>
@@ -19,8 +19,8 @@
 	<key>songChanged</key>
 	<string>false</string>
 	<key>songDuration</key>
-	<string>0</string>
+	<string>315</string>
 	<key>songName</key>
-	<string>Five Man Army</string>
+	<string>Juice</string>
 </dict>
 </plist>
