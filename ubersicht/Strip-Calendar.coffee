@@ -39,7 +39,7 @@ render: (output) -> """<div class="calendar #{settings.layout}">
     """
 
 style: """
-  #{if settings.layout == "horizontal" then "bottom" else "top"}: 72px
+  #{if settings.layout == "horizontal" then "bottom" else "top"}: 68px
   if #{settings.layout} == horizontal
     left 50%
     transform translateX(-50%)
@@ -67,7 +67,6 @@ style: """
 
   .calendar.horizontal th
     padding 8px 0
-    // border-radius: 0 0 8px 8px
     border-top: 1px solid #{settings.color.white05}
 
   .calendar.horizontal th.offday
@@ -83,13 +82,10 @@ style: """
 
   .calendar td
     padding 8px 0
-    // border-radius 8px 8px 0 0
     font-size 7pt
 
   .today
-    //-webkit-backdrop-filter #{settings.blurProperties}
     background-color #{settings.color.white05}
-    //border solid 0.5pt #{settings.color.white1}
     font-weight 900
     //background linear-gradient(180deg, rgba(#{settings.color.white01}) 0%, rgba(#{settings.color.white03}) 100%)
 

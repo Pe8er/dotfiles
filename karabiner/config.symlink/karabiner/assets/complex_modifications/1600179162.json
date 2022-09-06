@@ -1,19 +1,16 @@
 {
   "title": "PG Personal",
-  "rules":
-  [
+  "rules": [
     {
       "description": "HHKB: CMD + Escape to CMD + grave_accent_and_tilde",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "key_code": "escape",
             "modifiers": "command"
           },
-          "to":
-          {
+          "to": {
             "key_code": "grave_accent_and_tilde",
             "modifiers": "command"
           }
@@ -22,8 +19,7 @@
     },
     {
       "description": "Mouse: Mouse 4 to Back",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
@@ -37,17 +33,39 @@
       ]
     },
     {
+      "description": "Mouse: Mouse 4 to ESC in PlexAmp TEST",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "pointing_button": "button4"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^tv\\.plex\\.plexamp$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Mouse: CMD + Mouse 4 to Forward",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "pointing_button": "button4",
-            "modifiers":
-            {
+            "modifiers": {
               "mandatory": "command"
-              }
+            }
           },
           "to": {
             "key_code": "close_bracket",
@@ -58,15 +76,13 @@
     },
     {
       "description": "Mouse: Mouse 3 to Mission Control",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "pointing_button": "button3"
           },
-          "to":
-          {
+          "to": {
             "key_code": "mission_control"
           }
         }
@@ -74,19 +90,16 @@
     },
     {
       "description": "Mouse: CMD + Mouse 3 to Show Desktop",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "pointing_button": "button3",
-            "modifiers":
-            {
+            "modifiers": {
               "mandatory": "command"
-              }
+            }
           },
-          "to":
-          {
+          "to": {
             "key_code": "f11"
           }
         }
@@ -94,15 +107,13 @@
     },
     {
       "description": "Mouse: Mouse 5 to Play/Pause",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "pointing_button": "button5"
           },
-          "to":
-          {
+          "to": {
             "key_code": "play_or_pause"
           }
         }
@@ -110,19 +121,16 @@
     },
     {
       "description": "Mouse: CMD + Mouse 5 to Next Track",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "pointing_button": "button5",
-            "modifiers":
-            {
+            "modifiers": {
               "mandatory": "command"
             }
           },
-          "to":
-          {
+          "to": {
             "key_code": "fastforward"
           }
         }
@@ -130,19 +138,16 @@
     },
     {
       "description": "Mouse: OPT + Mouse 5 to Previous Track",
-      "manipulators":
-      [
+      "manipulators": [
         {
           "type": "basic",
           "from": {
             "pointing_button": "button5",
-            "modifiers":
-            {
+            "modifiers": {
               "mandatory": "option"
             }
           },
-          "to":
-          {
+          "to": {
             "key_code": "rewind"
           }
         }

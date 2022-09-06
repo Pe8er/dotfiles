@@ -9,14 +9,12 @@ show_menu(){
     FGRED=`echo "\033[41m"`
     RED_TEXT=`echo "\033[31m"`
     ENTER_LINE=`echo "\033[33m"`
-    echo ""
     echo "${MENU}**************SWITCH TOOLKIT*****************${NORMAL}"
     echo "${MENU}${NUMBER} 1)${NORMAL} Boot Payload ${NORMAL}"
     echo "${MENU}${NUMBER} 2)${NORMAL} Fluffy ${NORMAL}"
     echo "${MENU}${NUMBER} 3)${NORMAL} Tinfoil USB Install ${NORMAL}"
     echo "${MENU}${NUMBER} 4)${NORMAL} SD Card Cleanup ${NORMAL}"
     echo "${MENU}*********************************************${NORMAL}"
-    echo ""
     echo "${ENTER_LINE}Choose a menu option or hit ${RED_TEXT}Enter${ENTER_LINE} to exit. ${NORMAL}"
     read opt
 }
@@ -55,7 +53,7 @@ while [ opt != '' ]
 
         4) clear;
         option_picked "**************SD Card Cleanup**************";
-        $DIR/../switch-cleanup
+        $DIR/switch-cleanup
         show_menu;
         ;;
 

@@ -1,7 +1,7 @@
 {
     "global": {
         "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
+        "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false
     },
     "profiles": [
@@ -32,7 +32,7 @@
                         ]
                     },
                     {
-                        "description": "Razer Basilisk: Mouse 3 to Mission Control",
+                        "description": "Mouse: Mouse 3 to Mission Control",
                         "manipulators": [
                             {
                                 "from": {
@@ -46,7 +46,72 @@
                         ]
                     },
                     {
-                        "description": "Razer Basilisk: Mouse 4 to Back",
+                        "description": "Mouse: Command + Mouse 3 to Show Desktop",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": "command"
+                                    },
+                                    "pointing_button": "button3"
+                                },
+                                "to": {
+                                    "key_code": "f11"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse: Mouse 5 to Play/Pause",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": {
+                                    "key_code": "play_or_pause"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse: CMD + Mouse 5 to Next Track",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": "command"
+                                    },
+                                    "pointing_button": "button5"
+                                },
+                                "to": {
+                                    "key_code": "fastforward"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse: OPT + Mouse 5 to Previous Track",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": "option"
+                                    },
+                                    "pointing_button": "button5"
+                                },
+                                "to": {
+                                    "key_code": "rewind"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse: Mouse 4 to Back",
                         "manipulators": [
                             {
                                 "from": {
@@ -61,32 +126,38 @@
                         ]
                     },
                     {
-                        "description": "Razer Basilisk: Mouse 5 to Forward",
+                        "description": "Mouse: Mouse 4 to ESC in PlexAmp",
                         "manipulators": [
                             {
                                 "from": {
-                                    "pointing_button": "button5"
+                                    "pointing_button": "button4"
                                 },
                                 "to": {
-                                    "key_code": "close_bracket",
-                                    "modifiers": "command"
+                                    "key_code": "escape"
                                 },
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^tv\\.plex\\.plexamp$"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Razer Basilisk: Command + Mouse 3 to Show Desktop",
+                        "description": "Mouse: CMD + Mouse 4 to Forward",
                         "manipulators": [
                             {
                                 "from": {
                                     "modifiers": {
                                         "mandatory": "command"
                                     },
-                                    "pointing_button": "button3"
+                                    "pointing_button": "button4"
                                 },
                                 "to": {
-                                    "key_code": "f11"
+                                    "key_code": "close_bracket",
+                                    "modifiers": "command"
                                 },
                                 "type": "basic"
                             }
@@ -259,18 +330,64 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 834,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
                     "simple_modifications": [
                         {
                             "from": {
-                                "pointing_button": "button5"
+                                "key_code": "caps_lock"
                             },
                             "to": [
                                 {
-                                    "consumer_key_code": "play_or_pause"
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "delete_or_backspace"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "delete_or_backspace"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "backslash"
                                 }
                             ]
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [

@@ -1,8 +1,9 @@
 {
     "global": {
         "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
-        "show_profile_name_in_menu_bar": false
+        "show_in_menu_bar": false,
+        "show_profile_name_in_menu_bar": false,
+        "unsafe_ui": false
     },
     "profiles": [
         {
@@ -15,6 +16,30 @@
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
+                    {
+                        "description": "Mouse: Mouse 4 to ESC in PlexAmp TEST",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^tv\\.plex\\.plexamp$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
                     {
                         "description": "HHKB: Command + Escape to Command + grave_accent_and_tilde",
                         "manipulators": [
@@ -111,6 +136,22 @@
                         ]
                     },
                     {
+                        "description": "HHKB: CMD + Escape to CMD + grave_accent_and_tilde",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": "command"
+                                },
+                                "to": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": "command"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Mouse: Mouse 4 to Back",
                         "manipulators": [
                             {
@@ -119,24 +160,6 @@
                                 },
                                 "to": {
                                     "key_code": "open_bracket",
-                                    "modifiers": "command"
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Mouse: CMD + Mouse 4 to Forward",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": {
-                                        "mandatory": "command"
-                                    },
-                                    "pointing_button": "button4"
-                                },
-                                "to": {
-                                    "key_code": "close_bracket",
                                     "modifiers": "command"
                                 },
                                 "type": "basic"
@@ -188,7 +211,8 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -201,7 +225,8 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -214,7 +239,8 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -258,7 +284,8 @@
                                 }
                             ]
                         }
-                    ]
+                    ],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -271,7 +298,8 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -284,7 +312,8 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -294,10 +323,98 @@
                         "is_pointing_device": false,
                         "product_id": 8226,
                         "vendor_id": 9610
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 8226,
+                        "vendor_id": 9610
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 834,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "backslash"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "delete_or_backspace"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "delete_or_backspace"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "backslash"
+                                }
+                            ]
+                        }
+                    ],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 50895,
+                        "vendor_id": 12951
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 834,
+                        "vendor_id": 1452
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -305,12 +422,27 @@
                     "identifiers": {
                         "is_keyboard": false,
                         "is_pointing_device": true,
-                        "product_id": 8226,
-                        "vendor_id": 9610
+                        "product_id": 832,
+                        "vendor_id": 1452
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 34304,
+                        "vendor_id": 1452
                     },
                     "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
                 }
             ],
             "fn_function_keys": [
