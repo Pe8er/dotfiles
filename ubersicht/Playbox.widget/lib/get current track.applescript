@@ -95,7 +95,7 @@ on isMusicPlaying()
 	if isRunning is true then
 		try
 			with timeout of 2 seconds
-				set plexOutput to do shell script "/usr/local/bin/python3" & space & quoted form of mypath & "plex-now-playing.py"
+				set plexOutput to do shell script "/opt/homebrew/bin/python3" & space & quoted form of mypath & "plex-now-playing.py"
 				set AppleScript's text item delimiters to "^"
 				set isPlexAmpPlaying to text item 1 of plexOutput
 				set AppleScript's text item delimiters to ""

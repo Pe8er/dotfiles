@@ -1,1 +1,1 @@
-ln -s ~/.dotfiles/karabiner ~/.config
+ln -s ~/.dotfiles/karabiner/config.symlink ~/.config
