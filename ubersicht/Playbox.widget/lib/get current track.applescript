@@ -1,7 +1,6 @@
 
 global artistName, songName, albumName, songRating, songDuration, currentPosition, musicapp, apiKey, songMetaFile, mypath, currentCoverURL, isLoved, plexOutput, audioCodec
 set metaToGrab to {"artistName", "songName", "albumName", "songDuration", "currentPosition", "coverURL", "songChanged", "isLoved", "audioCodec"}
-property enableLogging : false --- options: true | false
 
 set apiKey to "2e8c49b69df3c1cf31aaa36b3ba1d166"
 try
@@ -10,16 +9,17 @@ try
 	set mypath to (mypath's text items 1 thru -2 as string) & "/"
 	set AppleScript's text item delimiters to ""
 on error e
-	logEvent(e)
-	return
+	log e
 end try
 
 set songMetaFile to (mypath & "songMeta.plist" as string)
 
 if isMusicPlaying() is true then
+	getSpotifyArt()
 	pruneCovers()
 	getSongMeta()
 	writeSongMeta({"currentPosition" & "##" & currentPosition})
+	set currentCoverURL to ""
 	
 	if didSongChange() is true then
 		delay 1
@@ -34,7 +34,7 @@ if isMusicPlaying() is true then
 		if didCoverChange() is true then
 			set savedCoverURL to my readSongMeta({"coverURL"})
 			set currentCoverURL to grabCover()
-			if savedCoverURL is not currentCoverURL then writeSongMeta({"coverURL" & "##" & currentCoverURL})
+			writeSongMeta({"coverURL" & "##" & currentCoverURL})
 		end if
 		writeSongMeta({"albumName" & "##" & albumName})
 	else
@@ -69,7 +69,7 @@ on isMusicPlaying()
 				end tell
 			end timeout
 		on error e
-			my logEvent(e)
+			log e
 		end try
 	end if
 	
@@ -86,7 +86,7 @@ on isMusicPlaying()
 				end tell
 			end timeout
 		on error e
-			my logEvent(e)
+			log e
 		end try
 	end if
 	
@@ -105,7 +105,7 @@ on isMusicPlaying()
 				end if
 			end timeout
 		on error e
-			my logEvent(e)
+			log e
 		end try
 	end if
 	return answer
@@ -135,7 +135,7 @@ on getSongMeta()
 						set audioCodec to "NA"
 					end tell
 				on error e
-					my logEvent(e)
+					log e
 				end try
 			end using terms from
 			
@@ -152,7 +152,7 @@ on getSongMeta()
 						set audioCodec to "NA"
 					end tell
 				on error e
-					my logEvent(e)
+					log e
 				end try
 			end using terms from
 			
@@ -166,7 +166,7 @@ on getSongMeta()
 		end if
 		
 	on error e
-		my logEvent(e)
+		log e
 	end try
 end getSongMeta
 
@@ -177,7 +177,7 @@ on didSongChange()
 		set savedSongMeta to (readSongMeta({"artistName"}) & readSongMeta({"songName"}) as string)
 		if currentSongMeta is not savedSongMeta then set answer to true
 	on error e
-		my logEvent(e)
+		log e
 	end try
 	return answer
 end didSongChange
@@ -190,7 +190,7 @@ on didCoverChange()
 		if currentSongMeta is not savedSongMeta then set answer to true
 		if readSongMeta({"coverURL"}) is "NA" then set answer to true
 	on error e
-		my logEvent(e)
+		log e
 	end try
 	return answer
 end didCoverChange
@@ -211,7 +211,7 @@ on grabCover()
 			return currentCoverURL
 		end if
 	on error e
-		logEvent(e)
+		log e
 		set currentCoverURL to getPathItem(mypath) & "default.png"
 	end try
 end grabCover
@@ -239,7 +239,7 @@ on getSpotifyArt()
 	try
 		tell application "Spotify" to set currentCoverURL to artwork url of current track as string
 		
-		if currentCoverURL is "missing value" then
+		if currentCoverURL does not start with "http" then
 			set coverDownloaded to false
 			set rawXML to ""
 			set currentCoverURL to "NA"
@@ -248,7 +248,7 @@ on getSpotifyArt()
 					set rawXML to (do shell script "curl 'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&artist=" & my textReplace(artistName, space, "+") & "&album=" & my textReplace(albumName, space, "+") & "&api_key=" & apiKey & "'")
 					delay 1
 				on error e
-					my logEvent(e & return & rawXML)
+					log e & return & rawXML
 				end try
 				if rawXML is not "" then
 					try
@@ -258,12 +258,12 @@ on getSpotifyArt()
 						set currentCoverURL to text item 1 of processingXML
 						set AppleScript's text item delimiters to ""
 						if currentCoverURL is "" then
-							my logEvent("Cover art unavailable." & return & rawXML)
+							log "Cover art unavailable." & return & rawXML
 							set currentCoverURL to "NA"
 							set coverDownloaded to true
 						end if
 					on error e
-						my logEvent(e & return & rawXML)
+						log e
 					end try
 					set coverDownloaded to true
 				end if
@@ -271,7 +271,7 @@ on getSpotifyArt()
 			end repeat
 		end if
 	on error e
-		logEvent(e)
+		log e
 	end try
 end getSpotifyArt
 
@@ -279,7 +279,7 @@ on pruneCovers()
 	try
 		do shell script "rm '" & readSongMeta({"oldFilename"}) & "'"
 	on error e
-		my logEvent(e)
+		log e
 	end try
 end pruneCovers
 
@@ -300,7 +300,7 @@ on readSongMeta(keyNames)
 			try
 				set keyValue to value of property list item keyName
 			on error e
-				my logEvent("Reading song metadata" & space & e)
+				log "Reading song metadata" & space & e
 				my writeSongMeta({keyName & "##" & "NA"})
 				set keyValue to value of property list item keyName
 			end try
@@ -330,7 +330,7 @@ on writeSongMeta(keys)
 					with properties {kind:string, name:keyName, value:keyValue}
 			end repeat
 		on error e
-			my logEvent(e)
+			log e
 		end try
 	end tell
 end writeSongMeta
@@ -450,10 +450,3 @@ on checkFile(myfile)
 		return false
 	end try
 end checkFile
-
-on logEvent(e)
-	if enableLogging is true then
-		set e to e as string
-		do shell script "echo '" & (current date) & space & e & "' >> ~/Library/Logs/CurrentTrack.log"
-	end if
-end logEvent
