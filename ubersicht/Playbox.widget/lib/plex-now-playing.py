@@ -19,8 +19,11 @@ PLEX_SERVER = 'http://192.168.1.200:32400'  # Address of Plex server to query
 USERNAME = 'pe8er'  # Plex username to login, only required on first run
 
 # Plex password to login, after first run, stored in keyring
-PASSWORD = Path(os.path.expanduser(WORKING_DIR) +
-                '/' + 'password.txt').read_text()
+
+if os.path.exists(Path(os.path.expanduser(WORKING_DIR) + '/' + 'password.txt')):
+    PASSWORD = Path(os.path.expanduser(WORKING_DIR) + '/' + 'password.txt').read_text()
+else:
+    PASSWORD = 'NA'
 
 # The location of the file that stores Plex token
 token_path = os.path.expanduser(WORKING_DIR) + '/' + '.plextoken'

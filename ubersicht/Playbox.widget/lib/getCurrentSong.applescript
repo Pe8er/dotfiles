@@ -31,6 +31,8 @@ on isMusicPlaying()
 					-- remove player state from the output string
 					set plexOutput to characters 11 thru -1 of plexOutput as string
 					return "Plexamp"
+				else
+					log plexOutput
 				end if
 			end timeout
 		on error e
@@ -64,4 +66,5 @@ on isMusicPlaying()
 	
 	-- If nothing is playing
 	return "NA"
+	
 end isMusicPlaying
