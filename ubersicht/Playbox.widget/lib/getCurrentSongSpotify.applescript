@@ -1,16 +1,10 @@
 try
 	set songDuration to 0
 	set currentPosition to 0
-	set isLoved to "false"
 	
 	try
 		tell application "Spotify"
 			set {artistName, songName, albumName, songDuration, coverURL} to {artist, name, album, duration, artwork url} of current track
-			try
-				set isLoved to starred of current track as string
-			on error
-				set isLoved to "false"
-			end try
 			set songDuration to my comma_delimit(songDuration)
 			set currentPosition to my formatNum(player position as string)
 			set songDuration to my formatNum(songDuration as string)
@@ -22,7 +16,7 @@ try
 on error e
 	log e
 end try
-return artistName & " @ " & songName & " @ " & albumName & " @ " & songDuration & " @ " & currentPosition & " @ " & coverURL & " @ " & isLoved & " @ " & audioCodec
+return artistName & " @ " & songName & " @ " & albumName & " @ " & songDuration & " @ " & currentPosition & " @ " & coverURL & " @ " & audioCodec
 
 
 on formatNum(aNumber)

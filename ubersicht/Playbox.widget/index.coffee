@@ -230,8 +230,7 @@ update: (output, domEl) ->
     tDuration = values[3]
     tPosition = values[4]
     tArtwork = values[5]
-    isLoved = values[6]
-    audioCodec = values[7]
+    audioCodec = values[6]
 
     # Progressbar
     tWidth = div.width()
