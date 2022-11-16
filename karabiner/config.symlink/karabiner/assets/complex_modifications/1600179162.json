@@ -33,7 +33,7 @@
       ]
     },
     {
-      "description": "Mouse: Mouse 4 to ESC in PlexAmp TEST",
+      "description": "Mouse: Mouse 4 to ESC in PlexAmp",
       "manipulators": [
         {
           "type": "basic",
@@ -115,6 +115,40 @@
           },
           "to": {
             "key_code": "play_or_pause"
+          }
+        }
+      ]
+    },
+    {
+      "description": "HHKB: CMD + SHIFT + ALT + CTRL + P to Play / Pause",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": ["command", "shift", "option", "control"]
+            }
+          },
+          "to": {
+            "key_code": "play_or_pause"
+          }
+        }
+      ]
+    },
+    {
+      "description": "HHKB: CMD + SHIFT + ALT + CTRL + N to Next",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": ["command", "shift", "option", "control"]
+            }
+          },
+          "to": {
+            "key_code": "fastforward"
           }
         }
       ]

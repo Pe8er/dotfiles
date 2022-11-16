@@ -1,9 +1,8 @@
-global mypath, plexOutput
-
+set TID to AppleScript's text item delimiters
 set mypath to POSIX path of (path to me)
 set AppleScript's text item delimiters to "/"
 set mypath to (mypath's text items 1 thru -2 as string) & "/"
-set AppleScript's text item delimiters to ""
+set AppleScript's text item delimiters to TID
 
 set musicPlayer to isMusicPlaying()
 

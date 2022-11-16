@@ -23,13 +23,9 @@ style: """
   if #{options.widgetTheme} == dark
     fColor = white
     bgColor = black
-    bgBrightness = 80%
-    bgContrast = 100%
   else
     fColor = black
     bgColor = white
-    bgBrightness = 150%
-    bgContrast = 50%
 
   // Global scaling for large and medium variants
 
@@ -47,21 +43,18 @@ style: """
   bgColor05 = rgba(bgColor,0.5)
   bgColor02 = rgba(bgColor,0.2)
 
-
-  margin = 0
-
-  // Positioning magic.
+  // Positioning magic
 
   if #{options.verticalPosition} == center
     top 50%
     transform translateY(-50%)
   else
-    #{options.verticalPosition} margin
+    #{options.verticalPosition} 0
   if #{options.horizontalPosition} == center
     left 50%
     transform translateX(-50%)
   else
-    #{options.horizontalPosition} margin
+    #{options.horizontalPosition} 0
 
 
   // Misc styles
@@ -70,9 +63,10 @@ style: """
     box-sizing border-box
 
   mainDimension = 180pt
+  
   position absolute
-  width auto
   min-width 150pt
+  width auto
   overflow hidden
   white-space nowrap
   font-family system, -apple-system
@@ -114,7 +108,7 @@ style: """
   .progresstrack
     width 100%
     height 1pt
-    background-color fColor05
+    background-color fColor02
     position absolute
     bottom 0
     left 0
@@ -139,7 +133,10 @@ style: """
     font-size 6pt
     position relative
     top -8pt
+    right 0
     z-index 4
+    -webkit-backdrop-filter blur(10px)
+
 
   .album
     color fColor05
@@ -188,7 +185,7 @@ options : options
 
 render: () -> """
   <div class="wrapper">
-    <div class="art"><!-- <div class="heart">&#9829;</div> --></div>
+    <div class="art"></div>
     <div class="progress"></div>
     <div class="progresstrack"></div>
     <div class="text">
@@ -203,15 +200,14 @@ render: () -> """
 afterRender: (domEl) ->
   div = $(domEl)
 
-  meta = div.find('.text')
-
   if @options.verticalPosition is 'center'
     div.css('top', (screen.height - div.height())/2)
   if @options.horizontalPosition is 'center'
     div.css('left', (screen.width - div.width())/2)
 
-  # if @options.widgetSize isnt 'smol'
-  #   meta.delay(3000).fadeOut(500)
+  if @options.widgetSize isnt 'smol'
+    div.find('.text').delay(3000).fadeOut(500)
+    div.find('.audioCodec').delay(3000).fadeOut(500)
 
 # Update the rendered output.
 update: (output, domEl) ->
@@ -220,6 +216,7 @@ update: (output, domEl) ->
   div = $(domEl)
   values = output.slice(0,-1).split(" @ ")
 
+  # If there is incoming data, display it
   if values[0] is 'NA'
     div.fadeOut(500)
   else
@@ -232,25 +229,14 @@ update: (output, domEl) ->
     tArtwork = values[5]
     audioCodec = values[6]
 
-    # Progressbar
+    # Progress bar
     tWidth = div.width()
     tCurrent = (tPosition / tDuration) * tWidth
     div.find('.progress').css width: tCurrent
 
+    # Audio codec tag
     if audioCodec isnt 'NA'
       div.find('.audioCodec').html(audioCodec)
-      if @options.widgetSize is 'smol'
-        div.find('.audioCodec').css display: 'inline-block'
-      else
-        div.find('.audioCodec').css display: 'inline-block'
 
-    # currArt = "/" + div.find('.art').css('background-image').split('/').slice(-3).join().replace(/\,/g, '/').slice(0,-1)
-    # if currArt isnt tArtwork and tArtwork isnt 'NA'
-    # artwork = div.find('.art')
+    # Update artwork
     div.find('.art').css('background-image', 'url('+tArtwork+')')
-
-    # else if tArtwork is 'NA'
-    #   artwork = div.find('.art')
-    #   artwork.css('background-image', 'url(/Playbox.widget/lib/default.png)')
-      
-    # div.css('max-width', screen.width)
