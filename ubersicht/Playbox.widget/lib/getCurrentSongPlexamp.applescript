@@ -128,17 +128,17 @@ on FileExists(theFile) -- (String) as Boolean
 	end tell
 end FileExists
 
-on writeToFile(this_data, target_file)
+on writeToFile(thisData, targetFile)
 	try
-		set the target_file to the target_file as string
-		set the open_target_file to open for access file target_file with write permission
-		set eof of the open_target_file to 0
-		write this_data to the open_target_file starting at eof
-		close access the open_target_file
+		set the targetFile to the targetFile as string
+		set the openTargetFile to open for access file targetFile with write permission
+		set eof of the openTargetFile to 0
+		write thisData to the openTargetFile starting at eof
+		close access the openTargetFile
 		return true
 	on error e
 		try
-			close access file target_file
+			close access file targetFile
 		end try
 		return e
 	end try
