@@ -17,13 +17,14 @@
                 },
                 "rules": [
                     {
-                        "description": "Mouse: Mouse 4 to ESC in PlexAmp TEST",
+                        "description": "Mouse: Mouse 4 to ESC in PlexAmp and Spark",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "^tv\\.plex\\.plexamp$"
+                                            "^tv\\.plex\\.plexamp$",
+                                            "^com\\.readdle\\.SparkDesktop$"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -49,6 +50,21 @@
                                 },
                                 "to": {
                                     "key_code": "mission_control"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse: Mouse 4 to Back",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": "command"
                                 },
                                 "type": "basic"
                             }
@@ -136,26 +152,107 @@
                         ]
                     },
                     {
-                        "description": "Mouse: Mouse 4 to Back",
+                        "description": "Application > Hyper",
                         "manipulators": [
                             {
                                 "from": {
-                                    "pointing_button": "button4"
+                                    "key_code": "application",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Keyboard: Reduce GLM Volume",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "down_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
                                 },
                                 "to": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": "command"
+                                    "shell_command": "/opt/homebrew/bin/sendmidi dev 'IAC' cc 22 1"
                                 },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "HHKB: CMD + SHIFT + ALT + CTRL + P to Play / Pause",
+                        "description": "Keyboard: Increase GLM Volume",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "p",
+                                    "key_code": "up_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "/opt/homebrew/bin/sendmidi dev 'IAC' cc 21 1"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left Control > Hyper",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Keyboard: Hyper + Return to Play / Pause",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter",
                                     "modifiers": {
                                         "mandatory": [
                                             "command",
@@ -173,11 +270,11 @@
                         ]
                     },
                     {
-                        "description": "HHKB: CMD + SHIFT + ALT + CTRL + N to Next",
+                        "description": "Keyboard: Hyper + [N] Right to Next Track",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "right_arrow",
                                     "modifiers": {
                                         "mandatory": [
                                             "command",
@@ -189,6 +286,28 @@
                                 },
                                 "to": {
                                     "key_code": "fastforward"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "[NEW]Keyboard: Hyper + Left to Prev Track",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_arrow",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "shift",
+                                            "option",
+                                            "control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "rewind"
                                 },
                                 "type": "basic"
                             }
@@ -496,11 +615,31 @@
                         },
                         {
                             "from": {
+                                "key_code": "caps_lock"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "left_control"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
                                 "key_code": "delete_or_backspace"
                             },
                             "to": [
                                 {
                                     "key_code": "backslash"
+                                }
+                            ]
+                        },
+                        {
+                            "from": {
+                                "key_code": "home"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "grave_accent_and_tilde"
                                 }
                             ]
                         },
@@ -521,26 +660,6 @@
                             "to": [
                                 {
                                     "key_code": "left_command"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_control"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "key_code": "home"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "grave_accent_and_tilde"
                                 }
                             ]
                         }

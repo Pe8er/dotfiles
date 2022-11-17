@@ -4,6 +4,7 @@
 songMeta.plist
 password.txt
 .plextoken
+ubersicht/simple-bar
 
 build/
 
@@ -29,3 +30,5 @@ ruby/irbrc.symlink
 ruby/gemrc.symlink
 
 ruby/aliases.zsh
+
+# karabiner/config.symlink/karabiner/assets/complex_modifications/1600179162.json
