@@ -2,7 +2,103 @@
   "title": "PG Personal",
   "rules": [
     {
-      "description": "HHKB: CMD + Escape to CMD + grave_accent_and_tilde",
+      "description": "Application > Hyper",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "application",
+            "modifiers": {
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift",
+              "modifiers": ["left_command", "left_control", "left_option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+
+    {
+      "description": "Left Control > Hyper",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift",
+              "modifiers": ["left_command", "left_control", "left_option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+
+    {
+      "description": "Keyboard: Reduce GLM Volume",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "down_arrow",
+            "modifiers": {
+              "mandatory": ["command", "shift", "option", "control"]
+            }
+          },
+          "to": {
+            "shell_command": "/opt/homebrew/bin/sendmidi dev 'IAC' cc 22 1"
+          }
+        }
+      ]
+    },
+
+    {
+      "description": "Keyboard: Increase GLM Volume",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "up_arrow",
+            "modifiers": {
+              "mandatory": ["command", "shift", "option", "control"]
+            }
+          },
+          "to": {
+            "shell_command": "/opt/homebrew/bin/sendmidi dev 'IAC' cc 21 1"
+          }
+        }
+      ]
+    },
+
+    {
+      "description": "Keyboard: Mute GLM",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "page_down",
+            "modifiers": {
+              "mandatory": ["command", "shift", "option", "control"]
+            }
+          },
+          "to": {
+            "shell_command": "/opt/homebrew/bin/sendmidi dev 'IAC' cc 22 1"
+          }
+        }
+      ]
+    },
+
+    {
+      "description": "Keyboard: CMD + Escape to CMD + grave_accent_and_tilde",
       "manipulators": [
         {
           "type": "basic",
@@ -32,8 +128,9 @@
         }
       ]
     },
+
     {
-      "description": "Mouse: Mouse 4 to ESC in PlexAmp",
+      "description": "Mouse: Mouse 4 to ESC in PlexAmp and Spark",
       "manipulators": [
         {
           "type": "basic",
@@ -49,13 +146,15 @@
             {
               "type": "frontmost_application_if",
               "bundle_identifiers": [
-                "^tv\\.plex\\.plexamp$"
+                "^tv\\.plex\\.plexamp$",
+                "^com\\.readdle\\.SparkDesktop$"
               ]
             }
           ]
         }
       ]
     },
+
     {
       "description": "Mouse: CMD + Mouse 4 to Forward",
       "manipulators": [
@@ -119,13 +218,32 @@
         }
       ]
     },
+
+    // {
+    //   "description": "Keyboard: Hyper + P to Play / Pause",
+    //   "manipulators": [
+    //     {
+    //       "type": "basic",
+    //       "from": {
+    //         "key_code": "p",
+    //         "modifiers": {
+    //           "mandatory": ["command", "shift", "option", "control"]
+    //         }
+    //       },
+    //       "to": {
+    //         "key_code": "play_or_pause"
+    //       }
+    //     }
+    //   ]
+    // },
+
     {
-      "description": "HHKB: CMD + SHIFT + ALT + CTRL + P to Play / Pause",
+      "description": "Keyboard: Hyper + Return to Play / Pause",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "p",
+            "key_code": "return_or_enter",
             "modifiers": {
               "mandatory": ["command", "shift", "option", "control"]
             }
@@ -136,13 +254,14 @@
         }
       ]
     },
+
     {
-      "description": "HHKB: CMD + SHIFT + ALT + CTRL + N to Next",
+      "description": "Keyboard: Hyper + [N] Right to Next Track",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "n",
+            "key_code": "right_arrow",
             "modifiers": {
               "mandatory": ["command", "shift", "option", "control"]
             }
@@ -153,6 +272,25 @@
         }
       ]
     },
+
+    {
+      "description": "[NEW]Keyboard: Hyper + Left to Prev Track",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_arrow",
+            "modifiers": {
+              "mandatory": ["command", "shift", "option", "control"]
+            }
+          },
+          "to": {
+            "key_code": "rewind"
+          }
+        }
+      ]
+    },
+
     {
       "description": "Mouse: CMD + Mouse 5 to Next Track",
       "manipulators": [
