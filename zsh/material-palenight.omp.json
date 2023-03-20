@@ -72,8 +72,8 @@
           "type": "exit",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#ffffff",
-          "background": "#ff8080",
+          "foreground": "#eeffff",
+          "background": "#f07178",
           "template": " {{ if gt .Code 0 }}error{{ else }}\uf42e{{ end }} "
         },
         {
@@ -95,14 +95,14 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#757575",
+          "foreground": "#676E95",
           "template": "\u2514"
         },
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#ffffff",
-          "template": "$"
+          "foreground": "#eeffff",
+          "template": ""
         }
       ],
       "newline": true
