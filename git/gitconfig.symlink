@@ -1,54 +1,21 @@
-# Local/private config goes in the include
-[include]
-        path = ~/.gitconfig.local
-[hub]
-        protocol = https
-[alias]
-        shift = !$HOME/bin/git-shift
-        co = checkout
-        plre = pull --rebase
-        pl = pull
-        ps = push
-        ca = commit -a
-        ci = commit
-        lg = log --pretty=full
-        ln = log --no-merges
-        lno = log --no-merges --pretty=oneline
-        st = status
-        br = branch
-        unstage = reset HEAD --
-        last = log -1 HEAD --pretty=full
-        mylog = log --author="Piotr" --since="yesterday" --name-status --pretty=full
-        find = log --all --
-        check = fetch; git log HEAD.. --oneline
-        bigreset = fetch origin; git reset --hard origin/master
-[color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
-[core]
-        excludesfile = ~/.gitignore
-        editor = vim
-[apply]
-        whitespace = nowarn
-[mergetool]
-        keepBackup = false
-[difftool]
-        prompt = false
-[diff "applescript"]
-    	textconv = osadecompile
-    	binary=true
-[help]
-        autocorrect = 1
-[push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+[user]
+	email = pgajos@icloud.com
+	name = Piotr Gajos
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[alias]
+	# The rest of my fun git aliases
+	b='branch'
+	ca='commit -a'
+	cb='copy-branch-name'
+	co = checkout
+	d=diff
+	gac='add -A && git commit -m'
+	p='push origin HEAD'
+	plpr='pull --prune'
+	xlog="log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+  c = commit
+  s = status
