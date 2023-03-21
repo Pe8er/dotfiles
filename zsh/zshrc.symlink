@@ -1,67 +1,10 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# where to install Casks
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# your project folder that we can `c [tab]` to
-# export PROJECTS=~/Code
-
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config /Users/piotr_gajos/.dotfiles/zsh/material-palenight.omp.json)"
 fi
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
-
-# load the path files
-for file in ${(M)config_files:#*/path.zsh}
-do
-  source $file
-done
-
-# load everything but the path and completion files
-for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
-do
-  source $file
-done
-
-#  https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
-
-# https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
-man() {
-    LESS_TERMCAP_mb=$'\e'"[1;31m" \
-    LESS_TERMCAP_md=$'\e'"[1;31m" \
-    LESS_TERMCAP_me=$'\e'"[0m" \
-    LESS_TERMCAP_se=$'\e'"[0m" \
-    LESS_TERMCAP_so=$'\e'"[1;44;33m" \
-    LESS_TERMCAP_ue=$'\e'"[0m" \
-    LESS_TERMCAP_us=$'\e'"[1;32m" \
-    command man "$@"
-}
-
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -U compinit
-compinit
-
-# load every completion after autocomplete loads
-for file in ${(M)config_files:#*/completion.zsh}
-do
-  source $file
-done
-
-unset config_files
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+source $HOME/.dotfiles/zsh/aliases.zsh
+source $HOME/.dotfiles/zsh/completion.zsh
+source $HOME/.dotfiles/zsh/config.zsh
+source $HOME/.dotfiles/zsh/path.zsh
