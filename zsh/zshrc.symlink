@@ -8,3 +8,4 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
 source $HOME/.dotfiles/zsh/path.zsh
+export PATH=$PATH:/Users/piotr_gajos/.spicetify

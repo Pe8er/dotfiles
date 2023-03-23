@@ -1,0 +1,1 @@
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkopen=("undefined"!=typeof self?self:global).webpackChunkopen||[]).push([[6025],{76434:(e,l,f)=>{f.r(l),f.d(l,{default:()=>n.Z});var n=f(36752)}}]);
