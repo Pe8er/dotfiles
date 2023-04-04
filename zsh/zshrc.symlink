@@ -4,8 +4,11 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config /Users/piotr_gajos/.dotfiles/zsh/material-palenight.omp.json)"
 fi
 
+source $HOME/.dotfiles/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
 source $HOME/.dotfiles/zsh/path.zsh
 export PATH=$PATH:/Users/piotr_gajos/.spicetify
+export PATH=$PATH:/Users/piotr_gajos/.dotfiles/bin
+eval $(thefuck --alias)
