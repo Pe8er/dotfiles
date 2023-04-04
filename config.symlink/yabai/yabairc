@@ -1,0 +1,20 @@
+yabai -m space --layout bsp
+yabai -m config window_placement second_child
+yabai -m config window_gap 40
+yabai -m space --padding abs:40:40:40:40
+# yabai -m config external_bar main:65:40:40:40
+yabai -m config auto_balance on
+yabai -m config window_topmost on
+
+# Mouse settings
+yabai -m config mouse_follows_focus off
+
+# Exclude apps
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Clock$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Plexamp$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^ImageOptim$" manage=off
+yabai -m rule --add app="^Adobe Lightroom" manage=on
