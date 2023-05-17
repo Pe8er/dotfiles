@@ -1,8 +1,8 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
-tap 'caskroom/cask-fonts'
-tap 'caskroom/cask-drivers'
+tap 'homebrew/cask-cask-fonts'
+tap 'homebrew/cask-cask-drivers'
 
 brew 'ack'
 brew 'bchunk'
