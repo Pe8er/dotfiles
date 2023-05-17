@@ -1,10 +1,24 @@
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
 yabai -m space --layout bsp
 yabai -m config window_placement second_child
-yabai -m config window_gap 40
-yabai -m space --padding abs:40:40:40:40
-# yabai -m config external_bar main:65:40:40:40
 yabai -m config auto_balance on
+
+# window opacity (default: off)
+# example: render all unfocused windows with 90% opacity
+# yabai -m config window_opacity on
+# yabai -m config active_window_opacity 1.0
+# yabai -m config normal_window_opacity 0.7
+
+# floating windows are always on top (default: off)
 yabai -m config window_topmost on
+yabai -m config window_animation_duration 0.3
+# yabai -m config window_gap 10
+# yabai -m space --padding abs:10:10:10:10
+# yabai -m config external_bar main:65:10:10:10
+
+# yabai -m config window_shadow off
 
 # Mouse settings
 yabai -m config mouse_follows_focus off
