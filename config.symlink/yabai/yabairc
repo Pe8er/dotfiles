@@ -1,34 +1,39 @@
+#!/usr/bin/env sh
+
+# Unload the macOS WindowManager process
+launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >/dev/null 2>&1 &
+
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
+yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
+yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+$HOME/.config/yabai/create_spaces.sh
+
+yabai -m config window_placement second_child \
+  auto_balance on \
+  window_animation_duration 0.3 \
+  window_topmost off \
+  mouse_follows_focus off \
+  top_padding 8 \
+  bottom_padding 8 \
+  left_padding 8 \
+  right_padding 8 \
+  window_gap 8
+
+# Manage apps…NOT
+yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim)$" manage=off
+yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add app="^Adobe Lightroom" manage=on
+
+# Float small, non-resizable windows, doesn't seem to work well
+# yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
 
 yabai -m space --layout bsp
-yabai -m config window_placement second_child
-yabai -m config auto_balance on
 
-# window opacity (default: off)
-# example: render all unfocused windows with 90% opacity
-# yabai -m config window_opacity on
-# yabai -m config active_window_opacity 1.0
-# yabai -m config normal_window_opacity 0.7
-
-# floating windows are always on top (default: off)
-yabai -m config window_topmost on
-yabai -m config window_animation_duration 0.3
-# yabai -m config window_gap 10
-# yabai -m space --padding abs:10:10:10:10
-# yabai -m config external_bar main:65:10:10:10
-
-# yabai -m config window_shadow off
-
-# Mouse settings
-yabai -m config mouse_follows_focus off
-
-# Exclude apps
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Clock$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^Plexamp$" manage=off
-yabai -m rule --add app="^Alfred Preferences$" manage=off
-yabai -m rule --add app="^ImageOptim$" manage=off
-yabai -m rule --add app="^Adobe Lightroom" manage=on
+echo "yabai configuration loaded.."

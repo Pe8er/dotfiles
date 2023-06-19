@@ -74,7 +74,7 @@
   "desktop.login.RegionMismatchMessage": "الدولة ديالك ماشي هي الدولة اللي داير في صفحتك الشخصية. باش تبقى خدام به، <a href=\"%0%\">حدّث الصفحة الشخصية ديالك</a> أو <a href=\"%1%\">رقي حساب Spotify ديالك</a>.",
   "desktop.login.PremiumUsersOnlyMessage": "هد التطبيق خاص بالمستخدمين ديال اشتراك Premium.",
   "desktop.login.CreateUserDeniedMessage": "الإيميل مربوط من قبل بواحد الحساب.",
-  "desktop.login.ClientUpdateFail": "عفاك اتليشارجي <a href=\"%0%\">آخر نسخة</a> من الموقع ديال Spotify.",
+  "desktop.login.ClientUpdateFail": "عفاك تليشارجي <a href=\"%0%\">آخر نسخة</a> من الموقع ديال Spotify.",
   "desktop.login.FbUserNotFoundSignUp": "ماعندكش حساب Spotify مربوط بحساب Facebook ديالك. إدا عندك حساب Spotify، عفاك دخل بمعطيات Spotify ديالك. <a href=\"#\" data-action=\"%0%\">افتح حساب</a> إدا معندكش حساب Spotify.",
   "desktop.login.errorCode": "(رمز الخطأ: {0})",
   "desktop.login.January": "يناير",

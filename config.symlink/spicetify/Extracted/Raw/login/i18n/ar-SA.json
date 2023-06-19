@@ -29,7 +29,7 @@
     "many": "فيه {0} خطأ في النموذج، يرجى إصلاحها قبل تسليمه.",
     "other": "فيه {0} خطأ في النموذج، يرجى إصلاحها قبل تسليمه."
   },
-  "desktop.login.SignupEmail": "إرسال رسالة إلكترونية",
+  "desktop.login.SignupEmail": "البريد الإلكتروني",
   "desktop.login.CreateAPassword": "إنشاء كلمة المرور",
   "desktop.login.SignupName": "ايش الاسم اللي تحب نناديك بيه؟",
   "desktop.login.SendEmailImplicitLabel": "ممكن نرسلك رسايل إلكترونية بالأخبار أو الترقيات من وقت للثاني. انتقل لصفحة إشعارات البريد الإلكتروني علشان تتحكم في الرسايل اللي نرسلها.",
@@ -110,7 +110,7 @@
   "desktop.settings.proxy.autodetect": "الاكتشاف التلقائي للإعدادات",
   "desktop.settings.proxy.noproxy": "ما في بروكسي",
   "desktop.settings.proxy.http": "HTTP",
-  "desktop.settings.proxy.socks4": "SOCKS4",
-  "desktop.settings.proxy.socks5": "SOCKS5",
+  "desktop.settings.proxy.socks4": "بروتوكول إنترنت SOCKS4",
+  "desktop.settings.proxy.socks5": "بروتوكول إنترنت SOCKS5",
   "settings.restartApp": "إعادة تشغيل التطبيق"
 }
