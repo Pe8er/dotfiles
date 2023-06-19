@@ -1,0 +1,194 @@
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
+source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+
+PADDINGS=4
+FONT="SF Pro"
+
+##### Bar Appearance #####
+
+bar=(
+  color=$TRANSPARENT
+  position=top
+  sticky=off
+  y_offset=8
+  height=24
+  padding_left=0
+  padding_right=0
+  margin=8
+  corner_radius=0
+  blur_radius=0
+)
+
+sketchybar --bar "${bar[@]}"
+
+##### Item Defaults #####
+
+item_defaults=(
+  background.color=$TRANSPARENT
+  background.height=24
+  background.padding_left=$PADDINGS
+  background.padding_right=$PADDINGS
+  background.corner_radius=0
+  # background.border_color=$GREEN
+  # background.border_width=2
+  icon.font="$FONT:Semibold:12"
+  icon.color=$ICON_COLOR
+  icon.highlight_color=$HIGHLIGHT
+  icon.padding_left=$PADDINGS
+  icon.padding_right=$PADDINGS
+  label.font="$FONT:Regular:12"
+  label.color=$LABEL_COLOR
+  label.highlight_color=$HIGHLIGHT
+  label.padding_left=$PADDINGS
+  label.padding_right=$PADDINGS
+  # updates=when_shown
+)
+
+sketchybar --default "${item_defaults[@]}"
+
+icon_defaults=(
+  alias.color=$ICON_COLOR
+  alias.update_freq=60
+  label.drawing=off
+  icon.padding_left=-8
+  icon.padding_right=-8
+  padding_left=0
+  padding_right=-4
+)
+
+bracket_defaults=(
+  background.color=$BAR_COLOR
+  background.border_color=$BAR_BORDER_COLOR
+  background.border_width=2
+  background.corner_radius=$PADDINGS
+  padding_left=16
+  padding_right=16
+)
+
+##### LEFT #####
+
+sketchybar \
+  --add item logo left \
+  --set logo icon=􀣺 \
+  label.drawing=off \
+  icon.padding_left=8 \
+  icon.padding_right=8 \
+  click_script="sketchybar --update" \
+  \
+  --add space web left \
+  --set web associated_display=1 \
+  associated_space=1 \
+  icon=􀎬 \
+  label=Web \
+  script="$PLUGIN_DIR/space.sh" \
+  click_script="yabai -m space --focus 1" \
+  \
+  --add space todo left \
+  --set todo associated_display=1 \
+  associated_space=2 \
+  icon=􀩳 \
+  label=Todo \
+  script="$PLUGIN_DIR/space.sh" \
+  click_script="yabai -m space --focus 2" \
+  \
+  --add space comms left \
+  --set comms associated_display=1 \
+  associated_space=3 \
+  icon=􀌨 \
+  label=Comms \
+  script="$PLUGIN_DIR/space.sh" \
+  click_script="yabai -m space --focus 3" \
+  \
+  --add event window_focus \
+  --add event windows_on_spaces \
+  \
+  --add item spacer_chevron left \
+  --set spacer_chevron label.drawing=off \
+  icon=􀆊 \
+  icon.padding_left=0 \
+  \
+  --add item front_app left \
+  --set front_app script="$PLUGIN_DIR/front_app.sh" \
+  icon.drawing=off \
+  label.font="$FONT:Bold:12.0" \
+  --subscribe front_app front_app_switched
+
+##### RIGHT #####
+
+sketchybar \
+  --add item spacer_rightmost right \
+  --set spacer_rightmost width=2 \
+  \
+  --add item date right \
+  --set date update_freq=10 \
+  label.font="$FONT:Semibold:7" \
+  align=right \
+  icon.drawing=off \
+  y_offset=6 \
+  width=0 \
+  script="$PLUGIN_DIR/date.sh" \
+  \
+  --add item clock right \
+  --set clock update_freq=10 \
+  y_offset=-3 \
+  icon.drawing=off \
+  label.font="$FONT:Bold:9" \
+  align=right \
+  script="$PLUGIN_DIR/clock.sh" \
+  \
+  --add item dndindicator right \
+  --set dndindicator script="$PLUGIN_DIR/dndindicator.sh" \
+  label.drawing=off \
+  update_freq=10 \
+  \
+  --add alias "Control Center,WiFi" right \
+  --rename "Control Center,WiFi" wifi \
+  --set wifi "${icon_defaults[@]}" \
+  \
+  --add alias "Control Center,Battery" right \
+  --rename "Control Center,Battery" battery \
+  --set battery "${icon_defaults[@]}" \
+  \
+  --add item spacer right \
+  --set spacer width=$PADDINGS \
+  \
+  --add item weather right \
+  --set weather script="$PLUGIN_DIR/weather.sh" \
+  icon.font="Hack Nerd Font:Regular:13.0" \
+  update_freq=300 \
+  click_script="/usr/bin/open /System/Applications/Weather.app" \
+  \
+  --add item pia right \
+  --set pia script="$PLUGIN_DIR/pia.sh" \
+  label.drawing=off \
+  icon= \
+  update_freq=5 \
+  \
+  --add item music right \
+  --set music "${bracket_defaults[@]}" \
+  script="$PLUGIN_DIR/music.sh" \
+  label.padding_right=8 \
+  background.padding_right=$PADDINGS \
+  updates=on \
+  --subscribe music media_change
+
+# --add item mailapp right \
+# --set mailapp script="$PLUGIN_DIR/mail.sh" \
+# icon=􀍕 \
+# update_freq=120 \
+# click_script="osascript -e 'tell application \"Mail\" to activate'" \
+# \
+
+##### Brackets to group stuff #####
+
+sketchybar --add bracket spaces logo web todo comms spacer_chevron front_app \
+  --set spaces "${bracket_defaults[@]}" \
+  --add bracket app_icons pia weather \
+  --set app_icons "${bracket_defaults[@]}" \
+  --add bracket status_icons battery wifi date clock spacer_rightmost dndindicator \
+  --set status_icons "${bracket_defaults[@]}"
+
+sketchybar --update

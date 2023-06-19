@@ -4,8 +4,6 @@
   "desktop-auth.login.millions-of-songs": "Miljoonittain kappaleita.",
   "desktop-auth.login.free-on-spotify": "A Spotifyon ingyen hallgathatod őket.",
   "desktop.login.LoginButton": "Ingia katika akaunti",
-  "desktop-auth.login.redirecting-to-browser-signup": "",
-  "desktop-auth.login.redirecting-to-browser-login": "",
   "desktop.login.SignupHeroText": "Inscrivez-vous pour obtenir gratuitement un compte Spotify.",
   "desktop.login.SignupAlmostDone": "Vous avez presque terminé.",
   "desktop.login.DontHaveAnAccountSignup": "Vous n'avez pas de compte ? <u>Inscrivez-vous</u>",
@@ -14,6 +12,8 @@
   "desktop.login.ContinueWithFacebook": "Facebook ব্যবহার করে এগিয়ে যান",
   "desktop.login.ContinueWithGoogle": "Продовжити за допомогою Google",
   "desktop.login.ContinueWithApple": "Продовжити за допомогою Apple",
+  "desktop-auth.login.redirecting-to-browser-signup": "",
+  "desktop-auth.login.redirecting-to-browser-login": "",
   "desktop.login.PreferencesLink": "Indstillinger",
   "desktop.login.Back": "पछाडि जानुहोस्",
   "desktop-auth.login.not-seeing-browser": "Δεν βλέπεις την καρτέλα στο πρόγραμμα περιήγησης;",
@@ -108,7 +108,7 @@
   "desktop.settings.proxy.autodetect": "स्वतः पत्ता लगाउने सुविधासम्बन्धी सेटिङ",
   "desktop.settings.proxy.noproxy": "Χωρίς διακομιστή μεσολάβησης",
   "desktop.settings.proxy.http": "ኤችቲቲፒ",
-  "desktop.settings.proxy.socks4": "‏SOCKS4",
-  "desktop.settings.proxy.socks5": "‏SOCKS5",
+  "desktop.settings.proxy.socks4": "بروتوكول إنترنت SOCKS4",
+  "desktop.settings.proxy.socks5": "بروتوكول إنترنت SOCKS5",
   "settings.restartApp": "Käynnistä sovellus uudelleen"
 }

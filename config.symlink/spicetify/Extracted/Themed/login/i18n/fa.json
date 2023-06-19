@@ -68,7 +68,7 @@
   "desktop.login.UserNotAllowedOnPlatformMessage": "استفاده از این دستگاه برای حساب شما فعال نشده است.",
   "desktop.login.MissingUserInfoMessage": "نمایه کاربر به‌طور کامل به‌روز نشده است، لطفاً <a href=\"%0%\">نمایه‌تان را به‌روز کنید</a> و از برنامه خارج و دوباره وارد شوید.",
   "desktop.login.RegionMismatchMessage": "کشورتان با کشوری که در نمایه درج کرده بودید یکی نیست. برای ادامه کار، <a href=\"%0%\">نمایه‌تان را به‌روز کنید</a> یا <a href=\"%1%\">حساب اسپاتیفای را ارتقا دهید</a>.",
-  "desktop.login.PremiumUsersOnlyMessage": "این برنامه تنها مختص کاربران «نسخه ممتاز» است.",
+  "desktop.login.PremiumUsersOnlyMessage": "این برنامه تنها مختص کاربران نسخه «ممتاز» است.",
   "desktop.login.CreateUserDeniedMessage": "ایمیل قبلاً به کاربر دیگری متصل شده است.",
   "desktop.login.ClientUpdateFail": "لطفاً <a href=\"%0%\">آخرین نسخه</a> را از وب‌سایت اسپاتیفای بارگیری کنید.",
   "desktop.login.FbUserNotFoundSignUp": "حسابی در اسپاتیفای ندارید که به حساب فیس‌بوک شما متصل شده باشد. اگر حساب اسپاتیفای دارید، لطفاً با اطلاعات کاربری اسپاتیفای وارد شوید. اگر حساب اسپاتیفای ندارید <a href=\"#\" data-action=\"%0%\">ثبت‌نام کنید</a>.",

@@ -22,8 +22,8 @@
   "desktop-auth.login.new-to-spotify": "Πρώτη φορά στο Spotify;",
   "desktop-auth.login.sign-up-with-browser": "Εγγράψου δωρεάν",
   "desktop.login.email.errorMessageA11y": {
-    "one": "Υπάρχει {0} σφάλμα σε αυτήν τη φόρμα, διόρθωσέ το πριν την υποβάλεις.",
-    "other": "Υπάρχουν {0} σφάλματα σε αυτήν τη φόρμα, διόρθωσέ τα πριν την υποβάλεις."
+    "one": "Υπάρχει {0} σφάλμα σε αυτή τη φόρμα, διόρθωσέ το πριν την υποβάλεις.",
+    "other": "Υπάρχουν {0} σφάλματα σε αυτή τη φόρμα, διόρθωσέ τα πριν την υποβάλεις."
   },
   "desktop.login.SignupEmail": "Email",
   "desktop.login.CreateAPassword": "Δημιουργία κωδικού πρόσβασης",

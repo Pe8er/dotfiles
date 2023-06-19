@@ -9,4 +9,5 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
 source $HOME/.dotfiles/zsh/path.zsh
-eval $(thefuck --alias)
+eval $(thefuck --alias)eval "$(pyenv init -)"
+export PATH=$PATH:/Users/pe8er/.spicetify

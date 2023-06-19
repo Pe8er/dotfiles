@@ -90,7 +90,7 @@
   "desktop.login.Day": "Eguna",
   "desktop.login.TermsAndConditions": "Spotify-ren Erabilera-baldintzak eta -zehaztapenak",
   "desktop.login.PrivacyPolicy": "Pribatutasun-gidalerroak",
-  "desktop.login.SignupAgree": "{0} sakatuz gero, onartu egingo dituzu {1}.",
+  "desktop.login.SignupAgree": "\"{0}\" sakatuz gero, onartu egingo dituzu {1}.",
   "desktop.login.PrivacyPolicyAgree": "Spotify-k zure datu pertsonalak biltzeko, erabiltzeko, partekatzeko eta babesteko moduari buruzko informazio gehiago lortzeko, irakurri Spotify-ren {0}.",
   "desktop.login.SignupAgreeCheckboxSpecificLicenses": "Honen bidez, onartzen ditut {0}.",
   "desktop.login.SignupAgreeCheckbox": "Onartzen ditut {0} eta {1}.",
