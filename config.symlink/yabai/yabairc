@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Unload the macOS WindowManager process
-launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >/dev/null 2>&1 &
+# launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >/dev/null 2>&1 &
 
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
@@ -25,8 +25,9 @@ yabai -m config window_placement second_child \
   window_gap 8
 
 # Manage apps…NOT
-yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim)$" manage=off
+yabai -m rule --add app="^(LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim|The Unarchiver|Transmission|Installer|Hosting AU|Numi|IINA)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add app="^Adobe Lightroom" manage=on

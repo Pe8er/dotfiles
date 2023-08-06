@@ -8,7 +8,7 @@ options =
   horizontalPosition    : "left"        # left | center | right
 
   # Choose widget size.
-  widgetSize: "smol"                  # big | medium | smol
+  widgetSize: "smol"                   # big | medium | smol
 
   # Choose color theme.
   widgetTheme: "dark"                   # dark | light

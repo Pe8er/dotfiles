@@ -1,17 +1,4 @@
-#!/bin/bash
-
-# LOCATION="Oborniki%20Slaskie,%20Poland" # set to your location
-# WEATHER=`curl -s "https://wttr.in/${LOCATION}?format=1" | sed 's|  *| |g'`
-
-# LABEL="$(echo "${WEATHER:3:10}")"
-# ICON="$(echo "${WEATHER:0:1}")"
-
-# echo $WEATHER
-# echo "Label " $LABEL
-# echo "Icon " $ICON
-
-# sketchybar --set $NAME label=$LABEL icon=$ICON
-# # sketchybar --set $NAME label="${TEMP}"
+#!/usr/bin/env bash
 
 API_KEY="462eeb49a1b844f191f175554222607" # insert api key here
 # CITY="Oborniki Slaskie, Poland"           # insert city here
@@ -130,4 +117,19 @@ is_day=$(echo $data | jq -r '.current.is_day')
 
 [ "$is_day" = "1" ] && icon=${weather_icons_day[$condition]} || icon=${weather_icons_night[$condition]}
 
-sketchybar --set weather icon="$icon" label="${temp}°C"
+render_item() {
+  if [ "$SSID" = "" ]; then
+    args+=(--set $NAME drawing=off)
+  else
+    args+=(--set $NAME icon="$icon" label="${temp}°C" drawing=on)
+  fi
+
+  sketchybar "${args[@]}" >/dev/null
+
+}
+CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
+SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
+
+render_item
+
+# sketchybar --set weather icon="$icon" label="${temp}°C"
