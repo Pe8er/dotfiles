@@ -4,7 +4,9 @@ ITEM_DIR="$CONFIG_DIR/items"
 source "$CONFIG_DIR/icons.sh"  # Loads all defined icons
 source "$CONFIG_DIR/colors.sh" # Loads all defined colors
 
-PADDINGS=4
+WIFI_CLICK_SCRIPT="open 'x-apple.systempreferences:com.apple.preference.network?Wi-Fi'"
+
+PADDINGS=8
 FONT="SF Pro"
 
 ##### Bar Appearance #####
@@ -13,13 +15,12 @@ bar=(
   color=$TRANSPARENT
   position=top
   sticky=off
-  y_offset=8
-  height=24
-  padding_left=0
-  padding_right=0
-  margin=8
+  height=32
+  padding_left=$PADDINGS
+  padding_right=$PADDINGS
   corner_radius=0
   blur_radius=0
+  notch_width=144
 )
 
 sketchybar --bar "${bar[@]}"
@@ -28,78 +29,160 @@ sketchybar --bar "${bar[@]}"
 
 item_defaults=(
   background.color=$TRANSPARENT
-  background.height=24
-  background.padding_left=$PADDINGS
-  background.padding_right=$PADDINGS
+  background.height=$(($PADDINGS * 3))
+  background.padding_left=0
+  background.padding_right=0
   background.corner_radius=0
-  # background.border_color=$GREEN
-  # background.border_width=2
   icon.font="$FONT:Semibold:12"
   icon.color=$ICON_COLOR
   icon.highlight_color=$HIGHLIGHT
   icon.padding_left=$PADDINGS
-  icon.padding_right=$PADDINGS
+  icon.padding_right=0
   label.font="$FONT:Regular:12"
   label.color=$LABEL_COLOR
   label.highlight_color=$HIGHLIGHT
   label.padding_left=$PADDINGS
   label.padding_right=$PADDINGS
-  # updates=when_shown
+  y_offset=-4
+  updates=when_shown
 )
 
 sketchybar --default "${item_defaults[@]}"
 
 icon_defaults=(
   alias.color=$ICON_COLOR
-  alias.update_freq=60
   label.drawing=off
-  icon.padding_left=-8
-  icon.padding_right=-8
   padding_left=0
-  padding_right=-4
+  padding_right=-$PADDINGS
 )
 
 bracket_defaults=(
-  background.color=$BAR_COLOR
-  background.border_color=$BAR_BORDER_COLOR
-  background.border_width=2
+  background.height=24
+  background.color=$BAR_COLOR_75
+  blur_radius=32
+  # background.border_color=$BAR_BORDER_COLOR
+  # background.border_width=1
   background.corner_radius=$PADDINGS
-  padding_left=16
-  padding_right=16
+  padding_left=$(($PADDINGS * 2))
+  padding_right=$(($PADDINGS * 2))
+)
+
+menu_defaults=(
+  popup.blur_radius=32
+  popup.background.color=$BAR_COLOR_75
+  popup.background.border_color=$BAR_BORDER_COLOR
+  popup.background.border_width=1
+  popup.background.corner_radius=$PADDINGS
+  popup.y_offset=$PADDINGS
+  popup.background.shadow.drawing=on
+)
+
+menu_item_defaults=(
+  padding_left=$PADDINGS
+  padding_right=$PADDINGS
+  background.color=$TRANSPARENT
+  icon.drawing=off
+  label.padding_left=$PADDINGS
+  label.padding_right=$PADDINGS
 )
 
 ##### LEFT #####
 
 sketchybar \
   --add item logo left \
-  --set logo icon=􀣺 \
+  --set logo "${menu_defaults[@]}" \
+  icon=􀣺 \
   label.drawing=off \
-  icon.padding_left=8 \
-  icon.padding_right=8 \
-  click_script="sketchybar --update" \
+  icon.padding_left=$PADDINGS \
+  icon.padding_right=$PADDINGS \
+  popup.align=left \
+  click_script="sketchybar --set logo popup.drawing=toggle" \
   \
-  --add space web left \
-  --set web associated_display=1 \
-  associated_space=1 \
+  --add item logo.about popup.logo \
+  --set logo.about "${menu_item_defaults[@]}" \
+  label="About This Mac" \
+  click_script="sketchybar --set logo popup.drawing=off; open -a 'System Information'" \
+  \
+  --add item logo.separator popup.logo \
+  --set logo.separator "${menu_item_defaults[@]}" \
+  label="───────────" \
+  label.color=$ICON_COLOR \
+  \
+  --add item logo.settings popup.logo \
+  --set logo.settings "${menu_item_defaults[@]}" \
+  label="System Settings…" \
+  click_script="sketchybar --set logo popup.drawing=off; open -a 'System Settings'" \
+  \
+  --add item logo.sleep popup.logo \
+  --set logo.sleep "${menu_item_defaults[@]}" \
+  label="Sleep" \
+  click_script="sketchybar --set logo popup.drawing=off; pmset sleepnow" \
+  \
+  --add item logo.restart popup.logo \
+  --set logo.restart "${menu_item_defaults[@]}" \
+  label="Restart…" \
+  click_script="sketchybar --set logo popup.drawing=off; osascript -e 'tell app \"loginwindow\" to «event aevtrrst»'" \
+  \
+  --add item logo.shut_down popup.logo \
+  --set logo.shut_down "${menu_item_defaults[@]}" \
+  label="Shut Down…" \
+  click_script="sketchybar --set logo popup.drawing=off; osascript -e 'tell app \"loginwindow\" to «event aevtrsdn»'" \
+  \
+  --add item logo.lock_screen popup.logo \
+  --set logo.lock_screen "${menu_item_defaults[@]}" \
+  label="Lock Screen" \
+  click_script="sketchybar --set logo popup.drawing=off; osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'" \
+  \
+  --add item logo.logout popup.logo \
+  --set logo.logout "${menu_item_defaults[@]}" \
+  label="Log Out ${USER}…" \
+  click_script="sketchybar --set logo popup.drawing=off; osascript -e 'tell app \"System Events\" to log out'" \
+  \
+  --add item logo.separator.2 popup.logo \
+  --set logo.separator.2 "${menu_item_defaults[@]}" \
+  label="───────────" \
+  label.color=$ICON_COLOR \
+  \
+  --add item logo.refresh popup.logo \
+  --set logo.refresh "${menu_item_defaults[@]}" \
+  label="Refresh Sketchybar" \
+  click_script="sketchybar --set logo popup.drawing=off; sketchybar --update" \
+  \
+  --add space space_template left \
+  --set space_template associated_display=1 \
+  label.drawing=off \
+  drawing=off \
+  updates=on \
+  icon.background.color=$GREEN \
+  icon.background.height=2 \
+  icon.background.y_offset=-13 \
+  label.background.color=$GREEN \
+  label.background.height=2 \
+  label.background.y_offset=-13 \
+  script="$PLUGIN_DIR/space.sh" \
+  \
+  --clone spaces_1.web space_template \
+  --set spaces_1.web associated_space=1 \
   icon=􀎬 \
   label=Web \
-  script="$PLUGIN_DIR/space.sh" \
+  drawing=on \
+  label.drawing=on \
   click_script="yabai -m space --focus 1" \
   \
-  --add space todo left \
-  --set todo associated_display=1 \
-  associated_space=2 \
+  --clone spaces_1.todo space_template \
+  --set spaces_1.todo associated_space=2 \
   icon=􀩳 \
   label=Todo \
-  script="$PLUGIN_DIR/space.sh" \
+  drawing=on \
+  label.drawing=on \
   click_script="yabai -m space --focus 2" \
   \
-  --add space comms left \
-  --set comms associated_display=1 \
-  associated_space=3 \
+  --clone spaces_1.comms space_template \
+  --set spaces_1.comms associated_space=3 \
   icon=􀌨 \
   label=Comms \
-  script="$PLUGIN_DIR/space.sh" \
+  drawing=on \
+  label.drawing=on \
   click_script="yabai -m space --focus 3" \
   \
   --add event window_focus \
@@ -116,79 +199,112 @@ sketchybar \
   label.font="$FONT:Bold:12.0" \
   --subscribe front_app front_app_switched
 
+##### NOTCH #####
+
+# sketchybar \
+#   --add item counter q \
+#   --set counter "${bracket_defaults[@]}" \
+#   padding_right=-8 \
+#   background.corner_radius=8 \
+#   background.color=0xff000000 \
+#   background.padding_left=8 \
+#   icon=󰒴 \
+#   icon.color=$RED \
+#   icon.background.height=20 \
+#   icon.background.color=$TRANSPARENT \
+#   icon.padding_left=8 \
+#   icon.padding_right=0 \
+#   label.padding_right=32 \
+#   script="$PLUGIN_DIR/Countdown.sh" \
+#   update_freq=60
+
 ##### RIGHT #####
 
 sketchybar \
-  --add item spacer_rightmost right \
-  --set spacer_rightmost width=2 \
-  \
   --add item date right \
   --set date update_freq=10 \
   label.font="$FONT:Semibold:7" \
   align=right \
   icon.drawing=off \
-  y_offset=6 \
+  y_offset=2 \
   width=0 \
-  script="$PLUGIN_DIR/date.sh" \
+  script='sketchybar --set $NAME label="$(date "+%a, %b %d")"' \
   \
   --add item clock right \
   --set clock update_freq=10 \
-  y_offset=-3 \
+  y_offset=-8 \
   icon.drawing=off \
   label.font="$FONT:Bold:9" \
   align=right \
-  script="$PLUGIN_DIR/clock.sh" \
+  script='sketchybar --set $NAME label="$(date "+%I:%M %p")"' \
   \
   --add item dndindicator right \
   --set dndindicator script="$PLUGIN_DIR/dndindicator.sh" \
   label.drawing=off \
   update_freq=10 \
+  updates=on \
   \
   --add alias "Control Center,WiFi" right \
-  --rename "Control Center,WiFi" wifi \
-  --set wifi "${icon_defaults[@]}" \
+  --rename "Control Center,WiFi" wifi.alias \
+  --set wifi.alias "${icon_defaults[@]}" \
+  "${menu_defaults[@]}" \
+  icon.drawing=off \
+  background.padding_right=0 \
+  icon.padding_right=0 \
+  popup.align=right \
+  popup.y_offset=$PADDINGS \
+  click_script="sketchybar --set wifi.alias popup.drawing=toggle; $WIFI_CLICK_SCRIPT" \
+  script="$PLUGIN_DIR/wifi.sh" \
+  updates=when_shown \
+  update_freq=5 \
+  --subscribe wifi.alias mouse.entered \
+  mouse.exited \
+  mouse.exited.global \
+  \
+  --add item wifi.details popup.wifi.alias \
+  --set wifi.details "${menu_item_defaults[@]}" \
   \
   --add alias "Control Center,Battery" right \
-  --rename "Control Center,Battery" battery \
-  --set battery "${icon_defaults[@]}" \
+  --rename "Control Center,Battery" battery.alias \
+  --set battery.alias "${icon_defaults[@]}" \
+  --subscribe battery.alias power_source_change \
   \
   --add item spacer right \
   --set spacer width=$PADDINGS \
   \
   --add item weather right \
   --set weather script="$PLUGIN_DIR/weather.sh" \
-  icon.font="Hack Nerd Font:Regular:13.0" \
+  icon.font="Hack Nerd Font:Bold:14.0" \
+  icon.padding_right=0 \
   update_freq=300 \
-  click_script="/usr/bin/open /System/Applications/Weather.app" \
+  updates=on \
+  click_script="open -a /System/Applications/Weather.app" \
+  --subscribe weather wifi_change \
   \
   --add item pia right \
   --set pia script="$PLUGIN_DIR/pia.sh" \
   label.drawing=off \
-  icon= \
+  icon=􀎡 \
+  icon.padding_right=$PADDINGS \
   update_freq=5 \
+  updates=on \
   \
   --add item music right \
   --set music "${bracket_defaults[@]}" \
   script="$PLUGIN_DIR/music.sh" \
-  label.padding_right=8 \
+  icon.padding_right=0 \
+  label.padding_right=$(($PADDINGS * 2)) \
   background.padding_right=$PADDINGS \
   updates=on \
   --subscribe music media_change
 
-# --add item mailapp right \
-# --set mailapp script="$PLUGIN_DIR/mail.sh" \
-# icon=􀍕 \
-# update_freq=120 \
-# click_script="osascript -e 'tell application \"Mail\" to activate'" \
-# \
-
 ##### Brackets to group stuff #####
 
-sketchybar --add bracket spaces logo web todo comms spacer_chevron front_app \
+sketchybar --add bracket spaces logo spaces_1.web spaces_1.todo spaces_1.comms spacer_chevron front_app \
   --set spaces "${bracket_defaults[@]}" \
   --add bracket app_icons pia weather \
   --set app_icons "${bracket_defaults[@]}" \
-  --add bracket status_icons battery wifi date clock spacer_rightmost dndindicator \
+  --add bracket status_icons battery.alias wifi.alias date clock dndindicator \
   --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --update

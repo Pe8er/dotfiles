@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://material-theme.com/docs/reference/color-palette/
+
 # foreground=""
 # text="0xff676e95"
 # selection_background="0xff717cb470"
@@ -37,7 +39,8 @@ export TRANSPARENT=0x00000000
 
 # General bar colors
 export BAR_COLOR=0xff292d3e
-export CONTRAST=0xff202331
+export BAR_COLOR_75=0xbf292d3e
+export CONTRAST=0xff34324a
 export BAR_BORDER_COLOR=0xff2b2a3e
 export ICON_COLOR=0xff676e95  # Color of all icons
 export LABEL_COLOR=0xffa6accd # Color of all labels
