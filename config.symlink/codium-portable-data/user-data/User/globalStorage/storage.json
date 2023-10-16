@@ -505,6 +505,13 @@
                                     "id": "vscode.menubar.separator"
                                 },
                                 {
+                                    "id": "workbench.action.splitEditorInGroup",
+                                    "label": "Split in &&Group"
+                                },
+                                {
+                                    "id": "vscode.menubar.separator"
+                                },
+                                {
                                     "id": "workbench.action.editorLayoutSingle",
                                     "label": "&&Single"
                                 },
@@ -593,8 +600,7 @@
                     },
                     {
                         "id": "editor.action.toggleWordWrap",
-                        "label": "&&Word Wrap",
-                        "enabled": false
+                        "label": "&&Word Wrap"
                     }
                 ]
             },
@@ -1334,6 +1340,11 @@
                 "label": "⌘K ⌘\\",
                 "isNative": false,
                 "userSettingsLabel": "cmd+k cmd+\\"
+            },
+            "workbench.action.splitEditorInGroup": {
+                "label": "⌘K ⇧⌘\\",
+                "isNative": false,
+                "userSettingsLabel": "cmd+k shift+cmd+\\"
             },
             "workbench.action.toggleEditorGroupLayout": {
                 "label": "Alt+Cmd+0",
