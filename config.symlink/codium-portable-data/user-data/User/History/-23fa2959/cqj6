@@ -1,0 +1,23 @@
+Total Refactor!!!!
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   config.symlink/codium-portable-data/user-data/Cache/Cache_Data/74740f557275fcc3_0
+#	modified:   config.symlink/codium-portable-data/user-data/TransportSecurity
+#	modified:   config.symlink/codium-portable-data/user-data/User/globalStorage/state.vscdb
+#	modified:   config.symlink/codium-portable-data/user-data/User/globalStorage/storage.json
+#	modified:   config.symlink/codium-portable-data/user-data/User/workspaceStorage/b6cfc3257d4c10dbeccb59468250f26e/state.vscdb
+#	modified:   config.symlink/codium-portable-data/user-data/logs/20231016T202221/window1/exthost/exthost.log
+#	modified:   config.symlink/codium-portable-data/user-data/logs/20231016T202221/window1/exthost/output_logging_20231016T205434/2-Prettier.log
+#	modified:   config.symlink/codium-portable-data/user-data/logs/20231016T202221/window1/exthost/vscode.git/Git.log
+#	modified:   config.symlink/codium-portable-data/user-data/logs/20231016T202221/window1/renderer.log
+#
+# Changes not staged for commit:
+#	modified:   config.symlink/codium-portable-data/user-data/logs/20231016T202221/window1/exthost/vscode.git/Git.log
+#
