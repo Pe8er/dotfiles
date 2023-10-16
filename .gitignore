@@ -28,13 +28,13 @@ ruby/gemrc.symlink
 ruby/aliases.zsh
 
 # VS Codium files
-config.symlink/codium-portable-data/user-data/Backups/*
-config.symlink/codium-portable-data/user-data/blob-storage/*
-config.symlink/codium-portable-data/user-data/Cache/*
-config.symlink/codium-portable-data/user-data/CachedData/*
-config.symlink/codium-portable-data/user-data/DawnCache/*
-config.symlink/codium-portable-data/user-data/GPUCache/*
-config.symlink/codium-portable-data/user-data/logs/*
+**/user-data/Backups
+**/user-data/blob-storage
+**/user-data/Cache
+**/user-data/CachedData
+**/user-data/DawnCache
+**/user-data/GPUCache
+**/user-data/logs
 
-tmp.jpg
-config.symlink/sketchybar/plugins/music/album.txt
+**/tmp.jpg
+**/album.txt
