@@ -1,0 +1,32 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Publish Extension
+
+on:
+  workflow_dispatch:
+    inputs:
+      semver:
+        type: choice
+        description: "SemVer Level"
+        required: true
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm install -g vsce
+      - run: npm ci
+      - run: |
+          git config user.name "Evan Buss"
+          git config user.email "evan.buss28@gmail.com"
+      - run: vsce publish -p ${{ secrets.EXTENSION_TOKEN }} ${{ github.event.inputs.semver }}
+      - run: git push origin master

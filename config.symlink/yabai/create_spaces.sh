@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DESIRED_SPACES_PER_DISPLAY=4
+DESIRED_SPACES_PER_DISPLAY=6
 CURRENT_SPACES="$(yabai -m query --displays | jq -r '.[].spaces | @sh')"
 
 DELTA=0

@@ -1,14 +1,6 @@
 #!/bin/bash
 
 defaults write -g NSUserKeyEquivalents '{
-"Show Previous Tab" = "@$Z";
-"Show Next Tab" = "@$X";
-"Select Previous Tab" = "@$Z";
-"Select Next Tab" = "@$X";
-"Select Previous Conversation" = "@$Z";
-"Select Next Conversation" = "@$X";
-"Select Previous Tab" = "@$Z";
-"Select Next Tab" = "@$X";
 "Guide Lines" = "@'\''";
 "Show Guides" = "@'\''";
 "Hide Guides" = "@'\''";
@@ -25,10 +17,6 @@ defaults write -g NSUserKeyEquivalents '{
 
 defaults write com.tsst.simplecomic NSUserKeyEquivalents '{
   "Full Screen" = "f";
-}'
-
-defaults write com.bohemiancoding.sketch3 NSUserKeyEquivalents '{
-  "Round to Pixel" = "@\\";
 }'
 
 defaults write com.apple.safari NSUserKeyEquivalents '{

@@ -1,7 +1,3 @@
 {
-  "window.commandCenter": false,
-  "files.associations": {
-    "*.keymap": "c"
-  },
-  "C_Cpp.errorSquiggles": "Enabled"
+    "editor.renderLineHighlight": "all"
 }

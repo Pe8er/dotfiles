@@ -1,22 +1,52 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+POPUP_OFF="sketchybar --set wifi popup.drawing=off"
+POPUP_CLICK_SCRIPT="sketchybar --set wifi popup.drawing=toggle"
+
+source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
+
+IP_ADDRESS=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
+IS_VPN=$(/usr/local/bin/piactl get connectionstate)
+
+if [[ $IS_VPN != "Disconnected" ]]; then
+  COLOR=$YELLOW
+  LABEL_COLOR=$COLOR
+  ICON_COLOR=$COLOR
+  ICON=􀎡
+  LABEL=$IP_ADDRESS
+elif [[ $IP_ADDRESS != "" ]]; then
+  COLOR=$TRANSPARENT
+  ICON=􀙇
+  LABEL=$IP_ADDRESS
+else
+  COLOR=$BLUE
+  LABEL_COLOR=$COLOR
+  ICON_COLOR=$COLOR
+  ICON=􀇿
+  LABEL="Disconnected"
+fi
 
 render_bar_item() {
-  if [ "$SSID" = "" ]; then
-    args+=(--set "$NAME" label="N/A")
-  else
-    args+=(--set "$NAME" label="$SSID (${CURR_TX}Mbps)"
-      label.drawing=off) # remove if you want more detailed info available without hovering
-  fi
-
+sketchybar --set $NAME background.border_color=$COLOR \
+  label.color=$LABEL_COLOR \
+  icon.color=$ICON_COLOR \
+  icon=$ICON \
+  label="$LABEL" \
+  click_script="$POPUP_CLICK_SCRIPT"
 }
 
 render_popup() {
-  if [ "$SSID" = "" ]; then
-    args+=(--set wifi.details label="N/A"
-      click_script="sketchybar --set $NAME popup.drawing=off")
+  if [ "$SSID" != "" ]; then
+    args=(
+    --set wifi click_script="$POPUP_CLICK_SCRIPT"
+    --set wifi.ssid label="$SSID"
+    --set wifi.strength label="$CURR_TX Mbps"
+    --set wifi.ipaddress label="$IP_ADDRESS"
+    click_script="printf $IP_ADDRESS | pbcopy;$POPUP_OFF"
+    )
   else
-    args+=(--set wifi.details label="$SSID ($CURR_TX Mbps) [$IP_ADDRESS]"
-      click_script="sketchybar --set $NAME popup.drawing=off")
+    args=(
+    --set wifi click_script="")
   fi
 
   sketchybar "${args[@]}" >/dev/null
@@ -28,6 +58,7 @@ update() {
   IP_ADDRESS="$(ipconfig getifaddr en0)"
   SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
   CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
+  # WIFI_INTERFACE=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
 
   args=()
 
@@ -57,3 +88,5 @@ case "$SENDER" in
   popup toggle
   ;;
 esac
+
+  # click_script="sketchybar --set wifi.alias popup.drawing=toggle; $WIFI_CLICK_SCRIPT" \

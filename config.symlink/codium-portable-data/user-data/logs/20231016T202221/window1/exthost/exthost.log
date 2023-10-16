@@ -1,0 +1,1156 @@
+2023-10-16 20:22:22.221 [info] Extension host with pid 71002 started
+2023-10-16 20:22:22.221 [info] Skipping acquiring lock for /Applications/codium-portable-data/user-data/User/workspaceStorage/b6cfc3257d4c10dbeccb59468250f26e.
+2023-10-16 20:22:22.335 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-16 20:22:22.340 [info] ExtensionService#_doActivateExtension foxundermoon.shell-format, startup: false, activationEvent: 'onLanguage:shellscript'
+2023-10-16 20:22:22.393 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-16 20:22:22.396 [info] ExtensionService#_doActivateExtension ChirtleLovesDolls.nebula-theme, startup: true, activationEvent: '*'
+2023-10-16 20:22:22.415 [info] ExtensionService#_doActivateExtension dnicolson.binary-plist, startup: true, activationEvent: '*'
+2023-10-16 20:22:22.458 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-16 20:22:22.466 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-16 20:22:22.508 [info] Eager extensions activated
+2023-10-16 20:22:22.534 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:22:22.535 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:22:22.538 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:22:22.539 [info] ExtensionService#_doActivateExtension Equinusocio.vsc-material-theme, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:22:22.545 [info] ExtensionService#_doActivateExtension equinusocio.vsc-material-theme-icons, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:22:22.564 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:22:22.701 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6560
+2023-10-16 20:22:22.718 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-10-16 20:22:23.019 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:24.607 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:22:24.607 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:22:26.653 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:32.429 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:34.707 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:22:34.707 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:22:37.523 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:38.248 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:22:38.248 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:22:43.556 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:48.637 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:53.730 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:22:59.349 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6561
+2023-10-16 20:23:04.444 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6562
+2023-10-16 20:23:05.838 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:23:05.838 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:23:09.537 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6568
+2023-10-16 20:23:14.617 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:18.083 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:23:18.083 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:23:19.705 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:24.838 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:30.272 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:35.361 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:40.455 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:45.551 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:54.048 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:23:59.129 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6576
+2023-10-16 20:24:20.652 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:24:20.660 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:24:21.863 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6578
+2023-10-16 20:24:26.947 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6578
+2023-10-16 20:24:41.421 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6579
+2023-10-16 20:25:04.975 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6579
+2023-10-16 20:25:10.069 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6579
+2023-10-16 20:25:15.154 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6579
+2023-10-16 20:25:24.137 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6579
+2023-10-16 20:25:30.796 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:25:30.796 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:25:31.971 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6580
+2023-10-16 20:25:32.907 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:25:32.907 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:25:37.056 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6580
+2023-10-16 20:25:39.201 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:25:39.201 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:25:42.180 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6580
+2023-10-16 20:25:47.270 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6580
+2023-10-16 20:25:52.931 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6581
+2023-10-16 20:25:59.341 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6580
+2023-10-16 20:26:04.455 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6580
+2023-10-16 20:26:09.572 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6614
+2023-10-16 20:26:14.670 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6613
+2023-10-16 20:26:19.609 [info] ExtensionService#_doActivateExtension evan-buss.font-switcher, startup: false, activationEvent: 'onCommand:font-switcher.switchFont'
+2023-10-16 20:26:19.762 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6614
+2023-10-16 20:26:24.849 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6614
+2023-10-16 20:26:30.396 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6614
+2023-10-16 20:26:35.962 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6615
+2023-10-16 20:26:44.836 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6615
+2023-10-16 20:26:49.939 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:26:55.025 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:00.117 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:05.206 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:10.337 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:17.328 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:25.656 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:30.781 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:27:39.820 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:28:24.517 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:28:30.799 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:29:25.521 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6616
+2023-10-16 20:29:33.116 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:29:38.211 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:29:39.173 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:29:39.173 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:29:42.227 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:29:42.227 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:29:43.301 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:29:48.392 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:29:53.481 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:29:59.868 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:30:06.238 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:30:06.238 [error] <standard input>:6:37: | can only immediately follow a statement
+
+2023-10-16 20:30:07.625 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6617
+2023-10-16 20:30:12.715 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6618
+2023-10-16 20:30:20.855 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2023-10-16 20:30:20.858 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2023-10-16 20:30:24.244 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6618
+2023-10-16 20:30:29.324 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6619
+2023-10-16 20:30:34.416 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6619
+2023-10-16 20:30:39.503 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6620
+2023-10-16 20:30:44.592 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6628
+2023-10-16 20:30:49.674 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6652
+2023-10-16 20:30:56.206 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6652
+2023-10-16 20:31:01.303 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6660
+2023-10-16 20:31:06.400 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6676
+2023-10-16 20:31:10.445 [info] ExtensionService#_doActivateExtension formulahendry.code-runner, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:31:11.655 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6842
+2023-10-16 20:31:16.752 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6846
+2023-10-16 20:31:17.222 [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag, startup: false, activationEvent: '*'
+2023-10-16 20:31:25.475 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6911
+2023-10-16 20:31:32.267 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6912
+2023-10-16 20:31:37.363 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6910
+2023-10-16 20:31:42.461 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6952
+2023-10-16 20:31:46.593 [info] ExtensionService#_doActivateExtension idleberg.applescript, startup: false, activationEvent: 'onCustomEditor:applescript.binary'
+2023-10-16 20:31:47.559 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6953
+2023-10-16 20:31:52.647 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6953
+2023-10-16 20:31:59.968 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6954
+2023-10-16 20:32:16.081 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6954
+2023-10-16 20:32:21.186 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6954
+2023-10-16 20:32:26.804 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6963
+2023-10-16 20:32:31.904 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6967
+2023-10-16 20:32:37.011 [warning] [Decorations] CAPPING events from decorations provider vscode.git 6967
+2023-10-16 20:32:53.121 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:32:58.225 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:33:03.325 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:33:08.427 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:33:13.587 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:33:18.679 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:33:23.778 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7821
+2023-10-16 20:33:30.640 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7822
+2023-10-16 20:33:31.126 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:33:31.126 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:33:35.736 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7822
+2023-10-16 20:33:40.841 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:33:45.934 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:33:48.600 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:33:48.600 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:33:51.034 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:33:52.800 [error] [foxundermoon.shell-format] provider FAILED
+2023-10-16 20:33:52.800 [error] <standard input>:15:21: arrays are a bash/mksh feature (parsed as posix via -ln=auto)
+
+2023-10-16 20:33:56.138 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:34:01.239 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:34:06.344 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:34:16.269 [info] ExtensionService#_doActivateExtension lmcarreiro.vscode-smart-column-indenter, startup: false, activationEvent: 'onCommand:extension.smartColumnIndenter.indent2'
+2023-10-16 20:34:20.654 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7823
+2023-10-16 20:34:31.704 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7841
+2023-10-16 20:34:36.857 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7842
+2023-10-16 20:34:51.625 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7842
+2023-10-16 20:34:59.604 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7842
+2023-10-16 20:35:04.870 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7842
+2023-10-16 20:35:07.936 [info] Extension host terminating: renderer closed the MessagePort
+2023-10-16 20:35:07.945 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at s.D [as value] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1312749)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:35:07.946 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at set b [as b] (/Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:714364)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:715005
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1401989)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:35:07.947 [info] Extension host with pid 71002 exiting with code 0
+2023-10-16 20:35:08.750 [info] Extension host with pid 90322 started
+2023-10-16 20:35:08.750 [info] Skipping acquiring lock for /Applications/codium-portable-data/user-data/User/workspaceStorage/b6cfc3257d4c10dbeccb59468250f26e.
+2023-10-16 20:35:08.824 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-16 20:35:08.828 [info] ExtensionService#_doActivateExtension foxundermoon.shell-format, startup: false, activationEvent: 'onLanguage:shellscript'
+2023-10-16 20:35:08.851 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-16 20:35:08.852 [info] ExtensionService#_doActivateExtension ChirtleLovesDolls.nebula-theme, startup: true, activationEvent: '*'
+2023-10-16 20:35:08.868 [info] ExtensionService#_doActivateExtension dnicolson.binary-plist, startup: true, activationEvent: '*'
+2023-10-16 20:35:08.895 [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag, startup: true, activationEvent: '*'
+2023-10-16 20:35:08.899 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-16 20:35:08.907 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-16 20:35:08.939 [info] Eager extensions activated
+2023-10-16 20:35:08.942 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:08.943 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:08.945 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:08.947 [info] ExtensionService#_doActivateExtension Equinusocio.vsc-material-theme, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:08.952 [info] ExtensionService#_doActivateExtension equinusocio.vsc-material-theme-icons, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:08.966 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:08.983 [info] ExtensionService#_doActivateExtension formulahendry.code-runner, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:35:09.137 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7848
+2023-10-16 20:35:09.466 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7848
+2023-10-16 20:35:09.473 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-10-16 20:35:29.339 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7849
+2023-10-16 20:35:34.447 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7849
+2023-10-16 20:35:39.540 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7860
+2023-10-16 20:35:44.663 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7864
+2023-10-16 20:36:02.858 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7875
+2023-10-16 20:36:05.091 [info] ExtensionService#_doActivateExtension Jefftime.malign, startup: false, activationEvent: 'onCommand:extension.malign'
+2023-10-16 20:36:07.954 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7874
+2023-10-16 20:36:11.200 [error] SyntaxError: Invalid regular expression: /(\)/: Unterminated group
+	at new RegExp (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:72:35
+	at Array.forEach (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:71:27
+	at Array.forEach (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:63:31
+	at Object.edit (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:59305)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:62:22
+	at Generator.next (<anonymous>)
+	at fulfilled (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:22:58)
+2023-10-16 20:36:13.043 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7875
+2023-10-16 20:36:14.499 [error] SyntaxError: Invalid regular expression: /(\)/: Unterminated group
+	at new RegExp (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:72:35
+	at Array.forEach (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:71:27
+	at Array.forEach (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:63:31
+	at Object.edit (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:59305)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:62:22
+	at Generator.next (<anonymous>)
+	at fulfilled (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:22:58)
+2023-10-16 20:36:15.637 [error] SyntaxError: Invalid regular expression: /( \)/: Unterminated group
+	at new RegExp (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:72:35
+	at Array.forEach (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:71:27
+	at Array.forEach (<anonymous>)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:63:31
+	at Object.edit (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:59305)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:62:22
+	at Generator.next (<anonymous>)
+	at fulfilled (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/jefftime.malign-0.3.0/out/extension.js:22:58)
+2023-10-16 20:36:18.139 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7875
+2023-10-16 20:36:23.223 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7875
+2023-10-16 20:36:28.320 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7877
+2023-10-16 20:36:33.414 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7877
+2023-10-16 20:36:38.509 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7885
+2023-10-16 20:36:43.639 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7885
+2023-10-16 20:36:48.026 [info] ExtensionService#_doActivateExtension ronkuslak.dreadalign, startup: false, activationEvent: 'onCommand:extension.loadDreadAlign'
+2023-10-16 20:36:48.729 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7885
+2023-10-16 20:36:53.813 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7885
+2023-10-16 20:36:58.897 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7885
+2023-10-16 20:37:03.990 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7886
+2023-10-16 20:37:09.087 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7886
+2023-10-16 20:37:14.178 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7886
+2023-10-16 20:37:19.940 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7887
+2023-10-16 20:37:25.032 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7886
+2023-10-16 20:37:39.974 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7886
+2023-10-16 20:37:45.067 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7886
+2023-10-16 20:37:50.164 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7887
+2023-10-16 20:37:55.262 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7887
+2023-10-16 20:37:55.720 [info] ExtensionService#_doActivateExtension idleberg.applescript, startup: false, activationEvent: 'onCustomEditor:applescript.binary'
+2023-10-16 20:37:59.957 [info] Extension host terminating: renderer closed the MessagePort
+2023-10-16 20:37:59.961 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at s.D [as value] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1312749)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:37:59.962 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at set b [as b] (/Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:714364)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:715005
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1401989)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:37:59.962 [info] Extension host with pid 90322 exiting with code 0
+2023-10-16 20:38:00.708 [info] Extension host with pid 93558 started
+2023-10-16 20:38:00.709 [info] Skipping acquiring lock for /Applications/codium-portable-data/user-data/User/workspaceStorage/b6cfc3257d4c10dbeccb59468250f26e.
+2023-10-16 20:38:00.724 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-16 20:38:00.740 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-16 20:38:00.741 [info] ExtensionService#_doActivateExtension ChirtleLovesDolls.nebula-theme, startup: true, activationEvent: '*'
+2023-10-16 20:38:00.758 [info] ExtensionService#_doActivateExtension dnicolson.binary-plist, startup: true, activationEvent: '*'
+2023-10-16 20:38:00.784 [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag, startup: true, activationEvent: '*'
+2023-10-16 20:38:00.819 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-16 20:38:00.827 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-16 20:38:00.873 [info] Eager extensions activated
+2023-10-16 20:38:00.878 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:00.879 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:00.881 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:00.883 [info] ExtensionService#_doActivateExtension Equinusocio.vsc-material-theme, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:00.888 [info] ExtensionService#_doActivateExtension equinusocio.vsc-material-theme-icons, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:00.903 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:00.917 [info] ExtensionService#_doActivateExtension formulahendry.code-runner, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:38:01.053 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7889
+2023-10-16 20:38:01.379 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-10-16 20:38:01.432 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7891
+2023-10-16 20:38:01.456 [info] ExtensionService#_doActivateExtension foxundermoon.shell-format, startup: false, activationEvent: 'onLanguage:shellscript'
+2023-10-16 20:38:04.240 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7892
+2023-10-16 20:38:12.209 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7900
+2023-10-16 20:38:17.311 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7908
+2023-10-16 20:38:22.406 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7910
+2023-10-16 20:38:27.504 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7919
+2023-10-16 20:38:32.600 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7923
+2023-10-16 20:38:37.691 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7923
+2023-10-16 20:38:42.781 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7942
+2023-10-16 20:38:47.874 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7942
+2023-10-16 20:38:52.969 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7942
+2023-10-16 20:39:02.775 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7942
+2023-10-16 20:39:08.110 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7957
+2023-10-16 20:39:13.206 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7956
+2023-10-16 20:39:13.663 [info] ExtensionService#_doActivateExtension wwm.better-align, startup: false, activationEvent: 'onCommand:wwm.aligncode'
+2023-10-16 20:39:13.670 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:13.670 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:18.295 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7957
+2023-10-16 20:39:21.473 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:23.390 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7958
+2023-10-16 20:39:28.484 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:39:33.577 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:39:38.673 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:39:41.824 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:41.824 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:43.763 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:39:48.854 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:39:50.005 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:50.006 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:53.949 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:39:58.954 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:58.955 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:39:59.031 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:04.121 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:11.829 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:15.285 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:40:15.285 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:40:16.920 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:22.008 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7960
+2023-10-16 20:40:27.102 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:32.285 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:42.470 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7959
+2023-10-16 20:40:53.283 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7961
+2023-10-16 20:40:58.390 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7965
+2023-10-16 20:41:03.482 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7965
+2023-10-16 20:41:16.132 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7965
+2023-10-16 20:41:19.782 [info] ExtensionService#_doActivateExtension chouzz.vscode-better-align, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:41:21.226 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7978
+2023-10-16 20:41:25.839 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:41:25.841 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:41:26.317 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7979
+2023-10-16 20:41:31.416 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:41:34.570 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:41:36.510 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:41:40.776 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:41:41.607 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:41:51.679 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:41:51.681 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:41:53.892 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7981
+2023-10-16 20:41:59.204 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7981
+2023-10-16 20:42:04.299 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:42:09.390 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:42:14.482 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:42:22.811 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:43:01.917 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7980
+2023-10-16 20:43:16.151 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:43:16.160 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:43:18.388 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7983
+2023-10-16 20:43:24.885 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7983
+2023-10-16 20:43:44.958 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:43:44.959 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:43:49.239 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:43:49.239 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:43:59.821 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:43:59.822 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:44:01.165 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:44:01.166 [warning] [chouzz.vscode-better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:44:59.768 [info] Extension host terminating: renderer closed the MessagePort
+2023-10-16 20:44:59.776 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at s.D [as value] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1312749)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:44:59.777 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at set b [as b] (/Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:714364)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:715005
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1401989)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:44:59.778 [info] Extension host with pid 93558 exiting with code 0
+2023-10-16 20:45:00.527 [info] Extension host with pid 98380 started
+2023-10-16 20:45:00.527 [info] Skipping acquiring lock for /Applications/codium-portable-data/user-data/User/workspaceStorage/b6cfc3257d4c10dbeccb59468250f26e.
+2023-10-16 20:45:00.551 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-16 20:45:00.554 [info] ExtensionService#_doActivateExtension foxundermoon.shell-format, startup: false, activationEvent: 'onLanguage:shellscript'
+2023-10-16 20:45:00.579 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-16 20:45:00.581 [info] ExtensionService#_doActivateExtension ChirtleLovesDolls.nebula-theme, startup: true, activationEvent: '*'
+2023-10-16 20:45:00.599 [info] ExtensionService#_doActivateExtension dnicolson.binary-plist, startup: true, activationEvent: '*'
+2023-10-16 20:45:00.624 [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag, startup: true, activationEvent: '*'
+2023-10-16 20:45:00.639 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-16 20:45:00.647 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-16 20:45:00.686 [info] Eager extensions activated
+2023-10-16 20:45:00.704 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.706 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.709 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.711 [info] ExtensionService#_doActivateExtension Equinusocio.vsc-material-theme, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.715 [info] ExtensionService#_doActivateExtension equinusocio.vsc-material-theme-icons, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.730 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.744 [info] ExtensionService#_doActivateExtension formulahendry.code-runner, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:45:00.913 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7994
+2023-10-16 20:45:00.927 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-10-16 20:45:01.006 [warning] [Decorations] CAPPING events from decorations provider vscode.git 7994
+2023-10-16 20:45:12.146 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8026
+2023-10-16 20:45:13.541 [info] ExtensionService#_doActivateExtension bladnman.auto-align, startup: false, activationEvent: 'onCommand:extension.autoalign'
+2023-10-16 20:45:17.244 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8026
+2023-10-16 20:45:22.346 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8026
+2023-10-16 20:45:27.439 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8026
+2023-10-16 20:45:32.530 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8026
+2023-10-16 20:45:40.194 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:45:40.204 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:45:42.831 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8029
+2023-10-16 20:45:48.050 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8029
+2023-10-16 20:45:53.147 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8029
+2023-10-16 20:45:59.649 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8029
+2023-10-16 20:46:04.743 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8029
+2023-10-16 20:46:09.839 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:14.926 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:22.901 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:27.999 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8029
+2023-10-16 20:46:33.083 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:38.179 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:49.729 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:54.826 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:46:59.917 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8030
+2023-10-16 20:47:05.012 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8031
+2023-10-16 20:47:10.107 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8031
+2023-10-16 20:47:15.200 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8031
+2023-10-16 20:47:20.296 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8031
+2023-10-16 20:47:25.388 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8031
+2023-10-16 20:47:30.485 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8032
+2023-10-16 20:47:46.041 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8032
+2023-10-16 20:47:51.137 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8033
+2023-10-16 20:47:56.227 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8033
+2023-10-16 20:48:01.318 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8032
+2023-10-16 20:48:06.412 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8032
+2023-10-16 20:48:11.529 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8032
+2023-10-16 20:48:21.530 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8035
+2023-10-16 20:48:29.984 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8035
+2023-10-16 20:48:32.075 [info] ExtensionService#_doActivateExtension Gruntfuggly.align-mode, startup: false, activationEvent: '*'
+2023-10-16 20:48:35.080 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8046
+2023-10-16 20:48:40.172 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8046
+2023-10-16 20:48:45.265 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8047
+2023-10-16 20:48:52.530 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8047
+2023-10-16 20:48:57.627 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8048
+2023-10-16 20:49:02.720 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8048
+2023-10-16 20:49:07.804 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8048
+2023-10-16 20:49:13.893 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8048
+2023-10-16 20:49:19.602 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8048
+2023-10-16 20:49:24.697 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8048
+2023-10-16 20:49:29.793 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8047
+2023-10-16 20:49:29.870 [error] SyntaxError: Invalid regular expression: /\ \(?=(?:(?:[^"]*"){2})*[^"]*$)/g: Unmatched ')'
+	at new RegExp (<anonymous>)
+	at getSplitRegex (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/gruntfuggly.align-mode-0.0.21/extension.js:12:12)
+	at alignCSV (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/gruntfuggly.align-mode-0.0.21/extension.js:174:26)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/gruntfuggly.align-mode-0.0.21/extension.js:276:31
+	at Array.map (<anonymous>)
+	at align (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/gruntfuggly.align-mode-0.0.21/extension.js:274:35)
+	at /Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/gruntfuggly.align-mode-0.0.21/extension.js:531:25
+2023-10-16 20:49:40.620 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8049
+2023-10-16 20:49:46.212 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8049
+2023-10-16 20:49:51.306 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8050
+2023-10-16 20:51:51.814 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8050
+2023-10-16 20:51:56.947 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8050
+2023-10-16 20:52:03.065 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8054
+2023-10-16 20:52:08.155 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8054
+2023-10-16 20:52:19.229 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8058
+2023-10-16 20:52:27.851 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8058
+2023-10-16 20:52:34.394 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8061
+2023-10-16 20:52:39.544 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8066
+2023-10-16 20:52:47.337 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8066
+2023-10-16 20:52:58.589 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8070
+2023-10-16 20:53:04.808 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8107
+2023-10-16 20:53:09.907 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8107
+2023-10-16 20:53:14.996 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8107
+2023-10-16 20:53:20.089 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8109
+2023-10-16 20:53:25.177 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8111
+2023-10-16 20:53:30.393 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8118
+2023-10-16 20:53:35.482 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8118
+2023-10-16 20:53:39.298 [info] ExtensionService#_doActivateExtension archaeron.vscode-tabularize, startup: false, activationEvent: 'onCommand:vscode-tabularize.tabularize'
+2023-10-16 20:53:40.570 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8118
+2023-10-16 20:53:45.663 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8118
+2023-10-16 20:53:50.756 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:53:55.851 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:54:12.373 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:54:17.468 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:54:22.565 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:54:27.661 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:54:32.745 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8119
+2023-10-16 20:54:33.777 [info] Extension host terminating: renderer closed the MessagePort
+2023-10-16 20:54:33.787 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at s.D [as value] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1312749)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:54:33.788 [error] Canceled: Canceled
+	at new d (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:64080)
+	at i._remoteCall (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13779)
+	at L.<computed>.U.charCodeAt.L.<computed> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10331)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96332)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at E.registerCommand.description (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:94898)
+	at n._executeContributedCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:96967)
+	at n._doExecuteCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95790)
+	at n.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:95657)
+	at Object.executeCommand (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:27475)
+	at set b [as b] (/Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:714364)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/github/dist/extension.js:2:715005
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1401989)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at Object.m [as dispose] (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1328537)
+	at /Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333378
+	at Array.forEach (<anonymous>)
+	at g.dispose (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1333364)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5060)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at w.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/extensions/git/dist/main.js:2:1314761)
+	at w.dispose (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:121:5157)
+	at o (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:30:829)
+	at s._deactivate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:12852)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10108
+	at Array.map (<anonymous>)
+	at s._deactivateAll (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10096)
+	at s.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:136:10476)
+	at o.terminate (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:140:1908)
+	at u (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:11535)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7610)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367) setContext undefined
+2023-10-16 20:54:33.789 [info] Extension host with pid 98380 exiting with code 0
+2023-10-16 20:54:34.539 [info] Extension host with pid 5338 started
+2023-10-16 20:54:34.539 [info] Skipping acquiring lock for /Applications/codium-portable-data/user-data/User/workspaceStorage/b6cfc3257d4c10dbeccb59468250f26e.
+2023-10-16 20:54:34.598 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-10-16 20:54:34.602 [info] ExtensionService#_doActivateExtension foxundermoon.shell-format, startup: false, activationEvent: 'onLanguage:shellscript'
+2023-10-16 20:54:34.635 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-10-16 20:54:34.636 [info] ExtensionService#_doActivateExtension ChirtleLovesDolls.nebula-theme, startup: true, activationEvent: '*'
+2023-10-16 20:54:34.652 [info] ExtensionService#_doActivateExtension dnicolson.binary-plist, startup: true, activationEvent: '*'
+2023-10-16 20:54:34.676 [info] ExtensionService#_doActivateExtension formulahendry.auto-close-tag, startup: true, activationEvent: '*'
+2023-10-16 20:54:34.686 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-10-16 20:54:34.694 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-10-16 20:54:34.726 [info] Eager extensions activated
+2023-10-16 20:54:34.731 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.732 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.735 [info] ExtensionService#_doActivateExtension Catppuccin.catppuccin-vsc, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.736 [info] ExtensionService#_doActivateExtension Equinusocio.vsc-material-theme, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.741 [info] ExtensionService#_doActivateExtension equinusocio.vsc-material-theme-icons, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.755 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.769 [info] ExtensionService#_doActivateExtension formulahendry.code-runner, startup: false, activationEvent: 'onStartupFinished'
+2023-10-16 20:54:34.944 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8124
+2023-10-16 20:54:35.283 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8124
+2023-10-16 20:54:35.290 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-10-16 20:54:37.214 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8124
+2023-10-16 20:54:42.311 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8124
+2023-10-16 20:54:47.403 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8124
+2023-10-16 20:55:00.196 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8124
+2023-10-16 20:55:09.946 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8123
+2023-10-16 20:55:13.083 [info] ExtensionService#_doActivateExtension wwm.better-align, startup: false, activationEvent: 'onCommand:wwm.aligncode'
+2023-10-16 20:55:13.087 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:55:13.088 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:55:15.280 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8123
+2023-10-16 20:55:20.380 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8123
+2023-10-16 20:55:25.465 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8123
+2023-10-16 20:55:32.861 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8129
+2023-10-16 20:55:37.979 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8129
+2023-10-16 20:55:59.177 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8129
+2023-10-16 20:56:47.481 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8148
+2023-10-16 20:56:52.576 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8148
+2023-10-16 20:56:55.470 [info] ExtensionService#_doActivateExtension janjoerke.align-by-regex, startup: false, activationEvent: 'onCommand:align.by.regex'
+2023-10-16 20:56:57.676 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8148
+2023-10-16 20:57:02.764 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8148
+2023-10-16 20:57:07.866 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8150
+2023-10-16 20:57:12.957 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:57:18.052 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:57:43.675 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:57:49.413 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:57:54.514 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:57:59.610 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:58:04.710 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:58:09.795 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:58:27.146 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8153
+2023-10-16 20:58:35.813 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8152
+2023-10-16 20:58:40.535 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:58:40.546 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-10-16 20:58:40.938 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8155
+2023-10-16 20:58:46.047 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8156
+2023-10-16 20:58:49.534 [warning] vscode.json-language-features - Code actions of kind 'quickfix 'requested but returned code action is of kind 'source.sort.json'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2023-10-16 20:58:51.141 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8155
+2023-10-16 20:58:56.260 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8154
+2023-10-16 20:59:01.367 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8154
+2023-10-16 20:59:06.458 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8154
+2023-10-16 20:59:11.557 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8154
+2023-10-16 20:59:16.647 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8155
+2023-10-16 20:59:21.754 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8155
+2023-10-16 20:59:26.849 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8156
+2023-10-16 20:59:31.974 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8155
+2023-10-16 20:59:37.088 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8155
+2023-10-16 20:59:39.207 [warning] vscode.json-language-features - Code actions of kind 'quickfix 'requested but returned code action is of kind 'source.sort.json'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2023-10-16 20:59:42.193 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8156
+2023-10-16 20:59:47.299 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8156
+2023-10-16 20:59:52.350 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.352 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:52.353 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[shellscript]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 20:59:54.540 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8157
+2023-10-16 20:59:59.671 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8158
+2023-10-16 21:00:04.790 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8157
+2023-10-16 21:00:11.520 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8157
+2023-10-16 21:00:16.611 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8158
+2023-10-16 21:00:21.837 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:00:32.269 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:00:37.373 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:00:42.468 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:00:45.973 [warning] vscode.json-language-features - Code actions of kind 'quickfix 'requested but returned code action is of kind 'source.sort.json'. Code action will be dropped. Please check 'CodeActionContext.only' to only return requested code actions.
+2023-10-16 21:00:47.555 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:00:52.652 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:00:57.749 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:01:02.842 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8159
+2023-10-16 21:01:07.936 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:01:17.452 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:01:22.565 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:01:27.675 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:01:32.762 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:01:39.895 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8161
+2023-10-16 21:01:45.014 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:02:05.694 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8160
+2023-10-16 21:02:10.786 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8161
+2023-10-16 21:02:31.741 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8161
+2023-10-16 21:02:35.408 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[jsonc]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 21:02:35.409 [warning] [wwm.better-align] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for '[jsonc]', provide the URI of a resource or 'null' for any resource.
+2023-10-16 21:02:36.841 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8161
+2023-10-16 21:02:41.943 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8162
+2023-10-16 21:02:47.038 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8161
+2023-10-16 21:02:52.155 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8162
+2023-10-16 21:02:57.249 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8163
+2023-10-16 21:03:02.341 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8162
+2023-10-16 21:03:07.436 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8162
+2023-10-16 21:03:12.529 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8162
+2023-10-16 21:03:17.625 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8162
+2023-10-16 21:03:22.717 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8163
+2023-10-16 21:03:27.809 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8164
+2023-10-16 21:03:37.524 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8164
+2023-10-16 21:03:43.759 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8164
+2023-10-16 21:03:49.692 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8165
+2023-10-16 21:03:54.784 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8165
+2023-10-16 21:03:59.883 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8165
+2023-10-16 21:04:04.986 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8165
+2023-10-16 21:04:11.617 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8165
+2023-10-16 21:04:16.712 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8166
+2023-10-16 21:04:21.801 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:04:26.900 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8166
+2023-10-16 21:04:32.028 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8166
+2023-10-16 21:04:37.129 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8166
+2023-10-16 21:04:42.225 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8166
+2023-10-16 21:04:55.638 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8166
+2023-10-16 21:05:00.736 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:05.855 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:10.968 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:16.074 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:21.166 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:26.257 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:31.357 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:36.445 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:41.538 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:46.633 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:51.730 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8167
+2023-10-16 21:05:56.829 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:01.944 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:07.058 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:12.155 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:17.254 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:22.341 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:27.437 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:32.552 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:37.648 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:42.736 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8168
+2023-10-16 21:06:47.860 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8169
+2023-10-16 21:06:52.947 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8169
+2023-10-16 21:06:58.041 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8169
+2023-10-16 21:07:05.114 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8170
+2023-10-16 21:07:10.892 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8170
+2023-10-16 21:07:28.974 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8170
+2023-10-16 21:07:36.351 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8177
+2023-10-16 21:07:41.451 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8182
+2023-10-16 21:07:46.555 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8185
+2023-10-16 21:07:54.205 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8185
+2023-10-16 21:07:59.289 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8196
+2023-10-16 21:08:04.374 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8202
+2023-10-16 21:08:09.464 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8202
+2023-10-16 21:08:14.557 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8215
+2023-10-16 21:08:17.246 [info] ExtensionService#_doActivateExtension naumovs.color-highlight, startup: false, activationEvent: '*'
+2023-10-16 21:08:19.662 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8520
+2023-10-16 21:08:25.628 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8528
+2023-10-16 21:08:30.747 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8529
+2023-10-16 21:08:35.843 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8529
+2023-10-16 21:08:45.881 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8529
+2023-10-16 21:08:52.080 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8529
+2023-10-16 21:09:01.265 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8531
+2023-10-16 21:09:15.413 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8538
+2023-10-16 21:09:17.684 [info] ExtensionService#_doActivateExtension cliffordfajardo.highlight-line-vscode, startup: false, activationEvent: '*'
+2023-10-16 21:09:20.518 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8552
+2023-10-16 21:09:25.088 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:34:73)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:129:19038)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at a.acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:15776)
+	at a.$acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:13865)
+	at i._doInvokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13722)
+	at i._invokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13404)
+	at i._receiveRequest (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:12171)
+	at i._receiveOneMessage (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10873)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:8936)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:9484)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7561)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-10-16 21:09:25.619 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8551
+2023-10-16 21:09:30.718 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8560
+2023-10-16 21:09:35.826 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8566
+2023-10-16 21:09:40.935 [warning] [Decorations] CAPPING events from decorations provider vscode.git 8568
+2023-10-16 21:09:46.299 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at updateDecorations (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:77:73)
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:84:13)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at t.$acceptConfigurationChanged (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:49266)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:48497
+2023-10-16 21:09:46.313 [info] ExtensionService#_doActivateExtension oderwat.indent-rainbow, startup: false, activationEvent: '*'
+2023-10-16 21:09:48.162 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9802
+2023-10-16 21:09:54.844 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:34:73)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:129:19038)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at a.acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:15776)
+	at a.$acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:13865)
+	at i._doInvokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13722)
+	at i._invokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13404)
+	at i._receiveRequest (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:12171)
+	at i._receiveOneMessage (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10873)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:8936)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:9484)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7561)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-10-16 21:09:56.248 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9802
+2023-10-16 21:10:01.359 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9803
+2023-10-16 21:10:06.471 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9804
+2023-10-16 21:10:08.315 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:34:73)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:129:19038)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at a.acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:15776)
+	at a.$acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:13865)
+	at i._doInvokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13722)
+	at i._invokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13404)
+	at i._receiveRequest (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:12171)
+	at i._receiveOneMessage (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10873)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:8936)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:9484)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7561)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-10-16 21:10:10.333 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:34:73)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:129:19038)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at a.acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:15776)
+	at a.$acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:13865)
+	at i._doInvokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13722)
+	at i._invokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13404)
+	at i._receiveRequest (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:12171)
+	at i._receiveOneMessage (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10873)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:8936)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:9484)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7561)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-10-16 21:10:11.599 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9805
+2023-10-16 21:10:14.085 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:34:73)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:129:19038)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at a.acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:15776)
+	at a.$acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:13865)
+	at i._doInvokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13722)
+	at i._invokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13404)
+	at i._receiveRequest (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:12171)
+	at i._receiveOneMessage (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10873)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:8936)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:9484)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7561)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-10-16 21:10:16.714 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9804
+2023-10-16 21:10:24.646 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9811
+2023-10-16 21:10:29.751 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9812
+2023-10-16 21:10:34.860 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9812
+2023-10-16 21:10:39.974 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9818
+2023-10-16 21:10:45.185 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9839
+2023-10-16 21:10:50.306 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9839
+2023-10-16 21:11:07.385 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9842
+2023-10-16 21:11:17.235 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9842
+2023-10-16 21:11:26.526 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9852
+2023-10-16 21:11:30.697 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at updateDecorations (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:77:73)
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:84:13)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at t.$acceptConfigurationChanged (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:49266)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:48497
+2023-10-16 21:11:31.640 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9871
+2023-10-16 21:11:37.325 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9871
+2023-10-16 21:11:45.925 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9893
+2023-10-16 21:11:52.356 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9893
+2023-10-16 21:12:05.914 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9893
+2023-10-16 21:12:45.065 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9903
+2023-10-16 21:12:50.183 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9906
+2023-10-16 21:12:55.296 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9906
+2023-10-16 21:13:00.405 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9906
+2023-10-16 21:13:06.769 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9912
+2023-10-16 21:13:16.095 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9945
+2023-10-16 21:13:25.986 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9945
+2023-10-16 21:13:33.354 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at updateDecorations (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:77:73)
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:84:13)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at t.$acceptConfigurationChanged (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:49266)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:48497
+2023-10-16 21:13:33.384 [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one, startup: false, activationEvent: 'workspaceContains:README.md'
+2023-10-16 21:13:33.455 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2023-10-16 21:13:44.791 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9989
+2023-10-16 21:13:49.954 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9989
+2023-10-16 21:13:55.066 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9989
+2023-10-16 21:14:02.795 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9989
+2023-10-16 21:14:08.863 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9989
+2023-10-16 21:14:13.960 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:14:20.356 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:14:26.614 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:14:52.280 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:14:57.429 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:15:02.537 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:15:06.367 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:34:73)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:129:19038)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at a.acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:15776)
+	at a.$acceptDocumentsAndEditorsDelta (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:127:13865)
+	at i._doInvokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13722)
+	at i._invokeHandler (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:13404)
+	at i._receiveRequest (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:12171)
+	at i._receiveOneMessage (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:10873)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:134:8936)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at s.value (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:9484)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2784)
+	at g.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:96:16738)
+	at MessagePortMain.<anonymous> (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:153:7561)
+	at MessagePortMain.emit (node:events:513:28)
+	at MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:367)
+2023-10-16 21:15:07.658 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:15:12.768 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:15:14.535 [error] TypeError: Cannot read properties of undefined (reading 'selection')
+	at updateDecorations (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:77:73)
+	at s.value (/Users/pe8er/.dotfiles/config.symlink/codium-portable-data/extensions/cliffordfajardo.highlight-line-vscode-0.0.1/out/extension.js:84:13)
+	at c._deliver (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2465)
+	at c._deliverQueue (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2556)
+	at c.fire (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:80:2891)
+	at t.$acceptConfigurationChanged (/Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:49266)
+	at /Applications/VSCodium.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:135:48497
+2023-10-16 21:15:17.884 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990
+2023-10-16 21:15:22.996 [warning] [Decorations] CAPPING events from decorations provider vscode.git 9990

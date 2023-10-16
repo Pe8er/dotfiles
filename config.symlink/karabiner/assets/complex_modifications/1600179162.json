@@ -21,7 +21,6 @@
         }
       ]
     },
-
     {
       "description": "CMD + Application > Application",
       "manipulators": [
@@ -48,7 +47,7 @@
         }
       ]
     },
-
+    
     {
       "description": "Caps Lock > Hyper",
       "manipulators": [
@@ -69,7 +68,7 @@
         }
       ]
     },
-
+    
     {
       "description": "Keyboard: Reduce GLM Volume",
       "manipulators": [
@@ -87,7 +86,7 @@
         }
       ]
     },
-
+    
     {
       "description": "Keyboard: Increase GLM Volume",
       "manipulators": [
@@ -105,7 +104,52 @@
         }
       ]
     },
-
+    
+    {
+      "description": "Keyboard: Hyper + Up to Volume Up",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "up_arrow",
+            "modifiers": {
+              "mandatory": [
+                "command",
+                "shift",
+                "option",
+                "control"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "volume_increment"
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Keyboard: Hyper + Down to Volume Down",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "down_arrow",
+            "modifiers": {
+              "mandatory": [
+                "command",
+                "shift",
+                "option",
+                "control"
+              ]
+            }
+          },
+          "to": {
+            "key_code": "volume_decrement"
+          },
+          "type": "basic"
+        }
+      ]
+    },
+    
     {
       "description": "Keyboard: Mute GLM",
       "manipulators": [
@@ -123,7 +167,7 @@
         }
       ]
     },
-
+    
     {
       "description": "Keyboard: CMD + Escape to CMD + grave_accent_and_tilde",
       "manipulators": [
@@ -157,7 +201,7 @@
         }
       ]
     },
-
+    
     {
       "description": "Mouse: Mouse 4 to ESC in PlexAmp and Spark",
       "manipulators": [
@@ -183,7 +227,7 @@
         }
       ]
     },
-
+    
     {
       "description": "Mouse: CMD + Mouse 4 to Forward",
       "manipulators": [
@@ -247,112 +291,113 @@
         }
       ]
     },
-
+    
     // {
-    //   "description": "Keyboard: Hyper + P to Play / Pause",
-    //   "manipulators": [
-    //     {
-    //       "type": "basic",
-    //       "from": {
-    //         "key_code": "p",
-    //         "modifiers": {
-    //           "mandatory": ["command", "shift", "option", "control"]
-    //         }
-    //       },
-    //       "to": {
-    //         "key_code": "play_or_pause"
-    //       }
-    //     }
-    //   ]
-    // },
-
-    {
-      "description": "Keyboard: Hyper + Return to Play / Pause",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "return_or_enter",
-            "modifiers": {
-              "mandatory": ["command", "shift", "option", "control"]
+      //   "description": "Keyboard: Hyper + P to Play / Pause",
+      //   "manipulators": [
+        //     {
+          //       "type": "basic",
+          //       "from": {
+            //         "key_code": "p",
+            //         "modifiers": {
+              //           "mandatory": ["command", "shift", "option", "control"]
+              //         }
+              //       },
+              //       "to": {
+                //         "key_code": "play_or_pause"
+                //       }
+                //     }
+                //   ]
+                // },
+                
+                {
+                  "description": "Keyboard: Hyper + Return to Play / Pause",
+                  "manipulators": [
+                    {
+                      "type": "basic",
+                      "from": {
+                        "key_code": "return_or_enter",
+                        "modifiers": {
+                          "mandatory": ["command", "shift", "option", "control"]
+                        }
+                      },
+                      "to": {
+                        "key_code": "play_or_pause"
+                      }
+                    }
+                  ]
+                },
+                
+                {
+                  "description": "Keyboard: Hyper + [N] Right to Next Track",
+                  "manipulators": [
+                    {
+                      "type": "basic",
+                      "from": {
+                        "key_code": "right_arrow",
+                        "modifiers": {
+                          "mandatory": ["command", "shift", "option", "control"]
+                        }
+                      },
+                      "to": {
+                        "key_code": "fastforward"
+                      }
+                    }
+                  ]
+                },
+                
+                {
+                  "description": "[NEW]Keyboard: Hyper + Left to Prev Track",
+                  "manipulators": [
+                    {
+                      "type": "basic",
+                      "from": {
+                        "key_code": "left_arrow",
+                        "modifiers": {
+                          "mandatory": ["command", "shift", "option", "control"]
+                        }
+                      },
+                      "to": {
+                        "key_code": "rewind"
+                      }
+                    }
+                  ]
+                },
+                
+                {
+                  "description": "Mouse: CMD + Mouse 5 to Next Track",
+                  "manipulators": [
+                    {
+                      "type": "basic",
+                      "from": {
+                        "pointing_button": "button5",
+                        "modifiers": {
+                          "mandatory": "command"
+                        }
+                      },
+                      "to": {
+                        "key_code": "fastforward"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "description": "Mouse: OPT + Mouse 5 to Previous Track",
+                  "manipulators": [
+                    {
+                      "type": "basic",
+                      "from": {
+                        "pointing_button": "button5",
+                        "modifiers": {
+                          "mandatory": "option"
+                        }
+                      },
+                      "to": {
+                        "key_code": "rewind"
+                      }
+                    }
+                  ]
+                }
+              ]
             }
-          },
-          "to": {
-            "key_code": "play_or_pause"
-          }
-        }
-      ]
-    },
-
-    {
-      "description": "Keyboard: Hyper + [N] Right to Next Track",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "right_arrow",
-            "modifiers": {
-              "mandatory": ["command", "shift", "option", "control"]
-            }
-          },
-          "to": {
-            "key_code": "fastforward"
-          }
-        }
-      ]
-    },
-
-    {
-      "description": "[NEW]Keyboard: Hyper + Left to Prev Track",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "left_arrow",
-            "modifiers": {
-              "mandatory": ["command", "shift", "option", "control"]
-            }
-          },
-          "to": {
-            "key_code": "rewind"
-          }
-        }
-      ]
-    },
-
-    {
-      "description": "Mouse: CMD + Mouse 5 to Next Track",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "pointing_button": "button5",
-            "modifiers": {
-              "mandatory": "command"
-            }
-          },
-          "to": {
-            "key_code": "fastforward"
-          }
-        }
-      ]
-    },
-    {
-      "description": "Mouse: OPT + Mouse 5 to Previous Track",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "pointing_button": "button5",
-            "modifiers": {
-              "mandatory": "option"
-            }
-          },
-          "to": {
-            "key_code": "rewind"
-          }
-        }
-      ]
-    }
-  ]
-}
+            

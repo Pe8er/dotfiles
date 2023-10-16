@@ -1,0 +1,62 @@
+{
+	"name": "vscode-tabularize",
+	"displayName": "vscode-tabularize",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "archaeron",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:vscode-tabularize.tabularize"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscode-tabularize.tabularize",
+				"title": "Tabularize"
+			},
+			{
+				"command": "vscode-tabularize.tabularize-input",
+				"title": "Tabularize Input"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "vscode-tabularize.tabularize",
+				"key": "ctrl+alt+a",
+				"mac": "ctrl+alt+a",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "vscode-tabularize.tabularize-input",
+				"key": "ctrl+alt+shift+a",
+				"mac": "ctrl+alt+shift+a",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.5",
+		"vscode": "^0.11.0"
+	},
+	"__metadata": {
+		"id": "5cb5c63a-100e-4a1b-95b0-5d2a422de4cc",
+		"publisherId": "4031e6d8-a8b1-4570-add6-80c75066575b",
+		"publisherDisplayName": "Archaeron",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1697482407620,
+		"preRelease": false
+	}
+}

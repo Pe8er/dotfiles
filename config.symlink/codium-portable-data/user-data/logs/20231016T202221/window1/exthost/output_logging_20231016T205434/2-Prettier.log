@@ -1,0 +1,949 @@
+["INFO" - 8:54:34 PM] Extension Name: esbenp.prettier-vscode.
+["INFO" - 8:54:34 PM] Extension Version: 10.1.0.
+["DEBUG" - 8:54:34 PM] Enabling Prettier globally
+{
+  "languageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "mongo"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "json5"
+    },
+    {
+      "language": "css"
+    },
+    {
+      "language": "postcss"
+    },
+    {
+      "language": "less"
+    },
+    {
+      "language": "scss"
+    },
+    {
+      "language": "handlebars"
+    },
+    {
+      "language": "graphql"
+    },
+    {
+      "language": "markdown"
+    },
+    {
+      "language": "mdx"
+    },
+    {
+      "language": "html"
+    },
+    {
+      "language": "vue"
+    },
+    {
+      "language": "yaml"
+    },
+    {
+      "language": "ansible"
+    },
+    {
+      "language": "home-assistant"
+    },
+    {
+      "language": "jsonc",
+      "scheme": "vscode-userdata"
+    }
+  ],
+  "rangeLanguageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "graphql"
+    }
+  ]
+}
+["DEBUG" - 8:54:34 PM] Using bundled version of prettier.
+["DEBUG" - 8:54:34 PM] Enabling Prettier for Workspace /Users/pe8er/.dotfiles
+{
+  "languageSelector": [
+    {
+      "pattern": "/Users/pe8er/.dotfiles/**/*.{js,_js,bones,cjs,es,es6,frag,gs,jake,javascript,jsb,jscad,jsfl,jslib,jsm,jspre,jss,mjs,njs,pac,sjs,ssjs,xsjs,xsjslib,wxs,js.flow,jsx,ts,cts,mts,tsx,importmap,json,4DForm,4DProject,avsc,geojson,gltf,har,ice,JSON-tmLanguage,mcmeta,tfstate,tfstate.backup,topojson,webapp,webmanifest,yy,yyp,jsonc,code-snippets,sublime-build,sublime-commands,sublime-completions,sublime-keymap,sublime-macro,sublime-menu,sublime-mousemap,sublime-project,sublime-settings,sublime-theme,sublime-workspace,sublime_metrics,sublime_session,json5,css,wxss,pcss,postcss,less,scss,handlebars,hbs,graphql,gql,graphqls,md,livemd,markdown,mdown,mdwn,mkd,mkdn,mkdown,ronn,scd,workbook,mdx,component.html,html,hta,htm,html.hl,inc,xht,xhtml,mjml,vue,yml,mir,reek,rviz,sublime-syntax,syntax,yaml,yaml-tmlanguage,yaml.sed,yml.mysql}",
+      "scheme": "file"
+    },
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "mongo"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "json5"
+    },
+    {
+      "language": "css"
+    },
+    {
+      "language": "postcss"
+    },
+    {
+      "language": "less"
+    },
+    {
+      "language": "scss"
+    },
+    {
+      "language": "handlebars"
+    },
+    {
+      "language": "graphql"
+    },
+    {
+      "language": "markdown"
+    },
+    {
+      "language": "mdx"
+    },
+    {
+      "language": "html"
+    },
+    {
+      "language": "vue"
+    },
+    {
+      "language": "yaml"
+    },
+    {
+      "language": "ansible"
+    },
+    {
+      "language": "home-assistant"
+    },
+    {
+      "language": "jsonc",
+      "scheme": "vscode-userdata"
+    }
+  ],
+  "rangeLanguageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "graphql"
+    }
+  ]
+}
+["DEBUG" - 8:55:07 PM] Using bundled version of prettier.
+["DEBUG" - 8:56:48 PM] Using bundled version of prettier.
+["DEBUG" - 8:56:48 PM] Enabling Prettier for Workspace /Users/pe8er/.dotfiles
+{
+  "languageSelector": [
+    {
+      "pattern": "/Users/pe8er/.dotfiles/**/*.{js,_js,bones,cjs,es,es6,frag,gs,jake,javascript,jsb,jscad,jsfl,jslib,jsm,jspre,jss,mjs,njs,pac,sjs,ssjs,xsjs,xsjslib,wxs,js.flow,jsx,ts,cts,mts,tsx,importmap,json,4DForm,4DProject,avsc,geojson,gltf,har,ice,JSON-tmLanguage,mcmeta,tfstate,tfstate.backup,topojson,webapp,webmanifest,yy,yyp,jsonc,code-snippets,sublime-build,sublime-commands,sublime-completions,sublime-keymap,sublime-macro,sublime-menu,sublime-mousemap,sublime-project,sublime-settings,sublime-theme,sublime-workspace,sublime_metrics,sublime_session,json5,css,wxss,pcss,postcss,less,scss,handlebars,hbs,graphql,gql,graphqls,md,livemd,markdown,mdown,mdwn,mkd,mkdn,mkdown,ronn,scd,workbook,mdx,component.html,html,hta,htm,html.hl,inc,xht,xhtml,mjml,vue,yml,mir,reek,rviz,sublime-syntax,syntax,yaml,yaml-tmlanguage,yaml.sed,yml.mysql}",
+      "scheme": "file"
+    },
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "mongo"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "json5"
+    },
+    {
+      "language": "css"
+    },
+    {
+      "language": "postcss"
+    },
+    {
+      "language": "less"
+    },
+    {
+      "language": "scss"
+    },
+    {
+      "language": "handlebars"
+    },
+    {
+      "language": "graphql"
+    },
+    {
+      "language": "markdown"
+    },
+    {
+      "language": "mdx"
+    },
+    {
+      "language": "html"
+    },
+    {
+      "language": "vue"
+    },
+    {
+      "language": "yaml"
+    },
+    {
+      "language": "ansible"
+    },
+    {
+      "language": "home-assistant"
+    },
+    {
+      "language": "jsonc",
+      "scheme": "vscode-userdata"
+    }
+  ],
+  "rangeLanguageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "graphql"
+    }
+  ]
+}
+["DEBUG" - 8:58:53 PM] Using bundled version of prettier.
+["DEBUG" - 8:59:07 PM] Using bundled version of prettier.
+["DEBUG" - 8:59:42 PM] Using bundled version of prettier.
+["DEBUG" - 9:00:03 PM] Using bundled version of prettier.
+["DEBUG" - 9:00:47 PM] Using bundled version of prettier.
+["DEBUG" - 9:00:52 PM] Using bundled version of prettier.
+["DEBUG" - 9:02:41 PM] Using bundled version of prettier.
+["DEBUG" - 9:03:23 PM] Using bundled version of prettier.
+["DEBUG" - 9:03:31 PM] Using bundled version of prettier.
+["DEBUG" - 9:04:20 PM] Using bundled version of prettier.
+["DEBUG" - 9:05:06 PM] Using bundled version of prettier.
+["DEBUG" - 9:06:01 PM] Using bundled version of prettier.
+["DEBUG" - 9:07:09 PM] Using bundled version of prettier.
+["DEBUG" - 9:08:43 PM] Using bundled version of prettier.
+["DEBUG" - 9:08:43 PM] Enabling Prettier for Workspace /Users/pe8er/.dotfiles
+{
+  "languageSelector": [
+    {
+      "pattern": "/Users/pe8er/.dotfiles/**/*.{js,_js,bones,cjs,es,es6,frag,gs,jake,javascript,jsb,jscad,jsfl,jslib,jsm,jspre,jss,mjs,njs,pac,sjs,ssjs,xsjs,xsjslib,wxs,js.flow,jsx,ts,cts,mts,tsx,importmap,json,4DForm,4DProject,avsc,geojson,gltf,har,ice,JSON-tmLanguage,mcmeta,tfstate,tfstate.backup,topojson,webapp,webmanifest,yy,yyp,jsonc,code-snippets,sublime-build,sublime-commands,sublime-completions,sublime-keymap,sublime-macro,sublime-menu,sublime-mousemap,sublime-project,sublime-settings,sublime-theme,sublime-workspace,sublime_metrics,sublime_session,json5,css,wxss,pcss,postcss,less,scss,handlebars,hbs,graphql,gql,graphqls,md,livemd,markdown,mdown,mdwn,mkd,mkdn,mkdown,ronn,scd,workbook,mdx,component.html,html,hta,htm,html.hl,inc,xht,xhtml,mjml,vue,yml,mir,reek,rviz,sublime-syntax,syntax,yaml,yaml-tmlanguage,yaml.sed,yml.mysql}",
+      "scheme": "file"
+    },
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "mongo"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "json5"
+    },
+    {
+      "language": "css"
+    },
+    {
+      "language": "postcss"
+    },
+    {
+      "language": "less"
+    },
+    {
+      "language": "scss"
+    },
+    {
+      "language": "handlebars"
+    },
+    {
+      "language": "graphql"
+    },
+    {
+      "language": "markdown"
+    },
+    {
+      "language": "mdx"
+    },
+    {
+      "language": "html"
+    },
+    {
+      "language": "vue"
+    },
+    {
+      "language": "yaml"
+    },
+    {
+      "language": "ansible"
+    },
+    {
+      "language": "home-assistant"
+    },
+    {
+      "language": "jsonc",
+      "scheme": "vscode-userdata"
+    }
+  ],
+  "rangeLanguageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "graphql"
+    }
+  ]
+}
+["DEBUG" - 9:09:18 PM] Using bundled version of prettier.
+["DEBUG" - 9:09:46 PM] Using bundled version of prettier.
+["DEBUG" - 9:09:46 PM] Enabling Prettier for Workspace /Users/pe8er/.dotfiles
+{
+  "languageSelector": [
+    {
+      "pattern": "/Users/pe8er/.dotfiles/**/*.{js,_js,bones,cjs,es,es6,frag,gs,jake,javascript,jsb,jscad,jsfl,jslib,jsm,jspre,jss,mjs,njs,pac,sjs,ssjs,xsjs,xsjslib,wxs,js.flow,jsx,ts,cts,mts,tsx,importmap,json,4DForm,4DProject,avsc,geojson,gltf,har,ice,JSON-tmLanguage,mcmeta,tfstate,tfstate.backup,topojson,webapp,webmanifest,yy,yyp,jsonc,code-snippets,sublime-build,sublime-commands,sublime-completions,sublime-keymap,sublime-macro,sublime-menu,sublime-mousemap,sublime-project,sublime-settings,sublime-theme,sublime-workspace,sublime_metrics,sublime_session,json5,css,wxss,pcss,postcss,less,scss,handlebars,hbs,graphql,gql,graphqls,md,livemd,markdown,mdown,mdwn,mkd,mkdn,mkdown,ronn,scd,workbook,mdx,component.html,html,hta,htm,html.hl,inc,xht,xhtml,mjml,vue,yml,mir,reek,rviz,sublime-syntax,syntax,yaml,yaml-tmlanguage,yaml.sed,yml.mysql}",
+      "scheme": "file"
+    },
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "mongo"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "json5"
+    },
+    {
+      "language": "css"
+    },
+    {
+      "language": "postcss"
+    },
+    {
+      "language": "less"
+    },
+    {
+      "language": "scss"
+    },
+    {
+      "language": "handlebars"
+    },
+    {
+      "language": "graphql"
+    },
+    {
+      "language": "markdown"
+    },
+    {
+      "language": "mdx"
+    },
+    {
+      "language": "html"
+    },
+    {
+      "language": "vue"
+    },
+    {
+      "language": "yaml"
+    },
+    {
+      "language": "ansible"
+    },
+    {
+      "language": "home-assistant"
+    },
+    {
+      "language": "jsonc",
+      "scheme": "vscode-userdata"
+    }
+  ],
+  "rangeLanguageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "graphql"
+    }
+  ]
+}
+["INFO" - 9:10:02 PM] Formatting vscode-userdata:/Applications/codium-portable-data/user-data/User/settings.json
+["DEBUG" - 9:10:02 PM] Using bundled version of prettier.
+["DEBUG" - 9:10:02 PM] Using bundled version of prettier.
+["INFO" - 9:10:02 PM] PrettierInstance:
+{
+  "doc": {
+    "builders": {
+      "line": {
+        "type": "line"
+      },
+      "softline": {
+        "type": "line",
+        "soft": true
+      },
+      "hardline": {
+        "type": "concat",
+        "parts": [
+          {
+            "type": "line",
+            "hard": true
+          },
+          {
+            "type": "break-parent"
+          }
+        ]
+      },
+      "literalline": {
+        "type": "concat",
+        "parts": [
+          {
+            "type": "line",
+            "hard": true,
+            "literal": true
+          },
+          {
+            "type": "break-parent"
+          }
+        ]
+      },
+      "lineSuffixBoundary": {
+        "type": "line-suffix-boundary"
+      },
+      "cursor": {
+        "type": "cursor"
+      },
+      "breakParent": {
+        "type": "break-parent"
+      },
+      "trim": {
+        "type": "trim"
+      },
+      "hardlineWithoutBreakParent": {
+        "type": "line",
+        "hard": true
+      },
+      "literallineWithoutBreakParent": {
+        "type": "line",
+        "hard": true,
+        "literal": true
+      }
+    },
+    "printer": {},
+    "utils": {},
+    "debug": {}
+  },
+  "version": "2.8.8",
+  "util": {},
+  "__internal": {
+    "errors": {},
+    "coreOptions": {
+      "CATEGORY_CONFIG": "Config",
+      "CATEGORY_EDITOR": "Editor",
+      "CATEGORY_FORMAT": "Format",
+      "CATEGORY_OTHER": "Other",
+      "CATEGORY_OUTPUT": "Output",
+      "CATEGORY_GLOBAL": "Global",
+      "CATEGORY_SPECIAL": "Special",
+      "options": {
+        "cursorOffset": {
+          "since": "1.4.0",
+          "category": "Special",
+          "type": "int",
+          "default": -1,
+          "range": {
+            "start": -1,
+            "end": null,
+            "step": 1
+          },
+          "description": "Print (to stderr) where a cursor at the given position would move to after formatting.\nThis option cannot be used with --range-start and --range-end.",
+          "cliCategory": "Editor"
+        },
+        "endOfLine": {
+          "since": "1.15.0",
+          "category": "Global",
+          "type": "choice",
+          "default": [
+            {
+              "since": "1.15.0",
+              "value": "auto"
+            },
+            {
+              "since": "2.0.0",
+              "value": "lf"
+            }
+          ],
+          "description": "Which end of line characters to apply.",
+          "choices": [
+            {
+              "value": "lf",
+              "description": "Line Feed only (\\n), common on Linux and macOS as well as inside git repos"
+            },
+            {
+              "value": "crlf",
+              "description": "Carriage Return + Line Feed characters (\\r\\n), common on Windows"
+            },
+            {
+              "value": "cr",
+              "description": "Carriage Return character only (\\r), used very rarely"
+            },
+            {
+              "value": "auto",
+              "description": "Maintain existing\n(mixed values within one file are normalised by looking at what's used after the first line)"
+            }
+          ]
+        },
+        "filepath": {
+          "since": "1.4.0",
+          "category": "Special",
+          "type": "path",
+          "description": "Specify the input filepath. This will be used to do parser inference.",
+          "cliName": "stdin-filepath",
+          "cliCategory": "Other",
+          "cliDescription": "Path to the file to pretend that stdin comes from."
+        },
+        "insertPragma": {
+          "since": "1.8.0",
+          "category": "Special",
+          "type": "boolean",
+          "default": false,
+          "description": "Insert @format pragma into file's first docblock comment.",
+          "cliCategory": "Other"
+        },
+        "parser": {
+          "since": "0.0.10",
+          "category": "Global",
+          "type": "choice",
+          "default": [
+            {
+              "since": "0.0.10",
+              "value": "babylon"
+            },
+            {
+              "since": "1.13.0"
+            }
+          ],
+          "description": "Which parser to use.",
+          "choices": [
+            {
+              "value": "flow",
+              "description": "Flow"
+            },
+            {
+              "value": "babel",
+              "since": "1.16.0",
+              "description": "JavaScript"
+            },
+            {
+              "value": "babel-flow",
+              "since": "1.16.0",
+              "description": "Flow"
+            },
+            {
+              "value": "babel-ts",
+              "since": "2.0.0",
+              "description": "TypeScript"
+            },
+            {
+              "value": "typescript",
+              "since": "1.4.0",
+              "description": "TypeScript"
+            },
+            {
+              "value": "acorn",
+              "since": "2.6.0",
+              "description": "JavaScript"
+            },
+            {
+              "value": "espree",
+              "since": "2.2.0",
+              "description": "JavaScript"
+            },
+            {
+              "value": "meriyah",
+              "since": "2.2.0",
+              "description": "JavaScript"
+            },
+            {
+              "value": "css",
+              "since": "1.7.1",
+              "description": "CSS"
+            },
+            {
+              "value": "less",
+              "since": "1.7.1",
+              "description": "Less"
+            },
+            {
+              "value": "scss",
+              "since": "1.7.1",
+              "description": "SCSS"
+            },
+            {
+              "value": "json",
+              "since": "1.5.0",
+              "description": "JSON"
+            },
+            {
+              "value": "json5",
+              "since": "1.13.0",
+              "description": "JSON5"
+            },
+            {
+              "value": "json-stringify",
+              "since": "1.13.0",
+              "description": "JSON.stringify"
+            },
+            {
+              "value": "graphql",
+              "since": "1.5.0",
+              "description": "GraphQL"
+            },
+            {
+              "value": "markdown",
+              "since": "1.8.0",
+              "description": "Markdown"
+            },
+            {
+              "value": "mdx",
+              "since": "1.15.0",
+              "description": "MDX"
+            },
+            {
+              "value": "vue",
+              "since": "1.10.0",
+              "description": "Vue"
+            },
+            {
+              "value": "yaml",
+              "since": "1.14.0",
+              "description": "YAML"
+            },
+            {
+              "value": "glimmer",
+              "since": "2.3.0",
+              "description": "Ember / Handlebars"
+            },
+            {
+              "value": "html",
+              "since": "1.15.0",
+              "description": "HTML"
+            },
+            {
+              "value": "angular",
+              "since": "1.15.0",
+              "description": "Angular"
+            },
+            {
+              "value": "lwc",
+              "since": "1.17.0",
+              "description": "Lightning Web Components"
+            }
+          ]
+        },
+        "plugins": {
+          "since": "1.10.0",
+          "type": "path",
+          "array": true,
+          "default": [
+            {
+              "value": []
+            }
+          ],
+          "category": "Global",
+          "description": "Add a plugin. Multiple plugins can be passed as separate `--plugin`s.",
+          "cliName": "plugin",
+          "cliCategory": "Config"
+        },
+        "pluginSearchDirs": {
+          "since": "1.13.0",
+          "type": "path",
+          "array": true,
+          "default": [
+            {
+              "value": []
+            }
+          ],
+          "category": "Global",
+          "description": "Custom directory that contains prettier plugins in node_modules subdirectory.\nOverrides default behavior when plugins are searched relatively to the location of Prettier.\nMultiple values are accepted.",
+          "cliName": "plugin-search-dir",
+          "cliCategory": "Config"
+        },
+        "printWidth": {
+          "since": "0.0.0",
+          "category": "Global",
+          "type": "int",
+          "default": 80,
+          "description": "The line length where Prettier will try wrap.",
+          "range": {
+            "start": 0,
+            "end": null,
+            "step": 1
+          }
+        },
+        "rangeEnd": {
+          "since": "1.4.0",
+          "category": "Special",
+          "type": "int",
+          "default": null,
+          "range": {
+            "start": 0,
+            "end": null,
+            "step": 1
+          },
+          "description": "Format code ending at a given character offset (exclusive).\nThe range will extend forwards to the end of the selected statement.\nThis option cannot be used with --cursor-offset.",
+          "cliCategory": "Editor"
+        },
+        "rangeStart": {
+          "since": "1.4.0",
+          "category": "Special",
+          "type": "int",
+          "default": 0,
+          "range": {
+            "start": 0,
+            "end": null,
+            "step": 1
+          },
+          "description": "Format code starting at a given character offset.\nThe range will extend backwards to the start of the first line containing the selected statement.\nThis option cannot be used with --cursor-offset.",
+          "cliCategory": "Editor"
+        },
+        "requirePragma": {
+          "since": "1.7.0",
+          "category": "Special",
+          "type": "boolean",
+          "default": false,
+          "description": "Require either '@prettier' or '@format' to be present in the file's first docblock comment\nin order for it to be formatted.",
+          "cliCategory": "Other"
+        },
+        "tabWidth": {
+          "type": "int",
+          "category": "Global",
+          "default": 2,
+          "description": "Number of spaces per indentation level.",
+          "range": {
+            "start": 0,
+            "end": null,
+            "step": 1
+          }
+        },
+        "useTabs": {
+          "since": "1.0.0",
+          "category": "Global",
+          "type": "boolean",
+          "default": false,
+          "description": "Indent with tabs instead of spaces."
+        },
+        "embeddedLanguageFormatting": {
+          "since": "2.1.0",
+          "category": "Global",
+          "type": "choice",
+          "default": [
+            {
+              "since": "2.1.0",
+              "value": "auto"
+            }
+          ],
+          "description": "Control how Prettier formats quoted code embedded in the file.",
+          "choices": [
+            {
+              "value": "auto",
+              "description": "Format embedded code if Prettier can automatically identify it."
+            },
+            {
+              "value": "off",
+              "description": "Never automatically format embedded code."
+            }
+          ]
+        }
+      }
+    },
+    "optionsModule": {
+      "hiddenDefaults": {
+        "astFormat": "estree",
+        "printer": {},
+        "locStart": null,
+        "locEnd": null
+      }
+    },
+    "optionsNormalizer": {},
+    "utils": {}
+  },
+  "__debug": {}
+}
+["INFO" - 9:10:02 PM] File Info:
+{
+  "ignored": false,
+  "inferredParser": "json"
+}
+["INFO" - 9:10:02 PM] No local configuration (i.e. .prettierrc or .editorconfig) detected, falling back to VS Code configuration
+["INFO" - 9:10:02 PM] Prettier Options:
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "jsxBracketSameLine": false,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "embeddedLanguageFormatting": "auto",
+  "vueIndentScriptAndStyle": false,
+  "filepath": "/Applications/codium-portable-data/user-data/User/settings.json",
+  "parser": "json"
+}
+["INFO" - 9:10:02 PM] Formatting completed in 22ms.
+["DEBUG" - 9:10:08 PM] Using bundled version of prettier.
+["DEBUG" - 9:10:12 PM] Using bundled version of prettier.
+["DEBUG" - 9:13:47 PM] Using bundled version of prettier.

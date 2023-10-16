@@ -1,0 +1,148 @@
+{
+    "name": "auto-align",
+    "displayName": "Auto-Align",
+    "description": "Align code on assignment characters.",
+    "version": "0.0.9",
+    "publisher": "bladnman",
+    "repository": "https://github.com/bladnman/auto-align",
+    "icon": "images/icon.png",
+    "engines": {
+        "vscode": "^1.22.0"
+    },
+    "categories": [
+      "Formatters",
+      "Languages",
+      "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.autoalign"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.autoalign",
+                "title": "Auto-Align"
+            }
+        ],
+        "configuration": [
+          {
+            "title": "Auto-Align Configuration",
+            "properties": {
+              "autoalign.moveableItems": {
+                "type": "array",
+                "default": [
+                  "=",
+                  ":",
+                  "+=",
+                  "-="
+                ],
+                "description": "Which items will be aligned"
+              },
+              "autoalign.moveableItemsAdditional": {
+                "type": "array",
+                "default": [],
+                "description": "Added items which items will be aligned"
+              },
+              "autoalign.nonMoveableItems": {
+                "type": "array",
+                "default": [
+                  "==",   
+                  "!=",
+                  "/",
+                  "*",
+                  "#",
+                  "<=",
+                  ">=",
+                  "=>",
+                  "=<",
+                  "for(",
+                  "for (",
+                  "if(",
+                  "if (",
+                  "-(",
+                  "- (",
+                  "(\"",
+                  "('",
+                  "(`",
+                  "=~",
+                  "&:",
+                  ">:",
+                  "*:",
+                  "::",
+                  ":active",
+                  ":checked",
+                  ":disabled",
+                  ":empty",
+                  ":enabled",
+                  ":first-",
+                  ":focus",
+                  ":hover",
+                  ":in-range",
+                  ":invalid",
+                  ":lang",
+                  ":last-",
+                  ":link",
+                  ":not",
+                  ":nth-",
+                  ":only-",
+                  ":optional",
+                  ":out-of-range",
+                  ":read-",
+                  ":required",
+                  ":root",
+                  ":target",
+                  ":valid",
+                  ":visited"
+                ],
+                "description": "If any of these come before any moveable item then it will prevent the line from being aligned."
+              },
+              "autoalign.nonMoveableItemsAdditional": {
+                "type": "array",
+                "default": [],
+                "description": "Added items which items will be unmoveable"
+              },
+              "autoalign.minSeparationLeft": {
+                "type": "number",
+                "default": 3,
+                "description": "Minimum number of spaces to the left of the aligned items"
+              },
+              "autoalign.separationRight": {
+                "type": "number",
+                "default": 1,
+                "description": "Number of spaces to the right of the aligned items"
+              },
+              "autoalign.columnWidth": {
+                "type": "number",
+                "default": 2,
+                "description": "If this is > 1 then all alignments will be matched up to imaginary columns of this width"
+              },
+              "autoalign.skipLinesEndingWithItems": {
+                "type": "array",
+                "default": [
+                  "{",
+                  "["
+                ],
+                "description": "If the line ends with these items they will not be aligned."
+              },
+              "autoalign.skipLinesEndingWithItemsAdditional": {
+                "type": "array",
+                "default": [],
+                "description": "Added items which lines will be skipped if ending with"
+              }
+            }
+          }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}

@@ -5,7 +5,7 @@ API_KEY="462eeb49a1b844f191f175554222607" # insert api key here
 CITY="$(curl -s ipinfo.io/loc)"
 
 # first comment is description, second is icon number
-weather_icons_day=(
+WEATHER_ICONS_DAY=(
   [1000]= # Sunny/113
   [1003]= # Partly cloudy/116
   [1006]= # Cloudy/119
@@ -56,7 +56,7 @@ weather_icons_day=(
   [1282]= # Moderate or heavy snow with thunder/395
 )
 
-weather_icons_night=(
+WEATHER_ICONS_NIGHT=(
   [1000]= # Clear/113
   [1003]= # Partly cloudy/116
   [1006]= # Cloudy/119
@@ -107,29 +107,69 @@ weather_icons_night=(
   [1282]= # Moderate or heavy snow with thunder/395
 )
 
-# CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
-data=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
-condition=$(echo $data | jq -r '.current.condition.code')
-temp=$(echo $data | jq -r '.current.temp_c | floor')
-feelslike=$(echo $data | jq -r '.current.feelslike_f')
-humidity=$(echo $data | jq -r '.current.humidity')
-is_day=$(echo $data | jq -r '.current.is_day')
-
-[ "$is_day" = "1" ] && icon=${weather_icons_day[$condition]} || icon=${weather_icons_night[$condition]}
-
 render_item() {
   if [ "$SSID" = "" ]; then
     args+=(--set $NAME drawing=off)
   else
-    args+=(--set $NAME icon="$icon" label="${temp}°C" drawing=on)
+    args+=(--set $NAME icon="$ICON" label="${TEMP}°C" drawing=on)
   fi
 
   sketchybar "${args[@]}" >/dev/null
 
 }
-CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
-SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
 
-render_item
+render_popup() {
+  if [ "$SSID" = "" ]; then
+    args+=(--set weather.details label="N/A"
+      click_script="sketchybar --set $NAME popup.drawing=off")
+  else
+    args+=(--set weather.details label="$CONDITION_TEXT, Humidity: $HUMIDITY% ($LOCATION)"
+      click_script="sketchybar --set $NAME popup.drawing=off")
+  fi
 
-# sketchybar --set weather icon="$icon" label="${temp}°C"
+  sketchybar "${args[@]}" >/dev/null
+
+}
+
+update() {
+  CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
+  SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
+  # CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
+  DATA=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
+  CONDITION=$(echo $DATA | jq -r '.current.condition.code')
+  CONDITION_TEXT=$(echo $DATA | jq -r '.current.condition.text')
+  TEMP=$(echo $DATA | jq -r '.current.temp_c | floor')
+  FEELSLIKE=$(echo $DATA | jq -r '.current.feelslike_f')
+  HUMIDITY=$(echo $DATA | jq -r '.current.humidity')
+  IS_DAY=$(echo $DATA | jq -r '.current.is_day')
+  LOCATION=$(echo $DATA | jq -r '.location.name' && echo ', ' && echo $DATA | jq -r '.location.country')
+
+  [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION]}
+  args=()
+
+  render_item
+  render_popup
+
+  if [ "$SENDER" = "forced" ]; then
+    sketchybar --set "$NAME"
+  fi
+}
+
+popup() {
+  sketchybar --set "$NAME" popup.drawing="$1"
+}
+
+case "$SENDER" in
+"routine" | "forced")
+  update
+  ;;
+"mouse.entered")
+  popup on
+  ;;
+"mouse.exited" | "mouse.exited.global")
+  popup off
+  ;;
+"mouse.clicked")
+  popup toggle
+  ;;
+esac
