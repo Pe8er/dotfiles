@@ -56,7 +56,8 @@
                             "items": [
                                 {
                                     "id": "workbench.action.reopenClosedEditor",
-                                    "label": "&&Reopen Closed Editor"
+                                    "label": "&&Reopen Closed Editor",
+                                    "enabled": false
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -1603,7 +1604,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 572,
+            "sideBarWidth": 559,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -1614,9 +1615,9 @@
             "backupPath": "/Applications/codium-portable-data/user-data/Backups/4300f7f5fe1488d379cfa97d36ab9139",
             "uiState": {
                 "mode": 1,
-                "x": 56,
+                "x": 59,
                 "y": 32,
-                "width": 1408,
+                "width": 1084,
                 "height": 918
             }
         },

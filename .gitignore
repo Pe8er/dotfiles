@@ -4,9 +4,6 @@
 songMeta.plist
 password.txt
 .plextoken
-logs
-History
-*Cache*
  
 build/
 
@@ -31,13 +28,9 @@ ruby/gemrc.symlink
 ruby/aliases.zsh
 
 # VS Codium files
-**/user-data/Backups
-**/user-data/blob-storage
-**/user-data/Cache
-**/user-data/CachedData
-**/user-data/DawnCache
-**/user-data/GPUCache
-**/user-data/logs
+config.symlink/codium-portable-data/user-data/*
+!config.symlink/codium-portable-data/user-data/User/
+
 
 **/tmp.jpg
 **/album.txt
