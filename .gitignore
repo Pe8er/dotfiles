@@ -34,3 +34,5 @@ config.symlink/codium-portable-data/user-data/*
 
 **/tmp.jpg
 **/album.txt
+config.symlink/sketchybar/plugins/music/tmp.jpg
+config.symlink/sketchybar/plugins/music/album.txt
