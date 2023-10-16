@@ -36,5 +36,5 @@ ruby/aliases.zsh
 **/user-data/GPUCache
 **/user-data/logs
 
-**/tmp.jpg
-**/album.txt
+tmp.jpg
+config.symlink/sketchybar/plugins/music/album.txt
