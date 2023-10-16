@@ -4,6 +4,9 @@
 songMeta.plist
 password.txt
 .plextoken
+logs
+History
+*Cache*
  
 build/
 
