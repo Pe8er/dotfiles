@@ -29,7 +29,7 @@ ruby/aliases.zsh
 
 # VS Codium files
 config.symlink/codium-portable-data/user-data/*
-!config.symlink/codium-portable-data/user-data/User/
+!config.symlink/codium-portable-data/user-data/User/settings.json
 
 
 **/tmp.jpg
