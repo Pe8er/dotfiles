@@ -31,5 +31,5 @@ ruby/aliases.zsh
 /config.symlink/codium-portable-data/user-data/*
 !/config.symlink/codium-portable-data/user-data/User/settings.json
 
-/config.symlink/sketchybar/plugins/music/tmp.jpg
-/config.symlink/sketchybar/plugins/music/album.txt
+tmp.jpg
+album.txt
