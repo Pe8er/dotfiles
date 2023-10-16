@@ -1,0 +1,41 @@
+.DS_STORE
+*.swp
+*~.nib
+songMeta.plist
+password.txt
+.plextoken
+ 
+build/
+
+*.mode1v3
+*.mode2v3
+
+xcuserdata
+
+.xcodeproj/ !*.xcodeproj/project.pbxproj
+
+# SSH Stuff
+id_rsa
+id_rsa.pub
+known_hosts
+git/gitconfig.local.symlink
+bin/update
+macos/hosts
+
+ruby/rbenv.zsh
+ruby/irbrc.symlink
+ruby/gemrc.symlink
+ruby/aliases.zsh
+
+# VS Codium files
+codium-portable-data/user-data/Backups/*
+codium-portable-data/user-data/blob-storage/*
+codium-portable-data/user-data/Cache/*
+codium-portable-data/user-data/CachedData/*
+codium-portable-data/user-data/DawnCache/*
+codium-portable-data/user-data/GPUCache/*
+codium-portable-data/user-data/logs/*
+
+tmp.jpg
+config.symlink/sketchybar/plugins/music/album.txt
+config.symlink/codium-portable-data/user-data/logs/20231016T202221/window1/exthost/vscode.git/Git.log
