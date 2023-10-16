@@ -27,11 +27,9 @@ ruby/irbrc.symlink
 ruby/gemrc.symlink
 ruby/aliases.zsh
 
-# VS Codium files
 codium-portable-data/user-data/Backups
 codium-portable-data/user-data/blob-storage
 codium-portable-data/user-data/Cache
 codium-portable-data/user-data/CachedData
 
-album.txt
-tmp.jpg
+# karabiner/config.symlink/karabiner/assets/complex_modifications/1600179162.json

@@ -31,6 +31,5 @@
 "explorer.confirmDelete": false,
 "workbench.editorAssociations": {
     "*.db": "default"
-},
-"git.enableSmartCommit": true
+}
 }

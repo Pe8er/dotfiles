@@ -4,7 +4,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.minimap.enabled": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.enableDebugLogs": false,
+  "prettier.enableDebugLogs": true,
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -31,6 +31,5 @@
 "explorer.confirmDelete": false,
 "workbench.editorAssociations": {
     "*.db": "default"
-},
-"git.enableSmartCommit": true
+}
 }
