@@ -1,0 +1,145 @@
+{
+	"name": "align-mode",
+	"displayName": "Auto Align",
+	"description": "Automatically align by commas, vertical bars, etc.",
+	"icon": "icon.png",
+	"version": "0.0.21",
+	"publisher": "Gruntfuggly",
+	"repository": "https://github.com/Gruntfuggly/auto-align",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "auto-align.alignColumns",
+				"title": "Auto Align: Align Columns"
+			},
+			{
+				"command": "auto-align.collapseColumns",
+				"title": "Auto Align: Collapse Columns"
+			},
+			{
+				"command": "auto-align.enable",
+				"title": "Auto Align: Enable auto align mode"
+			},
+			{
+				"command": "auto-align.disable",
+				"title": "Auto Align: Disable auto align mode"
+			},
+			{
+				"command": "auto-align.changeSeparator",
+				"title": "Auto Align: Change Separator"
+			},
+			{
+				"command": "auto-align.moveCursorToNextField",
+				"title": "Auto Align: Move Cursor to Next Field"
+			},
+			{
+				"command": "auto-align.moveCursorToPreviousField",
+				"title": "Auto Align: Move Cursor to Previous Field"
+			},
+			{
+				"command": "auto-align.alignSelection",
+				"title": "Auto Align: Align Selection"
+			},
+			{
+				"command": "auto-align.alignSelectionWithSeparator",
+				"title": "Auto Align: Align Selection With Separator"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "tab",
+				"command": "auto-align.moveCursorToNextField",
+				"when": "editorTextFocus && auto-align-enabled"
+			},
+			{
+				"key": "shift+tab",
+				"command": "auto-align.moveCursorToPreviousField",
+				"when": "editorTextFocus && auto-align-enabled"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Auto Align",
+			"properties": {
+				"autoAlign.enabled": {
+					"type": "object",
+					"description": "When true, auto formatting is enabled for the file extension",
+					"default": {
+						"csv": true,
+						"bsv": true
+					}
+				},
+				"autoAlign.associations": {
+					"type": "object",
+					"description": "Glob patterns to match files that should have auto formatting enabled",
+					"default": {
+						"csv": ",",
+						"bsv": "|"
+					}
+				},
+				"autoAlign.delay": {
+					"type": "number",
+					"description": "The delay in milliseconds before auto formatting",
+					"default": 1000
+				},
+				"autoAlign.extraSpace": {
+					"type": "boolean",
+					"description": "Automatically add an extra space after the separator for readability",
+					"default": true
+				},
+				"autoAlign.dimSeparators": {
+					"type": "boolean",
+					"description": "Set to true to dim the separators when active",
+					"default": true
+				},
+				"autoAlign.endingSeparator": {
+					"type": "boolean",
+					"description": "Set to true to include an extra separator at the end of each line.",
+					"default": false
+				},
+				"autoAlign.collapseOnDisable": {
+					"type": "boolean",
+					"description": "Collapse the fields when disabling auto align",
+					"default": false
+				},
+				"autoAlign.repositionCursor": {
+					"type": "boolean",
+					"description": "Attempt to position the cursor somewhere sensible after formatting",
+					"default": true
+				},
+				"autoAlign.alignment": {
+					"type": "string",
+					"enum": [
+						"left",
+						"right"
+					],
+					"default": "left",
+					"description": "Which what to align the columns"
+				}
+			}
+		}
+	},
+	"devDependencies": {
+		"vscode": "^1.0.0"
+	},
+	"__metadata": {
+		"id": "01e0d012-2dda-490b-a68f-533f06736a1a",
+		"publisherDisplayName": "Gruntfuggly",
+		"publisherId": "d4906d2e-f2ee-492d-9c7c-02b6160599ec",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1697482110836,
+		"preRelease": false
+	}
+}

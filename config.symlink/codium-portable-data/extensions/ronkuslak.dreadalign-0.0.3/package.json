@@ -1,0 +1,73 @@
+{
+	"name": "dreadalign",
+	"displayName": "DreadAlignment",
+	"description": "Align text in a easy, pain-free manner.",
+	"version": "0.0.3",
+	"license": "GPL-2.0",
+	"publisher": "ronkuslak",
+	"repository": {
+		"url": "https://github.com/rkuslak/dreadalign"
+	},
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"categories": [
+		"Formatters"
+	],
+	"activationEvents": [
+		"onCommand:extension.loadDreadAlign"
+	],
+	"main": "./out/dreadalign",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.loadDreadAlign",
+				"title": "DreadAlign: Align Text"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Dread Alignment",
+			"properties": {
+				"dreadalign.Prepend": {
+					"type": "string",
+					"default": " ",
+					"description": "Default string to prepend to delimiter if none provided"
+				},
+				"dreadalign.Postpend": {
+					"type": "string",
+					"default": " ",
+					"description": "Default string to postpend to delimiter if none provided"
+				},
+				"dreadalign.Delimiter": {
+					"type": "string",
+					"default": " ",
+					"description": "Default delimiter to use if none provided"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "~2.9.2",
+		"vscode": "~1.1.18",
+		"@types/node": "~8.0.0",
+		"@types/mocha": "^5.2.4"
+	},
+	"__metadata": {
+		"id": "e18f5736-6b97-4a06-9058-135acf959f32",
+		"publisherId": "38000587-86f2-4a29-abb4-c20a8a133fa7",
+		"publisherDisplayName": "ronkuslak",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1697481395184,
+		"preRelease": false
+	}
+}

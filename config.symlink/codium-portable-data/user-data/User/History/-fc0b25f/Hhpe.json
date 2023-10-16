@@ -1,0 +1,11 @@
+{
+    "editor.fontSize": 13,
+    "workbench.colorTheme": "Community Material Theme Darker",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.enableDebugLogs": true,
+    "[shellscript]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    }
+}

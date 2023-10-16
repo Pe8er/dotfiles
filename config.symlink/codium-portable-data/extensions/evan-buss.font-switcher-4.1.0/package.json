@@ -1,0 +1,99 @@
+{
+	"name": "font-switcher",
+	"displayName": "Font Switcher",
+	"description": "Quickly configure your font settings.",
+	"version": "4.1.0",
+	"publisher": "evan-buss",
+	"engines": {
+		"vscode": "^1.22.0"
+	},
+	"author": {
+		"name": "Evan Buss",
+		"email": "evan.buss28@gmail.com",
+		"url": "https://github.com/evan-buss"
+	},
+	"license": "MIT",
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"fonts",
+		"customization",
+		"vscode"
+	],
+	"extensionKind": [
+		"ui"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/evan-buss/font-switcher"
+	},
+	"icon": "icon.png",
+	"activationEvents": [
+		"onCommand:font-switcher.switchFont",
+		"onCommand:font-switcher.setFontSize",
+		"onCommand:font-switcher.switchTerminalFont",
+		"onCommand:font-switcher.setTerminalFontSize"
+	],
+	"main": "./dist/extension",
+	"browser": "./dist/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "font-switcher.switchFont",
+				"title": "Switch Font"
+			},
+			{
+				"command": "font-switcher.setFontSize",
+				"title": "Font Size"
+			},
+			{
+				"command": "font-switcher.switchTerminalFont",
+				"title": "Switch Terminal Font"
+			},
+			{
+				"command": "font-switcher.setTerminalFontSize",
+				"title": "Terminal Font Size"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "npm run test-compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"browser": "vscode-test-web --extensionDevelopmentPath=. ."
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "^18.0.5",
+		"@types/vscode": "^1.22.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.6",
+		"@typescript-eslint/parser": "^5.30.6",
+		"@vscode/test-web": "^0.0.27",
+		"eslint": "^8.20.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"ts-loader": "^9.3.1",
+		"typescript": "^4.7.4",
+		"vscode-test": "^1.6.1",
+		"webpack": "^5.73.0",
+		"webpack-cli": "^4.10.0"
+	},
+	"__metadata": {
+		"id": "d675f82f-f7bd-40a7-a99a-2fa418b8803b",
+		"publisherId": "f8ad9227-217c-4d37-8d0b-e329d388044d",
+		"publisherDisplayName": "Evan Buss",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1697480768458,
+		"preRelease": false
+	}
+}
