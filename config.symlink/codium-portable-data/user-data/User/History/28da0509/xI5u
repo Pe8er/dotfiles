@@ -31,10 +31,10 @@ ruby/aliases.zsh
 codium-portable-data/user-data/Backups/*
 codium-portable-data/user-data/blob-storage/*
 codium-portable-data/user-data/Cache/*
-codium-portable-data/user-data/CachedData/*
 codium-portable-data/user-data/DawnCache/*
 codium-portable-data/user-data/GPUCache/*
 codium-portable-data/user-data/logs/*
 
+codium-portable-data/user-data/CachedData
 album.txt
 tmp.jpg
