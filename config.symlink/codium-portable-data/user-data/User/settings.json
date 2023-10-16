@@ -21,7 +21,7 @@
   "autoAlign.enabled": {
     "csv": true,
     "bsv": true,
-    "sh": true
+    "sh": false
   },
   "align.by.regex.templates": {
     "abc": "=|,|:",
