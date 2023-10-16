@@ -951,3 +951,139 @@
 ["DEBUG" - 9:15:45 PM] Using bundled version of prettier.
 ["DEBUG" - 9:15:46 PM] Using bundled version of prettier.
 ["DEBUG" - 9:15:52 PM] Using bundled version of prettier.
+["DEBUG" - 9:16:12 PM] Using bundled version of prettier.
+["DEBUG" - 9:18:45 PM] Using bundled version of prettier.
+["DEBUG" - 9:18:54 PM] Using bundled version of prettier.
+["DEBUG" - 9:19:00 PM] Using bundled version of prettier.
+["DEBUG" - 9:19:08 PM] Using bundled version of prettier.
+["DEBUG" - 9:19:12 PM] Using bundled version of prettier.
+["DEBUG" - 9:19:35 PM] Using bundled version of prettier.
+["DEBUG" - 9:19:46 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:18 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:25 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:33 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:34 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:35 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:35 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:40 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:46 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:46 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:50 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:51 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:52 PM] Using bundled version of prettier.
+["DEBUG" - 9:20:53 PM] Using bundled version of prettier.
+["DEBUG" - 9:21:06 PM] Using bundled version of prettier.
+["DEBUG" - 9:21:09 PM] Using bundled version of prettier.
+["DEBUG" - 9:21:17 PM] Using bundled version of prettier.
+["DEBUG" - 9:21:17 PM] Using bundled version of prettier.
+["DEBUG" - 9:21:38 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:19 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:19 PM] Enabling Prettier for Workspace /Users/pe8er/.dotfiles
+{
+  "languageSelector": [
+    {
+      "pattern": "/Users/pe8er/.dotfiles/**/*.{js,_js,bones,cjs,es,es6,frag,gs,jake,javascript,jsb,jscad,jsfl,jslib,jsm,jspre,jss,mjs,njs,pac,sjs,ssjs,xsjs,xsjslib,wxs,js.flow,jsx,ts,cts,mts,tsx,importmap,json,4DForm,4DProject,avsc,geojson,gltf,har,ice,JSON-tmLanguage,mcmeta,tfstate,tfstate.backup,topojson,webapp,webmanifest,yy,yyp,jsonc,code-snippets,sublime-build,sublime-commands,sublime-completions,sublime-keymap,sublime-macro,sublime-menu,sublime-mousemap,sublime-project,sublime-settings,sublime-theme,sublime-workspace,sublime_metrics,sublime_session,json5,css,wxss,pcss,postcss,less,scss,handlebars,hbs,graphql,gql,graphqls,md,livemd,markdown,mdown,mdwn,mkd,mkdn,mkdown,ronn,scd,workbook,mdx,component.html,html,hta,htm,html.hl,inc,xht,xhtml,mjml,vue,yml,mir,reek,rviz,sublime-syntax,syntax,yaml,yaml-tmlanguage,yaml.sed,yml.mysql}",
+      "scheme": "file"
+    },
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "mongo"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "json5"
+    },
+    {
+      "language": "css"
+    },
+    {
+      "language": "postcss"
+    },
+    {
+      "language": "less"
+    },
+    {
+      "language": "scss"
+    },
+    {
+      "language": "handlebars"
+    },
+    {
+      "language": "graphql"
+    },
+    {
+      "language": "markdown"
+    },
+    {
+      "language": "mdx"
+    },
+    {
+      "language": "html"
+    },
+    {
+      "language": "vue"
+    },
+    {
+      "language": "yaml"
+    },
+    {
+      "language": "ansible"
+    },
+    {
+      "language": "home-assistant"
+    },
+    {
+      "language": "jsonc",
+      "scheme": "vscode-userdata"
+    }
+  ],
+  "rangeLanguageSelector": [
+    {
+      "language": "javascript"
+    },
+    {
+      "language": "javascriptreact"
+    },
+    {
+      "language": "typescript"
+    },
+    {
+      "language": "typescriptreact"
+    },
+    {
+      "language": "json"
+    },
+    {
+      "language": "jsonc"
+    },
+    {
+      "language": "graphql"
+    }
+  ]
+}
+["DEBUG" - 9:22:24 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:26 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:27 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:28 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:29 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:30 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:32 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:34 PM] Using bundled version of prettier.
+["DEBUG" - 9:22:35 PM] Using bundled version of prettier.
+["DEBUG" - 9:23:01 PM] Using bundled version of prettier.
