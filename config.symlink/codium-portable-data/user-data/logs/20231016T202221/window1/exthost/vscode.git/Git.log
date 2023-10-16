@@ -1570,3 +1570,68 @@
 2023-10-16 21:15:22.915 [info] > git config --get commit.template [14ms]
 2023-10-16 21:15:22.916 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/master refs/remotes/master [13ms]
 2023-10-16 21:15:22.964 [info] > git status -z -uall [48ms]
+2023-10-16 21:15:32.776 [info] > git add -A -- . [8285ms]
+2023-10-16 21:15:32.776 [info] warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/.gitattributes', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/CHANGELOG.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/LICENSE.txt', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/out/Part.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/out/block.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/out/extension.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/out/line.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/out/string-utils.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/janjoerke.align-by-regex-1.0.4/package-lock.json', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/@types/lodash.intersection/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/@types/lodash/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/.npmignore', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/index.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/src/BaseLCS.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/src/IncrementalIntersectionLCS.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/src/LCS.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/src/LCSof2usingDP.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/src/RecursiveInGroupsLCS.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/multiple-lcs/src/Sequence.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/.npmignore', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/index.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/.mailmap', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/AUTHORS.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/CONTRIBUTING.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/LICENSE.txt', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/README.md', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/ThirdPartyNoticeText.txt', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/node_modules/typescript/lib/protocol.d.ts', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/Columnizer.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/Config.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/Indenter.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/Language.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/LanguageFactory.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/LineOfCode.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/Token.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/typescript/TypeScriptLanguage.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/typescript/TypeScriptScanner.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/typescript/TypeScriptToken.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/xml/XmlLanguage.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/node_modules/smart-column-indenter/src/languages/xml/XmlToken.js', CRLF will be replaced by LF the next time Git touches it
+warning: in the working copy of 'config.symlink/codium-portable-data/extensions/lmcarreiro.vscode-smart-column-indenter-0.0.13/out/extension.js', CRLF will be replaced by LF the next time Git touches it
+2023-10-16 21:15:32.786 [info] > git config --get commit.template [6ms]
+2023-10-16 21:15:32.787 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/master refs/remotes/master [8ms]
+2023-10-16 21:15:33.473 [info] > git status -z -uall [686ms]
+2023-10-16 21:15:34.700 [info] > git show --textconv :.git/COMMIT_EDITMSG [7ms]
+2023-10-16 21:15:34.701 [info] > git ls-files --stage -- /Users/pe8er/.dotfiles/.git/COMMIT_EDITMSG [8ms]
+2023-10-16 21:15:35.029 [info] > git check-ignore -v -z --stdin [8ms]
+2023-10-16 21:15:38.679 [info] > git -c user.useConfigOnly=true commit --quiet [5134ms]
+2023-10-16 21:15:38.689 [info] > git config --get commit.template [9ms]
+2023-10-16 21:15:38.691 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/master refs/remotes/master [10ms]
+2023-10-16 21:15:38.743 [info] > git status -z -uall [51ms]
+2023-10-16 21:15:39.285 [info] > git config --get commit.template [11ms]
+2023-10-16 21:15:39.286 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) --ignore-case refs/heads/master refs/remotes/master [11ms]
+2023-10-16 21:15:39.353 [info] > git status -z -uall [66ms]
+2023-10-16 21:15:39.826 [info] > git check-ignore -v -z --stdin [8ms]
+2023-10-16 21:15:45.248 [info] > git ls-files --stage -- /Users/pe8er/.dotfiles/Brewfile [8ms]
+2023-10-16 21:15:45.248 [info] > git show --textconv :Brewfile [8ms]
+2023-10-16 21:15:45.253 [info] > git cat-file -s b64171686d59fd51c3b73bd17c00df1454d3edd3 [5ms]
+2023-10-16 21:15:46.660 [info] > git ls-files --stage -- /Users/pe8er/.dotfiles/config.symlink/sketchybar/colors.sh [7ms]
+2023-10-16 21:15:46.660 [info] > git show --textconv :config.symlink/sketchybar/colors.sh [8ms]
+2023-10-16 21:15:46.665 [info] > git cat-file -s 38cc82aec5d52daf5616f374c733eef5b53bfbaf [5ms]
