@@ -59,7 +59,7 @@ update(){
   
 
   if [ "$CURRENT_ALBUM" != "$PREVIOUS_ALBUM" ] || [ "$CURRENT_COVER" == "" ]; then
-    CURRENT_COVER=$(osascript $CONFIG_DIR/plugins/music/Get-Artwork.scpt)
+    CURRENT_COVER=$(osascript $CONFIG_DIR/plugins/music/Get-Artwork.applescript)
   fi
 
   if [ $(printf "$CURRENT_ARTIST" | wc -c) -ge '30' ]; then
