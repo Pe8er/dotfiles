@@ -28,8 +28,9 @@ ruby/gemrc.symlink
 ruby/aliases.zsh
 
 # VS Codium files
-/config.symlink/codium-portable-data/user-data/*
-!/config.symlink/codium-portable-data/user-data/User/settings.json
+extensions
+config.symlink/codium-portable-data/user-data/
+!config.symlink/codium-portable-data/user-data/product.json
 
 tmp.jpg
 album.txt
