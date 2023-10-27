@@ -15,14 +15,18 @@ CURRENT_ALBUM=""
 music_item_defaults=(
   width=234
   align=center
-  padding_left=8
-  padding_right=8
+  padding_left=$PADDINGS
+  padding_right=$PADDINGS
 )
 
 music_cover=(
   label.drawing=off
   icon.drawing=off
-  background.image.scale=0.5
+  background.image.scale=0.468
+  background.image.corner_radius=4
+  background.image.padding_left=$PADDINGS
+  background.image.padding_right=$PADDINGS
+  y_offset=-$PADDINGS
 )
 
 music_artist=(
@@ -40,7 +44,7 @@ music_album=(
 )
 
 render_bar_item() {
-  sketchybar --set $NAME label="$CURRENT_ARTIST: $CURRENT_SONG" label.padding_right=8
+  sketchybar --set $NAME label="$CURRENT_ARTIST: $CURRENT_SONG"
 }
 
 render_popup() {
@@ -50,14 +54,15 @@ render_popup() {
              --set music.album "${music_album[@]}"
 }
 
-update(){
+update() {
   CURRENT_ARTIST="$(echo "$INFO" | jq -r '.artist')"
   CURRENT_SONG="$(echo "$INFO" | jq -r '.title')"
   PREVIOUS_ALBUM="$(cat "$CONFIG_DIR/plugins/music/album.txt")"
   CURRENT_ALBUM="$(echo "$INFO" | jq -r '.album')"
+  PLAYER_STATE="$(echo "$INFO" | jq -r '.state')"
   echo "$CURRENT_ALBUM" > "$CONFIG_DIR/plugins/music/album.txt"
-  
 
+  
   if [ "$CURRENT_ALBUM" != "$PREVIOUS_ALBUM" ] || [ "$CURRENT_COVER" == "" ]; then
     CURRENT_COVER=$(osascript $CONFIG_DIR/plugins/music/Get-Artwork.applescript)
   fi
@@ -74,6 +79,12 @@ update(){
     CURRENT_ALBUM=${CURRENT_ALBUM:0:33}"…"
   fi
 
+  if [ "$PLAYER_STATE" = "playing" ]; then
+    ICON="􀊆"
+  else
+    ICON="􀊄"
+  fi
+
   # for i in ["$CURRENT_ARTIST", "$CURRENT_SONG", "$CURRENT_ALBUM"]; do
   #     if [ $(printf "$i" | wc -c) -ge '26' ]; then
   #       i = ${$i:0:26}"…"
@@ -81,17 +92,26 @@ update(){
   # done
 
   sketchybar --set music.cover background.image="$CURRENT_COVER"  \
+             --set music background.image="$CURRENT_COVER"        \
+             --set music icon="$ICON"                             \
              --set music.artist label="$CURRENT_ARTIST"           \
              --set music.title label="$CURRENT_SONG"              \
              --set music.album label="$CURRENT_ALBUM"
 
   render_bar_item
   render_popup
+  
+  echo "$SENDER $CURRENT_ARTIST" # When $SENDER is "forced", $CURRENT_ARTIST is empty
 }
 
 popup() {
   sketchybar --set "$NAME" popup.drawing="$1"
 }
+
+playpause() {
+  osascript -e 'tell application "Music" to playpause'
+}
+  
 
 case "$SENDER" in
 "routine" | "forced" | "media_change")
@@ -104,6 +124,6 @@ case "$SENDER" in
   popup off
   ;;
 "mouse.clicked")
-  popup toggle
+  playpause
   ;;
 esac
