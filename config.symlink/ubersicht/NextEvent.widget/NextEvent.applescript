@@ -1,4 +1,4 @@
-set input to paragraphs of (do shell script "~/.dotfiles/bin/icalBuddy -ec 'Found in Natural Language,CCSF' -npn -nc -iep 'datetime,title' -po 'datetime,title' -eed -ea -n -li 4 -ps '|^|' -b '' eventsToday")
+set input to paragraphs of (do shell script "~/.dotfiles/bin/icalBuddy -ec 'Found in Natural Language,CCSF' -npn -nc -iep 'datetime,title' -po 'datetime,title' -eed -ea -n -li 4 -ps '|: |' -b '' eventsToday")
 
 set currentTime to date (do shell script "date '+%I:%M %p'")
 

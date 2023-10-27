@@ -22,7 +22,7 @@ source "$ITEM_DIR/countdown.sh"
 
 # Right
 source "$ITEM_DIR/datetime.sh"
-source "$ITEM_DIR/dndindicator.sh"
+source "$ITEM_DIR/dnd.sh"
 source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
@@ -38,7 +38,7 @@ sketchybar \
 --add bracket app_icons weather \
         --set app_icons "${bracket_defaults[@]}" \
 \
---add bracket status_icons volume_icon volume battery.alias wifi date clock dndindicator \
+--add bracket status_icons volume_icon volume battery wifi date clock dnd \
         --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --update

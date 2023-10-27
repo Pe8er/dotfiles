@@ -11,7 +11,7 @@ sketchybar \
   padding_left=8 \
   popup.align=right \
   "${menu_defaults[@]}" \
-  background.color=$CONTRAST          \
+  background.color=$BLACK_50          \
   background.border_width=1          \
   background.corner_radius=6         \
   background.height=18               \
