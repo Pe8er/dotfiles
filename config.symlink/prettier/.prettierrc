@@ -1,8 +1,0 @@
-{
-  "tabWidth": 4,
-  "useTabs": false,
-  "pluginSearchDirs": ["./"],
-  "plugins": [
-    "prettier-plugin-sh"
-  ]
-}

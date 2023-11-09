@@ -40,6 +40,7 @@ item_defaults=(
   label.padding_left=$PADDINGS
   label.padding_right=$PADDINGS
   updates=when_shown
+  scroll_texts=on
 )
 
 icon_defaults=(

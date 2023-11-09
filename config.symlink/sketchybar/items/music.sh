@@ -6,16 +6,15 @@ source "$CONFIG_DIR/globalstyles.sh"
 music=(
   "${bracket_defaults[@]}"
   script="$PLUGIN_DIR/music.sh"
-  popup.align=right
+  popup.align=center
   background.padding_right=$PADDINGS
-  icon=$MUSIC
+  icon=􀊆
+  drawing=off
   label="Loading…"
-  background.image.scale=0.1
+  background.image.scale=0.0468
   background.image.corner_radius=$PADDINGS
-  background.image.y_offset=-$PADDINGS
-  background.image.border_width=2
-  background.image.border_color=$HIGHLIGHT
   icon.padding_left=32
+  label.max_chars=33
   updates=on
   --subscribe music media_change
   --subscribe music mouse.entered
@@ -29,7 +28,6 @@ sketchybar                                                                      
   --set      music "${music[@]}"                                                      \
   --set      music "${menu_defaults[@]}"                                              \
   --add item music.cover popup.music                                                  \
-       --set music.cover background.image=$CONFIG_DIR/plugins/music/Cover-Default.png \
   --add item music.artist popup.music                                                 \
   --add item music.title popup.music                                                  \
   --add item music.album popup.music

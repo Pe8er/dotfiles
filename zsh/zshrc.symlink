@@ -9,7 +9,20 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
 source $HOME/.dotfiles/zsh/path.zsh
-eval $(thefuck --alias)eval "$(pyenv init -)"
+eval $(thefuck --alias)
+eval "$(pyenv init -)"
 export PATH=$PATH:/Users/pe8er/.spicetify
 export PATH=$PATH:$HOME/.dotfiles/bin/
 source /Users/Shared/rlm/rlmenvset.sh
+
+# zsh-autocomplete settings
+bindkey -M menuselect '\r' .accept-line
+
+# Autocompletion
+zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 8 )) )'
+
+# Override history search.
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
+
+# History menu.
+zstyle ':autocomplete:history-search-backward:*' list-lines 8
