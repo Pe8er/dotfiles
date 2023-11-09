@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
+
 API_KEY="462eeb49a1b844f191f175554222607" # insert api key here
-# CITY="Oborniki Slaskie, Poland"           # insert city here
-CITY="$(curl -s ipinfo.io/loc)"
 
 # first comment is description, second is icon number
 WEATHER_ICONS_DAY=(
@@ -108,10 +109,11 @@ WEATHER_ICONS_NIGHT=(
 )
 
 render_item() {
-  if [ "$SSID" = "" ]; then
-    args+=(--set $NAME drawing=off)
+  if [ "$CITY" = "" ]; then
+    args+=(--set $NAME icon="􀌏" icon.padding_right=$PADDINGS label.drawing=off)
+    # echo "Debug: $NAME #123 $FONT"
   else
-    args+=(--set $NAME icon="$ICON" label="${TEMP}°C" drawing=on)
+    args+=(--set $NAME icon="$ICON" icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°C" label.drawing=on)
   fi
 
   sketchybar "${args[@]}" >/dev/null
@@ -119,7 +121,7 @@ render_item() {
 }
 
 render_popup() {
-  if [ "$SSID" = "" ]; then
+  if [ "$CITY" = "" ]; then
     args+=(--set weather.details label="N/A"
       click_script="sketchybar --set $NAME popup.drawing=off")
   else
@@ -134,18 +136,29 @@ render_popup() {
 update() {
   CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
   SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
+  
+  # echo "Debug: #137"
+  
+  # CITY="Oborniki Slaskie, Poland"           # insert city here
+  CITY="$(curl -s -m 5 ipinfo.io/loc)"
   # CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
-  DATA=$(curl -s "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
-  CONDITION=$(echo $DATA | jq -r '.current.condition.code')
-  CONDITION_TEXT=$(echo $DATA | jq -r '.current.condition.text')
-  TEMP=$(echo $DATA | jq -r '.current.temp_c | floor')
-  FEELSLIKE=$(echo $DATA | jq -r '.current.feelslike_f')
-  HUMIDITY=$(echo $DATA | jq -r '.current.humidity')
-  IS_DAY=$(echo $DATA | jq -r '.current.is_day')
-  LOCATION=$(echo $DATA | jq -r '.location.name' && echo ', ' && echo $DATA | jq -r '.location.country')
+  # echo "Debug: $NAME #140 City: $CITY"
 
-  [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION]}
-  args=()
+  if [ "$CITY" != "" ]; then
+    DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
+    CONDITION=$(echo $DATA | jq -r '.current.condition.code')
+    CONDITION_TEXT=$(echo $DATA | jq -r '.current.condition.text')
+    TEMP=$(echo $DATA | jq -r '.current.temp_c | floor')
+    FEELSLIKE=$(echo $DATA | jq -r '.current.feelslike_f')
+    HUMIDITY=$(echo $DATA | jq -r '.current.humidity')
+    IS_DAY=$(echo $DATA | jq -r '.current.is_day')
+    LOCATION=$(echo $DATA | jq -r '.location.name' && echo ', ' && echo $DATA | jq -r '.location.country')
+  
+
+    [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION]}
+    args=()
+    # echo "Debug: $NAME #157 Successful"
+  fi
 
   render_item
   render_popup
@@ -160,7 +173,7 @@ popup() {
 }
 
 case "$SENDER" in
-"routine" | "forced")
+"routine" | "forced" | "wifi_change")
   update
   ;;
 "mouse.entered")

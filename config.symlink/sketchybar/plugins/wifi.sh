@@ -5,33 +5,30 @@ POPUP_CLICK_SCRIPT="sketchybar --set wifi popup.drawing=toggle"
 
 source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
 
-IP_ADDRESS=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
 IS_VPN=$(/usr/local/bin/piactl get connectionstate)
+CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
+IP_ADDRESS="$(ipconfig getifaddr en0)"
+SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
+CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
 
 if [[ $IS_VPN != "Disconnected" ]]; then
-  COLOR=$YELLOW
-  LABEL_COLOR=$COLOR
-  ICON_COLOR=$COLOR
-  ICON=􀎡
-  LABEL=$IP_ADDRESS
-elif [[ $IP_ADDRESS != "" ]]; then
-  COLOR=$TRANSPARENT
+  ICON_COLOR=$GREEN
+  ICON=􀙵
+elif [[ $SSID != "" ]]; then
+  ICON_COLOR=$WHITE
   ICON=􀙇
-  LABEL=$IP_ADDRESS
+elif [[ $CURRENT_WIFI = "AirPort: Off" ]]; then
+  ICON_COLOR=$RED
+  ICON=􀙈
 else
-  COLOR=$BLUE
-  LABEL_COLOR=$COLOR
-  ICON_COLOR=$COLOR
-  ICON=􀇿
-  LABEL="Disconnected"
+  ICON_COLOR=$WHITE_25
+  ICON=􀙈
 fi
 
 render_bar_item() {
-sketchybar --set $NAME background.border_color=$COLOR \
-  label.color=$LABEL_COLOR \
+sketchybar --set $NAME \
   icon.color=$ICON_COLOR \
   icon=$ICON \
-  label="$LABEL" \
   click_script="$POPUP_CLICK_SCRIPT"
 }
 
@@ -50,24 +47,11 @@ render_popup() {
   fi
 
   sketchybar "${args[@]}" >/dev/null
-
 }
 
 update() {
-  CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
-  IP_ADDRESS="$(ipconfig getifaddr en0)"
-  SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
-  CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
-  # WIFI_INTERFACE=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
-
-  args=()
-
   render_bar_item
   render_popup
-
-  if [ "$SENDER" = "forced" ]; then
-    sketchybar --animate tanh 15 --set "$NAME" label.y_offset=5 label.y_offset=0
-  fi
 }
 
 popup() {

@@ -7,14 +7,19 @@ update() {
     dnd_enabled=$(
         defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"
     )
+
     if [ $dnd_enabled -eq 1 ]; then
-        sketchybar --set $NAME icon=􀆺
+        ICON=􀆺
+        COLOR=$WHITE
     else
-        sketchybar --set $NAME icon=􀆹 icon.color=$WHITE_50
+        ICON=􀆹
+        COLOR=$WHITE_25
     fi
+
+    sketchybar --set $NAME icon=$ICON icon.color=$COLOR
 }
 
-toggle(){
+toggle() {
     osascript -e 'tell application "System Events" to keystroke "\\" using {control down, shift down, command down, option down}'
     update
 }

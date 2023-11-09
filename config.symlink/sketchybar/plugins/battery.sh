@@ -40,12 +40,12 @@ render_item() {
     COLOR=$LABEL_COLOR
   fi
 
-  sketchybar --set battery icon.color="${COLOR}"
+  sketchybar --set battery alias.color=$COLOR
 
 }
 
 render_popup() {
-  sketchybar --set battery.details label="${CHARGING_STATUS}: $PERCENTAGE%"
+  sketchybar --set battery.details label="$PERCENTAGE% (${CHARGING_STATUS})"
 }
 
 update() {
@@ -58,7 +58,7 @@ popup() {
 }
 
 case "$SENDER" in
-"routine" | "forced")
+"routine" | "forced" | "power_source_change")
   update
   ;;
 "mouse.entered")

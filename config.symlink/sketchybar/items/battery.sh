@@ -4,6 +4,7 @@ sketchybar                                                     \
   --add alias "Control Center,Battery" right                   \
   --rename "Control Center,Battery" battery                    \
   --set battery "${icon_defaults[@]}"                          \
+  update_freq=10                                               \
   "${menu_defaults[@]}"                                        \
   popup.align=right                                            \
   click_script="sketchybar --set battery popup.drawing=toggle" \

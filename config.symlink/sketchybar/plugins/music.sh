@@ -13,15 +13,13 @@ PREVIOUS_ALBUM=""
 CURRENT_ALBUM=""
 
 music_item_defaults=(
-  width=234
   align=center
   padding_left=$PADDINGS
   padding_right=$PADDINGS
+  label.max_chars=32
 )
 
 music_cover=(
-  label.drawing=off
-  icon.drawing=off
   background.image.scale=0.468
   background.image.corner_radius=4
   background.image.padding_left=$PADDINGS
@@ -67,22 +65,30 @@ update() {
     CURRENT_COVER=$(osascript $CONFIG_DIR/plugins/music/Get-Artwork.applescript)
   fi
 
-  if [ $(printf "$CURRENT_ARTIST" | wc -c) -ge '30' ]; then
-    CURRENT_ARTIST=${CURRENT_ARTIST:0:30}"…"
-  fi
+  # if [ $(printf "$CURRENT_ARTIST" | wc -c) -ge '30' ]; then
+  #   CURRENT_ARTIST=${CURRENT_ARTIST:0:30}"…"
+  # fi
 
-  if [ $(printf "$CURRENT_SONG" | wc -c) -ge '27' ]; then
-    CURRENT_SONG=${CURRENT_SONG:0:27}"…"
-  fi
+  # if [ $(printf "$CURRENT_SONG" | wc -c) -ge '27' ]; then
+  #   CURRENT_SONG=${CURRENT_SONG:0:27}"…"
+  # fi
 
-  if [ $(printf "$CURRENT_ALBUM" | wc -c) -ge '33' ]; then
-    CURRENT_ALBUM=${CURRENT_ALBUM:0:33}"…"
-  fi
+  # if [ $(printf "$CURRENT_ALBUM" | wc -c) -ge '33' ]; then
+  #   CURRENT_ALBUM=${CURRENT_ALBUM:0:33}"…"
+  # fi
 
   if [ "$PLAYER_STATE" = "playing" ]; then
-    ICON="􀊆"
+    sketchybar --set music drawing=on                               \
+               --set music.cover background.image="$CURRENT_COVER"  \
+               --set music background.image="$CURRENT_COVER"        \
+               --set music.artist label="$CURRENT_ARTIST"           \
+               --set music.title label="$CURRENT_SONG"              \
+               --set music.album label="$CURRENT_ALBUM"
+
+    render_bar_item
+    render_popup
   else
-    ICON="􀊄"
+    sketchybar --set music drawing=off
   fi
 
   # for i in ["$CURRENT_ARTIST", "$CURRENT_SONG", "$CURRENT_ALBUM"]; do
@@ -91,17 +97,7 @@ update() {
   #     fi
   # done
 
-  sketchybar --set music.cover background.image="$CURRENT_COVER"  \
-             --set music background.image="$CURRENT_COVER"        \
-             --set music icon="$ICON"                             \
-             --set music.artist label="$CURRENT_ARTIST"           \
-             --set music.title label="$CURRENT_SONG"              \
-             --set music.album label="$CURRENT_ALBUM"
-
-  render_bar_item
-  render_popup
   
-  echo "$SENDER $CURRENT_ARTIST" # When $SENDER is "forced", $CURRENT_ARTIST is empty
 }
 
 popup() {
