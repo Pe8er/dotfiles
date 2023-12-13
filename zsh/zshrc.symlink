@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/zsh/material-palenight.omp.json)"
+  eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/zsh/themes/catppuccin_mocha.omp.json)"
 fi
 
 source $HOME/.dotfiles/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh

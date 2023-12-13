@@ -7,11 +7,13 @@ music=(
   "${bracket_defaults[@]}"
   script="$PLUGIN_DIR/music.sh"
   popup.align=center
-  background.padding_right=$PADDINGS
+  padding_left=0
+  padding_right=$PADDINGS
   icon=􀊆
   drawing=off
   label="Loading…"
-  background.image.scale=0.0468
+  background.image=media.artwork
+  background.image.scale=0.75
   background.image.corner_radius=$PADDINGS
   icon.padding_left=32
   label.max_chars=33

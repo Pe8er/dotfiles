@@ -10,53 +10,49 @@ window_state() {
   COLOR=$LABEL_COLOR
   ICON=$YABAI_GRID
 
-  if [ "$(echo "$WINDOW" | jq '.["is-floating"]')" = "true" ]; then
-    ICON=$YABAI_FLOAT
+  if [[ $STACK_INDEX -gt 0 ]]; then
+    LAST_STACK_INDEX=$(yabai -m query --windows --window stack.last | jq '.["stack-index"]')
+    ICON=$YABAI_STACK
+    LABEL="$(printf "[%s of %s]" "$STACK_INDEX" "$LAST_STACK_INDEX")"
     COLOR=$RED
   elif [ "$(echo "$WINDOW" | jq '.["has-fullscreen-zoom"]')" = "true" ]; then
     ICON=$YABAI_FULLSCREEN_ZOOM
-    COLOR=$BLUE
+    COLOR=$GREEN
+  elif [ "$(echo "$WINDOW" | jq '.["split-type"]')" == '"vertical"' ]; then
+    ICON=$YABAI_SPLIT_VERTICAL
+    COLOR=$LABEL_COLOR
+  elif [ "$(echo "$WINDOW" | jq '.["split-type"]')" == '"horizontal"' ]; then
+    ICON=$YABAI_SPLIT_HORIZONTAL
+    COLOR=$LABEL_COLOR
+  elif [ "$(echo "$WINDOW" | jq '.["is-floating"]')" = "true" ]; then
+    ICON=$YABAI_FLOAT
+    COLOR=$GREEN
   elif [ "$(echo "$WINDOW" | jq '.["has-parent-zoom"]')" = "true" ]; then
     ICON=$YABAI_PARENT_ZOOM
-    COLOR=$YELLOW
-  elif [[ $STACK_INDEX -gt 0 ]]; then
-    LAST_STACK_INDEX=$(yabai -m query --windows --window stack.last | jq '.["stack-index"]')
-    ICON=$YABAI_STACK
-    LABEL="$(printf "[%s/%s]" "$STACK_INDEX" "$LAST_STACK_INDEX")"
-    COLOR=$LABEL_COLOR
+    COLOR=$BLUE
   fi
 
-  args=(--animate sin 10 --bar border_color=$COLOR
-                         --set $NAME icon.color=$COLOR)
+  args=(--bar border_color=$COLOR --animate sin 10 --set $NAME icon=$ICON icon.color=$COLOR)
 
-  [ -z "$LABEL" ] && args+=(label.width=20) \
-                  || args+=(label="$LABEL" label.width=20)
+  [ -z "$LABEL" ] && args+=(label.width=0) \
+                  || args+=(label="$LABEL" label.width=50)
 
-  [ -z "$ICON" ] && args+=(icon.width=12) \
-                 || args+=(icon="$ICON" icon.width=12)
+  [ -z "$ICON" ] && args+=(icon.width=0) \
+                 || args+=(icon="$ICON" icon.width=30)
 
-  sketchybar "${args[@]}"
+  sketchybar -m "${args[@]}"
 }
 
-windows_on_spaces () {
-    /usr/bin/python3 $CONFIG_DIR/plugins/space.py
-    window_state
-}
 
 mouse_clicked() {
-  yabai -m window --toggle float
+  # yabai -m query --windows --window
+  yabai -m window --toggle zoom-fullscreen
   window_state
 }
-
-windows_on_spaces
 
 case "$SENDER" in
   "mouse.clicked") mouse_clicked
   ;;
-  "forced") windows_on_spaces
-  ;;
   "window_focus") window_state 
-  ;;
-  "windows_on_spaces" | "space_change") windows_on_spaces
   ;;
 esac
