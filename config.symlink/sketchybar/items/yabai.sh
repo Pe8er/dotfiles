@@ -5,7 +5,6 @@ yabai=(
   icon=$YABAI_GRID
   script="$PLUGIN_DIR/yabai.sh"
   icon.font="$FONT:Bold:12.0"
-  associated_display=active
 )
 
 sketchybar --add event window_focus            \

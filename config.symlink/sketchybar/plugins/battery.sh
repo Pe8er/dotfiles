@@ -26,7 +26,6 @@ render_item() {
     ;;
   [1-2][0-9])
     ICON="􀛩"
-    COLOR=$ORANGE
     ;;
   *)
     ICON="􀛪"

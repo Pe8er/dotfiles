@@ -1,6 +1,9 @@
-#!/bin/env/bash
+#!/bin/bash
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
+
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12")
 
 # Destroy space on right click, focus space on left click.
 # New space by left clicking separator (>)
@@ -12,27 +15,41 @@ do
   sid=$(($i+1))
 
   space=(
-    associated_space=$sid
+    space=$sid
     icon="${SPACE_ICONS[i]}"
+    icon.padding_left=0
+    icon.padding_right=-"$PADDINGS"
+    padding_left=$PADDINGS
+    padding_right=$PADDINGS
+    label.padding_right=$PADDINGS
+    icon.highlight_color=$HIGHLIGHT
+    label.color=$WHITE_50
+    label.highlight_color=$HIGHLIGHT
     label.font="sketchybar-app-font:Regular:14.0"
     label.y_offset=-1
-    label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
+    background.height=2
+    background.y_offset=-12
+    script="$PLUGIN_DIR/space.sh && $PLUGIN_DIR/space_windows.sh"
   )
 
   sketchybar --add space space.$sid left    \
              --set space.$sid "${space[@]}" \
-             --subscribe space.$sid mouse.clicked
+             --subscribe space.$sid mouse.clicked space_windows_change
 done
 
-# sketchybar \
-# --add item spacer_chevron left \
-#   --set spacer_chevron label.drawing=off \
-#   icon=􀆊 \
-#   icon.padding_left=0 \
-#   \
-#   --add item front_app left \
-#   --set front_app script="$PLUGIN_DIR/front_app.sh" \
-#   icon.drawing=off \
-#   label.font="$FONT:Bold:12.0" \
-#   --subscribe front_app front_app_switched
+# space_creator=(
+#   icon=􀐇
+#   icon.font="$FONT:Regular:14.0"
+#   padding_left=$PADDINGS
+#   padding_right=$PADDINGS
+#   icon.padding_right=$PADDINGS
+#   label.drawing=off
+#   display=active
+#   click_script='yabai -m space --create'
+#   script="$PLUGIN_DIR/space_windows.sh"
+#   icon.color=$HIGHLIGHT
+# )
+
+# sketchybar --add item space_creator left               \
+#            --set space_creator "${space_creator[@]}"   \
+#            --subscribe space_creator space_windows_change

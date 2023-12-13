@@ -3,26 +3,27 @@
 # Unload the macOS WindowManager process
 # launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >/dev/null 2>&1 &
 
-sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
 yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
-$HOME/.config/yabai/create_spaces.sh
+# $HOME/.config/yabai/create_spaces.sh
 
 yabai -m config window_placement second_child \
-  auto_balance off \
-  window_animation_duration 0.3 \
-  mouse_follows_focus off \
-  top_padding 0 \
-  bottom_padding 6 \
-  left_padding 6 \
-  right_padding 6 \
-  window_gap 6 \
-  external_bar all:20:0
+  auto_balance off                            \
+  mouse_follows_focus off                     \
+  top_padding 0                               \
+  bottom_padding 6                            \
+  left_padding 6                              \
+  right_padding 6                             \
+  window_gap 6                                \
+  --display 0 external_bar all:20:0           \
+  -- display 1 external_bar all:32:0          \
+  layout bsp
 
 # Center mouse on window with focus
 # yabai -m config mouse_follows_focus on
@@ -39,8 +40,7 @@ yabai -m rule --add app="^Adobe Lightroom" manage=on
 yabai -m rule --add app="^IINA$" sticky=on layer=above manage=off
 
 # Float small, non-resizable windows, doesn't seem to work well
-yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+# yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
 
-yabai -m space --layout bsp
 
 echo "Yabai configuration loaded…"

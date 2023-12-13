@@ -4,7 +4,7 @@ import os, json, re
 
 ICON_MAP = [
     {"regex": r"1Password 7", "icon": ":one_password:"},
-    {"regex": r"Affinity Designer", "icon": ":affinity_designer:"},
+    {"regex": r"Affinity Designer|Adobe Photoshop 2024", "icon": ":affinity_designer:"},
     {"regex": r"Affinity Photo|Lightroom Classic", "icon": ":affinity_photo:"},
     {"regex": r"Affinity Publisher", "icon": ":affinity_publisher:"},
     {"regex": r"Airmail", "icon": ":airmail:"},
@@ -18,6 +18,7 @@ ICON_MAP = [
     {"regex": r"Bear", "icon": ":bear:"},
     {"regex": r"Bitwarden", "icon": ":bit_warden:"},
     {"regex": r"Blender", "icon": ":blender:"},
+    {"regex": r"Books", "icon": "book"},
     {"regex": r"Brave Browser", "icon": ":brave_browser:"},
     {"regex": r"Calendar|Fantastical", "icon": ":calendar:"},
     {"regex": r"Calibre", "icon": ":book:"},
@@ -80,6 +81,7 @@ ICON_MAP = [
     {"regex": r"Notion", "icon": ":notion:"},
     {"regex": r"Nova", "icon": ":nova:"},
     {"regex": r"Numbers", "icon": ":numbers:"},
+    {"regex": r"Numi", "icon": ":add:"},
     {"regex": r"OBS", "icon": ":obsstudio:"},
     {"regex": r"Obsidian", "icon": ":obsidian:"},
     {"regex": r"OmniFocus", "icon": ":omni_focus:"},
@@ -97,7 +99,9 @@ ICON_MAP = [
     {"regex": r"Sequel Ace", "icon": ":sequel_ace:"},
     {"regex": r"Sequel Pro", "icon": ":sequel_pro:"},
     {"regex": r"Setapp", "icon": ":setapp:"},
+    {"regex": r"SF Symbols", "icon": ":android_studio:"},
     {"regex": r"Signal", "icon": ":signal:"},
+    {"regex": r"Silicio", "icon": ":music:"},
     {"regex": r"Sketch", "icon": ":sketch:"},
     {"regex": r"Skype", "icon": ":skype:"},
     {"regex": r"Slack", "icon": ":slack:"},
@@ -179,4 +183,10 @@ for app in apps:
 args = ' '.join([f'--set space.{space} label="{to_formatted_icons(apps)}" label.drawing=on' for space, apps in spaces.items()])
 default_args = "--set '/space\..*/' background.drawing=on --animate sin 10"
 
-os.system(f'sketchybar {default_args} {args}')
+args2 = ''
+spaces = json.loads(os.popen('yabai -m query --spaces').read())
+for space in spaces:
+    if not space['windows']:
+        args2 = f'{args2} --set space.{space["index"]} label="" label.drawing=off'
+
+os.system(f'sketchybar -m {default_args} {args} {args2}')

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "console_title_template": "{{if .Segments.Git.RepoName}} {{.Segments.Git.RepoName}} {{else}} {{.Folder}} {{end}}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "plain",
+          "foreground": "#676E95",
+          "template": "\n\u250c {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }} ",
+          "properties": {
+            "display_host": true
+          }
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#202331",
+          "background": "#676E95",
+          "template": " {{ .Path }} ",
+          "properties": {
+            "style": "agnoster_full"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#202331",
+          "background": "#c3e88d",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#c3e88d{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#f07178{{ end }}",
+            "{{ if gt .Ahead 0 }}#82aaff{{ end }}",
+            "{{ if gt .Behind 0 }}#676E95{{ end }}"
+          ],
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} \u2502{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }} ",
+          "properties": {
+            "branch_ahead_icon": "\u2191",
+            "branch_behind_icon": "\u2193",
+            "branch_gone": "\u2262",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u2261",
+            "cherry_pick_icon": "✓ ",
+            "commit_icon": "\u25b7 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "merge_icon": "\u25f4 ",
+            "no_commits_icon": "[no commits]",
+            "rebase_icon": "\u2c62 ",
+            "tag_icon": "\u25b6 ",
+            "untracked_modes": {
+              "/Users/user/Projects/oh-my-posh/": "no"
+            }
+          }
+        },
+        {
+          "type": "terraform",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#202331",
+          "background": "#ffcb6b",
+          "template": " {{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }} "
+        },
+        {
+          "type": "exit",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#f07178",
+          "background": "#444267",
+          "template": " {{ if gt .Code 0 }}error{{ else }}\uf42e{{ end }} "
+        }]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "#676E95",
+          "alignment": "right",
+          "newline": false,
+          "template": " {{ .CurrentDate | date .Format }}",
+          "properties": {
+            "time_format": "15:04 PM"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#676E95",
+          "template": "\u2514"
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#eeffff",
+          "template": ""
+        }
+      ]
+    }
+  ]
+}

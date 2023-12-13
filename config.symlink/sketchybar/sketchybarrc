@@ -29,6 +29,7 @@ source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/spacer.sh" right
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/music.sh"
+# source "$ITEM_DIR/moode.sh"
 
 # Brackets
 sketchybar \
