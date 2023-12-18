@@ -5,8 +5,7 @@ source "$CONFIG_DIR/globalstyles.sh"
 
 music_item_defaults=(
   align=center
-  # padding_left=$PADDINGS
-  # padding_right=$PADDINGS
+  width=240
   label.max_chars=32
 )
 
@@ -17,10 +16,10 @@ music_cover=(
   background.image.padding_left=$PADDINGS
   background.image.padding_right=$PADDINGS
   y_offset=-$PADDINGS
+  align=center
 )
 
 music_artist=(
-  "${separator[@]}"
   "${music_item_defaults[@]}"
 )
 
@@ -38,10 +37,10 @@ render_bar_item() {
 }
 
 render_popup() {
-  sketchybar --set music.cover "${music_cover[@]}"   \
-             --set music.artist "${music_artist[@]}" \
-             --set music.title "${music_title[@]}"   \
-             --set music.album "${music_album[@]}"
+  sketchybar --set $NAME.cover "${music_cover[@]}"   \
+             --set $NAME.artist "${music_artist[@]}" \
+             --set $NAME.title "${music_title[@]}"   \
+             --set $NAME.album "${music_album[@]}"
 }
 
 update() {
@@ -56,7 +55,6 @@ update() {
                --set $NAME.artist label="$CURRENT_ARTIST"  \
                --set $NAME.title label="$CURRENT_SONG"     \
                --set $NAME.album label="$CURRENT_ALBUM"
-
     render_bar_item
     render_popup
 
@@ -65,13 +63,6 @@ update() {
     popup off
     sketchybar --set $NAME drawing=off
   fi
-
-  # for i in ["$CURRENT_ARTIST", "$CURRENT_SONG", "$CURRENT_ALBUM"]; do
-  #     if [ $(printf "$i" | wc -c) -ge '26' ]; then
-  #       i = ${$i:0:26}"…"
-  #     fi
-  # done
-
   
 }
 
