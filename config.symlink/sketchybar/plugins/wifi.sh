@@ -3,7 +3,7 @@
 POPUP_OFF="sketchybar --set wifi popup.drawing=off"
 POPUP_CLICK_SCRIPT="sketchybar --set wifi popup.drawing=toggle"
 
-source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
+source "$HOME/.config/sketchybar/colors.sh" # Loads defined colors
 
 IS_VPN=$(/usr/local/bin/piactl get connectionstate)
 CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
@@ -13,16 +13,19 @@ CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate:
 
 if [[ $IS_VPN != "Disconnected" ]]; then
   ICON_COLOR=$GREEN
-  ICON=􀙵
+  ICON=􀎡
+elif [[ $SSID = "Ebrietas" ]]; then
+  ICON_COLOR=$WHITE
+  ICON=􀉤
 elif [[ $SSID != "" ]]; then
   ICON_COLOR=$WHITE
-  ICON=􀙇
+  ICON=􀐿
 elif [[ $CURRENT_WIFI = "AirPort: Off" ]]; then
   ICON_COLOR=$RED
-  ICON=􀙈
+  ICON=􀐾
 else
   ICON_COLOR=$WHITE_25
-  ICON=􀙈
+  ICON=􀐾
 fi
 
 render_bar_item() {

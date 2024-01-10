@@ -16,20 +16,24 @@ do
 
   space=(
     space=$sid
+    padding_left=$PADDINGS
+    padding_right=$PADDINGS
+    background.height=2
+    background.y_offset=-12
+    icon.drawing=on
+    icon.background.drawing=on
+    icon.background.color=0x00000000
+    icon.background.image.scale=0.5
     icon="${SPACE_ICONS[i]}"
     icon.padding_left=0
     icon.padding_right=-"$PADDINGS"
-    padding_left=$PADDINGS
-    padding_right=$PADDINGS
-    label.padding_right=$PADDINGS
     icon.highlight_color=$HIGHLIGHT
+    label.padding_right=$PADDINGS
     label.color=$WHITE_50
     label.highlight_color=$HIGHLIGHT
     label.font="sketchybar-app-font:Regular:14.0"
     label.y_offset=-1
-    background.height=2
-    background.y_offset=-12
-    script="$PLUGIN_DIR/space.sh && $PLUGIN_DIR/space_windows.sh"
+    script="$PLUGIN_DIR/space.sh" # && $PLUGIN_DIR/space_windows.sh"
   )
 
   sketchybar --add space space.$sid left    \

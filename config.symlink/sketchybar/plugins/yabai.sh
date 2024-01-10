@@ -6,6 +6,8 @@ window_state() {
 
   WINDOW=$(yabai -m query --windows --window)
   STACK_INDEX=$(echo "$WINDOW" | jq '.["stack-index"]')
+  # CURRENTSP=$(yabai -m query --spaces --space | jq '.index')
+  WINDOWCOUNT=$(yabai -m query --windows --space | jq -r '.[]."is-floating"' | grep false | wc -l)
 
   COLOR=$LABEL_COLOR
   ICON=$YABAI_GRID
@@ -15,9 +17,12 @@ window_state() {
     ICON=$YABAI_STACK
     LABEL="$(printf "[%s of %s]" "$STACK_INDEX" "$LAST_STACK_INDEX")"
     COLOR=$RED
-  elif [ "$(echo "$WINDOW" | jq '.["has-fullscreen-zoom"]')" = "true" ]; then
+  elif [[ $WINDOWCOUNT -lt 2 ]]; then
     ICON=$YABAI_FULLSCREEN_ZOOM
     COLOR=$GREEN
+  # elif [ "$(echo "$WINDOW" | jq '.["has-fullscreen-zoom"]')" = "true" ]; then
+  #   ICON=$YABAI_FULLSCREEN_ZOOM
+  #   COLOR=$GREEN
   elif [ "$(echo "$WINDOW" | jq '.["split-type"]')" == '"vertical"' ]; then
     ICON=$YABAI_SPLIT_VERTICAL
     COLOR=$LABEL_COLOR

@@ -37,8 +37,7 @@ item_defaults=(
   label.font="$FONT:Regular:12"
   label.color=$LABEL_COLOR
   label.highlight_color=$HIGHLIGHT
-  label.padding_left=$PADDINGS
-  label.padding_right=$PADDINGS
+  label.padding_left=$(($PADDINGS / 2))
   updates=when_shown
   scroll_texts=on
 )
@@ -54,9 +53,10 @@ bracket_defaults=(
   background.height=24
   background.color=$BAR_COLOR
   blur_radius=32
+  background.padding_right=$PADDINGS
   background.corner_radius=$PADDINGS
-  background.padding_left=$(($PADDINGS * 2))
-  background.padding_right=$(($PADDINGS * 2))
+  # background.padding_left=$(($PADDINGS * 2))
+  # background.padding_right=$(($PADDINGS * 2))
 )
 
 menu_defaults=(

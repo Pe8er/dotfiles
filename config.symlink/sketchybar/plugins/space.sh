@@ -36,6 +36,17 @@ create_icons() {
   space="$(echo "$INFO" | jq -r '.space')"
   apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
 
+  # icon_strip=""
+  # if [ "${apps}" != "" ]; then
+  #   while read -r app
+  #   do
+  #     icon_strip+="--set space.$space icon.background.image='app.$app'"
+  #   done <<< "${apps}"
+  # else
+  #   icon_strip="—"
+  # fi
+  # args+=(--set space.$space icon.background.image="$icon_strip")
+  
   icon_strip=" "
   if [ "${apps}" != "" ]; then
     while read -r app
