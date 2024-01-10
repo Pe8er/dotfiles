@@ -11,8 +11,6 @@ sketchybar                                                                      
   icon=􀣺                                                                                \
   icon.font="$FONT:Black:14.0"                                                           \
   label.drawing=off                                                                      \
-  icon.padding_left=$PADDINGS                                                            \
-  icon.padding_right=$PADDINGS                                                           \
   popup.align=left                                                                       \
   click_script="sketchybar --set logo popup.drawing=toggle"                              \
   --subscribe logo mouse.exited                                                          \

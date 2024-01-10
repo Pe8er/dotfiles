@@ -2,10 +2,11 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 messages=(
-  update_freq=3600
-  icon=􀌥
-  # label.drawing=off
+  "${notification_defaults[@]}"
+  icon=􀌤
+  background.color=$GREEN
   script="$PLUGIN_DIR/messages.sh"
+  click_script="open -a /System/Applications/Messages.app"
 )
 
 sketchybar --add item messages right       \

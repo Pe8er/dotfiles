@@ -1,8 +1,8 @@
 #!/bin/bash
 
 yabai=(
-  label.color=$LABEL_COLOR
   icon=$YABAI_GRID
+  label.drawing=off
   script="$PLUGIN_DIR/yabai.sh"
   icon.font="$FONT:Bold:12.0"
 )

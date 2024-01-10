@@ -39,7 +39,7 @@ render_item() {
     COLOR=$LABEL_COLOR
   fi
 
-  sketchybar --set battery alias.color=$COLOR
+  sketchybar --set battery icon=$ICON
 
 }
 

@@ -1,15 +1,21 @@
 #!/bin/env/bash
 
+battery=(
+  "${icon_defaults[@]}"
+  "${menu_defaults[@]}"                                        
+  icon.font.size=16
+  icon.font.style="Light"
+  update_freq=10                                               
+  popup.align=right                                            
+  click_script="sketchybar --set battery popup.drawing=toggle" 
+  script="$PLUGIN_DIR/battery.sh"                              
+  updates=when_shown                                           
+  
+)
+
 sketchybar                                                     \
-  --add alias "Control Center,Battery" right                   \
-  --rename "Control Center,Battery" battery                    \
-  --set battery "${icon_defaults[@]}"                          \
-  update_freq=10                                               \
-  "${menu_defaults[@]}"                                        \
-  popup.align=right                                            \
-  click_script="sketchybar --set battery popup.drawing=toggle" \
-  script="$PLUGIN_DIR/battery.sh"                              \
-  updates=when_shown                                           \
+  --add item battery right \
+  --set battery "${battery[@]}"                                \
   --subscribe battery power_source_change                      \
                       mouse.entered                            \
                       mouse.exited                             \
