@@ -35,12 +35,10 @@ item_defaults=(
   icon.font="$FONT:Semibold:12"
   icon.color=$ICON_COLOR
   icon.highlight_color=$HIGHLIGHT
-  # icon.background.color=$WHITE_10
   label.font="$FONT:Regular:12"
   label.color=$LABEL_COLOR
   label.highlight_color=$HIGHLIGHT
   label.padding_left=$(($PADDINGS / 2))
-  # label.padding_right=$(($PADDINGS / 2))
   updates=when_shown
   scroll_texts=on
 )
@@ -50,7 +48,9 @@ icon_defaults=(
 )
 
 notification_defaults=(
+  drawing=off
   update_freq=120
+  updates=on
   background.color=$WHITE_25
   background.height=16
   background.corner_radius=16
@@ -68,10 +68,7 @@ bracket_defaults=(
   background.height=24
   background.color=$BAR_COLOR
   blur_radius=32
-  # background.padding_right=$PADDINGS
   background.corner_radius=$PADDINGS
-  # background.padding_left=$(($PADDINGS * 2))
-  # background.padding_right=$(($PADDINGS * 2))
 )
 
 menu_defaults=(
