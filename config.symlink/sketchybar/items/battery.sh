@@ -21,4 +21,4 @@ sketchybar                                                     \
                       mouse.exited                             \
                       mouse.exited.global                      \
   --add item battery.details popup.battery                     \
-  --set battery.details "${menu_item_defaults[@]}"
+  --set battery.details "${menu_item_defaults[@]}" icon.drawing=off label.padding_left=0

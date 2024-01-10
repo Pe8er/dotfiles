@@ -22,6 +22,7 @@ do
     background.y_offset=-12
     icon.drawing=on
     icon="${SPACE_ICONS[i]}"
+    icon.color=$LABEL_COLOR
     icon.padding_left=0
     icon.padding_right=-"$PADDINGS"
     icon.highlight_color=$HIGHLIGHT

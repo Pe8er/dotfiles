@@ -33,4 +33,4 @@ sketchybar                                                                      
                     mouse.exited                                                              \
                     mouse.exited.global                                                       \
   --add item clock.details popup.clock                                                        \
-  --set clock.details "${menu_item_defaults[@]}"
+  --set clock.details "${menu_item_defaults[@]}" icon.drawing=off label.padding_left=0

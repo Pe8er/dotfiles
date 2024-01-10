@@ -14,9 +14,9 @@ sketchybar --bar "${bar[@]}" --default "${item_defaults[@]}"
 
 # Left
 source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/front_app.sh"
 source "$ITEM_DIR/yabai.sh"
 source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
 
 # Notch
 # source "$ITEM_DIR/countdown.sh"
@@ -36,7 +36,7 @@ source "$ITEM_DIR/music.sh"
 
 # Brackets
 sketchybar \
---add bracket left_side logo yabai '/space\..*/' \
+--add bracket left_side logo yabai '/space\..*/' front_app \
         --set left_side "${bracket_defaults[@]}" \
 \
 --add bracket status_icons spacer messages mail weather volume_icon volume battery wifi date clock dnd \

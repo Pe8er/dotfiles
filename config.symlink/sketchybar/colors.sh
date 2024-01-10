@@ -31,18 +31,24 @@ O50=0x80
 O25=0x40
 O10=0x1a
 
+# Base Colors
+export BASE_BLACK="181926" #181926
+export BASE_WHITE="eeeeee" #eeeeee
+
 # Color Palette
-export BLACK="$O100""181926"
-export BLACK_75="$O75""181926"
-export BLACK_50="$O50""181926"
-export BLACK_25="$O25""181926"
-export WHITE="$O100""eeeeee"
-export WHITE_75="$O75""eeeeee"
-export WHITE_50="$O50""eeeeee"
-export WHITE_25="$O25""eeeeee"
-export WHITE_10="$O10""eeeeee"
+export BLACK="$O100""$BASE_BLACK"
+export BLACK_75="$O75""$BASE_BLACK"
+export BLACK_50="$O50""$BASE_BLACK"
+export BLACK_25="$O25""$BASE_BLACK"
+export WHITE="$O100""$BASE_WHITE"
+export WHITE_75="$O75""$BASE_WHITE"
+export WHITE_50="$O50""$BASE_WHITE"
+export WHITE_25="$O25""$BASE_WHITE"
+export WHITE_10="$O10""$BASE_WHITE"
 export RED=0xfff07178 #f07178
-export GREEN=0xffc3e88d #c3e88d
+export GREEN=0xffC6FF00 #C6FF00
+export TEAL=0xff64FFDA #64FFDA
+export CYAN=0xff89DDFF #89DDFF
 export BLUE=0xff82aaff #82aaff
 export OSBLUE=0xff0259D1 #0259D1
 export YELLOW=0xffffcb6b #ffcb6b
@@ -60,8 +66,8 @@ export CONTRAST=0xff34324a #34324a
 export BAR_BORDER_COLOR=0xff2b2a3e #2b2a3e
 export ICON_COLOR=$WHITE
 export ICON_COLOR_INACTIVE=$GREY
-export LABEL_COLOR=$WHITE
-export HIGHLIGHT=$GREEN
+export LABEL_COLOR=$WHITE_75
+export HIGHLIGHT=$TEAL
 export POPUP_BACKGROUND_COLOR=$DARK_GREY
 export POPUP_BORDER_COLOR=$TRANSPARENT
 export SHADOW_COLOR=$BLACK
