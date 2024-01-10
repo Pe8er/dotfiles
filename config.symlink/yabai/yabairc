@@ -36,6 +36,7 @@ yabai -m rule --add label="GLMv4" app="^GLMv4$" title="(Preparations for Measure
 yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
 yabai -m rule --add app="^Adobe Lightroom" manage=on
 yabai -m rule --add app="^IINA$" sticky=on layer=above manage=off
 

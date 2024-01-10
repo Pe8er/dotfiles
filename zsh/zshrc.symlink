@@ -1,5 +1,3 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/zsh/themes/catppuccin_mocha.omp.json)"
 fi
@@ -11,18 +9,21 @@ source $HOME/.dotfiles/zsh/config.zsh
 source $HOME/.dotfiles/zsh/path.zsh
 eval $(thefuck --alias)
 eval "$(pyenv init -)"
-export PATH=$PATH:/Users/pe8er/.spicetify
-export PATH=$PATH:$HOME/.dotfiles/bin/
 source /Users/Shared/rlm/rlmenvset.sh
 
 # zsh-autocomplete settings
 bindkey -M menuselect '\r' .accept-line
 
 # Autocompletion
-zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 8 )) )'
+zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 20 )) )'
 
 # Override history search.
-zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 8
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 20
 
 # History menu.
-zstyle ':autocomplete:history-search-backward:*' list-lines 8
+zstyle ':autocomplete:history-search-backward:*' list-lines 20
+
+# Chruby
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.3 # run chruby to see actual version
