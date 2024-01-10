@@ -16,14 +16,11 @@ do
 
   space=(
     space=$sid
-    padding_left=$PADDINGS
+    padding_left=$(($PADDINGS / 2))
     padding_right=$PADDINGS
     background.height=2
     background.y_offset=-12
     icon.drawing=on
-    icon.background.drawing=on
-    icon.background.color=0x00000000
-    icon.background.image.scale=0.5
     icon="${SPACE_ICONS[i]}"
     icon.padding_left=0
     icon.padding_right=-"$PADDINGS"

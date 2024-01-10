@@ -1,11 +1,14 @@
+#!/bin/env/bash
+
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
 mail=(
-  update_freq=3600
-  icon=􀍖
-  # label.drawing=off
+  "${notification_defaults[@]}"
+  icon=􀣪
+  background.color=$YELLOW
   script="$PLUGIN_DIR/mail.sh"
+  click_script="open -a /System/Applications/Mail.app"
 )
 
 sketchybar --add item mail right       \

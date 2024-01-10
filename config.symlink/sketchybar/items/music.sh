@@ -8,7 +8,8 @@ music=(
   script="$PLUGIN_DIR/music.sh"
   popup.align=center
   padding_left=0
-  padding_right=$PADDINGS
+  label.padding_right=$PADDINGS
+  padding_right=$(($PADDINGS * 2))
   icon=􀊆
   drawing=off
   label="Loading…"
@@ -25,11 +26,11 @@ music=(
                     mouse.exited.global
 )
 
-sketchybar                                                                            \
-  --add item music right                                                              \
-  --set      music "${music[@]}"                                                      \
-  --set      music "${menu_defaults[@]}"                                              \
-  --add item music.cover popup.music                                                  \
-  --add item music.artist popup.music                                                 \
-  --add item music.title popup.music                                                  \
+sketchybar                               \
+  --add item music right                 \
+  --set      music "${music[@]}"         \
+  --set      music "${menu_defaults[@]}" \
+  --add item music.cover popup.music     \
+  --add item music.artist popup.music    \
+  --add item music.title popup.music     \
   --add item music.album popup.music

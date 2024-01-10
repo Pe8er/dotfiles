@@ -6,10 +6,9 @@ sketchybar                                                                      
              label.font="$FONT:Semibold:7"                                                    \
              align=right                                                                      \
              icon.drawing=off                                                                 \
+             label.padding_right=4                                                                 \
              y_offset=6                                                                       \
              width=0                                                                          \
-             padding_left=$PADDINGS                                                       \
-             padding_right=$PADDINGS                                                       \
              script='sketchybar --set $NAME label="$(date "+%a, %b %d")"'                     \
              click_script="open -a Calendar.app"                                              \
   --subscribe date system_woke                                                                \
@@ -23,9 +22,8 @@ sketchybar                                                                      
               y_offset=-4                                                                     \
               icon.drawing=off                                                                \
               label.font="$FONT:Bold:9"                                                       \
-              padding_left=$PADDINGS                                                       \
-              padding_right=$PADDINGS                                                       \
               align=right                                                                     \
+             label.padding_right=4                                                                 \
               popup.align=right                                                               \
               "${menu_defaults[@]}"                                                           \
               script="$PLUGIN_DIR/nextevent.sh"                                               \

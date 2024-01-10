@@ -110,10 +110,10 @@ WEATHER_ICONS_NIGHT=(
 
 render_item() {
   if [ "$CITY" = "" ]; then
-    args+=(--set $NAME icon="􀌏" icon.padding_right=$PADDINGS label.drawing=off)
+    args+=(--set $NAME icon="􀌏" label.drawing=off)
     # echo "Debug: $NAME #123 $FONT"
   else
-    args+=(--set $NAME icon="$ICON" icon.padding_right=0 icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°C" label.drawing=on)
+    args+=(--set $NAME icon="$ICON" icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°C" label.drawing=on)
   fi
 
   sketchybar "${args[@]}" >/dev/null

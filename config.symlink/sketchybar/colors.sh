@@ -29,14 +29,18 @@ O100=0xff
 O75=0xbf
 O50=0x80
 O25=0x40
+O10=0x1a
 
 # Color Palette
 export BLACK="$O100""181926"
+export BLACK_75="$O75""181926"
 export BLACK_50="$O50""181926"
 export BLACK_25="$O25""181926"
-export WHITE=0xffeeeeee #eeeeee
-export WHITE_50=0x80eeffff
-export WHITE_25=0x40eeffff
+export WHITE="$O100""eeeeee"
+export WHITE_75="$O75""eeeeee"
+export WHITE_50="$O50""eeeeee"
+export WHITE_25="$O25""eeeeee"
+export WHITE_10="$O10""eeeeee"
 export RED=0xfff07178 #f07178
 export GREEN=0xffc3e88d #c3e88d
 export BLUE=0xff82aaff #82aaff

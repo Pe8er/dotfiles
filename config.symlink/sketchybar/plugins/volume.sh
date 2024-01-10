@@ -21,10 +21,7 @@ volume_change() {
   esac
 
   sketchybar --set volume_icon icon=$ICON
-
-  sketchybar --set $NAME slider.percentage=$INFO \
-             --animate tanh 30 --set $NAME slider.width=$WIDTH 
-
+  sketchybar --set $NAME slider.percentage=$INFO --animate tanh 30 --set $NAME slider.width=$WIDTH 
   sleep 2
 
   # Check wether the volume was changed another time while sleeping

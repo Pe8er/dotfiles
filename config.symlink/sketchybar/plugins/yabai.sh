@@ -39,11 +39,11 @@ window_state() {
 
   args=(--bar border_color=$COLOR --animate sin 10 --set $NAME icon=$ICON icon.color=$COLOR)
 
-  [ -z "$LABEL" ] && args+=(label.width=0) \
-                  || args+=(label="$LABEL" label.width=50)
+  # [ -z "$LABEL" ] && args+=(label.width=0) \
+  #                 || args+=(label="$LABEL" label.width=50)
 
-  [ -z "$ICON" ] && args+=(icon.width=0) \
-                 || args+=(icon="$ICON" icon.width=30)
+  # [ -z "$ICON" ] && args+=(icon.width=0) \
+  #                || args+=(icon="$ICON" icon.width=30)
 
   sketchybar -m "${args[@]}"
 }
