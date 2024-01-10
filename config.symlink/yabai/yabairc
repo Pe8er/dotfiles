@@ -22,7 +22,7 @@ yabai -m config window_placement second_child \
   right_padding 6                             \
   window_gap 6                                \
   --display 0 external_bar all:20:0           \
-  -- display 1 external_bar all:32:0          \
+  --display 1 external_bar all:32:0           \
   layout bsp
 
 # Center mouse on window with focus

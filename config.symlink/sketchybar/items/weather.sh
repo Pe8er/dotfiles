@@ -20,4 +20,4 @@ sketchybar                                              \
   --add item weather right                              \
        --set weather "${weather[@]}"                    \
   --add item weather.details popup.weather              \
-       --set weather.details "${menu_item_defaults[@]}"
+       --set weather.details "${menu_item_defaults[@]}" icon.drawing=off label.padding_left=0

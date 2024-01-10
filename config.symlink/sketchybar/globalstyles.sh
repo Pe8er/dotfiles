@@ -7,7 +7,7 @@ source "$CONFIG_DIR/icons.sh"
 source "$CONFIG_DIR/colors.sh"
 
 PADDINGS=8
-FONT="SF Pro"
+FONT="JetBrainsMono Nerd Font"
 
 # Bar Appearance
 bar=(
@@ -81,11 +81,12 @@ menu_defaults=(
 )
 
 menu_item_defaults=(
-  label.font="$FONT:Regular:14"
+  label.font="$FONT:Regular:13"
   padding_left=$PADDINGS
   padding_right=$PADDINGS
   icon.padding_left=0
-  icon.padding_right=0
+  # icon.padding_right=0
+  icon.color=$HIGHLIGHT
   background.color=$TRANSPARENT
 )
 
