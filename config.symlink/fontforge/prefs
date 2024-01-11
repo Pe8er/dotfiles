@@ -142,18 +142,19 @@ ForceNamesWhenSaving:	NULL
 DefaultFontFilterIndex:	0
 FCShowHidden:	0
 FCDirPlacement:	0
-FCBookmarks:	~/Library/Fonts/;~/fonts;/Library/Fonts/;/System/Library/Fonts/;/usr/X11R6/lib/X11/fonts/
+FCBookmarks:	~/Library/Fonts/;~/fonts;/Library/Fonts/;/System/Library/Fonts/;/usr/X11R6/lib/X11/fonts/;/Users/pe8er/Library/Fonts/
 DefaultMVType:	1
 DefaultMVWidth:	800
 DefaultMVHeight:	300
 DefaultBVWidth:	270
 DefaultBVHeight:	250
 AnchorControlPixelSize:	150
-CV_B1Tool:	0
+CV_B1Tool:	2
 CV_CB1Tool:	0
 CV_B2Tool:	1
 CV_CB2Tool:	5
 XUID-Base:	1021 901 -1482537668
 ShowKerningPane:	1
 PluginStartupMode:	Ask
+Recent:	/Users/pe8er/Desktop/sketchybar-app-font.sfd
 Recent:	/Users/pe8er/Desktop/Helsinki.sfd

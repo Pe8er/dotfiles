@@ -1,14 +1,58 @@
 #!/bin/bash
 
+# echo $INFO
+
 update() {
   source "$CONFIG_DIR/colors.sh"
-  COLOR=$TRANSPARENT
+
   if [ "$SELECTED" = "true" ]; then
     COLOR=$HIGHLIGHT
+    OFFSET=-12
+  else
+    OFFSET=-20
+    COLOR=$TRANSPARENT
   fi
-  sketchybar --set $NAME icon.highlight=$SELECTED \
+
+  sketchybar --animate tanh 15                     \
+             --set $NAME icon.highlight=$SELECTED  \
                          label.highlight=$SELECTED \
-                         background.color=$COLOR
+                         background.color=$COLOR   \
+                         background.y_offset=$OFFSET
+  
+  # app="$(echo "$INFO" | jq -r '.apps | keys[0]')"
+
+  # echo UPDATE_SENDER: $SENDER
+  # echo UPDATE_APPS: $apps
+  
+  # FRONT_APP=$(yabai -m query --windows --window | jq -r '.app')
+  # space=$(yabai -m query --spaces | jq -r '.[].index')
+  # space_prev=$(yabai -m query --spaces --space recent | jq -r '.index')
+  # apps="$(yabai -m query --windows --space | jq -r '.[].app')"
+  # icon_strip=" "
+
+
+  # if [ "${apps}" != "" ]; then
+  #   while read -r app
+  #   do
+
+  #   # if [ "$FRONT_APP" = "$app" ]; then    
+  #   #   chevron_left=$($CONFIG_DIR/plugins/icon_map.sh "chevron_left")
+  #   #   chevron_right=$($CONFIG_DIR/plugins/icon_map.sh "chevron_right")
+  #   # else
+  #     chevron_left=""
+  #     chevron_right=""
+  #   # fi
+  #   # icon_strip+=" $chevron_right $($CONFIG_DIR/plugins/icon_map.sh "$app") $chevron_left"
+
+  #   done <<< "${apps}"
+  # else
+  #   icon_strip=" —"
+  # fi
+  # echo YABAI SPACE: $space
+  # args+=(--set space.$space label="$icon_strip")
+
+  # sketchybar -m "${args[@]}"
+  
 }
 
 set_space_label() {
@@ -32,20 +76,10 @@ mouse_clicked() {
 
 create_icons() {
   args=(--animate sin 10)
-
   space="$(echo "$INFO" | jq -r '.space')"
   apps="$(echo "$INFO" | jq -r '.apps | keys[]')"
-
-  # icon_strip=""
-  # if [ "${apps}" != "" ]; then
-  #   while read -r app
-  #   do
-  #     icon_strip+="--set space.$space icon.background.image='app.$app'"
-  #   done <<< "${apps}"
-  # else
-  #   icon_strip="—"
-  # fi
-  # args+=(--set space.$space icon.background.image="$icon_strip")
+  # space=$(yabai -m query --spaces --space | jq -r '.index')
+  # apps="$(yabai -m query --windows --space | jq -r '.[].app')"
   
   icon_strip=" "
   if [ "${apps}" != "" ]; then
@@ -56,9 +90,11 @@ create_icons() {
   else
     icon_strip=" —"
   fi
+  # echo SKETCHYBAR SPACE: $space
   args+=(--set space.$space label="$icon_strip")
 
   sketchybar -m "${args[@]}"
+  # update
 }
 
 case "$SENDER" in

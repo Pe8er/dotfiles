@@ -19,13 +19,13 @@ do
     padding_left=$(($PADDINGS / 2))
     padding_right=$PADDINGS
     background.height=2
-    background.y_offset=-12
     icon.drawing=on
     icon="${SPACE_ICONS[i]}"
     icon.color=$LABEL_COLOR
     icon.padding_left=0
-    icon.padding_right=-"$PADDINGS"
+    icon.padding_right=0
     icon.highlight_color=$HIGHLIGHT
+    label.padding_left=0
     label.padding_right=$PADDINGS
     label.color=$WHITE_50
     label.highlight_color=$HIGHLIGHT
@@ -36,7 +36,7 @@ do
 
   sketchybar --add space space.$sid left    \
              --set space.$sid "${space[@]}" \
-             --subscribe space.$sid mouse.clicked space_windows_change
+             --subscribe space.$sid mouse.clicked space_windows_change front_app_switched
 done
 
 # space_creator=(

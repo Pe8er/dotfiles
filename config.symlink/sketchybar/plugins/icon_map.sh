@@ -4,6 +4,12 @@ case "$1" in
 "WhatsApp")
   icon_result=":whats_app:"
   ;;
+"chevron_right")
+  icon_result=":chevron_right:"
+  ;;
+"chevron_left")
+  icon_result=":chevron_left:"
+  ;;
 "Nova")
   icon_result=":nova:"
   ;;
@@ -390,6 +396,9 @@ case "$1" in
   ;;
 "Transmit")
   icon_result=":transmit:"
+  ;;
+"Transmission")
+  icon_result=":transmission:"
   ;;
 "Android Messages")
   icon_result=":android_messages:"
