@@ -19,7 +19,7 @@ window_state() {
     COLOR=$RED
   elif [[ $WINDOWCOUNT -lt 2 ]]; then
     ICON=$YABAI_FULLSCREEN_ZOOM
-    COLOR=$GREEN
+    COLOR=$HIGHLIGHT
   # elif [ "$(echo "$WINDOW" | jq '.["has-fullscreen-zoom"]')" = "true" ]; then
   #   ICON=$YABAI_FULLSCREEN_ZOOM
   #   COLOR=$GREEN
@@ -31,7 +31,7 @@ window_state() {
     COLOR=$LABEL_COLOR
   elif [ "$(echo "$WINDOW" | jq '.["is-floating"]')" = "true" ]; then
     ICON=$YABAI_FLOAT
-    COLOR=$GREEN
+    COLOR=$HIGHLIGHT
   elif [ "$(echo "$WINDOW" | jq '.["has-parent-zoom"]')" = "true" ]; then
     ICON=$YABAI_PARENT_ZOOM
     COLOR=$BLUE

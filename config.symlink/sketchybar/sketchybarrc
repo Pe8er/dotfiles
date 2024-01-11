@@ -30,6 +30,7 @@ source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/mail.sh"
 source "$ITEM_DIR/messages.sh"
+source "$ITEM_DIR/transmission.sh"
 source "$ITEM_DIR/spacer.sh" right
 source "$ITEM_DIR/music.sh"
 # source "$ITEM_DIR/moode.sh"
@@ -39,7 +40,7 @@ sketchybar \
 --add bracket left_side logo yabai '/space\..*/' front_app \
         --set left_side "${bracket_defaults[@]}" \
 \
---add bracket status_icons spacer messages mail weather volume_icon volume battery wifi date clock dnd \
+--add bracket status_icons spacer transmission messages mail weather volume_icon volume battery wifi date clock dnd \
         --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --update

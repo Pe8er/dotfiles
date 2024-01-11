@@ -14,18 +14,19 @@ volume_slider=(
 )
 
 volume_icon=(
-  # icon.background.color=$ORANGE
-  # icon.color=$BLACK_75
   click_script="$PLUGIN_DIR/volume_click.sh"
   icon=$VOLUME_100
   icon.font="$FONT:Regular:14.0"
   label.drawing=off
 )
 
-sketchybar --add slider volume right            \
-           --set volume "${volume_slider[@]}"   \
-           --subscribe volume volume_change     \
-                              mouse.clicked     \
-                                                \
-           --add item volume_icon right         \
+sketchybar --add slider volume right              \
+           --set volume "${volume_slider[@]}"     \
+           --subscribe volume volume_change       \
+                              mouse.clicked       \
+                              mouse.entered       \
+                              mouse.exited        \
+                              mouse.exited.global \
+                                                  \
+           --add item volume_icon right           \
            --set volume_icon "${volume_icon[@]}"

@@ -11,6 +11,7 @@ wifi=(
   updates=when_shown
   update_freq=5
   --subscribe wifi wifi_change
+                   mouse.entered
                    mouse.exited
                    mouse.exited.global
 )
