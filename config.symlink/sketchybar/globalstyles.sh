@@ -32,7 +32,7 @@ item_defaults=(
   icon.padding_right=$(($PADDINGS / 2))
   icon.background.corner_radius=4
   icon.background.height=18
-  icon.font="$FONT:Semibold:12"
+  icon.font="$FONT:Regular:12"
   icon.color=$ICON_COLOR
   icon.highlight_color=$HIGHLIGHT
   label.font="$FONT:Regular:12"
@@ -54,14 +54,14 @@ notification_defaults=(
   background.color=$WHITE_25
   background.height=16
   background.corner_radius=16
-  icon.font.size="10"
+  icon.font.size=10
   icon.padding_left=$PADDINGS
   icon.padding_right=0
   icon.color=$BLACK_75
   label.color=$BLACK_75
   label.padding_right=$PADDINGS
-  label.font.size="11"
-  label.font.style="Bold"
+  label.font.size=11
+  label.font.style=Bold
 )
 
 bracket_defaults=(
