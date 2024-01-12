@@ -93,7 +93,7 @@ create_icons() {
   # echo SKETCHYBAR SPACE: $space
   args+=(--set space.$space label="$icon_strip")
 
-  sketchybar -m "${args[@]}"
+  sketchybar "${args[@]}"
   # update
 }
 

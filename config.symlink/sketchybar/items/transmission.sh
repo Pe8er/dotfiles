@@ -8,6 +8,7 @@ transmission=(
   icon.drawing=off
   update_freq=5
   background.color=$RED
+  label.font="JetBrainsMono Nerd Font:Bold:11"
   script="$PLUGIN_DIR/transmission.sh"
   click_script="open -a /Applications/Transmission.app"
 )

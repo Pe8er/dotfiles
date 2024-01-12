@@ -1,42 +1,49 @@
 #!/usr/bin/env bash
 
-# UPLOAD=$(transmission-remote -l | awk 'NR>1 {up=$4} END {print up}')
-# DOWNLOAD=$(transmission-remote -l | awk 'NR>1 {up=$5} END {print up}')
-TRANSMISSION=$(transmission-remote -l | awk 'NR>1 {up=$4; down=$5} END {print up, down}')
+source "$CONFIG_DIR/colors.sh"
 
-read UP DOWN <<< "$TRANSMISSION"
+# read -r UP DOWN < <(transmission-remote -l | awk 'NR>1 {print $3, $7; exit}')
+read UP DOWN <<< "$(transmission-remote -l | awk 'NR>1 {up=$4; down=$5} END {print up, down}')"
+NUMBERS=($UP $DOWN)
+
+# echo UP: $UP
+# echo DOWN: $DOWN
 
 # Number formatting. Thanks, ChatGPT!
-# Your numbers as an array
-numbers=($UP $DOWN)
+for ((i=0; i<${#NUMBERS[@]}; i++)); do
+    CURRENT_NUMBER=${NUMBERS[i]}
 
-for ((i=0; i<${#numbers[@]}; i++)); do
-    current_number=${numbers[i]}
-
-    # Check if the number is greater than 1000
-    if (( $(echo "$current_number > 1000" | bc -l) )); then
-        formatted_number=$(echo "scale=1; $current_number / 1000" | bc -l)
-        suffix="MB"
+    # Check if the number is greater than 999
+    if (( $(echo "$CURRENT_NUMBER > 999" | bc -l) )); then
+        FORMATTED_NUMBER=$(echo "scale=1; $CURRENT_NUMBER / 1000" | bc -l)
+        SUFFIX="MB"
     else
-        formatted_number=$(echo "scale=1; $current_number" | bc -l)
-        suffix="KB"
+        FORMATTED_NUMBER=$(echo "scale=1; $CURRENT_NUMBER" | bc -l)
+        SUFFIX="KB"
     fi
 
     # Remove the decimal point if it's zero
-    if [[ $formatted_number == *".0" ]]; then
-        formatted_number=${formatted_number%"."}
+    if [[ $FORMATTED_NUMBER == *".0" ]]; then
+        FORMATTED_NUMBER=${FORMATTED_NUMBER%".0"}
     fi
 
     # Create a new variable dynamically
-    new_variable="formatted_number_$i"
-    declare "$new_variable=$formatted_number$suffix"
-
-    # Print the formatted number and the new variable name
-    # echo "Original Number: $current_number, Formatted Number: ${!new_variable}"
+    NEW_VARIABLE="FORMATTED_NUMBER_$i"
+    declare "$NEW_VARIABLE=$FORMATTED_NUMBER$SUFFIX"
 done
 
-if [[ $TRANSMISSION != "" ]]; then
-  sketchybar -m --set $NAME drawing=on label="􀄯${formatted_number_0} 􀄱${formatted_number_1}"
+
+if [[ "$UP" == "0.0" && "$DOWN" == "0.0" ]]; then
+  args+=(background.color=$WHITE_50)
 else
-  sketchybar -m --set $NAME drawing=off
+  args+=(background.color=$ORANGE)
 fi
+
+
+if [[ $NUMBERS != "" ]]; then
+  args+=(drawing=on label="􀄯${FORMATTED_NUMBER_0} 􀄱${FORMATTED_NUMBER_1}")
+else
+  args=(drawing=off)
+fi
+
+sketchybar --set $NAME "${args[@]}"
