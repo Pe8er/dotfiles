@@ -3,55 +3,37 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12")
+# Defaults
+spaces=(
+  background.height=2
+  # label.padding_right=$PADDINGS
+  icon.padding_left=2
+  icon.padding_right=2
+  label.padding_right=2
+  # label.font="CaskaydiaCove Nerd Font:Light:12.0"
+)
+# Register custom event - this will be use by sketchybar's space items as well as app_space.sh
+sketchybar --add event window_change
 
-# Destroy space on right click, focus space on left click.
-# New space by left clicking separator (>)
+# Space items
+# COLORS_SPACE=($YELLOW $CYAN $MAGENTA $WHITE $BLUE $RED $GREEN)
+LENGTH=${#ICONS_SPACE[@]}
 
-sid=0
-spaces=()
-for i in "${!SPACE_ICONS[@]}"
+for i in "${!ICONS_SPACE[@]}"
 do
   sid=$(($i+1))
-
-  space=(
-    space=$sid
-    padding_left=$(($PADDINGS / 2))
-    padding_right=$PADDINGS
-    background.height=2
-    icon.drawing=on
-    icon="${SPACE_ICONS[i]}"
-    icon.color=$LABEL_COLOR
-    icon.padding_left=0
-    icon.padding_right=0
-    icon.highlight_color=$HIGHLIGHT
-    label.padding_left=0
-    label.padding_right=$PADDINGS
-    label.color=$WHITE_50
-    label.highlight_color=$HIGHLIGHT
-    label.font="sketchybar-app-font:Regular:14.0"
-    label.y_offset=-1
-    script="$PLUGIN_DIR/space.sh" # && $PLUGIN_DIR/space_windows.sh"
-  )
-
-  sketchybar --add space space.$sid left    \
-             --set space.$sid "${space[@]}" \
-             --subscribe space.$sid mouse.clicked space_windows_change front_app_switched
+  # PAD_LEFT=2
+  # PAD_RIGHT=2
+  # if [[ $i == 0 ]]; then
+  #   PAD_LEFT=8
+  # elif [[ $i == $(($LENGTH-1)) ]]; then
+  #   PAD_RIGHT=8
+  # fi
+  sketchybar --add space space.$sid left                                       \
+             --set       space.$sid script="$PLUGIN_DIR/app_space.sh"          \
+                                    "${spaces[@]}"                              \
+                                    associated_space=$sid                      \
+                                    icon=${ICONS_SPACE[i]}                     \
+                                    label="_"                                  \
+             --subscribe space.$sid front_app_switched window_change mouse.clicked
 done
-
-# space_creator=(
-#   icon=􀐇
-#   icon.font="$FONT:Regular:14.0"
-#   padding_left=$PADDINGS
-#   padding_right=$PADDINGS
-#   icon.padding_right=$PADDINGS
-#   label.drawing=off
-#   display=active
-#   click_script='yabai -m space --create'
-#   script="$PLUGIN_DIR/space_windows.sh"
-#   icon.color=$HIGHLIGHT
-# )
-
-# sketchybar --add item space_creator left               \
-#            --set space_creator "${space_creator[@]}"   \
-#            --subscribe space_creator space_windows_change
