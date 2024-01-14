@@ -10,7 +10,7 @@ spaces=(
   icon.padding_left=2
   icon.padding_right=2
   label.padding_right=2
-  # label.font="CaskaydiaCove Nerd Font:Light:12.0"
+  label.font="CaskaydiaCove Nerd Font:Light:12.0"
 )
 # Register custom event - this will be use by sketchybar's space items as well as app_space.sh
 sketchybar --add event window_change

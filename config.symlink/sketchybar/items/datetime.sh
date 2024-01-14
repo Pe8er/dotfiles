@@ -3,7 +3,7 @@
 sketchybar                                                                                    \
   --add item date right                                                                       \
   --set date update_freq=60                                                                   \
-             label.font="$FONT:Semibold:7"                                                    \
+             label.font="$FONT:Semibold:8"                                                    \
              align=right                                                                      \
              icon.drawing=off                                                                 \
              label.padding_right=4                                                                 \
@@ -19,7 +19,7 @@ sketchybar                                                                      
   --set date.details "${menu_item_defaults[@]}"                                               \
   --add item clock right                                                                      \
   --set clock update_freq=10                                                                  \
-              y_offset=-4                                                                     \
+              y_offset=-5                                                                     \
               icon.drawing=off                                                                \
               label.font="$FONT:Bold:9"                                                       \
               align=right                                                                     \
