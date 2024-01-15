@@ -56,10 +56,24 @@ create_icons() {
             # TITLE=$(echo ${TITLES_ARR[j]} | sed 's/"//g')
             ICON=$($HOME/.config/sketchybar/plugins/app_icon.sh "$APP")
 
+            # Define how currently focused app should be highlighted
             if [[ "$APP" == "$CURRENT_APP" ]]; then
               SUFFIX=" $APP"
             else
               SUFFIX=""
+            fi
+
+            if [[ "$APP" == "Messages" ]]; then
+              BADGE=$(sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message WHERE is_read=0 AND is_from_me=0 AND text!='' AND date_read=0" | wc -l | awk '{$1=$1};1')
+            else
+              BADGE=$(lsappinfo -all info -only StatusLabel $APP | sed -nr 's/\"StatusLabel\"=\{ \"label\"=\"(.+)\" \}$/\1/p' )
+            fi
+
+            # Define how notifications should be shown.
+            if [[ "$BADGE" -gt 0 ]]; then
+              # If you want number of notifications instead of dot:
+              # SUFFIX+=" ($BADGE)"
+              SUFFIX+=" •"
             fi
 
             LABEL+="$ICON$SUFFIX"
