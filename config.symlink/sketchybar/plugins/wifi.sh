@@ -12,7 +12,7 @@ SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
 CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
 
 if [[ $IS_VPN != "Disconnected" ]]; then
-  ICON_COLOR=$GREEN
+  ICON_COLOR=$HIGHLIGHT
   ICON=􀎡
 elif [[ $SSID = "Ebrietas" ]]; then
   ICON_COLOR=$WHITE

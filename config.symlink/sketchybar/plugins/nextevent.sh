@@ -35,10 +35,10 @@ render_popup() {
 
 update() {
   render_item
-  render_popup
 }
 
 popup() {
+  render_popup
   sketchybar --set "$NAME" popup.drawing="$1"
 }
 
