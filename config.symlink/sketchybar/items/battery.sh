@@ -1,10 +1,10 @@
 #!/bin/env/bash
 
 battery=(
-  "${icon_defaults[@]}"
-  "${menu_defaults[@]}"                                        
+  "${menu_defaults[@]}"
   icon.font.size=16
   icon.font.style="Light"
+  label.drawing=off
   update_freq=60                                             
   popup.align=right                                            
   click_script="sketchybar --set battery popup.drawing=toggle" 

@@ -3,29 +3,22 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-
 # The $SELECTED variable is available for space components and indicates if
 # the space invoking this script (with name: $NAME) is currently selected:
 # https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
 
-# sketchybar --set $NAME background.drawing=$SELECTED \
-# 	icon.highlight=$SELECTED \
-# 	label.highlight=$SELECTED \
-#   echo $ICONS_SPACE
+if [ "$SELECTED" = "true" ]; then
+  COLOR=$HIGHLIGHT
+  OFFSET=-12
+else
+  COLOR=$TRANSPARENT
+fi
 
-  if [ "$SELECTED" = "true" ]; then
-    COLOR=$HIGHLIGHT
-    OFFSET=-12
-  else
-    # OFFSET=0
-    COLOR=$TRANSPARENT
-  fi
-
-  sketchybar --animate tanh 10                     \
-             --set $NAME icon.highlight=$SELECTED  \
-                         label.highlight=$SELECTED \
-                         background.color=$COLOR   \
-                         background.y_offset=$OFFSET
+sketchybar --animate tanh 10                     \
+            --set $NAME icon.highlight=$SELECTED  \
+                        label.highlight=$SELECTED \
+                        background.color=$COLOR   \
+                        background.y_offset=$OFFSET
 
 create_icons() {
 
@@ -38,7 +31,7 @@ create_icons() {
   
       QUERY=$(yabai -m query --windows --space $sid)
       APPS=$(echo $QUERY | jq '.[].app')
-      TITLES=$(echo $QUERY | jq '.[].title')
+      # TITLES=$(echo $QUERY | jq '.[].title')
       CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
     
       if grep -q "\"" <<< $APPS; then
@@ -63,14 +56,16 @@ create_icons() {
               SUFFIX=""
             fi
 
+            BADGE=""
+
             if [[ "$APP" == "Messages" ]]; then
               BADGE=$(sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message WHERE is_read=0 AND is_from_me=0 AND text!='' AND date_read=0" | wc -l | awk '{$1=$1};1')
             else
-              BADGE=$(lsappinfo -all info -only StatusLabel $APP | sed -nr 's/\"StatusLabel\"=\{ \"label\"=\"(.+)\" \}$/\1/p' )
+              BADGE=$(lsappinfo -all info -only StatusLabel "$APP" | sed -nr 's/\"StatusLabel\"=\{ \"label\"=\"(.+)\" \}$/\1/p' )
             fi
 
             # Define how notifications should be shown.
-            if [[ "$BADGE" -gt 0 ]]; then
+            if [[ "$BADGE" != "" ]]; then
               # If you want number of notifications instead of dot:
               # SUFFIX+=" ($BADGE)"
               SUFFIX+=" •"
@@ -84,7 +79,7 @@ create_icons() {
 
           done
       else
-        LABEL+="_"
+        LABEL+=""
       fi
       sketchybar --set space.$sid label="$LABEL"
     done
@@ -92,7 +87,8 @@ create_icons() {
 
 mouse_clicked() {
   if [ "$BUTTON" = "right" ] || [ "$MODIFIER" = "shift" ]; then
-    SPACE_LABEL="$(osascript -e "return (text returned of (display dialog \"Give a name to space $NAME:\" default answer \"\" with icon note buttons {\"Cancel\", \"Continue\"} default button \"Continue\"))")"
+    SPACE_NAME="${NAME#*.}"
+    SPACE_LABEL="$(osascript -e "return (text returned of (display dialog \"Rename space $SPACE_NAME to:\" default answer \"\" with title \"Space Renamer\" buttons {\"Cancel\", \"Rename\"} default button \"Rename\"))")"
     if [ $? -eq 0 ]; then
       if [ "$SPACE_LABEL" = "" ]; then
         set_space_label "${NAME:6}"
