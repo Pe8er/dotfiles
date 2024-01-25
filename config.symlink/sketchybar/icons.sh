@@ -61,7 +61,8 @@ export ICONS_SPACE=(1 2 3 4 5 6 7 8 9 10)
 
 export ICON_APP=󰣆 # fallback app
 export ICON_TERM=󰆍 # fallback terminal app, terminal, warp, iterm2
-export ICON_PHOTOSHOP=
+export ICON_PHOTOSHOP=
+export ICON_AFTEREFFECTS=󱁑
 export ICON_PHOTOS=
 export ICON_FIGMA=
 export ICON_KICAD=

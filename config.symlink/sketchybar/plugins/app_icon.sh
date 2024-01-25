@@ -66,7 +66,7 @@ case "$1" in
 "Voice Memos")
 	RESULT=$ICON_MICROPHONE
 	;;
-"Messages" | "Slack" | "Microsoft Teams" | "Telegram")
+"Messages" | "Slack" | "Microsoft Teams" | "Telegram" | "WhatsApp")
 	RESULT=$ICON_CHAT
 	;;
 "Discord")
@@ -138,7 +138,7 @@ case "$1" in
 "Airflow")
 	RESULT=$ICON_CAST
 	;;
-"Microsoft Excel")
+"Microsoft Excel" | "Numbers")
 	RESULT=$ICON_TABLE
 	;;
 "Microsoft PowerPoint")
@@ -155,6 +155,9 @@ case "$1" in
 	;;
 "Adobe Photoshop 2024")
 	RESULT=$ICON_PHOTOSHOP
+	;;
+"Adobe After Effects")
+	RESULT=$ICON_AFTEREFFECTS
 	;;
 "Photos")
 	RESULT=$ICON_PHOTOS

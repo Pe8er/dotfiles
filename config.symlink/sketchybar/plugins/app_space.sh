@@ -30,23 +30,19 @@ create_icons() {
       LABEL=""
   
       QUERY=$(yabai -m query --windows --space $sid)
-      APPS=$(echo $QUERY | jq '.[].app')
-      # TITLES=$(echo $QUERY | jq '.[].title')
+      APPS=$(echo $QUERY | jq '.[].app' | uniq)
       CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
     
       if grep -q "\"" <<< $APPS; then
         APPS_ARR=()
-        while read -r line; do APPS_ARR+=("$line"); done <<< "$APPS"
-        TITLES_ARR=()
-        while read -r line; do TITLES_ARR+=("$line"); done <<< "$TITLES"
-    
+        while read -r line; do
+        APPS_ARR+=("$line"); done <<< "$APPS"
         LENGTH=${#APPS_ARR[@]}
 
         for j in "${!APPS_ARR[@]}"
           do
             APP=$(echo ${APPS_ARR[j]} | sed 's/"//g')
 
-            # TITLE=$(echo ${TITLES_ARR[j]} | sed 's/"//g')
             ICON=$($HOME/.config/sketchybar/plugins/app_icon.sh "$APP")
 
             # Define how currently focused app should be highlighted
@@ -70,7 +66,7 @@ create_icons() {
               # SUFFIX+=" ($BADGE)"
               SUFFIX+=" •"
             fi
-
+            
             LABEL+="$ICON$SUFFIX"
 
             if [[ $j < $(($LENGTH-1)) ]]; then
