@@ -7,7 +7,7 @@ sketchybar                                                                      
              align=right                                                                      \
              icon.drawing=off                                                                 \
              label.padding_right=4                                                                 \
-             y_offset=6                                                                       \
+             y_offset=5                                                                       \
              width=0                                                                          \
              script='sketchybar --set $NAME label="$(date "+%a, %b %d")"'                     \
              click_script="open -a Calendar.app"                                              \
@@ -19,7 +19,7 @@ sketchybar                                                                      
   --set date.details "${menu_item_defaults[@]}"                                               \
   --add item clock right                                                                      \
   --set clock update_freq=10                                                                  \
-              y_offset=-5                                                                     \
+              y_offset=-3                                                                  \
               icon.drawing=off                                                                \
               label.font="$FONT:Bold:9"                                                       \
               align=right                                                                     \
