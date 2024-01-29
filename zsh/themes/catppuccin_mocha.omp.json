@@ -1,120 +1,89 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
   "palette": {
-        "foreground": "#ACB0BE",
-        "background": "#545454",
-        "green": "#c3e88d",
-        "blue": "#89ddff",
-        "yellow":  "#ffcb6b",
-        "red":  "#f07178"
+    "background": "#545454",
+    "blue": "#89ddff",
+    "foreground": "#ACB0BE",
+    "green": "#c3e88d",
+    "red": "#f07178",
+    "yellow": "#ffcb6b"
   },
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "foreground": "p:foreground",
+          "type": "os",
           "style": "plain",
-          "template": "{{.Icon}} ",
-          "type": "os"
-        },
-        {
-          "type": "root",
-          "style": "powerline",
-          "powerline_symbol": "!!",
           "foreground": "p:foreground",
-          "background": "p:blue",
-          "template": ">>"
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
         },
-        // {
-        //   "foreground": "p:blue",
-        //   "style": "plain",
-        //   "template": "{{ .UserName }}@{{ .HostName }} ",
-        //   "type": "session"
-        // },
         {
+          "type": "session",
+          "style": "plain",
+          "foreground": "p:blue",
+          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} "
+        },
+        {
+          "type": "path",
+          "style": "plain",
           "foreground": "p:green",
+          "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "..\ue5fe..",
             "home_icon": "~",
             "style": "agnoster_short"
-          },
-          "style": "plain",
-          "template": "{{ .Path }} ",
-          "type": "path"
-        },
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
         {
+          "type": "git",
+          "style": "plain",
           "foreground": "p:yellow",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:yellow{{ end }}",
-            "{{ if gt .Ahead 0 }}p:green{{ end }}",
-            "{{ if gt .Behind 0 }}p:green{{ end }}"
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
+            "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
+            "{{ if gt .Behind 0 }}p:yellow{{ end }}"
           ],
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
             "commit_icon": "\uf417 ",
-            "fetch_status": false,
-            "fetch_upstream_icon": false,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
             "merge_icon": "\ue727 ",
             "no_commits_icon": "\uf0c3 ",
             "rebase_icon": "\ue728 ",
             "revert_icon": "\uf0e2 ",
             "tag_icon": "\uf412 ",
-            "fetch_status": true,
-            "fetch_upstream_icon": true,
             "untracked_modes": {
               "/Users/user/Projects/oh-my-posh/": "no"
             }
-        },
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 􀈎 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} 􀃲 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} 􀐛 {{ .StashCount }}{{ end }} ",
-          "style": "plain",
-          "type": "git"
-        },
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
         {
           "type": "text",
           "style": "plain",
           "foreground": "p:yellow",
           "template": "\uf105"
         }
-        // {
-        //   "type": "battery",
-        //   "style": "plain",
-        //   "powerline_symbol": "",
-        //   "foreground_templates": [
-        //     "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
-        //     "{{if eq \"Discharging\" .State.String}}p:red{{end}}",
-        //     "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
-        //   ],
-        //   "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }} ",
-        //   "properties": {
-        //     "discharging_icon": " ",
-        //     "charging_icon": " ",
-        //     "charged_icon": " "
-        //   }
-        // }
-      ],
-      "type": "prompt"
+      ]
     }
-    // {
-    //   "type": "prompt",
-    //   "alignment": "right",
-    //   "segments": [
-    //     {
-    //       "type": "time",
-    //       "style": "plain",
-    //       "foreground": "p:background",
-    //       "alignment": "right",
-    //       "newline": false,
-    //       "template": " {{ .CurrentDate | date .Format }}",
-    //       "properties": {
-    //         "time_format": "Mon, Jan 02 / 3:04 PM"
-    //       }
-    //     }
-    //   ]
-    // },
-  ],
-  "final_space": true,
-  "version": 2
+  ]
 }
