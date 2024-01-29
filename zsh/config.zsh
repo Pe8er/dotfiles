@@ -1,12 +1,8 @@
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
-else
-  export PS1='%3~$(git_info_for_prompt)%# '
-fi
-
-# export PROMPT="$PROMPT$(git-radar --zsh --fetch) "
-
-# export PS1="$PS1\$(git-radar --bash --fetch)"
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export PS1='%m:%3~$(git_info_for_prompt)%# '
+# else
+#   export PS1='%3~$(git_info_for_prompt)%# '
+# fi
 
 export LSCOLORS="exfxcxdxbxegedabagacad"
 export CLICOLOR=true

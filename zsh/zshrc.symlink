@@ -1,5 +1,5 @@
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh --config $HOME/.dotfiles/zsh/themes/catppuccin_mocha.omp.json)"
+  eval "$(oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/catppuccin_mocha.omp.json)"
 fi
 
 source $HOME/.dotfiles/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
@@ -27,3 +27,6 @@ zstyle ':autocomplete:history-search-backward:*' list-lines 20
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.3 # run chruby to see actual version
+
+# Change directories by typing the directory path without using the cd command
+setopt autocd
