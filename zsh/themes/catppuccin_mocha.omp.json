@@ -3,11 +3,12 @@
   "version": 2,
   "final_space": true,
   "palette": {
-    "background": "#545454",
-    "blue": "#89ddff",
-    "foreground": "#ACB0BE",
+    "background": "#0F111A",
+    "cyan": "#89ddff",
+    "blue": "#82aaff",
+    "foreground": "#ffffff",
     "green": "#c3e88d",
-    "red": "#f07178",
+    "red": "#ff5370",
     "yellow": "#ffcb6b"
   },
   "blocks": [
@@ -15,27 +16,34 @@
       "type": "prompt",
       "alignment": "left",
       "segments": [
+        // {
+        //   "type": "root",
+        //   "style": "powerline",
+        //   "powerline_symbol": "",
+        //   "foreground": "#111111",
+        //   "background": "#ffff66",
+        //   "template": ""
+        // },
         {
           "type": "os",
           "style": "plain",
           "foreground": "p:foreground",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} "
         },
         {
           "type": "session",
           "style": "plain",
-          "foreground": "p:blue",
-          "template": " {{ if .SSHSession }}\ueba9 {{ end }}{{ .UserName }}@{{ .HostName }} "
+          "foreground": "p:cyan",
+          "template": " {{ if .SSHSession }}\ueba9 {{ .UserName }}@{{ .HostName }} {{ end }}"
         },
         {
           "type": "path",
           "style": "plain",
-          "foreground": "p:green",
+          "foreground": "p:yellow",
           "template": " {{ .Path }} ",
           "properties": {
-            "folder_icon": "..\ue5fe..",
             "home_icon": "~",
-            "style": "agnoster_short"
+            "style": "agnoster_full"
           }
         }
       ]
@@ -49,12 +57,12 @@
           "style": "plain",
           "foreground": "p:yellow",
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:cyan{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
             "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
             "{{ if gt .Behind 0 }}p:yellow{{ end }}"
           ],
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 􀈎 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} 􀃳 {{ .Staging.String }}{{ end }} ",
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
@@ -79,6 +87,7 @@
       "segments": [
         {
           "type": "text",
+          "newline": "true",
           "style": "plain",
           "foreground": "p:yellow",
           "template": "\uf105"
@@ -86,4 +95,37 @@
       ]
     }
   ]
+  // "tooltips": [
+  //   {
+  //     "type": "git",
+  //     "tips": [
+  //       "git",
+  //       "g"
+  //     ],
+  //     "style": "plain",
+  //     "foreground": "p:yellow",
+  //     "foreground_templates": [
+  //       "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
+  //       "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
+  //       "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
+  //       "{{ if gt .Behind 0 }}p:yellow{{ end }}"
+  //     ],
+  //     "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+  //     "properties": {
+  //       "branch_icon": "\ue725 ",
+  //       "cherry_pick_icon": "\ue29b ",
+  //       "commit_icon": "\uf417 ",
+  //       "fetch_status": true,
+  //       "fetch_upstream_icon": true,
+  //       "merge_icon": "\ue727 ",
+  //       "no_commits_icon": "\uf0c3 ",
+  //       "rebase_icon": "\ue728 ",
+  //       "revert_icon": "\uf0e2 ",
+  //       "tag_icon": "\uf412 ",
+  //       "untracked_modes": {
+  //         "/Users/user/Projects/oh-my-posh/": "no"
+  //       }
+  //     }
+  //   }
+  // ]
 }

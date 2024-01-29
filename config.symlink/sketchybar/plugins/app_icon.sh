@@ -168,6 +168,12 @@ case "$1" in
 "KiCad")
 	RESULT=$ICON_KICAD
 	;;
+"JDownloader2")
+	RESULT=$ICON_DOWNLOAD
+	;;
+"SF Symbols")
+	RESULT=$ICON_ICON
+	;;
 *)
 	RESULT=$ICON_APP
 	;;
