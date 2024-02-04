@@ -85,7 +85,6 @@ menu_item_defaults=(
   padding_left=$PADDINGS
   padding_right=$PADDINGS
   icon.padding_left=0
-  # icon.padding_right=0
   icon.color=$HIGHLIGHT
   background.color=$TRANSPARENT
 )

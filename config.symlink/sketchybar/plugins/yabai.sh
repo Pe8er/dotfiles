@@ -4,54 +4,58 @@ window_state() {
   source "$CONFIG_DIR/colors.sh"
   source "$CONFIG_DIR/icons.sh"
 
-  WINDOW=$(yabai -m query --windows --window)
-  STACK_INDEX=$(echo "$WINDOW" | jq '.["stack-index"]')
-  # CURRENTSP=$(yabai -m query --spaces --space | jq '.index')
-  WINDOWCOUNT=$(yabai -m query --windows --space | jq -r '.[]."is-floating"' | grep false | wc -l)
-
   COLOR=$LABEL_COLOR
-  ICON=$YABAI_GRID
+
+  WINDOW=$(yabai -m query --windows --window)
+  read -r FLOATING SPLIT PARENT FULLSCREEN STICKY STACK_INDEX <<<$(echo "$WINDOW" | jq -rc '.["is-floating", "split-type", "has-parent-zoom", "has-fullscreen-zoom", "is-sticky", "stack-index"]')
 
   if [[ $STACK_INDEX -gt 0 ]]; then
     LAST_STACK_INDEX=$(yabai -m query --windows --window stack.last | jq '.["stack-index"]')
     ICON=$YABAI_STACK
-    LABEL="$(printf "[%s of %s]" "$STACK_INDEX" "$LAST_STACK_INDEX")"
-    COLOR=$RED
-  elif [[ $WINDOWCOUNT -lt 2 ]]; then
-    ICON=$YABAI_FULLSCREEN_ZOOM
-    COLOR=$HIGHLIGHT
-  # elif [ "$(echo "$WINDOW" | jq '.["has-fullscreen-zoom"]')" = "true" ]; then
-  #   ICON=$YABAI_FULLSCREEN_ZOOM
-  #   COLOR=$GREEN
-  elif [ "$(echo "$WINDOW" | jq '.["split-type"]')" == '"vertical"' ]; then
-    ICON=$YABAI_SPLIT_VERTICAL
-    COLOR=$LABEL_COLOR
-  elif [ "$(echo "$WINDOW" | jq '.["split-type"]')" == '"horizontal"' ]; then
-    ICON=$YABAI_SPLIT_HORIZONTAL
-    COLOR=$LABEL_COLOR
-  elif [ "$(echo "$WINDOW" | jq '.["is-floating"]')" = "true" ]; then
+    LABEL="$(printf "%s/%s  " "$STACK_INDEX" "$LAST_STACK_INDEX")"
+    COLOR=$YELLOW
+  elif [[ $FLOATING == "true" ]]; then
     ICON=$YABAI_FLOAT
-    COLOR=$HIGHLIGHT
-  elif [ "$(echo "$WINDOW" | jq '.["has-parent-zoom"]')" = "true" ]; then
-    ICON=$YABAI_PARENT_ZOOM
-    COLOR=$BLUE
+  elif [[ $PARENT == "true" ]]; then
+    ICON="􁈔"
+  elif [[ $FULLSCREEN == "true" ]]; then
+    ICON=$YABAI_FULLSCREEN_ZOOM
+  elif [[ $SPLIT == "vertical" ]]; then
+    ICON=$YABAI_SPLIT_VERTICAL
+  elif [[ $SPLIT == "horizontal" ]]; then
+    ICON=$YABAI_SPLIT_HORIZONTAL
+  else
+    ICON=$YABAI_GRID
   fi
 
   args=(--bar border_color=$COLOR --animate sin 10 --set $NAME icon=$ICON icon.color=$COLOR)
 
-  # [ -z "$LABEL" ] && args+=(label.width=0) \
-  #                 || args+=(label="$LABEL" label.width=50)
+  [ -z "$LABEL" ] && args+=(label.drawing=off) \
+                  || args+=(label.drawing=on label="$LABEL" label.color=$COLOR)
 
-  # [ -z "$ICON" ] && args+=(icon.width=0) \
-  #                || args+=(icon="$ICON" icon.width=30)
+  [ -z "$ICON" ] && args+=(icon.width=0) \
+                 || args+=(icon="$ICON")
 
   sketchybar -m "${args[@]}"
 }
 
 
 mouse_clicked() {
-  # yabai -m query --windows --window
-  yabai -m window --toggle zoom-fullscreen
+
+  yabai_mode=$(yabai -m query --spaces --space | jq -r .type)
+
+  case "$yabai_mode" in
+      bsp)
+      yabai -m config layout stack
+      ;;
+      stack)
+      yabai -m config layout float
+      ;;
+      float)
+      yabai -m config layout bsp
+      ;;
+  esac
+
   window_state
 }
 
