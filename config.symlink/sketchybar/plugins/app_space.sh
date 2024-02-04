@@ -78,6 +78,7 @@ create_icons() {
         LABEL+=""
       fi
       sketchybar --set space.$sid label="$LABEL"
+      # osascript -e 'display notification "Spaces and icons created"'
     done
 }
 
@@ -105,7 +106,7 @@ case "$SENDER" in
   "mouse.clicked")
   mouse_clicked
   ;;
-  "window_change" | "front_app_switched")
+  "space_change" | "window_change" | "front_app_switched")
   create_icons
   ;;
 esac
