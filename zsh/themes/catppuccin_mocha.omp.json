@@ -61,8 +61,8 @@
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
-            "{{ if gt .Ahead 0 }}p:green{{ end }}",
-            "{{ if gt .Behind 0 }}p:yellow{{ end }}"
+            "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
+            "{{ if gt .Behind 0 }}p:green{{ end }}"
           ],
           "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 􀈎 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} 􀃳 {{ .Staging.String }}{{ end }}",
           "properties": {
