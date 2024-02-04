@@ -57,7 +57,7 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "p:yellow",
+          "foreground": "p:green",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
