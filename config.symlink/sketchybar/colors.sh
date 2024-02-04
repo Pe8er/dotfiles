@@ -3,7 +3,7 @@
 # https://material-theme.com/docs/reference/color-palette/
 
 # Material Ocean
-# "background": "#0F111A",
+# background": "#0F111A",
 # "grey": "#3B4252",
 # "cyan": "#89ddff",
 # "blue": "#82aaff",
@@ -23,15 +23,15 @@ export BASE_BLACK="181926" #0F111A
 export BASE_WHITE="eeeeee" #eeeeee
 
 # Color Palette
-export BLACK="$O100""$BASE_BLACK"
-export BLACK_75="$O75""$BASE_BLACK"
-export BLACK_50="$O50""$BASE_BLACK"
-export BLACK_25="$O25""$BASE_BLACK"
-export WHITE="$O100""$BASE_WHITE"
-export WHITE_75="$O75""$BASE_WHITE"
-export WHITE_50="$O50""$BASE_WHITE"
-export WHITE_25="$O25""$BASE_WHITE"
-export WHITE_10="$O10""$BASE_WHITE"
+export BLACK=$O100$BASE_BLACK
+export BLACK_75=$O75$BASE_BLACK
+export BLACK_50=$O50$BASE_BLACK
+export BLACK_25=$O25$BASE_BLACK
+export WHITE=$O100$BASE_WHITE
+export WHITE_75=$O75$BASE_WHITE
+export WHITE_50=$O50$BASE_WHITE
+export WHITE_25=$O25$BASE_WHITE
+export WHITE_10=$O10$BASE_WHITE
 export RED=0xffff5370 #ff5370
 export GREEN=0xffc3e88d #c3e88d
 export TEAL=0xff64FFDA #64FFDA
