@@ -14,7 +14,7 @@
         {
           "foreground": "p:os",
           "style": "plain",
-          "template": "{{.Icon}} ",
+          "template": "{{.Icon}}",
           "type": "os"
         },
         {

@@ -8,17 +8,22 @@ sudo yabai --load-sa
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
 yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
-# yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
-# yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
-
 yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
 yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
+
+# Float small, non-resizable windows, doesn't seem to work well
+# yabai -m signal --add event=small_window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+# yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er '.["can-resize"]' | grep -q 'false' && yabai -m window $YABAI_WINDOW_ID --toggle float'
+yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er '.["can-resize"]' | grep -q 'false' && yabai -m window $YABAI_WINDOW_ID --toggle float'
+
 
 # $HOME/.config/yabai/create_spaces.sh
 
 yabai -m config window_placement second_child \
   auto_balance off                            \
   mouse_follows_focus off                     \
+  focus_follows_mouse autofocus               \
+  window_shadow off                           \
   top_padding 0                               \
   bottom_padding 6                            \
   left_padding 6                              \
@@ -28,23 +33,16 @@ yabai -m config window_placement second_child \
   --display 1 external_bar all:32:0           \
   layout bsp
 
-# Center mouse on window with focus
-# yabai -m config mouse_follows_focus on
-yabai -m config focus_follows_mouse autofocus
-
 # Manage apps…NOT
 yabai -m rule --add app="^(Messages|LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Alfred|Activity Monitor|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim|The Unarchiver|Transmission|Installer|Hosting AU|Numi|IINA)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="GLMv4" app="^GLMv4$" title="(Preparations for Measurements)" manage=off
 yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+yabai -m rule --add title="Dr" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
 yabai -m rule --add app="^Adobe (After Effects|Audition|Media Encoder|Lightroom)$" role="AXLayoutArea" subrole="AXFloatingWindow" manage=on
 yabai -m rule --add app="^IINA$" sticky=on layer=above manage=off
-
-# Float small, non-resizable windows, doesn't seem to work well
-# yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
-
 
 echo "Yabai configuration loaded…"
