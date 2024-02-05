@@ -5,10 +5,6 @@ source "$CONFIG_DIR/colors.sh"
 update() {
 PERCENTAGE=$(df -H /System/Volumes/Data | awk 'END {print $5}' | sed 's/%//')
 
-if [ $PERCENTAGE = "" ]; then
-  exit 0
-fi
-
 COLOR=$LABEL_COLOR
 
 case ${PERCENTAGE} in
