@@ -73,11 +73,9 @@ bracket_defaults=(
 
 menu_defaults=(
   popup.blur_radius=32
-  popup.background.color=$BAR_COLOR
+  popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.background.corner_radius=$PADDINGS
   popup.background.shadow.drawing=on
-  popup.background.border_width=1
-  popup.background.border_color=$GREY_50
 )
 
 menu_item_defaults=(
