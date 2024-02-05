@@ -1,11 +1,11 @@
 #!/bin/bash
 
 diskmonitor=(
-  icon.font.size=16
+  icon.font="CaskaydiaCove Nerd Font Mono:Regular:24"
   icon.padding_right=20
   label.drawing=off
+  y_offset=1
   update_freq=360
-  width=0
   updates=when_shown
   script="$PLUGIN_DIR/diskmonitor.sh"
 )
