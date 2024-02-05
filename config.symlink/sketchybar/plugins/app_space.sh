@@ -106,7 +106,7 @@ case "$SENDER" in
   "mouse.clicked")
   mouse_clicked
   ;;
-  "space_change" | "window_change" | "front_app_switched")
+  "space_change" | "window_change" | "front_app_switched" | "routine" | "forced")
   create_icons
   ;;
 esac
