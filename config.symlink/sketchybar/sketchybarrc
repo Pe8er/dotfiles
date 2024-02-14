@@ -33,12 +33,12 @@ source "$ITEM_DIR/transmission.sh"
 source "$ITEM_DIR/music.sh"
 # source "$ITEM_DIR/moode.sh"
 
-# Brackets
+# Brackets '/space\..*/'
 sketchybar \
---add bracket left_side logo yabai '/space\..*/' \
+        --add bracket left_side logo yabai '/space\..*/' \
         --set left_side "${bracket_defaults[@]}" \
 \
---add bracket status_icons transmission messages diskmonitor weather volume_icon volume battery wifi date clock dnd \
+        --add bracket status_icons transmission messages diskmonitor weather volume_icon volume battery wifi date clock dnd \
         --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --hotload on

@@ -7,12 +7,13 @@ yabai=(
   icon.font="$FONT:Bold:12.0"
 )
 
-sketchybar --add event window_focus                \
-           --add event windows_on_spaces           \
-           --add item yabai left                   \
+# Allows my shortcut / workflow in Alfred to trigger things in Sketchybar
+sketchybar --add event alfred_trigger
+
+sketchybar --add item yabai left                   \
            --set yabai "${yabai[@]}"               \
-           --subscribe yabai window_focus          \
-                             space_change          \
-                             windows_on_spaces     \
+           --subscribe yabai space_change          \
                              mouse.scrolled.global \
-                             mouse.clicked
+                             mouse.clicked         \
+                             front_app_switched    \
+                             alfred_trigger

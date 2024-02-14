@@ -6,13 +6,13 @@ render_item() {
 
   PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
   CHARGING=$(pmset -g batt | grep 'AC Power')
-  CHARGING_STATUS="Not charging"
+  CHARGING_LABEL="Not charging"
+  COLOR=$ICON_COLOR
+  DRAWING="off"
 
   if [ $PERCENTAGE = "" ]; then
     exit 0
   fi
-
-  COLOR=$LABEL_COLOR
 
   case ${PERCENTAGE} in
   9[0-9] | 100)
@@ -26,25 +26,28 @@ render_item() {
     ;;
   [1-2][0-9])
     ICON="􀛩"
+    COLOR=$(getcolor yellow)
+    DRAWING="on"
     ;;
   *)
     ICON="􀛪"
-    COLOR=$RED
+    COLOR=$(getcolor orange)
+    DRAWING="on"
     ;;
   esac
 
   if [[ $CHARGING != "" ]]; then
     ICON="􀢋"
-    CHARGING_STATUS="Charging"
+    CHARGING_LABEL="Charging"
     COLOR=$LABEL_COLOR
+    DRAWING="off"
   fi
 
-  sketchybar --set battery icon=$ICON
-
+  sketchybar --set $NAME icon=$ICON icon.color=$COLOR label=$PERCENTAGE% label.color=$COLOR label.drawing=$DRAWING
 }
 
 render_popup() {
-  sketchybar --set battery.details label="$PERCENTAGE% (${CHARGING_STATUS})"
+  sketchybar --set $NAME.details label="$PERCENTAGE% (${CHARGING_LABEL})"
 }
 
 update() {
@@ -52,11 +55,27 @@ update() {
   render_popup
 }
 
+label_toggle() {
+
+  DRAWING_STATE=$(sketchybar --query $NAME | jq -r '.label.drawing')
+
+  if [[ $DRAWING_STATE == "on" ]]; then
+    DRAWING="off"
+  else
+    DRAWING="on"
+  fi
+
+  sketchybar --set $NAME label.drawing=$DRAWING
+}
+
 popup() {
   sketchybar --set "$NAME" popup.drawing="$1"
 }
 
 case "$SENDER" in
+"mouse.clicked")
+  label_toggle
+  ;;
 "routine" | "forced" | "power_source_change")
   update
   ;;

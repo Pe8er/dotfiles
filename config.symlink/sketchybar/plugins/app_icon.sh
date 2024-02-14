@@ -141,7 +141,7 @@ case "$1" in
 "Microsoft Excel" | "Numbers")
 	RESULT=$ICON_TABLE
 	;;
-"Microsoft PowerPoint")
+"Microsoft PowerPoint" | "Keynote" | "Google Slides")
 	RESULT=$ICON_PRESENT
 	;;
 "OneDrive")
@@ -159,7 +159,7 @@ case "$1" in
 "Adobe After Effects")
 	RESULT=$ICON_AFTEREFFECTS
 	;;
-"Photos")
+"Photos" | "Lightroom Classic")
 	RESULT=$ICON_PHOTOS
 	;;
 "Figma")
@@ -173,6 +173,12 @@ case "$1" in
 	;;
 "SF Symbols")
 	RESULT=$ICON_ICON
+	;;
+"Steam" | "Steam Helper")
+	RESULT=$ICON_STEAM
+	;;
+"HandBrake")
+	RESULT=$ICON_HANDBRAKE
 	;;
 *)
 	RESULT=$ICON_APP

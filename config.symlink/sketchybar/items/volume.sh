@@ -8,7 +8,7 @@ volume_slider=(
   slider.highlight_color=$HIGHLIGHT
   slider.background.height=8
   slider.background.corner_radius=12
-  slider.background.color=$WHITE_25
+  slider.background.color=$(getcolor white 25)
   padding_left=0
   padding_right=0
 )

@@ -103,7 +103,10 @@ export ICON_CLOUD=󰅧 # onedrive
 export ICON_PEN=󰏬 # curve
 export ICON_REMOTEDESKTOP=󰢹 # vmware, utm
 export ICON_DOWNLOAD=􁾮 # Jdownloader2
-export ICON_ICON=􀼱 # Jdownloader2
+export ICON_ICON=􀼱 # SF Symbols
+export ICON_STEAM=󰓓 # Steam
+export ICON_HANDBRAKE=󱁆
+
 
 export ICON_CLOCK=󰥔 # clock, timewarrior, tty-clock
 export ICON_CALENDAR=󰃭 # calendar
