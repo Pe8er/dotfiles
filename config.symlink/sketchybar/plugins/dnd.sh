@@ -1,33 +1,45 @@
-#!/bin/sh
+#!/bin/bash
 
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-update() {
-    dnd_enabled=$(cat ~/Library/DoNotDisturb/DB/Assertions.json | jq .data[0].storeAssertionRecords)
-    # alternate method: defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"
-    ICON=􀆺
+check_state() {
+  # DND_ENABLED=$(cat ~/Library/DoNotDisturb/DB/Assertions.json | jq .data[0].storeAssertionRecords)
 
-    if [ "$dnd_enabled" = "null" ]; then
-        COLOR=$WHITE_25
-        # echo $NAME: "Disabled"
-    else
-        COLOR=$WHITE
-        # echo $NAME: "Enabled"
-    fi
+  # Alternate SLOW method:
+  DND_ENABLED=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes")
 
-    sketchybar --set $NAME icon=$ICON icon.color=$COLOR
+  if [ "$DND_ENABLED" -eq 0 ]; then
+    COLOR=$(getcolor white 25)
+  else
+    COLOR=$(getcolor white)
+  fi
+
+  sketchybar --set $NAME icon.color=$COLOR
 }
 
-toggle() {
-    osascript -e 'tell application "System Events" to keystroke "\\" using {control down, shift down, command down, option down}'
+update_icon() {
+  if [ "$SENDER" == "focus_off" ]; then
+    COLOR=$(getcolor white 25)
+  else
+    COLOR=$(getcolor white)
+  fi
+
+  sketchybar --set $NAME icon.color=$COLOR
+}
+
+toggle_dnd() {
+  osascript -e 'tell application "System Events" to keystroke "\\" using {control down, shift down, command down, option down}'
 }
 
 case "$SENDER" in
-"routine" | "forced" | "focus_on" | "focus_off")
-    update
-    ;;
+"routine" | "forced")
+  check_state
+  ;;
+"focus_on" | "focus_off")
+  update_icon
+  ;;
 "mouse.clicked")
-    toggle
-    ;;
+  toggle_dnd
+  ;;
 esac

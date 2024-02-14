@@ -2,10 +2,10 @@
 
 diskmonitor=(
   icon.font="CaskaydiaCove Nerd Font Mono:Regular:24"
-  icon.padding_right=20
+  icon.padding_right=0
   label.drawing=off
   y_offset=1
-  update_freq=360
+  update_freq=300
   updates=when_shown
   script="$PLUGIN_DIR/diskmonitor.sh"
 )
@@ -14,8 +14,10 @@ misc=(
   icon.drawing=off
   width=0
   padding_right=4
-  update_freq=360
+  update_freq=300
   updates=when_shown
+  label.drawing=off
+  click_script="open -a DaisyDisk.app"
 )
 
 diskmonitor_label=(

@@ -5,25 +5,29 @@ source "$CONFIG_DIR/globalstyles.sh"
 
 # Defaults
 spaces=(
-  background.height=2
+  background.height=18
+  background.corner_radius=50
   icon.padding_left=2
   icon.padding_right=2
   label.padding_right=2
 )
-# Register custom event - this will be use by sketchybar's space items as well as app_space.sh
-sketchybar --add event window_change
 
-# Space items
-LENGTH=${#ICONS_SPACE[@]}
+# # Register custom event - this will be used by sketchybar's space items
+# sketchybar --add event yabai_window_created   \
+#            --add event yabai_window_destroyed \
+#            --add event yabai_window_focused   \ki
+#            --add event yabai_application_terminated
 
-for i in "${!ICONS_SPACE[@]}"
-do
-  sid=$(($i+1))
-  sketchybar --add space space.$sid left                                       \
-             --set       space.$sid script="$PLUGIN_DIR/app_space.sh"          \
-                                    "${spaces[@]}"                              \
-                                    associated_space=$sid                      \
-                                    icon=${ICONS_SPACE[i]}                     \
-                                    label="_"                                  \
-             --subscribe space.$sid front_app_switched window_change mouse.clicked
+# Get all spaces
+SPACES=($(yabai -m query --spaces | jq -r '.[].index'))
+
+for SID in "${SPACES[@]}"; do
+  sketchybar --add space space.$SID left   \
+    --set space.$SID "${spaces[@]}"        \
+    script="$PLUGIN_DIR/app_space.sh $SID" \
+    associated_space=$SID                  \
+    icon=$SID                              \
+    --subscribe space.$SID mouse.clicked front_app_switched space_change space_windows_change
 done
+
+# yabai_window_created yabai_window_destroyed yabai_application_terminated

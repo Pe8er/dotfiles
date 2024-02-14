@@ -3,43 +3,80 @@
 # Unload the macOS WindowManager process
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >/dev/null 2>&1 &
 
-
 # Create spaces for sketchybar
-"$HOME/.config/yabai/create_spaces.sh"
+# "$HOME/.config/yabai/create_spaces.sh"
 
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
-yabai -m signal --add event=display_added action="sleep 3 && $HOME/.config/yabai/create_spaces.sh"
-yabai -m signal --add event=display_removed action="sleep 3 && $HOME/.config/yabai/create_spaces.sh"
-yabai -m signal --add event=window_created action="sketchybar -m --trigger window_change &> /dev/null"
-yabai -m signal --add event=window_destroyed action="sketchybar -m --trigger window_change &> /dev/null"
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+# yabai -m signal --add event=window_created action="sketchybar --trigger yabai_window_created"
+# yabai -m signal --add event=window_destroyed action="sketchybar --trigger yabai_window_destroyed"
+# yabai -m signal --add event=window_focused action="sketchybar --trigger yabai_window_focused"
+
+# yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+# yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
+# yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
+# yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+# yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+# $HOME/.config/yabai/create_spaces.sh
+
 # Float small, non-resizable windows
 yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
-
 
 yabai -m config window_placement second_child \
   auto_balance off                            \
   mouse_follows_focus off                     \
   focus_follows_mouse autofocus               \
+  menubar_opacity 0.0                         \
   window_shadow on                            \
-  top_padding 0                               \
-  bottom_padding 6                            \
-  left_padding 6                              \
-  right_padding 6                             \
-  window_gap 6                                \
-  --display 0 external_bar all:20:0           \
-  --display 1 external_bar all:32:0           \
+  top_padding 4                               \
+  bottom_padding 8                            \
+  left_padding 8                              \
+  right_padding 8                             \
+  window_gap 8                                \
   layout bsp
+  # external_bar all:32:0           \
 
-# Manage apps…NOT
+# Setup spaces
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create
+  fi
+
+  yabai -m space "$idx" --label "$name"
+  echo yabai -m space "$idx" --label "$name"
+}
+
+setup_space 1 Web
+setup_space 2 Mail
+setup_space 3 Todo
+setup_space 4 Code
+setup_space 5 Music
+setup_space 6 Design
+setup_space 7 Presentation
+
+# Assign apps to specific spaces
+yabai -m rule --add app="^(Arc|Discord)$" space=^1
+yabai -m rule --add app="^(Mail)$" space=^2
+yabai -m rule --add app="^(Things|Notes)$" space=^3
+yabai -m rule --add app="^(VSCodium|iTerm)$" space=^4
+yabai -m rule --add app="^Music$" space=^5
+yabai -m rule --add app="^(Figma|After Effects|Lightroom|Photoshop)$" space=^6
+yabai -m rule --add app="^(Keynote|Microsoft PowerPoint)$" space=^7
+
+# Manage apps and windows
 yabai -m rule --add app="^(Messages|LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Alfred|Activity Monitor|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim|The Unarchiver|Transmission|Installer|Hosting AU|Numi|IINA)$" manage=off
-yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Small windows" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="GLMv4" app="^GLMv4$" title="(Preparations for Measurements)" manage=off
 yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" manage=off
 yabai -m rule --add label="Mail New Message" app="^Mail$" title="(New Message)" manage=off
-# yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
-# yabai -m rule --add title="Dr" manage=off
+yabai -m rule --add label="Steam Helper" app="^Steam Helper$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
 yabai -m rule --add app="^Adobe (After Effects|Audition|Media Encoder|Lightroom)$" role="AXLayoutArea" subrole="AXFloatingWindow" manage=on

@@ -101,7 +101,7 @@ case "$SENDER" in
   "mouse.clicked")
   mouse_clicked
   ;;
-  "space_windows_change")
+  "yabai_window_created" | "yabai_window_destroyed" | "yabai_window_focused" | "yabai_application_terminated")
   create_icons
   ;;
   *) update

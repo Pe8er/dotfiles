@@ -1,6 +1,6 @@
 #!/bin/bash
 
-window_state() {
+set_icon() {
   source "$CONFIG_DIR/colors.sh"
   source "$CONFIG_DIR/icons.sh"
 
@@ -30,38 +30,39 @@ window_state() {
 
   args=(--bar border_color=$COLOR --animate sin 10 --set $NAME icon=$ICON icon.color=$COLOR)
 
-  [ -z "$LABEL" ] && args+=(label.drawing=off) \
-                  || args+=(label.drawing=on label="$LABEL" label.color=$COLOR)
+  [ -z "$LABEL" ] && args+=(label.drawing=off) ||
+    args+=(label.drawing=on label="$LABEL" label.color=$COLOR)
 
-  [ -z "$ICON" ] && args+=(icon.width=0) \
-                 || args+=(icon="$ICON")
+  [ -z "$ICON" ] && args+=(icon.width=0) ||
+    args+=(icon="$ICON")
 
   sketchybar -m "${args[@]}"
 }
-
 
 mouse_clicked() {
 
   yabai_mode=$(yabai -m query --spaces --space | jq -r .type)
 
   case "$yabai_mode" in
-      bsp)
-      yabai -m config layout stack
-      ;;
-      stack)
-      yabai -m config layout float
-      ;;
-      float)
-      yabai -m config layout bsp
-      ;;
+  bsp)
+    yabai -m config layout stack
+    ;;
+  stack)
+    yabai -m config layout float
+    ;;
+  float)
+    yabai -m config layout bsp
+    ;;
   esac
 
-  window_state
+  set_icon
 }
 
 case "$SENDER" in
-  "mouse.clicked") mouse_clicked
+"mouse.clicked" | "alfred_trigger")
+  mouse_clicked
   ;;
-  "window_focus") window_state 
+"window_focus" | "front_app_switched")
+  set_icon
   ;;
 esac

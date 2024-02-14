@@ -6,8 +6,8 @@ sketchybar                                          \
   updates=on                                        \
   icon=􀦛                                            \
   label.font.style="Bold"                           \
-  background.color=$GREEN                           \
+  background.color=$(getcolor green)                           \
   background.border_width=1                         \
-  background.border_color=$GREY_50                  \
-  label.color=$DARK_GREY                            \
-  icon.color=$DARK_GREY
+  background.border_color=$(getcolor grey50)                 \
+  label.color=$(getcolor grey)                            \
+  icon.color=$(getcolor grey)

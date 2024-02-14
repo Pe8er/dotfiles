@@ -29,8 +29,8 @@ render_popup() {
     theEvent="Please install icalBuddy → brew install ical-buddy."
   fi
 
+  sketchybar --set clock.next_event label="$theEvent" click_script="sketchybar --set $NAME popup.drawing=off" >/dev/null
 
-  sketchybar --set clock.details label="$theEvent" click_script="sketchybar --set $NAME popup.drawing=off" >/dev/null
 }
 
 update() {

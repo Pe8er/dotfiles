@@ -51,14 +51,14 @@ notification_defaults=(
   drawing=off
   update_freq=120
   updates=on
-  background.color=$WHITE_25
+  background.color="$(getcolor white 25)"
   background.height=16
   background.corner_radius=16
   icon.font.size=10
   icon.padding_left=$PADDINGS
   icon.padding_right=0
-  icon.color=$BLACK_75
-  label.color=$BLACK_75
+  icon.color="$(getcolor black 75)"
+  label.color="$(getcolor black 75)"
   label.padding_right=$PADDINGS
   label.font.size=11
   label.font.style=Bold
@@ -85,11 +85,12 @@ menu_item_defaults=(
   icon.padding_left=0
   icon.color=$HIGHLIGHT
   background.color=$TRANSPARENT
+  scroll_texts=on
 )
 
 separator=(
   background.height=1
-  width=200
-  background.color=$WHITE_25
+  width=180
+  background.color="$(getcolor white 25)"
   background.y_offset=-16
 )
