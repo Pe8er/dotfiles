@@ -6,8 +6,8 @@ source "$CONFIG_DIR/colors.sh"
 POPUP_OFF="sketchybar --set wifi popup.drawing=off"
 POPUP_CLICK_SCRIPT="sketchybar --set wifi popup.drawing=toggle"
 
-# IS_VPN=$(/usr/local/bin/piactl get connectionstate)
-IS_VPN="Disconnected"
+IS_VPN=$(/usr/local/bin/piactl get connectionstate)
+# IS_VPN="Disconnected"
 CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
 IP_ADDRESS="$(ipconfig getifaddr en0)"
 SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
@@ -23,7 +23,6 @@ elif [[ $SSID != "" ]]; then
   ICON_COLOR=$(getcolor white)
   ICON=􀐿
 elif [[ $CURRENT_WIFI = "AirPort: Off" ]]; then
-  # ICON_COLOR=$RED
   ICON=􀐾
 else
   ICON_COLOR=$(getcolor white 25)

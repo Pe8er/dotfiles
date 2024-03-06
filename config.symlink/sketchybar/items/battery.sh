@@ -5,7 +5,6 @@ battery=(
   icon.font.size=16
   icon.padding_right=0
   icon.font.style="Light"
-  # label.drawing=off
   update_freq=60                                             
   popup.align=right                                            
   click_script="sketchybar --set battery popup.drawing=toggle" 

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source "$CONFIG_DIR/colors.sh"
+TMP="/tmp/drawing_state.txt"
 
 render_item() {
 
@@ -8,7 +9,7 @@ render_item() {
   CHARGING=$(pmset -g batt | grep 'AC Power')
   CHARGING_LABEL="Not charging"
   COLOR=$ICON_COLOR
-  DRAWING="off"
+  local DRAWING=$(get_label_state)
 
   if [ $PERCENTAGE = "" ]; then
     exit 0
@@ -31,7 +32,7 @@ render_item() {
     ;;
   *)
     ICON="􀛪"
-    COLOR=$(getcolor orange)
+    COLOR=$(getcolor red)
     DRAWING="on"
     ;;
   esac
@@ -39,33 +40,37 @@ render_item() {
   if [[ $CHARGING != "" ]]; then
     ICON="􀢋"
     CHARGING_LABEL="Charging"
-    COLOR=$LABEL_COLOR
-    DRAWING="off"
   fi
 
-  sketchybar --set $NAME icon=$ICON icon.color=$COLOR label=$PERCENTAGE% label.color=$COLOR label.drawing=$DRAWING
+  sketchybar --set $NAME icon=$ICON icon.color=$COLOR label=$PERCENTAGE% label.color=$LABEL_COLOR label.drawing=$DRAWING
 }
 
 render_popup() {
   sketchybar --set $NAME.details label="$PERCENTAGE% (${CHARGING_LABEL})"
 }
 
-update() {
-  render_item
-  render_popup
+save_label_state() {
+  echo "$(sketchybar --query $NAME | jq -r '.label.drawing')" > $TMP
+}
+
+get_label_state() {
+  cat "$TMP"
 }
 
 label_toggle() {
-
-  DRAWING_STATE=$(sketchybar --query $NAME | jq -r '.label.drawing')
-
-  if [[ $DRAWING_STATE == "on" ]]; then
+  if [[ $(get_label_state) == "on" ]]; then
     DRAWING="off"
   else
     DRAWING="on"
   fi
-
+  
   sketchybar --set $NAME label.drawing=$DRAWING
+  save_label_state
+}
+
+update() {
+  render_item
+  render_popup
 }
 
 popup() {

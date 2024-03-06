@@ -14,11 +14,9 @@ update() {
     ;;
   8[8-9] | 9[0-7])
     ICON="󰪤"
-    COLOR=$(getcolor orange)
     ;;
   7[6-9] | 8[0-7])
     ICON="󰪣"
-    COLOR=$(getcolor yellow)
     ;;
   6[4-9] | 7[0-5])
     ICON="󰪢"

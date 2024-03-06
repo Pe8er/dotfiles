@@ -1,8 +1,8 @@
 #!/bin/bash
+source "$CONFIG_DIR/colors.sh"
+source "$CONFIG_DIR/icons.sh"
 
 set_icon() {
-  source "$CONFIG_DIR/colors.sh"
-  source "$CONFIG_DIR/icons.sh"
 
   COLOR=$LABEL_COLOR
 
@@ -12,8 +12,8 @@ set_icon() {
   if [[ $STACK_INDEX -gt 0 ]]; then
     LAST_STACK_INDEX=$(yabai -m query --windows --window stack.last | jq '.["stack-index"]')
     ICON=$YABAI_STACK
-    LABEL="$(printf "%s/%s  " "$STACK_INDEX" "$LAST_STACK_INDEX")"
-    COLOR=$YELLOW
+    LABEL="$(printf "%s/%s" "$STACK_INDEX" "$LAST_STACK_INDEX")"
+    COLOR=$(getcolor yellow)
   elif [[ $FLOATING == "true" ]]; then
     ICON=$YABAI_FLOAT
   elif [[ $PARENT == "true" ]]; then
@@ -28,7 +28,7 @@ set_icon() {
     ICON=$YABAI_GRID
   fi
 
-  args=(--bar border_color=$COLOR --animate sin 10 --set $NAME icon=$ICON icon.color=$COLOR)
+  args=(--bar border_color=$COLOR --animate tanh 10 --set $NAME icon=$ICON icon.color=$COLOR)
 
   [ -z "$LABEL" ] && args+=(label.drawing=off) ||
     args+=(label.drawing=on label="$LABEL" label.color=$COLOR)
@@ -41,19 +41,15 @@ set_icon() {
 
 mouse_clicked() {
 
-  yabai_mode=$(yabai -m query --spaces --space | jq -r .type)
+  YABAI_MODE=$(yabai -m query --spaces --space | jq -r .type)
 
-  case "$yabai_mode" in
-  bsp)
-    yabai -m config layout stack
-    ;;
-  stack)
-    yabai -m config layout float
-    ;;
-  float)
-    yabai -m config layout bsp
-    ;;
-  esac
+  if [[ $YABAI_MODE == "bsp" ]]; then
+    YABAI_MODE="stack"
+  else
+    YABAI_MODE="bsp"
+  fi
+
+  yabai -m space --layout $YABAI_MODE
 
   set_icon
 }
@@ -62,7 +58,7 @@ case "$SENDER" in
 "mouse.clicked" | "alfred_trigger")
   mouse_clicked
   ;;
-"window_focus" | "front_app_switched")
+"window_focus" | "front_app_switched" | "update_yabai_icon" | "space_windows_change")
   set_icon
   ;;
 esac

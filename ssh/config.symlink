@@ -4,7 +4,7 @@ Host *
  IdentityFile ~/.ssh/id_rsa
 
 Host pi
- User pi
+ User pe8er
  Hostname pi.local
 
 Host spizarnia

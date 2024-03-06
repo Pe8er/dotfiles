@@ -51,7 +51,6 @@ update() {
 
   if [ "$PLAYER_STATE" = "playing" ]; then
     sketchybar --set $NAME drawing=on                      \
-                           icon=􀊆                          \
                --set $NAME.artist label="$CURRENT_ARTIST"  \
                --set $NAME.title label="$CURRENT_SONG"     \
                --set $NAME.album label="$CURRENT_ALBUM"
@@ -59,9 +58,8 @@ update() {
     render_popup
 
   else
-    sketchybar --set $NAME icon=􀊄
-    popup off
     sketchybar --set $NAME drawing=off
+    popup off
   fi
   
 }

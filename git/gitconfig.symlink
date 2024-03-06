@@ -19,3 +19,18 @@
   s = status
 [pull]
 	rebase = true
+[maintenance]
+	repo = /Users/pe8er/Developer/Code Brown
+	repo = /Users/pe8er/Developer/chocV
+	repo = /Users/pe8er/Developer/crkbd
+	repo = /Users/pe8er/Developer/horizon
+	repo = /Users/pe8er/Developer/horizon-mini
+	repo = /Users/pe8er/Developer/miryoku_zmk
+	repo = /Users/pe8er/Developer/pe8er.net
+	repo = /Users/pe8er/Developer/urchin
+	repo = /Users/pe8er/Developer/zmk-config-corne
+	repo = /Users/pe8er/Developer/zmk-config-horizon-mini
+	repo = /Users/pe8er/Developer/znap
+	repo = /Users/pe8er/Developer/marlonrichert/zsh-autocomplete
+	repo = /Users/pe8er/Developer/zsh/znap
+	repo = /Users/pe8er/Developer/zsh/marlonrichert/zsh-autocomplete

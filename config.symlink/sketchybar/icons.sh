@@ -49,24 +49,12 @@ VOLUME_33=􀊥
 VOLUME_10=􀊡
 VOLUME_0=􀊣
 
-# Material Design Icons
-
 export ICON_CMD=󰘳
 export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop
 export ICON_LOCK=󰌾
-
-# export ICONS_SPACE=(󰎤 󰎧 󰎪 󰎭 󰎱 󰎳 󰎶)
-export ICONS_SPACE=(1 2 3 4 5 6 7 8 9 10)
-
 export ICON_APP=󰣆 # fallback app
-export ICON_TERM=󰆍 # fallback terminal app, terminal, warp, iterm2
-export ICON_PHOTOSHOP=
-export ICON_AFTEREFFECTS=󱁑
-export ICON_PHOTOS=
-export ICON_FIGMA=
-export ICON_KICAD=
-export ICON_THINGS=
+
 export ICON_PACKAGE=󰏓 # brew
 export ICON_DEV=󰅨 # nvim, xcode, vscode
 export ICON_VSCODIUM= # nvim, xcode, vscode
@@ -75,14 +63,12 @@ export ICON_FINDER=󰀶
 export ICON_GIT=󰊢 # lazygit
 export ICON_LIST=󱃔 # taskwarrior, taskwarrior-tui, reminders, onenote
 export ICON_SCREENSAVOR=󱄄 # unimatrix, pipe.sh
-
 export ICON_WEATHER=󰖕 # weather
 export ICON_MAIL=󰇮 # mail, outlook
 export ICON_CALC=󰪚 # calculator, numi
 export ICON_MAP=󰆋 # maps, find my
 export ICON_MICROPHONE=󰍬 # voice memos
-export ICON_CHAT=󰭻 # messages, slack, teams, discord, telegram
-export ICON_DISCORD= # messages, slack, teams, discord, telegram
+export ICON_CHAT=󰭻 # messages, slack, teams, telegram
 export ICON_VIDEOCHAT=󰍫 # facetime, zoom, webex
 export ICON_NOTE=󱞎 # notes, textedit, stickies, word, bat
 export ICON_CAMERA=󰄀 # photo booth
@@ -102,25 +88,32 @@ export ICON_PRESENT=󰈩 # powerpoint
 export ICON_CLOUD=󰅧 # onedrive
 export ICON_PEN=󰏬 # curve
 export ICON_REMOTEDESKTOP=󰢹 # vmware, utm
-export ICON_DOWNLOAD=􁾮 # Jdownloader2
-export ICON_ICON=􀼱 # SF Symbols
-export ICON_STEAM=󰓓 # Steam
-export ICON_HANDBRAKE=󱁆
-
-
 export ICON_CLOCK=󰥔 # clock, timewarrior, tty-clock
 export ICON_CALENDAR=󰃭 # calendar
-
 export ICON_WIFI=󰖩
 export ICON_WIFI_OFF=󰖪
 export ICON_VPN=󰦝 # vpn, nordvpn
-
 export ICONS_VOLUME=(󰸈 󰕿 󰖀 󰕾)
-
 export ICONS_BATTERY=(󰂎 󰁺 󰁻 󰁼 󰁽 󰁾 󰁿 󰂀 󰂁 󰂂 󰁹)
 export ICONS_BATTERY_CHARGING=(󰢟 󰢜 󰂆 󰂇 󰂈 󰢝 󰂉 󰢞 󰂊 󰂋 󰂅)
-
 export ICON_SWAP=󰁯
 export ICON_RAM=󰓅
 export ICON_DISK=󰋊 # disk utility
 export ICON_CPU=󰘚
+
+# My apps
+export ICON_DISCORD= # Discord
+export ICON_TERM= # fallback terminal app, terminal, warp, iterm2
+export ICON_PHOTOSHOP=
+export ICON_AFTEREFFECTS=󱁑
+export ICON_PHOTOS=
+export ICON_FIGMA=
+export ICON_KICAD=
+export ICON_THINGS=
+export ICON_DOWNLOAD=􁾮 # Jdownloader2
+export ICON_ICON=􀼱 # SF Symbols
+export ICON_STEAM=󰓓 # Steam
+export ICON_HANDBRAKE=󱁆
+export ICON_FIREFOX=󰈹
+export ICON_FONTBOOK=
+export ICON_GLM=󰓃

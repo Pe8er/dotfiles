@@ -10,7 +10,6 @@ music=(
   padding_left=0
   label.padding_right=$PADDINGS
   padding_right=$(($PADDINGS * 2))
-  icon=􀊆
   drawing=off
   label="Loading…"
   background.image=media.artwork
