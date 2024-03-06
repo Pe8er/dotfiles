@@ -1,7 +1,9 @@
-TEXT=$(sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message WHERE is_read=0 AND is_from_me=0 AND text!='' AND date_read=0" | wc -l | awk '{$1=$1};1')
+# TEXT=$(sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message WHERE is_read=0 AND is_from_me=0 AND text!='' AND date_read=0" | wc -l | awk '{$1=$1};1')
+TEXT=$(sqlite3 ~/Library/Messages/chat.db "SELECT COUNT(guid) FROM message WHERE NOT(is_read) AND NOT(is_from_me) AND text !=''")
+
 
 if [ $TEXT = 0 ]; then
-  sketchybar -m --set $NAME drawing=off
+  sketchybar --set $NAME drawing=off
 else
-  sketchybar -m --set $NAME drawing=on label="$TEXT"
+  sketchybar --set $NAME drawing=on label="$TEXT"
 fi

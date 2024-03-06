@@ -25,7 +25,6 @@ bar=(
 
 # Item Defaults
 item_defaults=(
-  background.color=$TRANSPARENT
   background.padding_left=$(($PADDINGS / 2))
   background.padding_right=$(($PADDINGS / 2))
   icon.padding_left=2
@@ -76,6 +75,9 @@ menu_defaults=(
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.background.corner_radius=$PADDINGS
   popup.background.shadow.drawing=on
+  popup.background.shadow.color=$(getcolor black 50)
+  popup.background.shadow.angle=90
+  popup.background.shadow.distance=16
 )
 
 menu_item_defaults=(

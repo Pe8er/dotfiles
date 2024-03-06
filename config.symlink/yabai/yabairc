@@ -8,15 +8,20 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >
 
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-# yabai -m signal --add event=window_created action="sketchybar --trigger yabai_window_created"
-# yabai -m signal --add event=window_destroyed action="sketchybar --trigger yabai_window_destroyed"
+
+# Automatically focus the window below the cursor after a window/application is closed.
+# yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+# yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+
+yabai -m signal --add event=window_created action="sketchybar --trigger space_windows_change"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger space_windows_change"
 # yabai -m signal --add event=window_focused action="sketchybar --trigger yabai_window_focused"
 
 # yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 # yabai -m signal --add event=display_added action="sleep 2 && $HOME/.config/yabai/create_spaces.sh"
 # yabai -m signal --add event=display_removed action="sleep 1 && $HOME/.config/yabai/create_spaces.sh"
-# yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
-# yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+yabai -m signal --add event=window_created action="sketchybar --trigger yabai_window_created_destroyed"
+yabai -m signal --add event=window_destroyed action="sketchybar --trigger yabai_window_created_destroyed"
 
 # $HOME/.config/yabai/create_spaces.sh
 
@@ -29,7 +34,7 @@ yabai -m config window_placement second_child \
   focus_follows_mouse autofocus               \
   menubar_opacity 0.0                         \
   window_shadow on                            \
-  top_padding 4                               \
+  top_padding 0                               \
   bottom_padding 8                            \
   left_padding 8                              \
   right_padding 8                             \

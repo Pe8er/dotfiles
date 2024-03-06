@@ -4,7 +4,7 @@ source "$CONFIG_DIR/globalstyles.sh"
 messages=(
   "${notification_defaults[@]}"
   icon=􀌤
-  background.color=$GREEN
+  background.color=$(getcolor green)
   script="$PLUGIN_DIR/messages.sh"
   click_script="open -a /System/Applications/Messages.app"
 )

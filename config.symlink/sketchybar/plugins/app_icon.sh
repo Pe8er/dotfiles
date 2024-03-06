@@ -87,8 +87,11 @@ case "$1" in
 "Photo Booth")
 	RESULT=$ICON_CAMERA
 	;;
-"Safari" | "Beam" | "DuckDuckGo" | "Arc" | "Microsoft Edge" | "Google Chrome" | "Firefox")
+"Safari" | "Beam" | "DuckDuckGo" | "Arc" | "Microsoft Edge" | "Google Chrome")
 	RESULT=$ICON_WEB
+	;;
+"Firefox")
+	RESULT=$ICON_FIREFOX
 	;;
 "System Settings" | "System Information" | "TinkerTool")
 	RESULT=$ICON_COG
@@ -114,8 +117,11 @@ case "$1" in
 "VSCodium")
 	RESULT=$ICON_VSCODIUM
 	;;
-"Font Book" | "Dictionary")
+"Dictionary")
 	RESULT=$ICON_BOOKINFO
+	;;
+"Font Book")
+	RESULT=$ICON_FONTBOOK
 	;;
 "Activity Monitor")
 	RESULT=$ICON_CHART
@@ -179,6 +185,9 @@ case "$1" in
 	;;
 "HandBrake")
 	RESULT=$ICON_HANDBRAKE
+	;;
+"GLMv4" | "GLMv5")
+	RESULT=$ICON_GLM
 	;;
 *)
 	RESULT=$ICON_APP

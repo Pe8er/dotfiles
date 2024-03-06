@@ -9,6 +9,7 @@ yabai=(
 
 # Allows my shortcut / workflow in Alfred to trigger things in Sketchybar
 sketchybar --add event alfred_trigger
+sketchybar --add event update_yabai_icon
 
 sketchybar --add item yabai left                   \
            --set yabai "${yabai[@]}"               \
@@ -16,4 +17,6 @@ sketchybar --add item yabai left                   \
                              mouse.scrolled.global \
                              mouse.clicked         \
                              front_app_switched    \
-                             alfred_trigger
+                             space_windows_change  \
+                             alfred_trigger        \
+                             update_yabai_icon
