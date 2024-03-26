@@ -9,5 +9,6 @@ messages=(
   click_script="open -a /System/Applications/Messages.app"
 )
 
-sketchybar --add item messages right       \
-           --set      messages "${messages[@]}"
+sketchybar --add item  messages right            \
+           --set       messages "${messages[@]}" \
+           --subscribe messages front_app_switched

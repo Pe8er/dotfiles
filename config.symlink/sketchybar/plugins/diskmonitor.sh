@@ -5,7 +5,7 @@ source "$CONFIG_DIR/colors.sh"
 update() {
 
   PERCENTAGE=$(df -H /System/Volumes/Data | awk 'END {print $5}' | sed 's/%//')
-  COLOR=$LABEL_COLOR
+  COLOR=$ICON_COLOR
 
   case ${PERCENTAGE} in
   9[8-9] | 100)

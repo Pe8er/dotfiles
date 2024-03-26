@@ -4,10 +4,8 @@ source "$CONFIG_DIR/colors.sh"
 TMP="/tmp/drawing_state.txt"
 
 render_item() {
-
   PERCENTAGE=$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)
   CHARGING=$(pmset -g batt | grep 'AC Power')
-  CHARGING_LABEL="Not charging"
   COLOR=$ICON_COLOR
   local DRAWING=$(get_label_state)
 
@@ -39,22 +37,21 @@ render_item() {
 
   if [[ $CHARGING != "" ]]; then
     ICON="􀢋"
-    CHARGING_LABEL="Charging"
   fi
 
   sketchybar --set $NAME icon=$ICON icon.color=$COLOR label=$PERCENTAGE% label.color=$LABEL_COLOR label.drawing=$DRAWING
 }
 
-render_popup() {
-  sketchybar --set $NAME.details label="$PERCENTAGE% (${CHARGING_LABEL})"
-}
-
 save_label_state() {
-  echo "$(sketchybar --query $NAME | jq -r '.label.drawing')" > $TMP
+  echo "$(sketchybar --query $NAME | jq -r '.label.drawing')" > "$TMP"
 }
 
 get_label_state() {
-  cat "$TMP"
+  if [ -e "$TMP" ]; then
+    cat "$TMP"
+  else
+    echo "off" > "$TMP"
+  fi
 }
 
 label_toggle() {
@@ -68,26 +65,11 @@ label_toggle() {
   save_label_state
 }
 
-update() {
-  render_item
-  render_popup
-}
-
-popup() {
-  sketchybar --set "$NAME" popup.drawing="$1"
-}
-
 case "$SENDER" in
 "mouse.clicked")
   label_toggle
   ;;
 "routine" | "forced" | "power_source_change")
-  update
-  ;;
-"mouse.entered")
-  popup on
-  ;;
-"mouse.exited" | "mouse.exited.global")
-  popup off
+  render_item
   ;;
 esac

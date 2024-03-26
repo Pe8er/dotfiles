@@ -3,7 +3,6 @@ source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/icons.sh"
 
 set_icon() {
-
   COLOR=$LABEL_COLOR
 
   WINDOW=$(yabai -m query --windows --window)
@@ -40,7 +39,6 @@ set_icon() {
 }
 
 mouse_clicked() {
-
   YABAI_MODE=$(yabai -m query --spaces --space | jq -r .type)
 
   if [[ $YABAI_MODE == "bsp" ]]; then
@@ -55,10 +53,10 @@ mouse_clicked() {
 }
 
 case "$SENDER" in
-"mouse.clicked" | "alfred_trigger")
-  mouse_clicked
-  ;;
-"window_focus" | "front_app_switched" | "update_yabai_icon" | "space_windows_change")
-  set_icon
-  ;;
+  "mouse.clicked" | "alfred_trigger")
+    mouse_clicked
+    ;;
+  "window_focus" | "front_app_switched" | "update_yabai_icon" | "space_windows_change")
+    set_icon
+    ;;
 esac
