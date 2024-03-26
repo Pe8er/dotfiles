@@ -8,7 +8,6 @@ wifi=(
   click_script="$POPUP_CLICK_SCRIPT"
   label.drawing=off
   popup.align=right
-  updates=when_shown
   update_freq=5
   --subscribe wifi wifi_change
                    mouse.entered

@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
 render_item() {
-  sketchybar --set $NAME label="$(date "+%I:%M %p")"
+  sketchybar --set $NAME label="$(date "+%I:%M %p")" \
+             --set date icon.drawing=$drawing
 }
 
-render_popup() {
-
+get_events() {
   if which "icalBuddy" &>/dev/null; then 
+    drawing="off"
     input=$(/opt/homebrew/bin/icalBuddy -ec 'Found in Natural Language,CCSF' -npn -nc -iep 'datetime,title' -po 'datetime,title' -eed -ea -n -li 4 -ps '|: |' -b '' eventsToday)
     currentTime=$(date '+%I:%M %p')
-
-    # echo "Debug: $NAME #11 $input"
 
     if [ -n "$input" ]; then
       IFS='^' read -ra events <<< "$input"
@@ -19,6 +18,7 @@ render_popup() {
         eventTime=${eventItems[0]}
         if [ "$eventTime" '>' "$currentTime" ]; then
           theEvent="$anEvent"
+          drawing="on"
           break
         fi
       done
@@ -28,18 +28,17 @@ render_popup() {
   else
     theEvent="Please install icalBuddy → brew install ical-buddy."
   fi
-
-  sketchybar --set clock.next_event label="$theEvent" click_script="sketchybar --set $NAME popup.drawing=off" >/dev/null
-
 }
 
 update() {
+  get_events
   render_item
 }
 
 popup() {
-  render_popup
-  sketchybar --set "$NAME" popup.drawing="$1"
+  get_events
+  sketchybar --set clock.next_event label="$theEvent" \
+             --set "$NAME" popup.drawing="$1"
 }
 
 case "$SENDER" in

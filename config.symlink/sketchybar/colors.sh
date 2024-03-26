@@ -36,6 +36,7 @@ getcolor() {
     local yellow=#ffcb6b
     local red=#ff5370
     local black=#0f111a
+    local trueblack=#000000
     local white=#eeeeee
 
     case $opacity in
@@ -56,6 +57,7 @@ getcolor() {
         yellow) local color=$yellow ;;
         red) local color=$red ;;
         black) local color=$black ;;
+        trueblack) local color=$trueblack ;;
         white) local color=$white ;;
         *) 
             echo "Invalid color name: $color_name" >&2

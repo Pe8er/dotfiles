@@ -3,7 +3,12 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-API_KEY="462eeb49a1b844f191f175554222607" # insert api key here
+# API key from https://www.weatherapi.com/my/
+API_KEY="462eeb49a1b844f191f175554222607"
+CITY="Wroclaw, Poland"
+CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
+# get city from IP, pretty inaccurate
+# CITY="$(curl -s -m 5 ipinfo.io/loc)"
 
 # first comment is description, second is icon number
 WEATHER_ICONS_DAY=(
@@ -109,19 +114,17 @@ WEATHER_ICONS_NIGHT=(
 )
 
 render_item() {
-  if [ "$CITY" = "" ]; then
-    args+=(--set $NAME icon="􀌏" label.drawing=off)
-    # echo "Debug: $NAME #123 $FONT"
+  if [ "$TEMP" = "" ]; then
+    args=(--set $NAME icon="􀌏" label.drawing=off)
   else
-    args+=(--set $NAME icon="$ICON" icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°C" label.drawing=on)
+    args=(--set $NAME icon="$ICON" icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°" label.drawing=on)
   fi
 
   sketchybar "${args[@]}" >/dev/null
-
 }
 
 render_popup() {
-  if [ "$CITY" = "" ]; then
+  if [ "$TEMP" = "" ]; then
     args+=(--set weather.details label="N/A"
       click_script="sketchybar --set $NAME popup.drawing=off")
   else
@@ -130,20 +133,9 @@ render_popup() {
   fi
 
   sketchybar "${args[@]}" >/dev/null
-
 }
 
 update() {
-  CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
-  SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
-  
-  # echo "Debug: #137"
-  
-  # CITY="Oborniki Slaskie, Poland"           # insert city here
-  CITY="$(curl -s -m 5 ipinfo.io/loc)"
-  # CITY=$(echo "$CITY" | curl -Gso /dev/null -w %{url_effective} --data-urlencode @- "" | cut -c 3- || true)
-  # echo "Debug: $NAME #140 City: $CITY"
-
   if [ "$CITY" != "" ]; then
     DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
     CONDITION=$(echo $DATA | jq -r '.current.condition.code')
@@ -152,12 +144,12 @@ update() {
     FEELSLIKE=$(echo $DATA | jq -r '.current.feelslike_f')
     HUMIDITY=$(echo $DATA | jq -r '.current.humidity')
     IS_DAY=$(echo $DATA | jq -r '.current.is_day')
+    LAT=$(echo $DATA | jq -r '.location.lat')
+    LON=$(echo $DATA | jq -r '.location.lon')
     LOCATION=$(echo $DATA | jq -r '.location.name' && echo ', ' && echo $DATA | jq -r '.location.country')
   
-
     [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION]}
     args=()
-    # echo "Debug: $NAME #157 Successful"
   fi
 
   render_item

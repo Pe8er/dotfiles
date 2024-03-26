@@ -11,6 +11,7 @@ FONT="JetBrainsMono Nerd Font"
 
 # Bar Appearance
 bar=(
+  # color="$(getcolor trueblack)"
   color=$TRANSPARENT
   position=top
   topmost=off

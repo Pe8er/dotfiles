@@ -1,9 +1,15 @@
 #!/bin/env/bash
 
 date=(
-  icon.drawing=off                   
-  label.font="$FONT:Semibold:8"      
-  label.padding_right=4                   
+  icon=􀀁
+  icon.drawing=off
+  icon.font.size=6
+  icon.padding_right=1
+  icon.color=$(getcolor yellow)          
+  icon.y_offset=1.5
+  label.font="$FONT:Semibold:8"
+  label.padding_left=0
+  label.padding_right=4
   y_offset=5                         
   width=0                            
   update_freq=60                     
@@ -24,10 +30,8 @@ clock=(
 )
 
 calendar_item=(
-  # label.width=180
   padding_left=0
   padding_right=0
-  # label.align=left
   label.padding_left=0
   label.padding_right=0
   icon.drawing=off
@@ -51,10 +55,3 @@ sketchybar                                      \
                     mouse.exited.global         \
   --add item clock.next_event popup.clock          \
   --set clock.next_event "${menu_item_defaults[@]}" icon.drawing=off label.padding_left=0 label.max_chars=22 \
-
-# IFS=$'\n' read -d '' -r -a lines <<< "$(gcal --starting-day=1 | tail -n +3 | sed 's/< \([0-9]*\)>/ [\1]/g')"
-
-# for ((index=0; index<${#lines[@]}-1; index++))
-# do
-#     sketchybar --add item cal.$index popup.clock --set cal.$index "${menu_item_defaults[@]}" "${calendar_item[@]}" label="${lines[index]}"
-# done
