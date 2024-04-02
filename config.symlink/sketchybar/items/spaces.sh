@@ -13,7 +13,7 @@ spaces=(
 )
 
 # Get all spaces
-SPACES=($(yabai -m query --spaces | jq -r '.[].index'))
+SPACES=($(yabai -m query --spaces index | jq -r '.[].index'))
 
 for SID in "${SPACES[@]}"; do
   sketchybar --add space space.$SID left   \

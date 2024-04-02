@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 DESIRED_SPACES_PER_DISPLAY=10
-CURRENT_SPACES="$(yabai -m query --displays | jq -r '.[].spaces | @sh')"
+CURRENT_SPACES="$(yabai -m query --displays spaces | jq -r '.[].spaces | @sh')"
 
 DELTA=0
 while read -r line

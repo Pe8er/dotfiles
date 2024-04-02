@@ -27,6 +27,7 @@ brew upgrade yabai
 
 updateSudoers
 echo "Starting yabai..."
+sleep 2
 yabai --start-service
 
 # pin yabai back to brew

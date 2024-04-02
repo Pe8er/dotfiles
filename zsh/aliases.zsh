@@ -11,3 +11,4 @@ alias update.yabai='~/.config/yabai/update.sh'
 alias update.zsh-autocomplete='git -C ~autocomplete pull'
 alias update.brew='brew update && brew upgrade'
 alias update.znap='znap pull'
+alias notify="terminal-notifier -message"

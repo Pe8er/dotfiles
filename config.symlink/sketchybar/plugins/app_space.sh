@@ -13,13 +13,15 @@ create_icons() {
 update_icons() {
   debug $FUNCNAME
 
-  CURRENT_SID=$(yabai -m query --spaces --space | jq -r '.index')
+  CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
 
   if [[ "$CURRENT_SID" == "$SID" ]]; then
     BACKGROUND_COLOR=$HIGHLIGHT_25
     PADDING=$PADDINGS
     create_icons "$CURRENT_SID"
+    # LABEL=$BAR_COLOR
   else
+    # LABEL_COLOR=$LABEL_COLOR
     BACKGROUND_COLOR=$TRANSPARENT
     PADDING=0
   fi
@@ -30,12 +32,13 @@ update_icons() {
                               background.color=$BACKGROUND_COLOR \
                               icon.padding_left=$PADDING         \
                               label.padding_right=$PADDING
+                              # label.color=$LABEL_COLOR \
 }
 
 
 create_label() {
   SID=$1
-  QUERY=$(yabai -m query --windows --space "$SID")
+  QUERY=$(yabai -m query --windows app,has-focus --space "$SID")
   IFS=$'\n'
   local APPS=($(echo "$QUERY" | jq -r '.[].app' | sort -u))
   local CURRENT_APP=$(echo "$QUERY" | jq -r '.[] | select(.["has-focus"] == true) | .app')
@@ -100,11 +103,7 @@ mouse_clicked() {
       fi
     fi
   elif [[ "$MODIFIER" == "cmd" ]]; then
-    yabai -m query --spaces --space |
-      jq -re ".index" |
-      xargs -I{} yabai -m query --windows --space {} |
-      jq -sre 'add | map(select(."is-minimized"==false)) | sort_by(.display, .frame.y, .frame.x, .id) | . as $array | length as $array_length | index(map(select(."has-focus"==true))) as $has_index | if $has_index > 0 then nth($has_index - 1).id else nth($array_length - 1).id end' |
-      xargs -I{} yabai -m window --focus {}
+    ~/.config/yabai/cycle_windows.sh
   else
     yabai -m space --focus $SID
   fi

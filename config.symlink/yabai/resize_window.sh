@@ -1,7 +1,7 @@
 #!/bin/bash
 
 WINDOW_RESIZE_AMOUNT=100
-WINDOW=$(yabai -m query --windows --window)
+WINDOW=$(yabai -m query --windows split-type,split-child --window)
 SPLIT_TYPE=$(echo $WINDOW | jq -r '."split-type"')
 SPLIT_CHILD=$(echo $WINDOW | jq -r '."split-child"')
 
