@@ -1,7 +1,7 @@
 #!/bin/bash
 
 window_id=$YABAI_WINDOW_ID
-window_data=$(yabai -m query --windows --window "$window_id")
+window_data=$(yabai -m query --windows can-resize,is-floating --window "$window_id")
 can_resize=$(echo "$window_data" | jq '.["can-resize"]')
 floating=$(echo "$window_data" | jq '.["is-floating"]')
 

@@ -15,21 +15,11 @@ music=(
   background.image=media.artwork
   background.image.scale=0.75
   background.image.corner_radius=$PADDINGS
-  icon.padding_left=32
-  label.max_chars=33
+  icon.padding_left=20
   updates=on
   --subscribe music media_change
-  --subscribe music mouse.entered
-                    mouse.clicked
-                    mouse.exited
-                    mouse.exited.global
 )
 
-sketchybar                               \
-  --add item music right                 \
-  --set      music "${music[@]}"         \
-  --set      music "${menu_defaults[@]}" \
-  --add item music.cover popup.music     \
-  --add item music.artist popup.music    \
-  --add item music.title popup.music     \
-  --add item music.album popup.music
+sketchybar                \
+  --add item music right  \
+  --set      music "${music[@]}"

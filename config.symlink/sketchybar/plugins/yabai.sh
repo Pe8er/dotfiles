@@ -5,18 +5,16 @@ source "$CONFIG_DIR/icons.sh"
 set_icon() {
   COLOR=$LABEL_COLOR
 
-  WINDOW=$(yabai -m query --windows --window)
-  read -r FLOATING SPLIT PARENT FULLSCREEN STICKY STACK_INDEX <<<$(echo "$WINDOW" | jq -rc '.["is-floating", "split-type", "has-parent-zoom", "has-fullscreen-zoom", "is-sticky", "stack-index"]')
+  WINDOW=$(yabai -m query --windows is-floating,split-type,has-fullscreen-zoom,is-sticky,stack-index --window)
+  read -r FLOATING SPLIT FULLSCREEN STICKY STACK_INDEX <<<$(echo "$WINDOW" | jq -rc '.["is-floating", "split-type", "has-fullscreen-zoom", "is-sticky", "stack-index"]')
 
   if [[ $STACK_INDEX -gt 0 ]]; then
-    LAST_STACK_INDEX=$(yabai -m query --windows --window stack.last | jq '.["stack-index"]')
+    LAST_STACK_INDEX=$(yabai -m query --windows stack-index --window stack.last | jq '.["stack-index"]')
     ICON=$YABAI_STACK
     LABEL="$(printf "%s/%s" "$STACK_INDEX" "$LAST_STACK_INDEX")"
     COLOR=$(getcolor yellow)
   elif [[ $FLOATING == "true" ]]; then
     ICON=$YABAI_FLOAT
-  elif [[ $PARENT == "true" ]]; then
-    ICON="􁈔"
   elif [[ $FULLSCREEN == "true" ]]; then
     ICON=$YABAI_FULLSCREEN_ZOOM
   elif [[ $SPLIT == "vertical" ]]; then
@@ -39,7 +37,7 @@ set_icon() {
 }
 
 mouse_clicked() {
-  YABAI_MODE=$(yabai -m query --spaces --space | jq -r .type)
+  YABAI_MODE=$(yabai -m query --spaces type --space | jq -r .type)
 
   if [[ $YABAI_MODE == "bsp" ]]; then
     YABAI_MODE="stack"
@@ -48,8 +46,6 @@ mouse_clicked() {
   fi
 
   yabai -m space --layout $YABAI_MODE
-
-  set_icon
 }
 
 case "$SENDER" in
