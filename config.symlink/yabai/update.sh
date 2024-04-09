@@ -43,7 +43,7 @@ echo "Your running $YABAI_V"
 echo "Yabai update completed successfully."
 
 
-# #!/bin/zsh
+################ UPDATE FROM HEAD ################
 
 # # scripting-addition;
 # # function to update sudoers file
@@ -80,11 +80,11 @@ echo "Yabai update completed successfully."
 # # pin yabai back to brew
 # brew pin yabai
 # if brew list --pinned | grep -q yabai; then
-#     echo "Yabai pinned to brew."
+#     echo "Yabai pinned to brew"
 # fi
 
 # # Success message
 # sleep 1
 # YABAI_V=$(yabai --version)
-# echo "You're running $YABAI_V."
+# echo "Your running $YABAI_V"
 # echo "Yabai update completed successfully."

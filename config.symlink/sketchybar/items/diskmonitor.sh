@@ -23,7 +23,6 @@ misc=(
 diskmonitor_label=(
   "${misc[@]}"
   label.font="$FONT:Semibold:8"
-  label=SSD
   y_offset=5
 )
 

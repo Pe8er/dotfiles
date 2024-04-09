@@ -1,16 +1,21 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
 
 update() {
 
-  PERCENTAGE=$(df -H /System/Volumes/Data | awk 'END {print $5}' | sed 's/%//')
+  VOLUMEDATA=$(df -H /System/Volumes/Data)
+  USEDSPACEPERCENT=$(echo "$VOLUMEDATA" | awk 'END {print $5}' | sed 's/%//')
+  FREESPACE=$(echo "$VOLUMEDATA" | awk 'END {print $4}' | sed 's/G//')
+  FREESPACEPERCENT=$(echo "100 - $USEDSPACEPERCENT" | bc)
+  PERCENTAGE=$FREESPACEPERCENT
   COLOR=$ICON_COLOR
 
   case ${PERCENTAGE} in
   9[8-9] | 100)
     ICON="󰪥"
-    COLOR=$(getcolor red)
+    COLOR=$(getcolor green)
     ;;
   8[8-9] | 9[0-7])
     ICON="󰪤"
@@ -32,11 +37,10 @@ update() {
     ;;
   1[6-9] | 2[0-7])
     ICON="󰪞"
-    COLOR=$GREEN
     ;;
   [0-9] | 1[0-5])
     ICON="󰝦"
-    COLOR=$GREEN
+    COLOR=$(getcolor orange)
     ;;
   *)
     # Handle other cases if needed
@@ -50,6 +54,7 @@ update() {
 }
 
 label_toggle() {
+  update
 
   DRAWING_STATE=$(sketchybar --query $NAME.value | jq -r '.label.drawing')
 
@@ -58,18 +63,13 @@ label_toggle() {
     PADDING="0"
   else
     DRAWING="on"
-    if [[ $PERCENTAGE == "100" ]]; then
-      PADDING="28"
-    else
-      PADDING="20"
-    fi
+    PADDING="30"
   fi
 
   sketchybar --set $NAME.value label.drawing=$DRAWING \
-    --set $NAME.label label.drawing=$DRAWING \
+    --set $NAME.label label=$FREESPACE'GB' label.drawing=$DRAWING \
     --set $NAME icon.padding_right=$PADDING
 
-  update
 }
 
 case "$SENDER" in
