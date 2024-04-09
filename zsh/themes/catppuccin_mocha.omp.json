@@ -3,14 +3,25 @@
   "version": 2,
   "final_space": true,
   "palette": {
-    "background": "#0F111A",
-    "grey": "#3B4252",
-    "cyan": "#89ddff",
-    "blue": "#82aaff",
-    "foreground": "#ffffff",
-    "green": "#c3e88d",
-    "red": "#ff5370",
-    "yellow": "#ffcb6b"
+    // Material Darker
+    // "background": "#0F111A",
+    // "grey": "#3B4252",
+    // "cyan": "#89ddff",
+    // "blue": "#82aaff",
+    // "foreground": "#ffffff",
+    // "green": "#c3e88d",
+    // "red": "#ff5370",
+    // "yellow": "#ffcb6b"
+
+    // Tokyo Night
+    "background": "#1a1b26",
+    "grey": "#565f89",
+    "cyan": "#b4f9f8",
+    "blue": "#7dcfff",
+    "foreground": "#cfc9c2",
+    "green": "#9ece6a",
+    "red": "#f7768e",
+    "yellow": "#e0af68"
   },
   "blocks": [
     {

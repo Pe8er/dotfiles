@@ -37,15 +37,8 @@ set_icon() {
 }
 
 mouse_clicked() {
-  YABAI_MODE=$(yabai -m query --spaces type --space | jq -r .type)
-
-  if [[ $YABAI_MODE == "bsp" ]]; then
-    YABAI_MODE="stack"
-  else
-    YABAI_MODE="bsp"
-  fi
-
-  yabai -m space --layout $YABAI_MODE
+  yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')
+  set_icon
 }
 
 case "$SENDER" in

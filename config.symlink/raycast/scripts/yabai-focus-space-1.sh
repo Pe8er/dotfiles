@@ -25,3 +25,5 @@ spaceNum="${filename_no_extension: -1}"
 
 yabai -m space --focus $spaceNum
 
+echo "Welcome to Space $spaceNum!"
+

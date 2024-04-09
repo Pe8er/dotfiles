@@ -16,10 +16,11 @@ music=(
   background.image.scale=0.75
   background.image.corner_radius=$PADDINGS
   icon.padding_left=20
+  label.max_chars=38
   updates=on
   --subscribe music media_change
 )
 
-sketchybar                \
-  --add item music right  \
+sketchybar                       \
+  --add item music right         \
   --set      music "${music[@]}"

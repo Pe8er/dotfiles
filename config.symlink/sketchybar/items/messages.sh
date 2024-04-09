@@ -5,6 +5,7 @@ messages=(
   "${notification_defaults[@]}"
   icon=􀌤
   background.color=$(getcolor green)
+  updates=on
   script="$PLUGIN_DIR/messages.sh"
   click_script="open -a /System/Applications/Messages.app"
 )

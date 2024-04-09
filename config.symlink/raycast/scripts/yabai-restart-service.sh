@@ -2,17 +2,18 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Reload Yabai Config
+# @raycast.title Restart Yabai Service
 # @raycast.mode silent
 
 # Optional parameters:
-# @raycast.icon assets/arrow.clockwise.circle.fill.svg
+# @raycast.icon assets/yabai.png
 # @raycast.packageName Yabai
 
 # Documentation:
-# @raycast.description Reload Yabai Config
+# @raycast.description Restarts Yabai service
 # @raycast.author Pior Gajos
 # @raycast.authorURL https://github.com/Pe8er
 
-~/.config/yabai/reload.sh
+yabai --restart-service
 
+echo "Restarting Yabai service…"

@@ -15,24 +15,18 @@ yabai -m signal --add event=window_destroyed action="sketchybar --trigger space_
 yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
 
 yabai_config=(
-  layout                    bsp
   window_placement          second_child
+  focus_follows_mouse       autoraise
+  mouse_modifier            fn
+  menubar_opacity           0.0
+  window_animation_duration 0.0
+  layout                    bsp
   auto_balance              off
-  mouse_follows_focus       off
-  focus_follows_mouse       autofocus
   top_padding               0
   bottom_padding            8
   left_padding              8
   right_padding             8
   window_gap                8
-  menubar_opacity           0.0
-  window_shadow             on
-  window_animation_duration 0.0
-  window_opacity            off
-  window_opacity_duration   0.3
-  active_window_opacity     1.0
-  normal_window_opacity     0.9
-  # external_bar all:32:0
 )
 
 yabai -m config ${yabai_config[*]}
@@ -67,22 +61,29 @@ yabai -m rule --add app="^(Mail)$" space=^2
 yabai -m rule --add app="^(Things|Notes)$" space=^3
 yabai -m rule --add app="^(VSCodium|iTerm)$" space=^4
 yabai -m rule --add app="^Music$" space=^5
-yabai -m rule --add app="^(Figma|Adobe After Effects 2024|Lightroom|Photoshop)$" space=^6
+yabai -m rule --add app="^(Figma|Adobe After Effects 2024|Adobe Photoshop Lightroom Classic|Photoshop)$" space=^6
 yabai -m rule --add app="^(Keynote|Microsoft PowerPoint)$" space=^7
 
+# https://github.com/koekeishiya/yabai/issues/2170
+# yabai -m rule --add app=".*" sub-layer=normal
+
 # Manage apps and windows
-yabai -m rule --add app="^(Messages|LuLu|Vimac|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Alfred|Activity Monitor|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim|The Unarchiver|Transmission|Installer|Hosting AU|Numi|IINA)$" manage=off
+yabai -m rule --add app="^(Steam Helper|Raycast|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|App Store|Clock|Karabiner-Elements|Plexamp|Alfred Preferences|ImageOptim|The Unarchiver|Installer|Hosting AU|Numi)$" manage=off
 yabai -m rule --add label="Small windows" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="GLMv4" app="^GLMv4$" title="(Preparations for Measurements)" manage=off
 yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" manage=off
 yabai -m rule --add label="Mail New Message" app="^Mail$" title="(New Message)" manage=off
-yabai -m rule --add label="Steam Helper" app="^Steam Helper$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
 yabai -m rule --add app="^Adobe (After Effects|Audition|Media Encoder|Lightroom)$" role="AXLayoutArea" subrole="AXFloatingWindow" manage=on
 yabai -m rule --add app="^IINA$" sticky=on manage=off
 
-# https://github.com/koekeishiya/yabai/issues/2170
-yabai -m rule --add app=".*" sub-layer=normal
+# Define scratchpads
+# https://github.com/koekeishiya/yabai/issues/2203
+yabai -m rule --add app="^Messages$" scratchpad=Messages grid=11:11:1:1:9:9
+yabai -m rule --add app="^Transmission$" scratchpad=Transmission grid=11:11:3:3:6:6
+
+# Apply rules to existing windows
+yabai -m rule --apply
 
 echo "Yabai configuration loaded…"

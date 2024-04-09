@@ -2,7 +2,6 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-# read -r UP DOWN < <(transmission-remote -l | awk 'NR>1 {print $3, $7; exit}')
 read UP DOWN <<< "$(transmission-remote -l | awk 'NR>1 {up=$4; down=$5} END {print up, down}')"
 NUMBERS=($UP $DOWN)
 
@@ -34,9 +33,9 @@ done
 
 
 if [[ "$UP" == "0.0" && "$DOWN" == "0.0" ]]; then
-  args+=(background.color=$WHITE_50)
+  args+=(background.color=$(getcolor white 25))
 else
-  args+=(background.color=$ORANGE)
+  args+=(background.color=$(getcolor orange))
 fi
 
 
