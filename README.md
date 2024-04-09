@@ -15,29 +15,20 @@ This installs:
 2.  Homebrew.
 3.  Apps.
 
-As soon as Dropbox is installed, launch it and start the sync.
+# 3. Apps Setup
 
-# 3. Apps Setup #1
+### Additional Downloads
 
-### Alfred
-
-Launch and activate to enable PowerPack.
-
-### 1Password
-
-1.  Preferences > Sync > Enable iCloud.
-2.  Preferences > Advanced > Enable 3rd party integrations.
+1. [Things](https://apps.apple.com/us/app/things-3/id904280696)
+2. [Silicio](https://apps.apple.com/gb/app/silicio-mini-player/id933627574)
+3. Adobe Apps
+4. [Popcorn-Time](https://github.com/popcorn-official/popcorn-desktop/)
 
 ### Mail
 
 1.  Enable Junk mail filtering.
 2.  Enable signatures.
 3.  Enable rules.
-
-### Fantastical 2
-
-1.  [Download from App Store](https://itunes.apple.com/us/app/fantastical-2-calendar-and-reminders/id975937182?mt=12).
-2.  Sign into [fucking iCloud](https://appleid.apple.com/) and generate the fucking app-specific password.
 
 ### Things
 
@@ -47,45 +38,6 @@ Launch and activate to enable PowerPack.
     1.  Quick Entry shortcuts (Ctrl + ~ and Ctrl + Esc)
     2.  Calendar events.
     3.  Reminders.
-
-### Reeder
-
-1.  [Download from App Store](https://itunes.apple.com/us/app/reeder-3/id880001334?mt=12).
-2.  Sign into Feedly.
-3.  Increase article font size to 20.
-
-# 4. Dropbox Sync
-
-Wait for it… especially:
-
-1.  AppleScripts.
-2.  App preferences and data (Alfred, The Clock etc).
-
-# 5. Replace Home Folders 📦
-
-Run `osascript ~/Dropbox/Library/Scripts/Tools/Replace\ Home\ Folders.scpt`.
-
-# 6. Apps Setup #2
-
-### Alfred 📦
-
-1.  Change shortcut to `⌥ + Tab`.
-2.  Set theme.
-3.  Enable clipboard history.
-4.  Enable 1Password.
-
-### The Clock 📦
-
-Restore backup from iCloud.
-
-### Misc Crap
-
-4.  Run `~/.dotfiles/script/bootstrap` again.
-5.  Run `~/.dotfiles/macos/set-defaults.sh`.
-6.  Modify screenshot shortcuts.
-7.  Sync Hazel rules from Dropbox.
-8.  Enable Polish dictionaries in Dictionary.app.
-9.  Run `~/.dotfiles/macos/set-defaults.sh` again.
 
 # Troubleshooting
 
