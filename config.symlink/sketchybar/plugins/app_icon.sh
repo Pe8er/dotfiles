@@ -189,6 +189,18 @@ case "$1" in
 "GLMv4" | "GLMv5")
 	RESULT=$ICON_GLM
 	;;
+"Popcorn-Time")
+	RESULT=$ICON_POPCORN
+	;;
+"InDesign")
+	RESULT=$ICON_INDESIGN
+	;;
+"Adobe Illustrator 2024")
+	RESULT=$ICON_ILLUSTRATOR
+	;;
+"DaisyDisk")
+	RESULT=$ICON_DAISYDISK
+	;;
 *)
 	RESULT=$ICON_APP
 	;;

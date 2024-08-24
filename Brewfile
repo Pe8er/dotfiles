@@ -35,11 +35,8 @@ brew 'yabai'
 brew 'yt-dlp'
 
 # Apps
-
-# cask 'alfred'
 cask 'arc'
 cask 'audacity'
-# cask 'batchmod'
 cask 'colorpicker-skalacolor'
 cask 'cyberduck'
 cask 'discord'
@@ -83,4 +80,6 @@ brew 'font-iosevka-term-nerd-font'
 brew 'font-jetbrains-mono-nerd-font'
 brew 'font-roboto-mono-nerd-font'
 cask 'font-caskaydia-cove-nerd-font'
+cask 'font-cormorant-garamond'
+cask 'font-sf-pro'
 cask 'sf-symbols'

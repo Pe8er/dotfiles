@@ -18,6 +18,8 @@ getcolor() {
   local o10=0x1a
   local o0=0x00
 
+  local trueblack=#000000
+
   # Material Darker
   # local blue=#82aaff
   # local teal=#64ffda
@@ -29,7 +31,6 @@ getcolor() {
   # local red=#ff5370
   # local purple=#c792ea
   # local black=#0f111a
-  # local trueblack=#000000
   # local white=#eeeeee
 
   #Tokyo Night
@@ -43,26 +44,7 @@ getcolor() {
   local red=#f7768e
   local purple=#bb9af7
   local black=#1a1b26
-  local trueblack=#000000
   local white=#cfc9c2
-
-# OK #f7768e	This keyword, HTML elements, Regex group symbol, CSS units, Terminal Red
-# OK #ff9e64	Number and Boolean constants, Language support constants
-# OK #e0af68	Function parameters, Regex character sets, Terminal Yellow
-# OK #9ece6a	Strings, CSS class names
-# OK #73daca	Object literal keys, Markdown links, Terminal Green
-# OK #b4f9f8	Regex literal strings
-#  #2ac3de	Language support functions, CSS HTML elements
-# OK #7dcfff	Object properties, Regex quantifiers and flags, Markdown headings, Terminal Cyan, Markdown code, Import/export keywords
-#  #7aa2f7	Function names, CSS property names, Terminal Blue
-# OK #bb9af7	Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta
-#  #c0caf5	Variables, Class names, Terminal White
-#  #a9b1d6	Editor Foreground
-#  #9aa5ce	Markdown Text, HTML Text
-#  #cfc9c2	Parameters inside functions (semantic highlighting only)
-#  OK #565f89	Comments
-#  #414868	Terminal Black
-#  #1a1b26	Editor Background (Night)
 
   case $opacity in
   75) local opacity=$o75 ;;
@@ -103,16 +85,16 @@ daily_color() {
 }
 
 # Pick a random color name
-RANDOMHIGHLIGHT=$(daily_color)
+# RANDOMHIGHLIGHT=$(daily_color)
 
 # Bar and item colors
-export BAR_COLOR=$(getcolor black 75)
-export BAR_BORDER_COLOR=$(getcolor black 50)
-export HIGHLIGHT=$(getcolor $RANDOMHIGHLIGHT)
-export HIGHLIGHT_75=$(getcolor $RANDOMHIGHLIGHT 75)
-export HIGHLIGHT_50=$(getcolor $RANDOMHIGHLIGHT 50)
-export HIGHLIGHT_25=$(getcolor $RANDOMHIGHLIGHT 25)
-export HIGHLIGHT_10=$(getcolor $RANDOMHIGHLIGHT 10)
+export BAR_COLOR=$(getcolor trueblack)
+export BAR_BORDER_COLOR=$(getcolor black 0)
+export HIGHLIGHT=$(getcolor teal)
+export HIGHLIGHT_75=$(getcolor teal 75)
+export HIGHLIGHT_50=$(getcolor teal 50)
+export HIGHLIGHT_25=$(getcolor teal 25)
+export HIGHLIGHT_10=$(getcolor teal 10)
 export ICON_COLOR=$(getcolor white)
 export ICON_COLOR_INACTIVE=$(getcolor white 50)
 export LABEL_COLOR=$(getcolor white 75)

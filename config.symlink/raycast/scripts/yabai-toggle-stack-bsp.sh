@@ -15,6 +15,7 @@
 # @raycast.authorURL https://github.com/Pe8er
 
 sketchybar --trigger alfred_trigger
+sleep 0.5
 layout=$(yabai -m query --spaces type --space | jq -r .type)
 echo "Layout: $layout"
 sleep 0.5

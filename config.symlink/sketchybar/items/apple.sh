@@ -7,8 +7,8 @@ POPUP_OFF='sketchybar --set logo popup.drawing=off'
 
 logo=(
   "${menu_defaults[@]}"
-  icon=􀣺
-  icon.font="$FONT:Black:14.0"
+  icon=$APPLE
+  icon.font.size=14
   label.drawing=off
   popup.align=left
   click_script="sketchybar --set logo popup.drawing=toggle"
@@ -72,6 +72,9 @@ logo_refresh=(
   icon=􀅈
   label="Refresh Sketchybar"
   click_script="$POPUP_OFF; sketchybar --update"
+  # script="sketchybar --update"
+  # update_freq=86400
+  # updates=on
 )
 
 sketchybar                                            \

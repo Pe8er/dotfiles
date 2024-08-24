@@ -4,35 +4,44 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 SID=$1
-DEBUG=0
+DEBUG=1
 
 create_icons() {
   sketchybar --set space.$1 label="$(create_label "$1")"
 }
 
 update_icons() {
-  debug $FUNCNAME
-
+  
   CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
 
   if [[ "$CURRENT_SID" == "$SID" ]]; then
-    BACKGROUND_COLOR=$HIGHLIGHT_25
-    PADDING=$PADDINGS
     create_icons "$CURRENT_SID"
-    # LABEL=$BAR_COLOR
+    BACKGROUND_COLOR=$HIGHLIGHT
+    COLOR=$BAR_COLOR
+    STYLE="Bold"
   else
-    # LABEL_COLOR=$LABEL_COLOR
-    BACKGROUND_COLOR=$TRANSPARENT
-    PADDING=0
+    BACKGROUND_COLOR="$(getcolor white 10)"
+    COLOR=$LABEL_COLOR
+    STYLE="Regular"
   fi
 
-  sketchybar --animate tanh 10                                   \
-             --set space.$SID icon.highlight=$SELECTED           \
-                              label.highlight=$SELECTED          \
-                              background.color=$BACKGROUND_COLOR \
-                              icon.padding_left=$PADDING         \
-                              label.padding_right=$PADDING
-                              # label.color=$LABEL_COLOR \
+  # CURRENT_LABEL=&(sketchybar --query space.$SID | jq -r ".label.value")
+
+  # if [[ $CURRENT_LABEL ]]; then
+  #   PADDING_LABEL=0
+  # else
+  #   PADDING_LABEL=$PADDINGS
+  # fi
+  
+  echo $CURRENT_SID ">" $CURRENT_LABEL ">" $PADDING_LABEL
+
+  sketchybar --animate tanh 10                                    \
+             --set space.$SID icon.color=$COLOR                   \
+                              label.color=$COLOR                  \
+                              background.color=$BACKGROUND_COLOR  \
+                              background.height=18                \
+                              label.font.style=$STYLE             \
+                              icon.padding_left=$PADDINGS
 }
 
 
@@ -44,31 +53,39 @@ create_label() {
   local CURRENT_APP=$(echo "$QUERY" | jq -r '.[] | select(.["has-focus"] == true) | .app')
   local LABEL BADGE
 
-  for APP in "${APPS[@]}"; do
-    # Add icon
-    LABEL+=$("$HOME/.config/sketchybar/plugins/app_icon.sh" "$APP")
-    # Set up badge
-    BADGE="$(set_badge $APP)"
-    # Add app name for currently focused app
-    if [[ "$APP" == "$CURRENT_APP" ]]; then
-      LABEL+=" $APP"
-    # For unfocused apps…
-    else
-      # Add a space if there is a badge
-      if [[ $BADGE ]]; then
+  # if [[ $APPS ]]; then
+  #   export PADDING_LABEL=$PADDINGS
+    for APP in "${APPS[@]}"; do
+      # Add icon
+      LABEL+=$("$HOME/.config/sketchybar/plugins/app_icon.sh" "$APP")
+      # Set up badge
+      BADGE="$(set_badge $APP)"
+      # Add app name for currently focused app
+      if [[ "$APP" == "$CURRENT_APP" ]]; then
+        LABEL+=" $APP"
+      # For unfocused apps…
+      else
+        # Add a space if there is a badge
+        if [[ $BADGE ]]; then
+          LABEL+=" "
+        fi
+      fi
+      # Add badge
+      LABEL+="$BADGE"
+      # Add a space between labels if there is more than one app on a space
+      if (( ${#APPS[@]} > 1 )); then
         LABEL+=" "
       fi
+    done
+    # Remove trailing space if necessary
+    if [[ "$LABEL" =~ [[:space:]]$ ]]; then
+      LABEL="${LABEL%"${LABEL##*[![:space:]]}"}"
     fi
-    # Add badge
-    LABEL+="$BADGE"
-    # Add a space between labels if there is more than one app on a space
-    if (( ${#APPS[@]} > 1 )); then
-      LABEL+=" "
-    fi
-  done
-
+  # else
+    # export PADDING_LABEL=0
+    # LABEL=""
+  # fi
   echo $LABEL
-
   unset IFS
 }
 
@@ -127,6 +144,7 @@ debug() {
 case "$SENDER" in
 "routine" | "forced" | "space_windows_change")
   create_icons "$SID"
+  update_icons
   ;;
 "front_app_switched" | "space_change")
   update_icons

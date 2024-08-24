@@ -3,15 +3,14 @@
 # Loads defined colors
 source "$CONFIG_DIR/colors.sh"
 
-POPUP_OFF="sketchybar --set wifi popup.drawing=off"
-POPUP_CLICK_SCRIPT="sketchybar --set wifi popup.drawing=toggle"
-
 IS_VPN=$(/usr/local/bin/piactl get connectionstate)
 # IS_VPN="Disconnected"
-CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
-IP_ADDRESS="$(ipconfig getifaddr en0)"
-SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
-CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
+# CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
+CURRENT_WIFI="$(ipconfig getsummary en0)"
+# IP_ADDRESS="$(ipconfig getifaddr en0)"
+IP_ADDRESS="$(echo "$CURRENT_WIFI" | grep -o "yiaddr = .*" | sed 's/^yiaddr = //')"
+SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID : .*" | sed 's/^SSID : //' | tail -n 1)"
+# CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
 
 if [[ $IS_VPN != "Disconnected" ]]; then
   ICON_COLOR=$HIGHLIGHT
@@ -29,27 +28,24 @@ else
   ICON=􀐾
 fi
 
-
-
 render_bar_item() {
   sketchybar --set $NAME \
     icon.color=$ICON_COLOR \
-    icon=$ICON \
-    click_script="$POPUP_CLICK_SCRIPT"
+    icon=$ICON
 }
 
 render_popup() {
   if [ "$SSID" != "" ]; then
     args=(
-      --set wifi click_script="$POPUP_CLICK_SCRIPT"
       --set wifi.ssid label="$SSID"
-      --set wifi.strength label="$CURR_TX Mbps"
       --set wifi.ipaddress label="$IP_ADDRESS"
-      click_script="printf $IP_ADDRESS | pbcopy;$POPUP_OFF"
+      click_script="printf $IP_ADDRESS | pbcopy;sketchybar --set wifi popup.drawing=toggle"
     )
   else
     args=(
-      --set wifi click_script="")
+      --set wifi.ssid label="Not connected"
+      --set wifi.ipaddress label="No IP"
+      )
   fi
 
   sketchybar "${args[@]}" >/dev/null
@@ -69,11 +65,6 @@ case "$SENDER" in
   update
   ;;
 "mouse.clicked")
-  popup on
-  ;;
-"mouse.exited" | "mouse.exited.global")
-  popup off
+  popup toggle
   ;;
 esac
-
-# click_script="sketchybar --set wifi.alias popup.drawing=toggle; $WIFI_CLICK_SCRIPT" \

@@ -33,9 +33,9 @@ done
 
 
 if [[ "$UP" == "0.0" && "$DOWN" == "0.0" ]]; then
-  args+=(background.color=$(getcolor white 25))
+  args+=(background.color=$(getcolor green 50))
 else
-  args+=(background.color=$(getcolor orange))
+  args+=(background.color=$(getcolor green))
 fi
 
 

@@ -5,6 +5,7 @@ date=(
   icon.drawing=off
   icon.font.size=6
   icon.padding_right=1
+  label.color=$LABEL_COLOR
   icon.color=$(getcolor yellow)          
   icon.y_offset=1.5
   label.font="$FONT:Semibold:8"
@@ -19,6 +20,7 @@ date=(
 
 clock=(
   "${menu_defaults[@]}"
+  label.color=$LABEL_COLOR
   icon.drawing=off          
   label.font="$FONT:Bold:10" 
   label.padding_right=4           

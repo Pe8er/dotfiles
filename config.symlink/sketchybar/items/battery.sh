@@ -1,7 +1,7 @@
 #!/bin/env/bash
 
 battery=(
-  icon.font.size=16
+  icon.font.size=14
   icon.padding_right=0
   icon.font.style="Light"
   update_freq=60                                             

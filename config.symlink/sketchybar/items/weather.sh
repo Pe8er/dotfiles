@@ -7,6 +7,7 @@ weather=(
   popup.align=right
   update_freq=300
   icon.padding_right=0
+  icon.color=$HIGHLIGHT
   updates=on
   click_script="sketchybar --set $NAME popup.drawing=toggle; open -a /System/Applications/Weather.app"
   --subscribe weather wifi_change

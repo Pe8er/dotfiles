@@ -5,6 +5,8 @@
 # focused application in the $INFO variable:
 # https://felixkratz.github.io/SketchyBar/config/events#events-and-scripting
 
-if [ "$SENDER" = "front_app_switched" ]; then
-  sketchybar --set $NAME label="$INFO" # icon.background.image="app.$INFO"
-fi
+
+CURRENT_APP=$(yabai -m query --windows app --window | jq -r '.app')
+CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
+FRONT_APP_LABEL_COLOR="$(sketchybar --query space.$CURRENT_SID | jq -r ".label.highlight_color")"
+sketchybar --set $NAME label="$CURRENT_APP" label.color=$FRONT_APP_LABEL_COLOR
