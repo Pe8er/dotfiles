@@ -39,8 +39,38 @@ This installs:
     2.  Calendar events.
     3.  Reminders.
 
+### VSCodium
+
+1. Theme: `Tokyo Night` or `Material Ocean High Contrast`
+2. Icons: `Fluent Icons`
+3. Font: `JetBrainsMono Nerd Font Mono`
+4. Allow VSCode to modify itself:
+
+```bash
+sudo chown -R $(whoami) $(which codium)
+sudo chown -R $(whoami) /Applications/VSCodium.app/Contents/Resources/app/out
+```
+
+1. APC Customize UI++ stuff in settings.json:
+
+```json
+"workbench.colorTheme": "Tokyo Night",
+"editor.fontFamily": "JetBrainsMono Nerd Font Mono, FiraCode Nerd Font, monospace",
+"editor.fontSize": 13,
+"window.titleBarStyle": "native",
+  "apc.electron": {
+    "frame": false
+  },
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.fontLigatures": true,
+  "editor.minimap.autohide": true
+```
+
+1. Enable APC extension.
+
 # Troubleshooting
 
-##### Uninstall Homebrew
+### Uninstall Homebrew
 
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"`

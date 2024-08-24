@@ -1,7 +1,8 @@
 #!/bin/bash
 
 diskmonitor=(
-  icon.font="CaskaydiaCove Nerd Font Mono:Regular:24"
+  # icon.font="CaskaydiaCove Nerd Font Mono:Regular:24"
+  icon.font.size=14
   icon.padding_right=0
   label.drawing=off
   y_offset=1

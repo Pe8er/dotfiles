@@ -11,12 +11,11 @@ FONT="JetBrainsMono Nerd Font"
 
 # Bar Appearance
 bar=(
-  # color="$(getcolor trueblack)"
-  color=$TRANSPARENT
+  color=$BAR_COLOR
   position=top
   topmost=off
   sticky=on
-  height=32
+  height=33
   padding_left=$PADDINGS
   padding_right=$PADDINGS
   corner_radius=0
@@ -31,11 +30,10 @@ item_defaults=(
   icon.padding_left=2
   icon.padding_right=$(($PADDINGS / 2))
   icon.background.corner_radius=4
-  icon.background.height=18
-  icon.font="$FONT:Regular:12"
+  icon.font="$FONT:Regular:11"
   icon.color=$ICON_COLOR
   icon.highlight_color=$HIGHLIGHT
-  label.font="$FONT:Regular:12"
+  label.font="$FONT:Regular:11"
   label.color=$LABEL_COLOR
   label.highlight_color=$HIGHLIGHT
   label.padding_left=$(($PADDINGS / 2))
@@ -52,7 +50,7 @@ notification_defaults=(
   update_freq=120
   updates=on
   background.color="$(getcolor white 25)"
-  background.height=16
+  background.height=20
   background.corner_radius=16
   icon.font.size=10
   icon.padding_left=$PADDINGS
@@ -65,10 +63,9 @@ notification_defaults=(
 )
 
 bracket_defaults=(
-  background.height=24
-  background.color=$BAR_COLOR
-  blur_radius=32
-  background.corner_radius=$PADDINGS
+  background.height=20
+  background.color="$(getcolor black)"
+  background.corner_radius=4
 )
 
 menu_defaults=(
@@ -82,7 +79,7 @@ menu_defaults=(
 )
 
 menu_item_defaults=(
-  label.font="$FONT:Regular:13"
+  label.font="$FONT:Regular:12"
   padding_left=$PADDINGS
   padding_right=$PADDINGS
   icon.padding_left=0

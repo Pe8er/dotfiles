@@ -18,6 +18,7 @@ music=(
   icon.padding_left=20
   label.max_chars=38
   updates=on
+  click_script="osascript -e 'tell application \"Music\" to playpause'"
   --subscribe music media_change
 )
 
