@@ -5,19 +5,18 @@ source "$CONFIG_DIR/globalstyles.sh"
 
 music=(
   "${bracket_defaults[@]}"
-  script="$PLUGIN_DIR/music.sh"
   popup.align=center
-  padding_left=0
   label.padding_right=$PADDINGS
-  padding_right=$(($PADDINGS * 2))
   drawing=off
   label="Loading…"
   background.image=media.artwork
-  background.image.scale=0.75
-  background.image.corner_radius=$PADDINGS
-  icon.padding_left=20
-  label.max_chars=38
+  background.image.scale=0.6
+  background.image.corner_radius=4
+  icon.padding_left=16
+  label.max_chars=16
+  label.scroll_duration=100
   updates=on
+  script="$PLUGIN_DIR/music.sh"
   click_script="osascript -e 'tell application \"Music\" to playpause'"
   --subscribe music media_change
 )

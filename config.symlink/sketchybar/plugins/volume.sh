@@ -7,17 +7,17 @@ volume_change() {
   source "$CONFIG_DIR/colors.sh"
 
   case $INFO in
-    [6-9][0-9]|100) ICON=$VOLUME_100
+    [6-9][0-9]|100) ICON=$ICON_VOLUME_100
     ;;
-    [3-5][0-9]) ICON=$VOLUME_66
+    [3-5][0-9]) ICON=$ICON_VOLUME_66
     ;;
-    [1-2][0-9]) ICON=$VOLUME_33
+    [1-2][0-9]) ICON=$ICON_VOLUME_33
     ;;
-    [1-9]) ICON=$VOLUME_10
+    [1-9]) ICON=$ICON_VOLUME_10
     ;;
-    0) ICON=$VOLUME_0
+    0) ICON=$ICON_VOLUME_0
     ;;
-    *) ICON=$VOLUME_100
+    *) ICON=$ICON_VOLUME_100
   esac
 
   sketchybar --set volume_icon icon=$ICON

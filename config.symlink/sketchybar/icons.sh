@@ -1,59 +1,60 @@
 #!/bin/bash
 
 # General Icons
-LOADING=􀖇
-APPLE=􀣺
-PREFERENCES=􀺽
-ACTIVITY=􀒓
-LOCK=􀒳
-BELL=􀋚
-BELL_DOT=􀝗
-MUSIC=􀑪
+ICON_LOADING=􀖇
+ICON_APPLE=􀣺
+ICON_PREFERENCES=􀺽
+ICON_ACTIVITY=􀒓
+ICON_LOCK=􀒳
+ICON_BELL=􀋚
+ICON_BELL_DOT=􀝗
+ICON_MUSIC=􀑪
 
 # Git Icons
-GIT_ISSUE=􀍷
-GIT_DISCUSSION=􀒤
-GIT_PULL_REQUEST=􀙡
-GIT_COMMIT=􀡚
-GIT_INDICATOR=􀂓
+ICON_GIT_ISSUE=􀍷
+ICON_GIT_DISCUSSION=􀒤
+ICON_GIT_PULL_REQUEST=􀙡
+ICON_GIT_COMMIT=􀡚
+ICON_GIT_INDICATOR=􀂓
 
 # Spotify Icons
-SPOTIFY_BACK=􀊎
-SPOTIFY_PLAY_PAUSE=􀊈
-SPOTIFY_NEXT=􀊐
-SPOTIFY_SHUFFLE=􀊝
-SPOTIFY_REPEAT=􀊞
+ICON_SPOTIFY_BACK=􀊎
+ICON_SPOTIFY_PLAY_PAUSE=􀊈
+ICON_SPOTIFY_NEXT=􀊐
+ICON_SPOTIFY_SHUFFLE=􀊝
+ICON_SPOTIFY_REPEAT=􀊞
 
 # Yabai Icons
-YABAI_STACK=􀏭
-YABAI_FULLSCREEN_ZOOM=􀂓
-YABAI_PARENT_ZOOM=􀥃
-YABAI_FLOAT=􀢌
-YABAI_GRID=􀧍
-YABAI_SPLIT_VERTICAL=􀘜
-YABAI_SPLIT_HORIZONTAL=􀧋
+ICON_YABAI_STACK=􀏭
+ICON_YABAI_FULLSCREEN_ZOOM=􀂓
+ICON_YABAI_PARENT_ZOOM=􀥃
+ICON_YABAI_FLOAT=􀢌
+ICON_YABAI_GRID=􀧍
+ICON_YABAI_SPLIT_VERTICAL=􀘜
+ICON_YABAI_SPLIT_HORIZONTAL=􀧋
 
 
 # Battery Icons
-BATTERY_100=􀛨
-BATTERY_75=􀺸
-BATTERY_50=􀺶
-BATTERY_25=􀛩
-BATTERY_0=􀛪
-BATTERY_CHARGING=􀢋
+ICON_BATTERY_100=􀛨
+ICON_BATTERY_75=􀺸
+ICON_BATTERY_50=􀺶
+ICON_BATTERY_25=􀛩
+ICON_BATTERY_0=􀛪
+ICON_BATTERY_CHARGING=􀢋
 
 # Volume Icons
-VOLUME_100=􀊩
-VOLUME_66=􀊧
-VOLUME_33=􀊥
-VOLUME_10=􀊡
-VOLUME_0=􀊣
+ICON_VOLUME_100=􀊩
+ICON_VOLUME_66=􀊧
+ICON_VOLUME_33=􀊥
+ICON_VOLUME_10=􀊡
+ICON_VOLUME_0=􀊣
 
 export ICON_CMD=󰘳
 export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop
 export ICON_LOCK=󰌾
 export ICON_APP=󰣆 # fallback app
+export ICON_DOCUMENTS=󰈙 # powerpoint
 
 export ICON_PACKAGE=󰏓 # brew
 export ICON_DEV=󰅨 # nvim, xcode, vscode
@@ -74,7 +75,6 @@ export ICON_NOTE=󱞎 # notes, textedit, stickies, word, bat
 export ICON_CAMERA=󰄀 # photo booth
 export ICON_WEB=󰇧 # safari, beam, duckduckgo, arc, edge, chrome, firefox
 export ICON_HOMEAUTOMATION=󱉑 # home
-export ICON_MUSIC=􀫀 # music, spotify
 export ICON_PODCAST=󰦔 # podcasts
 export ICON_PLAY=󱉺 # tv, quicktime, vlc
 export ICON_BOOK=󰂿 # books
@@ -104,7 +104,7 @@ export ICON_CONTROLCENTER=􀜊
 
 # My apps
 export ICON_DISCORD= # Discord
-export ICON_TERM= # fallback terminal app, terminal, warp, iterm2
+export ICON_TERM= # fallback terminal app, terminal, warp, iterm2
 export ICON_PHOTOSHOP=
 export ICON_AFTEREFFECTS=󱁑
 export ICON_INDESIGN=󰴑

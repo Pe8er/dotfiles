@@ -1,1 +1,1 @@
-"use strict";(("undefined"!=typeof self?self:global).webpackChunkopen=("undefined"!=typeof self?self:global).webpackChunkopen||[]).push([[6025],{66137:(e,l,f)=>{f.r(l),f.d(l,{default:()=>n.Z});var n=f(57360)}}]);
+"use strict";(("undefined"!=typeof self?self:global).webpackChunkclient_web=("undefined"!=typeof self?self:global).webpackChunkclient_web||[]).push([[6505],{27122:(e,l,f)=>{f.r(l),f.d(l,{default:()=>n.A});var n=f(7182)}}]);

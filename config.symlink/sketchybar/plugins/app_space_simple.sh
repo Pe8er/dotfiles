@@ -4,10 +4,8 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 SID=$1
-DEBUG=0
 
 update_icons() {
-
   sketchybar --animate tanh 10                         \
              --set space.$SID icon.highlight=$SELECTED \
                               label.highlight=$SELECTED
@@ -35,22 +33,8 @@ set_space_label() {
   sketchybar --set $NAME label="$@"
 }
 
-debug() {
-  if (( DEBUG == 1 )); then
-    echo ---$(date +"%T")---
-    echo sender: $SENDER
-    echo sid: $SID
-    echo ---
-    echo $@
-    echo ---
-  fi
-}
-
 case "$SENDER" in
-"routine" | "forced" | "space_windows_change")
-  update_icons
-  ;;
-"space_change")
+"routine" | "forced" | "space_windows_change" | "space_change")
   update_icons
   ;;
 "mouse.clicked")

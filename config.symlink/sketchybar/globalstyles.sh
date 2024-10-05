@@ -16,17 +16,18 @@ bar=(
   topmost=off
   sticky=on
   height=33
-  padding_left=$PADDINGS
-  padding_right=$PADDINGS
+  padding_left=4
+  padding_right=4
   corner_radius=0
   blur_radius=0
-  notch_width=160
+  notch_width=170
 )
 
 # Item Defaults
 item_defaults=(
   background.padding_left=$(($PADDINGS / 2))
   background.padding_right=$(($PADDINGS / 2))
+  background.height=20
   icon.padding_left=2
   icon.padding_right=$(($PADDINGS / 2))
   icon.background.corner_radius=4
@@ -39,6 +40,7 @@ item_defaults=(
   label.padding_left=$(($PADDINGS / 2))
   updates=when_shown
   scroll_texts=on
+  background.corner_radius=4
 )
 
 icon_defaults=(
@@ -46,26 +48,19 @@ icon_defaults=(
 )
 
 notification_defaults=(
+  background.color="$(getcolor white 25)"
+  icon.color="$(getcolor black 75)"
+  icon.padding_left=4
+  icon.padding_right=0
+  label.color="$(getcolor black 75)"
+  label.padding_right=$PADDINGS
   drawing=off
   update_freq=120
   updates=on
-  background.color="$(getcolor white 25)"
-  background.height=20
-  background.corner_radius=16
-  icon.font.size=10
-  icon.padding_left=$PADDINGS
-  icon.padding_right=0
-  icon.color="$(getcolor black 75)"
-  label.color="$(getcolor black 75)"
-  label.padding_right=$PADDINGS
-  label.font.size=11
-  label.font.style=Bold
 )
 
 bracket_defaults=(
-  background.height=20
   background.color="$(getcolor black)"
-  background.corner_radius=4
 )
 
 menu_defaults=(
