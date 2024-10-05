@@ -13,12 +13,12 @@ weather=(
   --subscribe weather wifi_change
                       mouse.entered
                       mouse.exited
-                      mouse.clicked
                       mouse.exited.global
+                      mouse.clicked
 )
 
-sketchybar                                              \
-  --add item weather right                              \
-       --set weather "${weather[@]}"                    \
-  --add item weather.details popup.weather              \
+sketchybar                                  \
+  --add item weather right                  \
+       --set weather "${weather[@]}"        \
+  --add item weather.details popup.weather  \
        --set weather.details "${menu_item_defaults[@]}" icon.drawing=off label.padding_left=0
