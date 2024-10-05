@@ -2,17 +2,18 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 weather=(
-  script="$PLUGIN_DIR/weather.sh"
   "${menu_defaults[@]}"
   popup.align=right
-  update_freq=300
   icon.padding_right=0
   icon.color=$HIGHLIGHT
   updates=on
-  click_script="sketchybar --set $NAME popup.drawing=toggle; open -a /System/Applications/Weather.app"
+  update_freq=300
+  script="$PLUGIN_DIR/weather.sh"
+  click_script="open -a /System/Applications/Weather.app"
   --subscribe weather wifi_change
                       mouse.entered
                       mouse.exited
+                      mouse.clicked
                       mouse.exited.global
 )
 

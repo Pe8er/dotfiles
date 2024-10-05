@@ -1,10 +1,9 @@
 #!/bin/sh
 
 front_app=(
-            script="$PLUGIN_DIR/front_app.sh"
-            icon=􀆊
-            icon.color=$(getcolor white 50)
-            label.padding_right=0
+  icon.color=$(getcolor white 50)
+  label.padding_right=0
+  script="$PLUGIN_DIR/front_app.sh"
 )
 
 sketchybar                             \

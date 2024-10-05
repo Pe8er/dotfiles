@@ -13,20 +13,20 @@ set_icon() {
 
   if [[ $STACK_INDEX -gt 0 ]]; then
     LAST_STACK_INDEX=$(yabai -m query --windows stack-index --window stack.last | jq '.["stack-index"]')
-    ICON=$YABAI_STACK
+    ICON=$ICON_YABAI_STACK
     LABEL="$(printf "%s/%s" "$STACK_INDEX" "$LAST_STACK_INDEX")"
     COLOR=$FRONT_APP_LABEL_COLOR
     WIDTH="dynamic"
   elif [[ $FLOATING == "true" ]]; then
-    ICON=$YABAI_FLOAT
+    ICON=$ICON_YABAI_FLOAT
   elif [[ $FULLSCREEN == "true" ]]; then
-    ICON=$YABAI_FULLSCREEN_ZOOM
+    ICON=$ICON_YABAI_FULLSCREEN_ZOOM
   elif [[ $SPLIT == "vertical" ]]; then
-    ICON=$YABAI_SPLIT_VERTICAL
+    ICON=$ICON_YABAI_SPLIT_VERTICAL
   elif [[ $SPLIT == "horizontal" ]]; then
-    ICON=$YABAI_SPLIT_HORIZONTAL
+    ICON=$ICON_YABAI_SPLIT_HORIZONTAL
   else
-    ICON=$YABAI_GRID
+    ICON=$ICON_YABAI_GRID
   fi
 
   args=(--bar border_color=$COLOR --animate tanh 10 --set $NAME icon=$ICON icon.color=$COLOR width=$WIDTH)

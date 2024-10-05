@@ -1,7 +1,7 @@
 #!/bin/env/bash
 
 spacer=(
-  width=0
+  width=4
   icon.padding_left=0
   icon.padding_right=0
   padding_left=0

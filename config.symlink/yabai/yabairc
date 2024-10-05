@@ -65,9 +65,9 @@ yabai -m rule --add app="^(Arc|Discord)$" space=^1
 yabai -m rule --add app="^(Mail)$" space=^2
 yabai -m rule --add app="^(Things|Notes)$" space=^3
 yabai -m rule --add app="^(VSCodium|iTerm)$" space=^4
-yabai -m rule --add app="^(Music|Popcorn-Time)$" space=^5
+yabai -m rule --add app="^(Music|Popcorn-Time|Spotify)$" space=^5
 yabai -m rule --add app="^(Figma|Adobe)$" space=^6
-yabai -m rule --add app="^(Keynote|Microsoft PowerPoint)$" space=^7
+yabai -m rule --add app="^(Pages|Keynote|Microsoft)$" space=^7
 
 # https://github.com/koekeishiya/yabai/issues/2170
 # yabai -m rule --add app=".*" sub-layer=normal

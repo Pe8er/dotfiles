@@ -4,6 +4,7 @@ POPUP_OFF="sketchybar --set wifi popup.drawing=off"
 
 wifi=(
   "${menu_defaults[@]}"
+  icon.padding_right=0
   label.drawing=off
   popup.align=right
   update_freq=5

@@ -13,23 +13,57 @@ spaces=(
   icon.padding_right=0
 )
 
+space_properties="[
+  {
+    \"icon\": \"$ICON_WEB\",
+    \"label\": \"\",
+    \"color\": \"teal\"
+  },
+  {
+    \"icon\": \"$ICON_MAIL\",
+    \"label\": \"\",
+    \"color\": \"orange\"
+  },
+  {
+    \"icon\": \"$ICON_THINGS\",
+    \"label\": \"\",
+    \"color\": \"yellow\"
+  },
+  {
+    \"icon\": \"$ICON_TERM\",
+    \"label\": \"\",
+    \"color\": \"cyan\"
+  },
+  {
+    \"icon\": \"$ICON_MUSIC\",
+    \"label\": \"\",
+    \"color\": \"green\"
+  },
+  {
+    \"icon\": \"$ICON_FIGMA\",
+    \"label\": \"\",
+    \"color\": \"blue\"
+  },
+  {
+    \"icon\": \"$ICON_DOCUMENTS\",
+    \"label\": \"\",
+    \"color\": \"purple\"
+  }
+]"
+
 # Define Spaces
 SPACES=(1 2 3 4 5 6 7)
 
 for SID in "${SPACES[@]}"; do
-  sketchybar --add space space.$SID left      \
-             --set space.$SID "${spaces[@]}"  \
-                   associated_space=$SID      \
-                   icon=$SID                  \
-                   script="$PLUGIN_DIR/app_space_simple.sh $SID" \
+  SIDJSON=$((SID - 1))
+  SPACE_COLOR=$(getcolor $(echo "$space_properties" | jq -r .[$SIDJSON].color))
+  sketchybar --add space space.$SID left                                         \
+             --set space.$SID "${spaces[@]}"                                     \
+                   associated_space=$SID                                         \
+                   icon=$(echo "$space_properties" | jq -r ".[$SIDJSON].icon")   \
+                   label=$(echo "$space_properties" | jq -r ".[$SIDJSON].label") \
+                   icon.highlight_color=$SPACE_COLOR                             \
+                   label.highlight_color=$SPACE_COLOR                            \
+                   script="$PLUGIN_DIR/app_space_simple.sh $SID"                 \
              --subscribe space.$SID mouse.clicked space_change update_yabai_icon space_windows_change
 done
-
-
-sketchybar  --set space.1 icon=$ICON_WEB label="Web" icon.highlight_color=$(getcolor red) label.highlight_color=$(getcolor red) \
-            --set space.2 icon=$ICON_MAIL label="Comms" icon.highlight_color=$(getcolor orange) label.highlight_color=$(getcolor orange) \
-            --set space.3 icon=$ICON_THINGS label="Todo" icon.highlight_color=$(getcolor yellow) label.highlight_color=$(getcolor yellow) \
-            --set space.4 icon=$ICON_VSCODIUM label="Code" icon.highlight_color=$(getcolor cyan) label.highlight_color=$(getcolor cyan) \
-            --set space.5 icon=$ICON_MUSIC label="Fun"  icon.highlight_color=$(getcolor green) label.highlight_color=$(getcolor green) \
-            --set space.6 icon=$ICON_FIGMA label="Design" icon.highlight_color=$(getcolor blue) label.highlight_color=$(getcolor blue) \
-            --set space.7 icon=$ICON_PRESENT label="Docs" icon.highlight_color=$(getcolor purple) label.highlight_color=$(getcolor purple)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 yabai=(
-  icon=$YABAI_GRID
+  icon=$ICON_YABAI_GRID
   label.drawing=off
   width=28
   script="$PLUGIN_DIR/yabai.sh"

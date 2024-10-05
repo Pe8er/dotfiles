@@ -5,6 +5,7 @@ control_center=(
   icon=$ICON_CONTROLCENTER
   label.drawing=off
   y_offset=1
+  padding_left=0
   click_script="osascript -e 'tell application \"System Events\" to tell process \"Control Center\" to perform action \"AXPress\" of menu bar item 2 of menu bar 1'"
 )
 
