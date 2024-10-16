@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # API key from https://www.weatherapi.com/my/
-API_KEY="462eeb49a1b844f191f175554222607"
-CITY="Wroclaw, Poland"
+API_KEY="$(cat $CONFIG_DIR/plugins/weather.api)"
+# CITY="Wroclaw, Poland"
 # CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
 # get city from IP, pretty inaccurate
 CITY="$(curl -s -m 5 ipinfo.io/loc)"

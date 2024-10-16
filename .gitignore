@@ -5,6 +5,7 @@ songMeta.plist
 password.txt
 .plextoken
 weather-api
+weather.api
  
 build/
 
