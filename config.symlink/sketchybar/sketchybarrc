@@ -19,7 +19,7 @@ source "$ITEM_DIR/spaces_simple.sh"
 source "$ITEM_DIR/front_app.sh"
 
 # Notch
-source "$ITEM_DIR/countdown.sh"
+# source "$ITEM_DIR/countdown.sh"
 
 # Right
 source "$ITEM_DIR/control_center.sh"

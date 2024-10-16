@@ -80,7 +80,7 @@ getcolor() {
 # Pick color based on day of week
 daily_color() {
   DAY_OF_WEEK=$(date +%u)
-  local COLORS=("blue" "teal" "cyan" "green" "yellow" "orange" "red" "purple")
+  local COLORS=("blue" "teal" "cyan" "green" "yellow" "orange" "red" "purple" "grey")
   echo ${COLORS[$DAY_OF_WEEK]}
 }
 

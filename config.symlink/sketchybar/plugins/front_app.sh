@@ -16,4 +16,4 @@ else
   ICON=""
 fi
 
-sketchybar --animate tanh 10 --set $NAME icon=$ICON label="$CURRENT_APP" label.color=$FRONT_APP_LABEL_COLOR
+sketchybar --set $NAME icon=$ICON label="$CURRENT_APP" label.color=$FRONT_APP_LABEL_COLOR

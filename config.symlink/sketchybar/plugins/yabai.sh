@@ -5,7 +5,7 @@ source "$CONFIG_DIR/icons.sh"
 set_icon() {
   CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
   FRONT_APP_LABEL_COLOR="$(sketchybar --query space.$CURRENT_SID | jq -r ".label.highlight_color")"
-  COLOR=$LABEL_COLOR
+  COLOR=$ICON_COLOR
   WIDTH=28
 
   WINDOW=$(yabai -m query --windows is-floating,split-type,has-fullscreen-zoom,is-sticky,stack-index --window)
