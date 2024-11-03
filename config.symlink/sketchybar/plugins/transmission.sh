@@ -5,9 +5,6 @@ source "$CONFIG_DIR/colors.sh"
 read UP DOWN <<< "$(transmission-remote -l | awk 'NR>1 {up=$4; down=$5} END {print up, down}')"
 NUMBERS=($UP $DOWN)
 
-# echo UP: $UP
-# echo DOWN: $DOWN
-
 if [[ $NUMBERS = "" ]]; then
   args=(drawing=off)
 else

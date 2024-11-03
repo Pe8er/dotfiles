@@ -3,11 +3,9 @@ source "$CONFIG_DIR/globalstyles.sh"
 
 weather=(
   "${menu_defaults[@]}"
+  "${notification_defaults[@]}"
   popup.align=right
-  icon.padding_right=0
   icon.color=$HIGHLIGHT
-  updates=on
-  update_freq=300
   script="$PLUGIN_DIR/weather.sh"
   click_script="open -a /System/Applications/Weather.app"
   --subscribe weather wifi_change

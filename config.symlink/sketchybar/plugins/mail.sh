@@ -1,9 +1,26 @@
 #!/usr/bin/env bash
 
-TEXT=$(lsappinfo info -only StatusLabel "Mail" | grep -o '"label"="[0-9]*"' | awk -F'"' '{print $4}')
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
 
-if [[ $TEXT -gt 0 ]]; then
-  sketchybar -m --set $NAME drawing=on label="$TEXT"
-else
-  sketchybar -m --set $NAME drawing=off
-fi
+DRAWING="on"
+
+COUNT=$(lsappinfo info -only StatusLabel "Mail" | grep -o '"label"="[0-9]*"' | awk -F'"' '{print $4}')
+
+case "$COUNT" in
+[7-9]|[1-9][0-9])
+  COLOR=$(getcolor red)
+  ;;
+[3-6])
+  COLOR=$(getcolor orange)
+  ;;
+[1-2])
+  COLOR=$(getcolor yellow)
+  ;;
+0|"")
+  COLOR=$LABEL_COLOR
+  DRAWING="off"
+  ;;
+esac
+
+sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR

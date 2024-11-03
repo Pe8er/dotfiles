@@ -3,12 +3,7 @@ source "$CONFIG_DIR/globalstyles.sh"
 
 messages=(
   "${notification_defaults[@]}"
-  icon=􀌤
-  background.color=$HIGHLIGHT_10
-  background.height=16
-  label.color=$HIGHLIGHT
-  icon.color=$HIGHLIGHT
-  updates=on
+  icon=$ICON_CHAT
   script="$PLUGIN_DIR/messages.sh"
   click_script="open -a /System/Applications/Messages.app"
 )

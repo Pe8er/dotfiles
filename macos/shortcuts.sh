@@ -38,10 +38,18 @@ defaults write com.apple.finder NSUserKeyEquivalents '{
 "Show Package Contents" = "^r";
 }'
 
+defaults write com.apple.reminders NSUserKeyEquivalents '{
+"\033Edit\033Priority\033High" = "^1";
+"\033Edit\033Priority\033Medium" = "^2";
+"\033Edit\033Priority\033Low" = "^3";
+"\033Edit\033Priority\033None" = "^0";
+"\033Edit\033Mark Due Date As\033None" = "@0";
+"Show Reminder Info" = "@i";
+}'
+
 echo "Shortcuts added successfuly!"
 
 comment="
-Reference: http://www.hcs.harvard.edu/~jrus/site/cocoa-text.html
 
 @ = Command
 ^ = Control

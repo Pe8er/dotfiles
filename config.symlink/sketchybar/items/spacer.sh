@@ -1,5 +1,8 @@
 #!/bin/env/bash
 
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
+
 spacer=(
   width=4
   icon.padding_left=0
@@ -9,5 +12,5 @@ spacer=(
 )
 
 sketchybar \
-  --add item spacer $1 \
-  --set spacer "${spacer[@]}"
+  --add item spacer.$1 $2 \
+  --set spacer.$1 "${spacer[@]}"

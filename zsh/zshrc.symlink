@@ -49,3 +49,5 @@ zstyle ':completion:*:descriptions' format '%F{yellow}%d%f'
 
 # Automatically show subfolders in current folder
 # zstyle ':autocomplete:*' min-input 0
+# Created by `pipx` on 2024-11-01 18:00:38
+export PATH="$PATH:/Users/pe8er/.local/bin"

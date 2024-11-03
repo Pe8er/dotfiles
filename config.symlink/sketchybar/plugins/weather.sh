@@ -4,7 +4,8 @@
 API_KEY="$(cat $CONFIG_DIR/plugins/weather.api)"
 # CITY="Wroclaw, Poland"
 # CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
-# get city from IP, pretty inaccurate
+
+# get city from IP, sometimes pretty inaccurate
 CITY="$(curl -s -m 5 ipinfo.io/loc)"
 
 # first comment is description, second is icon number

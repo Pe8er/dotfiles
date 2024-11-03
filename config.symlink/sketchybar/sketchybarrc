@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
 
@@ -14,9 +16,11 @@ sketchybar --bar "${bar[@]}" --default "${item_defaults[@]}"
 
 # Left
 source "$ITEM_DIR/apple.sh"
+source "$ITEM_DIR/spacer.sh" 3 left
 source "$ITEM_DIR/yabai.sh"
+
 source "$ITEM_DIR/spaces_simple.sh"
-source "$ITEM_DIR/front_app.sh"
+# source "$ITEM_DIR/front_app.sh"
 
 # Notch
 # source "$ITEM_DIR/countdown.sh"
@@ -29,18 +33,29 @@ source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/diskmonitor.sh"
+
+source "$ITEM_DIR/spacer.sh" 2 right
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/mail.sh"
 source "$ITEM_DIR/messages.sh"
+source "$ITEM_DIR/reminders.sh"
 source "$ITEM_DIR/weather.sh"
-source "$ITEM_DIR/spacer.sh" right
+source "$ITEM_DIR/spacer.sh" 1 right
+
 source "$ITEM_DIR/transmission.sh"
+
 source "$ITEM_DIR/music.sh"
 
+
 # Brackets '/space\..*/'
-sketchybar --add bracket left.side '/space\..*/'                                                       \
-           --set left.side "${bracket_defaults[@]}"                                                    \
-                                                                                                       \
-           --add bracket status_icons weather messages diskmonitor volume_icon volume battery wifi dnd \
-           --set status_icons "${bracket_defaults[@]}"
+sketchybar --add bracket left.side '/space\..*/'                                              \
+           --set left.side "${bracket_defaults[@]}"                                           \
+                                                                                              \
+           --add bracket notifications spacer.1 weather reminders messages brew mail spacer.2                   \
+           --set notifications "${bracket_defaults[@]}"                                       \
+                                                                                              \
+           --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd control_center \
+           --set status_icons "${bracket_defaults[@]}" background.color=$TRANSPARENT
 
 sketchybar --hotload on
 sketchybar --update

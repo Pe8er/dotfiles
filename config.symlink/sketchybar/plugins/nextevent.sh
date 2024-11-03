@@ -2,12 +2,14 @@
 
 render_item() {
   sketchybar --set $NAME label="$(date "+%I:%M %p")" \
-             --set date icon.drawing=$drawing
+             --set date icon.drawing=$DRAWING \
+             --set clock label.padding_left=$PADDING
 }
 
 get_events() {
   if which "icalBuddy" &>/dev/null; then 
-    drawing="off"
+    DRAWING="off"
+    PADDING="0"
     input=$(/opt/homebrew/bin/icalBuddy -ec 'Found in Natural Language,CCSF' -npn -nc -iep 'datetime,title' -po 'datetime,title' -eed -ea -n -li 4 -ps '|: |' -b '' eventsToday)
     currentTime=$(date '+%I:%M %p')
 
@@ -18,7 +20,8 @@ get_events() {
         eventTime=${eventItems[0]}
         if [ "$eventTime" '>' "$currentTime" ]; then
           theEvent="$anEvent"
-          drawing="on"
+          DRAWING="on"
+          PADDING="12"
           break
         fi
       done
