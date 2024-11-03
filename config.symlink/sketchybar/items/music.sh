@@ -4,11 +4,11 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 music=(
-  "${bracket_defaults[@]}"
-  popup.align=center
+  # popup.align=center
   label.padding_right=$PADDINGS
   drawing=off
   label="Loading…"
+  background.color=$TRANSPARENT
   background.image=media.artwork
   background.image.scale=0.6
   background.image.corner_radius=4
@@ -17,7 +17,7 @@ music=(
   label.scroll_duration=100
   updates=on
   script="$PLUGIN_DIR/music.sh"
-  click_script="osascript -e 'tell application \"Music\" to playpause'"
+  click_script="osascript -e 'tell application \"Spotify\" to playpause'"
   --subscribe music media_change
 )
 

@@ -4,7 +4,7 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 transmission=(
-  "${notification_defaults[@]}"
+  label.padding_right=4
   icon.drawing=off
   update_freq=5
   script="$PLUGIN_DIR/transmission.sh"

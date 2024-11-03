@@ -6,7 +6,7 @@ source "$CONFIG_DIR/icons.sh"
 # Load defined colors
 source "$CONFIG_DIR/colors.sh"
 
-PADDINGS=8
+PADDINGS=6
 FONT="JetBrainsMono Nerd Font"
 
 # Bar Appearance
@@ -28,8 +28,8 @@ item_defaults=(
   background.padding_left=$(($PADDINGS / 2))
   background.padding_right=$(($PADDINGS / 2))
   background.height=20
-  icon.padding_left=2
-  icon.padding_right=$(($PADDINGS / 2))
+  icon.padding_left=0
+  icon.padding_right=0
   icon.background.corner_radius=4
   icon.font="$FONT:Regular:11"
   icon.color=$ICON_COLOR
@@ -48,19 +48,16 @@ icon_defaults=(
 )
 
 notification_defaults=(
-  background.color="$(getcolor white 25)"
-  icon.color="$(getcolor black 75)"
-  icon.padding_left=4
-  icon.padding_right=0
-  label.color="$(getcolor black 75)"
-  label.padding_right=$PADDINGS
-  drawing=off
-  update_freq=120
   updates=on
+  update_freq=300
+  background.padding_left=$PADDINGS
+  background.padding_right=$PADDINGS
+  # background.color=$(getcolor red 25)
+  label.drawing=off
 )
 
 bracket_defaults=(
-  background.color="$(getcolor black)"
+  background.color="$(getcolor grey 50)"
 )
 
 menu_defaults=(
@@ -78,6 +75,7 @@ menu_item_defaults=(
   padding_left=$PADDINGS
   padding_right=$PADDINGS
   icon.padding_left=0
+  icon.padding_right=4
   icon.color=$HIGHLIGHT
   background.color=$TRANSPARENT
   scroll_texts=on

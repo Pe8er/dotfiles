@@ -20,19 +20,6 @@ getcolor() {
 
   local trueblack=#000000
 
-  # Material Darker
-  # local blue=#82aaff
-  # local teal=#64ffda
-  # local cyan=#89ddff
-  # local grey=#3b4252
-  # local green=#c3e88d
-  # local yellow=#ffcb6b
-  # local orange=#f78c6c
-  # local red=#ff5370
-  # local purple=#c792ea
-  # local black=#0f111a
-  # local white=#eeeeee
-
   #Tokyo Night
   local blue=#7dcfff
   local teal=#73daca
@@ -87,7 +74,7 @@ daily_color() {
 # Pick a random color name
 # RANDOMHIGHLIGHT=$(daily_color)
 
-# Bar and item colors
+# Color Tokens
 export BAR_COLOR=$(getcolor trueblack)
 export BAR_BORDER_COLOR=$(getcolor black 0)
 export HIGHLIGHT=$(getcolor teal)
@@ -102,3 +89,16 @@ export POPUP_BACKGROUND_COLOR=$(getcolor black 25)
 export POPUP_BORDER_COLOR=$(getcolor black 0)
 export SHADOW_COLOR=$(getcolor black)
 export TRANSPARENT=$(getcolor black 0)
+
+# Material Darker Theme
+# local blue=#82aaff
+# local teal=#64ffda
+# local cyan=#89ddff
+# local grey=#3b4252
+# local green=#c3e88d
+# local yellow=#ffcb6b
+# local orange=#f78c6c
+# local red=#ff5370
+# local purple=#c792ea
+# local black=#0f111a
+# local white=#eeeeee
