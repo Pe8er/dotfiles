@@ -52,7 +52,6 @@ notification_defaults=(
   update_freq=300
   background.padding_left=$PADDINGS
   background.padding_right=$PADDINGS
-  # background.color=$(getcolor red 25)
   label.drawing=off
 )
 
