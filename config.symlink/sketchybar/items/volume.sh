@@ -1,16 +1,16 @@
 #!/bin/bash
 
 volume_slider=(
-  script="$PLUGIN_DIR/volume.sh"
   updates=on
-  label.drawing=off
   icon.drawing=off
-  slider.highlight_color=$HIGHLIGHT
-  slider.background.height=8
-  slider.background.corner_radius=12
-  slider.background.color=$(getcolor white 25)
+  label.drawing=off
   padding_left=0
   padding_right=0
+  slider.background.color=$(getcolor white 25)
+  slider.background.corner_radius=12
+  slider.background.height=8
+  slider.highlight_color=$HIGHLIGHT
+  script="$PLUGIN_DIR/volume.sh"
 )
 
 volume_icon=(

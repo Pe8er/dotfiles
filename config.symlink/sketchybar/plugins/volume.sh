@@ -1,21 +1,21 @@
 #!/bin/bash
 
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
+
 WIDTH=100
 
 volume_change() {
-  source "$CONFIG_DIR/icons.sh"
-  source "$CONFIG_DIR/colors.sh"
-
   case $INFO in
-    [6-9][0-9]|100) ICON=$ICON_VOLUME_100
+    [7-9][0-9]|100) ICON=$ICON_VOLUME_100
     ;;
-    [3-5][0-9]) ICON=$ICON_VOLUME_66
+    [4-6][0-9]) ICON=$ICON_VOLUME_66
     ;;
-    [1-2][0-9]) ICON=$ICON_VOLUME_33
+    [2-3][0-9]) ICON=$ICON_VOLUME_33
     ;;
-    [1-9]) ICON=$ICON_VOLUME_10
+    [0-1][1-9]) ICON=$ICON_VOLUME_10
     ;;
-    0) ICON=$ICON_VOLUME_0
+    [0-9]) ICON=$ICON_VOLUME_0
     ;;
     *) ICON=$ICON_VOLUME_100
   esac

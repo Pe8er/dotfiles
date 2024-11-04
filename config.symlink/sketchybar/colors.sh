@@ -1,75 +1,64 @@
 #!/bin/bash
-
 # set -x
 
-# https://material-theme.com/docs/reference/color-palette/
-
-#!/bin/bash
-
 getcolor() {
+  COLOR_NAME=$1
+  OPACITY=$2
 
-  color_name=$1
-  opacity=$2
+  if [[ -z $OPACITY ]]; then
+    OPACITY=100
+  fi
 
-  local o100=0xff
-  local o75=0xbf
-  local o50=0x80
-  local o25=0x40
-  local o10=0x1a
-  local o0=0x00
+  # Rose Pine https://rosepinetheme.com/palette/ingredients/
+  COLORS=(
+    blue "#7283CF"
+    teal "#419BBE"
+    cyan "#9ccfd8"
+    grey "#524f67"
+    green "#B4D99C"
+    yellow "#ebbcba"
+    orange "#f6c177"
+    red "#eb6f92"
+    purple "#c4a7e7"
+    black "#26233a"
+    trueblack "#000000"
+    white "#e0def4"
+  )
 
-  local trueblack=#000000
+  # Initialize color as an empty string
+  local COLOR=""
 
-  #Tokyo Night
-  local blue=#7dcfff
-  local teal=#73daca
-  local cyan=#b4f9f8
-  local grey=#565f89
-  local green=#9ece6a
-  local yellow=#e0af68
-  local orange=#ff9e64
-  local red=#f7768e
-  local purple=#bb9af7
-  local black=#1a1b26
-  local white=#cfc9c2
+  # Loop through the array to find the color hex by name
+  for ((i=0; i<${#COLORS[@]}; i+=2)); do
+    if [[ "${COLORS[i]}" == "$COLOR_NAME" ]]; then
+      COLOR="${COLORS[i+1]}"
+      break
+    fi
+  done
 
-  case $opacity in
-  75) local opacity=$o75 ;;
-  50) local opacity=$o50 ;;
-  25) local opacity=$o25 ;;
-  10) local opacity=$o10 ;;
-  0) local opacity=$o0 ;;
-  *) local opacity=$o100 ;;
-  esac
-
-  case $color_name in
-  blue) local color=$blue ;;
-  teal) local color=$teal ;;
-  cyan) local color=$cyan ;;
-  grey) local color=$grey ;;
-  green) local color=$green ;;
-  yellow) local color=$yellow ;;
-  orange) local color=$orange ;;
-  red) local color=$red ;;
-  purple) local color=$purple ;;
-  black) local color=$black ;;
-  trueblack) local color=$trueblack ;;
-  white) local color=$white ;;
-  *)
-    echo "Invalid color name: $color_name" >&2
+  # Check if color was found
+  if [[ -z $COLOR ]]; then
+    echo "Invalid color name: $COLOR_NAME" >&2
     return 1
-    ;;
-  esac
+  fi
 
-  echo $opacity${color:1}
+  echo $(percent_to_hex $OPACITY)${COLOR:1}
+}
+
+percent_to_hex() {
+  local PERCENTAGE=$1
+  local DECIMAL=$(( (PERCENTAGE * 255) / 100 ))
+  printf "0x%02X\n" "$DECIMAL"
 }
 
 # Pick color based on day of week
-daily_color() {
-  DAY_OF_WEEK=$(date +%u)
-  local COLORS=("blue" "teal" "cyan" "green" "yellow" "orange" "red" "purple" "grey")
-  echo ${COLORS[$DAY_OF_WEEK]}
-}
+# daily_color() {
+#   DAY_OF_WEEK=$(date +%u)
+#   local COLORS=("blue" "teal" "cyan" "green" "yellow" "orange" "red" "purple" "grey")
+#   echo ${COLORS[$DAY_OF_WEEK]}
+# }
+
+# echo test: $(getcolor trueblack)
 
 # Pick a random color name
 # RANDOMHIGHLIGHT=$(daily_color)
@@ -90,7 +79,7 @@ export POPUP_BORDER_COLOR=$(getcolor black 0)
 export SHADOW_COLOR=$(getcolor black)
 export TRANSPARENT=$(getcolor black 0)
 
-# Material Darker Theme
+# Material Darker
 # local blue=#82aaff
 # local teal=#64ffda
 # local cyan=#89ddff
@@ -102,3 +91,16 @@ export TRANSPARENT=$(getcolor black 0)
 # local purple=#c792ea
 # local black=#0f111a
 # local white=#eeeeee
+
+# Tokyo Night
+# local blue=#7dcfff
+# local teal=#73daca
+# local cyan=#b4f9f8
+# local grey=#565f89
+# local green=#9ece6a
+# local yellow=#e0af68
+# local orange=#ff9e64
+# local red=#f7768e
+# local purple=#bb9af7
+# local black=#1a1b26
+# local white=#cfc9c2

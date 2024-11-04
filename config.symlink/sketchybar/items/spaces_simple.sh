@@ -8,7 +8,7 @@ spaces=(
   ignore_association=on
   updates=on                           
   associated_display=1                 
-  background.corner_radius=16
+  # background.corner_radius=16
   background.height=16
   icon.padding_left=$PADDINGS
   icon.padding_right=$PADDINGS
@@ -30,7 +30,7 @@ space_properties="[
     \"color\": \"orange\"
   },
   {
-    \"icon\": \"$ICON_THINGS\",
+    \"icon\": \"$ICON_REMINDERS\",
     \"label\": \"\",
     \"color\": \"yellow\"
   },

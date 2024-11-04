@@ -7,6 +7,8 @@ currentSong="$(echo "$INFO" | jq -r '.title')"
 
 if [[ "$player" = "Music" || "$player" = "Spotify" ]]; then
   if [ "$playerState" = "playing" ]; then
-    sketchybar --set $NAME drawing=on label="$currentArtist: $currentSong"
+    sketchybar --set $NAME drawing=on label="$currentArtist: $currentSong" background.image=media.artwork
   fi
+else
+  sketchybar --set $NAME drawing=off
 fi
