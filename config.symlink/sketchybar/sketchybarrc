@@ -42,6 +42,10 @@ source "$ITEM_DIR/reminders.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/spacer.sh" 1 right
 
+sketchybar --add alias "Tomito,TomitoMenuBarItem" right \
+           --rename "Tomito,TomitoMenuBarItem" pomodoro \
+           --set pomodoro click_script="open -a /Applications/Tomito.app"
+
 source "$ITEM_DIR/transmission.sh"
 
 source "$ITEM_DIR/music.sh"

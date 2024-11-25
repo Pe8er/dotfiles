@@ -34,6 +34,8 @@ extensions
 config.symlink/codium-portable-data/user-data/
 !config.symlink/codium-portable-data/user-data/product.json
 
+config.symlink/raycast/extensions/
+
 tmp.jpg
 album.txt
 Get-Artwork.scpt

@@ -3,7 +3,7 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-COUNT=$(( $(reminders show-all --due-date today | wc -l) + 0 ))
+COUNT=$(( $(reminders show-all --due-date today | grep -E "^[a-zA-Z &]+: \d{1,2}: " | wc -l) + 0 ))
 
 DRAWING="on"
 

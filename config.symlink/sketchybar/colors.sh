@@ -4,10 +4,12 @@
 getcolor() {
   COLOR_NAME=$1
   OPACITY=$2
+  local COLOR=""
 
   if [[ -z $OPACITY ]]; then
     OPACITY=100
   fi
+  
 
   # Rose Pine https://rosepinetheme.com/palette/ingredients/
   COLORS=(
@@ -25,8 +27,6 @@ getcolor() {
     white "#e0def4"
   )
 
-  # Initialize color as an empty string
-  local COLOR=""
 
   # Loop through the array to find the color hex by name
   for ((i=0; i<${#COLORS[@]}; i+=2)); do
@@ -42,35 +42,23 @@ getcolor() {
     return 1
   fi
 
-  echo $(percent_to_hex $OPACITY)${COLOR:1}
+  echo $(PERCENT2HEX $OPACITY)${COLOR:1}
 }
 
-percent_to_hex() {
+PERCENT2HEX() {
   local PERCENTAGE=$1
   local DECIMAL=$(( (PERCENTAGE * 255) / 100 ))
   printf "0x%02X\n" "$DECIMAL"
 }
 
-# Pick color based on day of week
-# daily_color() {
-#   DAY_OF_WEEK=$(date +%u)
-#   local COLORS=("blue" "teal" "cyan" "green" "yellow" "orange" "red" "purple" "grey")
-#   echo ${COLORS[$DAY_OF_WEEK]}
-# }
-
-# echo test: $(getcolor trueblack)
-
-# Pick a random color name
-# RANDOMHIGHLIGHT=$(daily_color)
-
 # Color Tokens
 export BAR_COLOR=$(getcolor trueblack)
 export BAR_BORDER_COLOR=$(getcolor black 0)
-export HIGHLIGHT=$(getcolor teal)
-export HIGHLIGHT_75=$(getcolor teal 75)
-export HIGHLIGHT_50=$(getcolor teal 50)
-export HIGHLIGHT_25=$(getcolor teal 25)
-export HIGHLIGHT_10=$(getcolor teal 10)
+export HIGHLIGHT=$(getcolor cyan)
+export HIGHLIGHT_75=$(getcolor cyan 75)
+export HIGHLIGHT_50=$(getcolor cyan 50)
+export HIGHLIGHT_25=$(getcolor cyan 25)
+export HIGHLIGHT_10=$(getcolor cyan 10)
 export ICON_COLOR=$(getcolor white)
 export ICON_COLOR_INACTIVE=$(getcolor white 50)
 export LABEL_COLOR=$(getcolor white 75)

@@ -1,5 +1,24 @@
 #!/bin/bash
 
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local apps="$3"
+
+  echo "Setting up space $idx: $name"
+
+  # Check if space exists
+  if ! yabai -m query --spaces | jq -e ".[] | select(.index == $idx)" &>/dev/null; then
+    yabai -m space --create
+  fi
+
+  # Label the space
+  yabai -m space "$idx" --label "$name"
+
+  # Add rule to assign apps to the space
+  yabai -m rule --add app="^(${apps})$" space="$name"
+}
+
 # Unload the macOS WindowManager process
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist >/dev/null 2>&1 &
 
@@ -10,10 +29,8 @@ sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa" label="loadSa"
 # yabai -m signal --add event=window_created action="sketchybar --trigger space_windows_change" label="sketchybarNewWindowCreated"
 # yabai -m signal --add event=window_destroyed action="sketchybar --trigger space_windows_change" label="sketchybarWindowDestroyed"
-
 # yabai -m signal --add event=window_created action="/Users/pe8er/.dotfiles/config.symlink/yabai/float_if_one_window.sh"
 # yabai -m signal --add event=window_destroyed action="/Users/pe8er/.dotfiles/config.symlink/yabai/float_if_one_window.sh"
-
 # if [[ $(yabai -m query --spaces --display | jq '.[-1]."has-focus"') == "false" ]]; then yabai -m window --space next --focus; fi
 
 # Float small, non-resizable windows
@@ -23,7 +40,7 @@ yabai_config=(
   window_placement          second_child
   focus_follows_mouse       autoraise
   mouse_modifier            fn
-  menubar_opacity           0.0
+  menubar_opacity           1.0
   window_animation_duration 0.0
   layout                    bsp
   auto_balance              off
@@ -36,45 +53,28 @@ yabai_config=(
 
 yabai -m config ${yabai_config[*]}
 
-# Setup spaces
-function setup_space {
-  local idx="$1"
-  local name="$2"
-  local space=
-  echo "setup space $idx : $name"
-
-  space=$(yabai -m query --spaces --space "$idx")
-  if [ -z "$space" ]; then
-    yabai -m space --create
-  fi
-
-  yabai -m space "$idx" --label "$name"
-  echo yabai -m space "$idx" --label "$name"
-}
-
-setup_space 1 Web
-setup_space 2 Mail
-setup_space 3 Todo
-setup_space 4 Code
-setup_space 5 Media
-setup_space 6 Design
-setup_space 7 Presentation
-
-# Assign apps to specific spaces
-yabai -m rule --add app="^(Arc|Discord)$" space=1
-yabai -m rule --add app="^(Mail)$" space=2
-yabai -m rule --add app="^(Things|Notes|Reminders)$" space=3
-yabai -m rule --add app="^(VSCodium|iTerm)$" space=4
-yabai -m rule --add app="^(Music|Popcorn-Time|Spotify)$" space=5
-yabai -m rule --add app="^(Figma|Adobe)$" space=6
-yabai -m rule --add app="^(Pages|Keynote|Microsoft)$" space=7
+# Set up spaces
+setup_space 1 Web "Arc|Discord|Safari|Chrome"
+setup_space 2 Mail "Mail"
+setup_space 3 Todo "Things|Reminders"
+setup_space 4 Code "VSCodium|iTerm"
+setup_space 5 Media "Music|Popcorn-Time|Spotify"
+setup_space 6 Design "Figma|Adobe"
+setup_space 7 Presentation "Pages|Keynote|Microsoft"
 
 # Override default layouts
 yabai -m config --space 5 layout stack
 
 # Manage apps and windows
+
+# Always floating, sticky on all spaces
+yabai -m rule --add label="Notes" app="^(Notes|ADI-2 Remote|Messages|Transmission|Tomito)$" sticky=on manage=off sub-layer=above
+
+# Don't manage these
+yabai -m rule --add app="^(IINA|Steam Helper|Raycast|Calculator|Software\ Update|Dictionary|VLC|System\ Settings|zoom.us|Photo\ Booth|Archive\ Utility|Clock|Plexamp|Alfred\ Preferences|ImageOptim|The\ Unarchiver|Installer|Hosting\ AU)$" manage=off
+
+# Everything else
 yabai -m rule --add label="Mail messages" app="Mail" title="(New|Message|Re)" sticky=on manage=off sub-layer=above
-yabai -m rule --add app="^(Steam Helper|Raycast|Calculator|Software\ Update|Dictionary|VLC|System\ Settings|zoom.us|Photo\ Booth|Archive\ Utility|Clock|Plexamp|Alfred\ Preferences|ImageOptim|The\ Unarchiver|Installer|Hosting\ AU)$" manage=off
 yabai -m rule --add label="Small windows" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add app="^(Trash|Copy|Bin|Move|About This Mac|Info|Preferences)$" manage=off sub-layer=above
 yabai -m rule --add label="GLMv4" app="^GLMv4$" title="(Preparations\ for\ Measurements)" manage=off
@@ -82,13 +82,12 @@ yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" mana
 yabai -m rule --add label="About This Mac" app="System Information" title="About\ This\ Mac" manage=off
 yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
 yabai -m rule --add app="^Adobe (After Effects|Audition|Media Encoder|Lightroom)$" role="AXLayoutArea" subrole="AXFloatingWindow" manage=on
-yabai -m rule --add app="^IINA$" manage=off
 
 # Define scratchpads
 # https://github.com/koekeishiya/yabai/issues/2203
 # <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
-yabai -m rule --add app="^Messages$" scratchpad=Messages grid=5:5:1:1:3:3
-yabai -m rule --add app="^Transmission$" scratchpad=Transmission grid=5:7:2:1:3:1
+# yabai -m rule --add app="^Messages$" scratchpad=Messages grid=5:5:1:1:3:3
+# yabai -m rule --add app="^Transmission$" scratchpad=Transmission grid=5:7:2:1:3:1
 
 # Apply rules to existing windows
 yabai -m rule --apply
