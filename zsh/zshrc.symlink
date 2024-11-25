@@ -29,9 +29,11 @@ compctl -K    _pyenv pyenv
 # Adobe crack
 znap eval rlmenvset '/Users/Shared/rlm/rlmenvset.sh'
 # Chruby
-znap eval chruby '/opt/homebrew/opt/chruby/share/chruby/(chruby|auto).sh'
-# znap eval chruby '/opt/homebrew/opt/chruby/share/chruby/auto.sh'
+# znap eval chruby '/opt/homebrew/opt/chruby/share/chruby/(chruby|auto).sh'
 # chruby ruby-3.1.3 # run chruby to see actual version
+
+#Brew??
+znap eval brew "$(brew shellenv)"
 
 ####### zsh-autocomplete settings #######
 
@@ -50,4 +52,3 @@ zstyle ':completion:*:descriptions' format '%F{yellow}%d%f'
 # Automatically show subfolders in current folder
 # zstyle ':autocomplete:*' min-input 0
 # Created by `pipx` on 2024-11-01 18:00:38
-export PATH="$PATH:/Users/pe8er/.local/bin"

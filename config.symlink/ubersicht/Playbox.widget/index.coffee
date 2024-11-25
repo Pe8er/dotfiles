@@ -8,10 +8,13 @@ options =
   horizontalPosition    : "left"        # left | center | right
 
   # Choose widget size.
-  widgetSize: "smol"                   # big | medium | smol
+  widgetSize: "medium"                   # big | medium | smol
 
   # Choose color theme.
   widgetTheme: "dark"                   # dark | light
+
+  # Stick the widget in the corner? It removes round corners and shadows for a flat, minimalist setup.
+  stickInCorner: false                  # true | false
 
 command: "osascript 'Playbox.widget/lib/getCurrentSong.applescript'"
 refreshFrequency: '1s'
@@ -23,9 +26,13 @@ style: """
   if #{options.widgetTheme} == dark
     fColor = white
     bgColor = black
+    bgBrightness = 70%
+    bgContrast = 100%
   else
     fColor = black
     bgColor = white
+    bgBrightness = 150%
+    bgContrast = 50%
 
   // Global scaling for large and medium variants
 
@@ -43,18 +50,39 @@ style: """
   bgColor05 = rgba(bgColor,0.5)
   bgColor02 = rgba(bgColor,0.2)
 
+  blurProperties = blur(16px) brightness(bgBrightness) contrast(bgContrast) saturate(140%)
+
+    // Stick in corner styling.
+
+  if #{options.stickInCorner} == false
+    margin = 16pt
+    borderRadius = 8pt * scale
+    box-shadow 0 24pt 32pt 0 rgba(0,0,0,0.6)
+    border-radius borderRadius
+    .text
+      border-radius 0 0 borderRadius borderRadius
+  else
+    margin = 0
+    borderRadius = 0
+    .text
+      border-radius 0
+
+  if #{options.stickInCorner} == false and #{options.widgetSize} != smol
+    .art
+      border-radius borderRadius
+
   // Positioning magic
 
   if #{options.verticalPosition} == center
     top 50%
     transform translateY(-50%)
   else
-    #{options.verticalPosition} 0
+    #{options.verticalPosition} margin
   if #{options.horizontalPosition} == center
     left 50%
     transform translateX(-50%)
   else
-    #{options.horizontalPosition} 0
+    #{options.horizontalPosition} margin
 
 
   // Misc styles
@@ -135,7 +163,7 @@ style: """
     top -8pt
     right 0
     z-index 4
-    -webkit-backdrop-filter blur(10px)
+    -webkit-backdrop-filter blurProperties
 
 
   .album
@@ -167,7 +195,7 @@ style: """
       margin 0
       color fColor1
       padding 4pt * scale
-      -webkit-backdrop-filter blur(10px)
+      -webkit-backdrop-filter blurProperties
       line-height 8pt
     
     .song, .artist, .album

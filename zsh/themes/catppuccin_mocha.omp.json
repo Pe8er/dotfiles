@@ -1,25 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
-  "final_space": true,
   "palette": {
-    // Material Darker
-    // "background": "#0F111A",
-    // "grey": "#3B4252",
-    // "cyan": "#89ddff",
-    // "blue": "#82aaff",
-    // "foreground": "#ffffff",
-    // "green": "#c3e88d",
-    // "red": "#ff5370",
-    // "yellow": "#ffcb6b"
-
-    // Tokyo Night
     "background": "#1a1b26",
-    "grey": "#565f89",
-    "cyan": "#b4f9f8",
     "blue": "#7dcfff",
+    "cyan": "#b4f9f8",
     "foreground": "#cfc9c2",
     "green": "#9ece6a",
+    "grey": "#565f89",
     "red": "#f7768e",
     "yellow": "#e0af68"
   },
@@ -27,55 +14,37 @@
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
-        // {
-        //   "type": "root",
-        //   "style": "powerline",
-        //   "powerline_symbol": "",
-        //   "foreground": "#111111",
-        //   "background": "#ffff66",
-        //   "template": ""
-        // },
         {
-          "type": "os",
-          "style": "plain",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "foreground": "p:foreground",
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}"
+          "type": "os",
+          "style": "plain"
         },
         {
-          "type": "session",
-          "style": "plain",
+          "template": " {{ if .SSHSession }}\ueba9 {{ .UserName }}@{{ .HostName }} {{ end }}",
           "foreground": "p:cyan",
-          "template": " {{ if .SSHSession }}\ueba9 {{ .UserName }}@{{ .HostName }} {{ end }}"
+          "type": "session",
+          "style": "plain"
         },
         {
-          "type": "path",
-          "style": "plain",
-          "foreground": "p:yellow",
-          "template": " {{ .Path }} ",
           "properties": {
             "home_icon": "~",
             "style": "agnoster_full"
-          }
+          },
+          "template": " {{ .Path }} ",
+          "foreground": "p:yellow",
+          "type": "path",
+          "style": "plain"
         }
-      ]
+      ],
+      "newline": true
     },
     {
       "type": "prompt",
       "alignment": "right",
       "segments": [
         {
-          "type": "git",
-          "style": "plain",
-          "foreground": "p:green",
-          "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
-            "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
-            "{{ if gt .Behind 0 }}p:yellow{{ end }}"
-          ],
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} 􀈎 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} 􀃳 {{ .Staging.String }}{{ end }}",
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
@@ -90,67 +59,34 @@
             "untracked_modes": {
               "/Users/user/Projects/oh-my-posh/": "no"
             }
-          }
+          },
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \udbc0\ude0e {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \udbc0\udcf3 {{ .Staging.String }}{{ end }}",
+          "foreground": "p:green",
+          "type": "git",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
+            "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
+            "{{ if gt .Behind 0 }}p:yellow{{ end }}"
+          ]
         }
-        // {
-        //   "type": "time",
-        //   "style": "plain",
-        //   "foreground": "p:grey",
-        //   "alignment": "right",
-        //   "newline": false,
-        //   // "template": " {{ .CurrentDate | date .Format }}",
-        //   "template": "{{if not .Segments.GitPath.IsWorkTree}}{{ .CurrentDate | date .Format }}{{ end }}",
-        //   "properties": {
-        //     "time_format": " Jan 02 / 3:04 PM"
-        //   }
-        // }
       ]
     },
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "type": "text",
-          "style": "plain",
+          "template": "\uf105",
           "foreground": "p:yellow",
-          "template": "\uf105"
+          "type": "text",
+          "style": "plain"
         }
-      ]
+      ],
+      "newline": true
     }
-  ]
-  // "tooltips": [
-  //   {
-  //     "type": "git",
-  //     "tips": [
-  //       "git",
-  //       "g"
-  //     ],
-  //     "style": "plain",
-  //     "foreground": "p:yellow",
-  //     "foreground_templates": [
-  //       "{{ if or (.Working.Changed) (.Staging.Changed) }}p:red{{ end }}",
-  //       "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:green{{ end }}",
-  //       "{{ if gt .Ahead 0 }}p:yellow{{ end }}",
-  //       "{{ if gt .Behind 0 }}p:yellow{{ end }}"
-  //     ],
-  //     "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
-  //     "properties": {
-  //       "branch_icon": "\ue725 ",
-  //       "cherry_pick_icon": "\ue29b ",
-  //       "commit_icon": "\uf417 ",
-  //       "fetch_status": true,
-  //       "fetch_upstream_icon": true,
-  //       "merge_icon": "\ue727 ",
-  //       "no_commits_icon": "\uf0c3 ",
-  //       "rebase_icon": "\ue728 ",
-  //       "revert_icon": "\uf0e2 ",
-  //       "tag_icon": "\uf412 ",
-  //       "untracked_modes": {
-  //         "/Users/user/Projects/oh-my-posh/": "no"
-  //       }
-  //     }
-  //   }
-  // ]
+  ],
+  "version": 3,
+  "final_space": true
 }
