@@ -23,4 +23,4 @@ case "$COUNT" in
   ;;
 esac
 
-sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR
+sketchybar --animate tanh 20 --set $NAME drawing=$DRAWING label=$COUNT icon.color=$COLOR

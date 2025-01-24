@@ -1,5 +1,5 @@
 global mypath, plexToken, plexUsername, plexPassword, plexXML
-set plexServer to "http://192.168.1.200:32400"
+set plexServer to "http://192.168.1.132:32400"
 set plexUsername to "pe8er"
 
 -- Find my path

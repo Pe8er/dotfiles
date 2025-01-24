@@ -11,7 +11,8 @@ FONT="JetBrainsMono Nerd Font"
 
 # Bar Appearance
 bar=(
-  color=$BAR_COLOR
+  color=$TRANSPARENT
+  # color="$(getcolor black 50)"
   position=top
   topmost=off
   sticky=on
@@ -19,7 +20,7 @@ bar=(
   padding_left=4
   padding_right=4
   corner_radius=0
-  blur_radius=0
+  blur_radius=32
   notch_width=170
 )
 
@@ -52,11 +53,12 @@ notification_defaults=(
   update_freq=300
   background.padding_left=$PADDINGS
   background.padding_right=$PADDINGS
-  label.drawing=off
+  drawing=off
 )
 
 bracket_defaults=(
-  background.color="$(getcolor grey 50)"
+  background.color="$(getcolor black)"
+  # blur_radius=32
 )
 
 menu_defaults=(
@@ -64,9 +66,9 @@ menu_defaults=(
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.background.corner_radius=$PADDINGS
   popup.background.shadow.drawing=on
-  popup.background.shadow.color=$(getcolor black 50)
+  popup.background.shadow.color=$(getcolor black)
   popup.background.shadow.angle=90
-  popup.background.shadow.distance=16
+  popup.background.shadow.distance=64
 )
 
 menu_item_defaults=(
@@ -76,8 +78,10 @@ menu_item_defaults=(
   icon.padding_left=0
   icon.padding_right=4
   icon.color=$HIGHLIGHT
+  icon.font.size=13
   background.color=$TRANSPARENT
-  scroll_texts=on
+  scroll_texts=off
+  icon.width=16
 )
 
 separator=(

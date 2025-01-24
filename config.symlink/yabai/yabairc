@@ -40,7 +40,7 @@ yabai_config=(
   window_placement          second_child
   focus_follows_mouse       autoraise
   mouse_modifier            fn
-  menubar_opacity           1.0
+  # menubar_opacity           0.0
   window_animation_duration 0.0
   layout                    bsp
   auto_balance              off
@@ -58,7 +58,7 @@ setup_space 1 Web "Arc|Discord|Safari|Chrome"
 setup_space 2 Mail "Mail"
 setup_space 3 Todo "Things|Reminders"
 setup_space 4 Code "VSCodium|iTerm"
-setup_space 5 Media "Music|Popcorn-Time|Spotify"
+setup_space 5 Media "Music|Popcorn-Time|Spotify|calibre|TIDAL"
 setup_space 6 Design "Figma|Adobe"
 setup_space 7 Presentation "Pages|Keynote|Microsoft"
 
@@ -68,7 +68,7 @@ yabai -m config --space 5 layout stack
 # Manage apps and windows
 
 # Always floating, sticky on all spaces
-yabai -m rule --add label="Notes" app="^(Notes|ADI-2 Remote|Messages|Transmission|Tomito)$" sticky=on manage=off sub-layer=above
+yabai -m rule --add label="Notes" app="^(Notes|ADI-2 Remote|Messages|Transmission|Tomito|Reminders)$" sticky=on manage=off sub-layer=above
 
 # Don't manage these
 yabai -m rule --add app="^(IINA|Steam Helper|Raycast|Calculator|Software\ Update|Dictionary|VLC|System\ Settings|zoom.us|Photo\ Booth|Archive\ Utility|Clock|Plexamp|Alfred\ Preferences|ImageOptim|The\ Unarchiver|Installer|Hosting\ AU)$" manage=off
@@ -82,6 +82,7 @@ yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" mana
 yabai -m rule --add label="About This Mac" app="System Information" title="About\ This\ Mac" manage=off
 yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
 yabai -m rule --add app="^Adobe (After Effects|Audition|Media Encoder|Lightroom)$" role="AXLayoutArea" subrole="AXFloatingWindow" manage=on
+yabai -m rule --add app="^Arc$" manage=on
 
 # Define scratchpads
 # https://github.com/koekeishiya/yabai/issues/2203

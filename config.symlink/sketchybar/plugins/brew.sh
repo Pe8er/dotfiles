@@ -3,24 +3,45 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-DRAWING="on"
+update_label() {
+  DRAWING="on"
+  COUNT=$(brew outdated | wc -l | tr -d ' ')
 
-COUNT=$(brew outdated | wc -l | tr -d ' ')
+  case "$COUNT" in
+  [7-9] | [1-9][0-9])
+    COLOR=$(getcolor red)
+    ;;
+  [3-6])
+    COLOR=$(getcolor orange)
+    ;;
+  [1-2])
+    COLOR=$(getcolor yellow)
+    ;;
+  0 | "")
+    COLOR=$LABEL_COLOR
+    DRAWING="off"
+    ;;
+  esac
 
-case "$COUNT" in
-[3-5][0-9])
-  COLOR=$(getcolor red)
+  sketchybar --animate tanh 20 --set $NAME drawing=$DRAWING label=$COUNT icon.color=$COLOR
+}
+
+mouse_clicked() {
+  sketchybar --set $NAME icon=$ICON_REFRESH
+  $CONFIG_DIR/items/brew_script.sh &
+
+  # Wait for the brew process to finish
+  wait $!
+  echo "Brew update and upgrade are complete."
+  update_label
+  sketchybar --set $NAME icon=$ICON_PACKAGE
+}
+
+case "$SENDER" in
+"routine" | "forced")
+  update_label
   ;;
-[1-2][0-9])
-  COLOR=$(getcolor orange)
-  ;;
-[1-9])
-  COLOR=$(getcolor yellow)
-  ;;
-0|"")
-  COLOR=$LABEL_COLOR
-  DRAWING="off"
+"mouse.clicked")
+  mouse_clicked
   ;;
 esac
-
-sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR

@@ -55,14 +55,14 @@ logo_shutdown=(
 logo_lockscreen=(
   "${menu_item_defaults[@]}"
   icon=􀼑
-  label="Lock Screen    􀆍􀆔Q"
+  label="Lock Screen      􀆍􀆔Q"
   click_script="osascript -e 'tell application \"System Events\" to keystroke \"q\" using {command down,control down}'; $POPUP_OFF"
 )
 
 logo_logout=(
   "${menu_item_defaults[@]}"
   icon=􀉭
-  label="Log Out ${USER}… 􀆝􀆔Q"
+  label="Log Out ${USER}…   􀆝􀆔Q"
   click_script="osascript -e 'tell app \"System Events\" to log out'; $POPUP_OFF"
   "${separator[@]}"
 )

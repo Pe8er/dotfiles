@@ -8,7 +8,7 @@ ICON_ACTIVITY=􀒓
 ICON_LOCK=􀒳
 ICON_BELL=􀋚
 ICON_BELL_DOT=􀝗
-ICON_MUSIC=􀑪
+ICON_MUSIC=󰿏
 
 # Git Icons
 ICON_GIT_ISSUE=􀍷
@@ -48,13 +48,15 @@ ICON_VOLUME_66=􀊧
 ICON_VOLUME_33=􀊥
 ICON_VOLUME_10=􀊡
 ICON_VOLUME_0=􀊣
+ICON_VOLUME_HEADPHONES=
 
 export ICON_CMD=󰘳
 export ICON_COG=󰒓 # system settings, system information, tinkertool
 export ICON_CHART=󱕍 # activity monitor, btop
 export ICON_LOCK=󰌾
 export ICON_APP=󰣆 # fallback app
-export ICON_DOCUMENTS=󰈙 # powerpoint
+export ICON_DOCUMENTS=󰧮 # powerpoint
+export ICON_REFRESH=
 
 export ICON_PACKAGE=󰏗 # brew
 export ICON_DEV=󰅨 # nvim, xcode, vscode

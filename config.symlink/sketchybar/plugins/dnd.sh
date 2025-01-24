@@ -8,23 +8,12 @@ check_state() {
 
   # Alternate SLOW method:
   DND_ENABLED=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes")
-
-  if [ "$DND_ENABLED" -eq 0 ]; then
-    COLOR=$(getcolor white 25)
-  else
-    COLOR=$(getcolor white)
-  fi
-
+  [ "$DND_ENABLED" = 0 ] && COLOR=$ICON_COLOR_INACTIVE || COLOR=$ICON_COLOR
   sketchybar --set $NAME icon.color=$COLOR
 }
 
 update_icon() {
-  if [ "$SENDER" == "focus_off" ]; then
-    COLOR=$(getcolor white 25)
-  else
-    COLOR=$(getcolor white)
-  fi
-
+  [ "$SENDER" = "focus_off" ] && COLOR=$ICON_COLOR_INACTIVE || COLOR=$ICON_COLOR
   sketchybar --set $NAME icon.color=$COLOR
 }
 
