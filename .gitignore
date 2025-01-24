@@ -6,6 +6,7 @@ password.txt
 .plextoken
 weather-api
 weather.api
+aqi.api
  
 build/
 

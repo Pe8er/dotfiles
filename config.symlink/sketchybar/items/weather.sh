@@ -4,19 +4,35 @@ source "$CONFIG_DIR/globalstyles.sh"
 weather=(
   "${menu_defaults[@]}"
   "${notification_defaults[@]}"
-  popup.align=right
+  update_freq=1800
+  drawing=on
+  popup.align=center
   icon.color=$HIGHLIGHT
   script="$PLUGIN_DIR/weather.sh"
-  click_script="open -a /System/Applications/Weather.app"
   --subscribe weather wifi_change
-                      mouse.entered
-                      mouse.exited
-                      mouse.exited.global
                       mouse.clicked
+                      system_woke
 )
 
-sketchybar                                  \
-  --add item weather right                  \
-       --set weather "${weather[@]}"        \
-  --add item weather.details popup.weather  \
-       --set weather.details "${menu_item_defaults[@]}" icon.drawing=off label.padding_left=0
+aqi=(
+  label.color=$LABEL_COLOR_NEGATIVE
+  drawing=off
+  background.height=16
+  label.padding_left=$PADDINGS
+  label.padding_right=$PADDINGS
+)
+
+sketchybar                                       \
+  --add item aqi right                           \
+  --set aqi "${aqi[@]}"                          \
+  --add item weather right                       \
+  --set weather "${weather[@]}"                  \
+  --add item weather.location popup.weather      \
+  --add item weather.condition popup.weather     \
+  --add item weather.aqi popup.weather           \
+  --add item weather.precipitation popup.weather \
+  --add item weather.wind popup.weather          \
+  --add item weather.humidity popup.weather      \
+  --add item weather.update popup.weather        \
+  --add item weather.openapp popup.weather       \
+  --set '/weather\..*/' "${menu_item_defaults[@]}" click_script="sketchybar --set weather popup.drawing=off"

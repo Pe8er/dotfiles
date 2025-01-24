@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
-# API key from https://www.weatherapi.com/my/
-API_KEY="$(cat $CONFIG_DIR/plugins/weather.api)"
-# CITY="Wroclaw, Poland"
-# CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
 
-# get city from IP, sometimes pretty inaccurate
-CITY="$(curl -s -m 5 ipinfo.io/loc)"
-
-# first comment is description, second is icon number
 WEATHER_ICONS_DAY=(
   [1000]= # Sunny/113
   [1003]= # Partly cloudy/116
@@ -111,68 +105,119 @@ WEATHER_ICONS_NIGHT=(
   [1282]= # Moderate or heavy snow with thunder/395
 )
 
-render_item() {
+render_items() {
   if [ "$TEMP" = "" ]; then
-    args=(--set $NAME icon="􀌏" label.drawing=off)
+    args=(--set $NAME icon="􀌏" label.drawing=off click_script="sketchybar --update")
   else
-    args=(--set $NAME icon="$ICON" icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°" label.drawing=on)
+    args=(--set $NAME icon="$ICON" icon.color=$AQI_COLOR icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°" label.drawing=on click_script="sketchybar --set weather popup.drawing=toggle")
+  fi
+
+  if [[ $AQI_NUMBER -gt 100 ]]; then
+    args+=(--set aqi background.color=$AQI_COLOR label=$AQI_NUMBER drawing=on)
+  else
+    args+=(--set aqi drawing=off)
   fi
 
   sketchybar "${args[@]}" >/dev/null
 }
 
 render_popup() {
-  if [ "$TEMP" = "" ]; then
-    args+=(--set weather.details label="N/A"
-      click_script="sketchybar --set $NAME popup.drawing=off")
+  if [ "$TEMP" != "" ]; then
+    args=(--set weather.location label="$LOCATION" icon=""
+      --set weather.condition label="$CONDITION_TEXT" icon="$ICON"
+      --set weather.aqi label="$AQI_NUMBER ($AQI_DESCRIPTION)" icon="" icon.color="$AQI_COLOR" label.color="$AQI_COLOR" click_script="sketchybar --set aqi background.color=$AQI_COLOR label=$AQI_NUMBER drawing=toggle"
+      --set weather.precipitation label="$PRECIPITATION mm" icon="󰖌"
+      --set weather.wind label="$WIND km/h $WIND_DIRECTION" icon=""
+      --set weather.humidity label="$HUMIDITY%" icon="󰞍"
+      --set weather.update label="$LAST_UPDATED minutes ago" icon="$ICON_REFRESH" click_script="sketchybar --update"
+      --set weather.openapp label="More Information…" icon="" click_script="open -a /System/Applications/Weather.app")
   else
-    args+=(--set weather.details label="$CONDITION_TEXT, Humidity: $HUMIDITY% ($LOCATION)"
-      click_script="sketchybar --set $NAME popup.drawing=off")
+    args=(--set '/weather\..*/' drawing=off)
   fi
 
   sketchybar "${args[@]}" >/dev/null
 }
 
 update() {
+  # API key from https://www.weatherapi.com/my/
+  WEATHER_API_KEY="$(cat $CONFIG_DIR/plugins/weather.api)"
+  AQI_API_KEY="$(cat $CONFIG_DIR/plugins/aqi.api)"
+  CITY="Wroclaw, Poland"
+  CITY_NAME=${CITY%%,*}
+  CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
+
+  # get city from IP, sometimes pretty inaccurate
+  # CITY="$(curl -s -m 5 ipinfo.io/loc)"
+
   if [ "$CITY" != "" ]; then
-    DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=$API_KEY&q=$CITY")
-    CONDITION=$(echo $DATA | jq -r '.current.condition.code')
-    CONDITION_TEXT=$(echo $DATA | jq -r '.current.condition.text')
-    TEMP=$(echo $DATA | jq -r '.current.temp_c | floor')
-    FEELSLIKE=$(echo $DATA | jq -r '.current.feelslike_f')
-    HUMIDITY=$(echo $DATA | jq -r '.current.humidity')
-    IS_DAY=$(echo $DATA | jq -r '.current.is_day')
-    LAT=$(echo $DATA | jq -r '.location.lat')
-    LON=$(echo $DATA | jq -r '.location.lon')
-    LOCATION=$(echo $DATA | jq -r '.location.name' && echo ', ' && echo $DATA | jq -r '.location.country')
-  
+    WEATHER_DATA=$(curl -s -m 5 "http://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${CITY}")
+    TEMP=$(echo $WEATHER_DATA | jq -r '.current.temp_c | floor')
+    LOCATION=$(echo $WEATHER_DATA | jq -r '.location.name' && echo ', ' && echo $WEATHER_DATA | jq -r '.location.country')
+    CONDITION=$(echo $WEATHER_DATA | jq -r '.current.condition.code')
+    CONDITION_TEXT=$(echo $WEATHER_DATA | jq -r '.current.condition.text')
+    PRECIPITATION=$(echo $WEATHER_DATA | jq -r '.current.precip_mm')
+    HUMIDITY=$(echo $WEATHER_DATA | jq -r '.current.humidity')
+    WIND=$(echo $WEATHER_DATA | jq -r '.current.wind_kph')
+    WIND_DIRECTION=$(echo $WEATHER_DATA | jq -r '.current.wind_dir')
+    IS_DAY=$(echo $WEATHER_DATA | jq -r '.current.is_day')
+    LAST_UPDATED_EPOCH=$(echo $WEATHER_DATA | jq -r '.current.last_updated_epoch')
+    AQI_DATA=$(curl -s -m 5 "https://api.waqi.info/feed/${CITY_NAME}/?token=${AQI_API_KEY}")
+    AQI_NUMBER=$(echo $AQI_DATA | jq -r '.data.aqi | floor')
+
+    CURRENT_EPOCH=$(date +%s)
+    DIFFERENCE_SECONDS=$((CURRENT_EPOCH - LAST_UPDATED_EPOCH))
+    LAST_UPDATED=$((DIFFERENCE_SECONDS / 60))
+
+    case "$AQI_NUMBER" in
+    [0-9] | [1-4][0-9] | 50)
+      AQI_DESCRIPTION="Good"
+      AQI_COLOR=$(getcolor green)
+      ;;
+    [5-9][0-9] | 100)
+      AQI_DESCRIPTION="Moderate"
+      AQI_COLOR=$(getcolor yellow)
+      ;;
+    1[0-4][0-9] | 150)
+      AQI_DESCRIPTION="Unhealthy for Sensitive Groups"
+      AQI_COLOR=$(getcolor orange)
+      ;;
+    1[5-9][0-9] | 200)
+      AQI_DESCRIPTION="Unhealthy"
+      AQI_COLOR=$(getcolor red)
+      ;;
+    2[0-9][0-9] | 300)
+      AQI_DESCRIPTION="Very Unhealthy"
+      AQI_COLOR=$(getcolor purple)
+      ;;
+    3[0-9][0-9] | 500)
+      AQI_DESCRIPTION="Hazardous"
+      AQI_COLOR=$(getcolor maroon)
+      ;;
+    *)
+      AQI_DESCRIPTION="Unknown"
+      AQI_COLOR=$HIGHLIGHT
+      ;;
+    esac
+
     [ "$IS_DAY" = "1" ] && ICON=${WEATHER_ICONS_DAY[$CONDITION]} || ICON=${WEATHER_ICONS_NIGHT[$CONDITION]}
     args=()
+
   fi
 
-  render_item
+  render_items
   render_popup
-
-  if [ "$SENDER" = "forced" ]; then
-    sketchybar --set "$NAME"
-  fi
+  
 }
 
 popup() {
-  sketchybar --set "$NAME" popup.drawing="$1"
+  sketchybar --set weather popup.drawing="$1"
 }
 
 case "$SENDER" in
-"routine" | "forced" | "wifi_change")
+"routine" | "forced" | "wifi_change" | "system_woke")
   update
   ;;
-"mouse.entered")
-  popup on
-  ;;
-"mouse.exited" | "mouse.exited.global")
-  popup off
-  ;;
 "mouse.clicked")
-  popup toggle
+echo $SENDER $INFO
   ;;
 esac

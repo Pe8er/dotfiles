@@ -18,12 +18,7 @@ sketchybar --bar "${bar[@]}" --default "${item_defaults[@]}"
 source "$ITEM_DIR/apple.sh"
 source "$ITEM_DIR/spacer.sh" 3 left
 source "$ITEM_DIR/yabai.sh"
-
 source "$ITEM_DIR/spaces_simple.sh"
-# source "$ITEM_DIR/front_app.sh"
-
-# Notch
-# source "$ITEM_DIR/countdown.sh"
 
 # Right
 source "$ITEM_DIR/control_center.sh"
@@ -35,19 +30,14 @@ source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/diskmonitor.sh"
 
 source "$ITEM_DIR/spacer.sh" 2 right
+
 source "$ITEM_DIR/brew.sh"
 source "$ITEM_DIR/mail.sh"
 source "$ITEM_DIR/messages.sh"
 source "$ITEM_DIR/reminders.sh"
 source "$ITEM_DIR/weather.sh"
 source "$ITEM_DIR/spacer.sh" 1 right
-
-sketchybar --add alias "Tomito,TomitoMenuBarItem" right \
-           --rename "Tomito,TomitoMenuBarItem" pomodoro \
-           --set pomodoro click_script="open -a /Applications/Tomito.app"
-
 source "$ITEM_DIR/transmission.sh"
-
 source "$ITEM_DIR/music.sh"
 
 
@@ -55,11 +45,11 @@ source "$ITEM_DIR/music.sh"
 sketchybar --add bracket left.side '/space\..*/'                                              \
            --set left.side "${bracket_defaults[@]}"                                           \
                                                                                               \
-           --add bracket notifications spacer.1 weather reminders messages brew mail spacer.2                   \
+           --add bracket notifications spacer.1 weather aqi reminders messages brew mail                   \
            --set notifications "${bracket_defaults[@]}"                                       \
                                                                                               \
-           --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd control_center \
-           --set status_icons "${bracket_defaults[@]}" background.color=$TRANSPARENT
+           --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd date clock \
+           --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --hotload on
 sketchybar --update

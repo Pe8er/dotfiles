@@ -36,7 +36,7 @@ fi
 
 
 if [[ "$UP" == "0.0" && "$DOWN" == "0.0" ]]; then
-  args+=(background.color=$(getcolor grey))
+  args+=(background.color=$(getcolor black 50))
 else
   args+=(background.color=$HIGHLIGHT)
 fi

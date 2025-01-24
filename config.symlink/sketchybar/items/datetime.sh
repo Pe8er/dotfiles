@@ -7,7 +7,8 @@ date=(
   icon.padding_right=1
   icon.color=$(getcolor yellow)          
   icon.y_offset=1.5
-  label.font="$FONT:Semibold:8"
+  label.font="$FONT:Semibold:7"
+  label.padding_right=4
   y_offset=5                         
   width=0                            
   update_freq=60                     
@@ -17,11 +18,12 @@ date=(
 
 clock=(
   "${menu_defaults[@]}"
-  label.padding_left=8
+  label.padding_left=$PADDINGS
+  label.padding_right=4
   icon.drawing=off          
   label.color=$LABEL_COLOR
-  label.font="$FONT:Bold:10"
-  y_offset=-3            
+  label.font="$FONT:Bold:9"
+  y_offset=-2
   update_freq=10            
   popup.align=right
   script="$PLUGIN_DIR/nextevent.sh"

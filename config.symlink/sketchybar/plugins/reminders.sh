@@ -3,9 +3,8 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-COUNT=$(( $(reminders show-all --due-date today | grep -E "^[a-zA-Z &]+: \d{1,2}: " | wc -l) + 0 ))
-
 DRAWING="on"
+COUNT=$(( $(reminders show-all --due-date today | grep -E "^[a-zA-Z &]+: \d{1,2}: " | wc -l) + 0 ))
 
 case "$COUNT" in
 [7-9]|[1-9][0-9])
@@ -23,4 +22,4 @@ case "$COUNT" in
   ;;
 esac
 
-sketchybar --animate tanh 20 --set $NAME label.drawing=$DRAWING label=$COUNT icon.color=$COLOR
+sketchybar --animate tanh 20 --set $NAME drawing=$DRAWING label=$COUNT icon.color=$COLOR

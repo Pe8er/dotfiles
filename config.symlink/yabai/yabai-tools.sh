@@ -19,7 +19,7 @@ help() {
   echo "  float              - Float / unfloat active window"
   echo "  focus [NUM]        - Focus space [NUM]"
   echo "  maximize           - Make window full screen or move it back to grid"
-  echo "  mirror [x|y]       - Mirror layout along X or Y axis"
+  echo "  mirror             - Mirror layout along X or Y axis"
   echo "  move [NUM]         - Move active window to space [NUM]"
   echo "  resize [+|-]       - Increase / decrease active window size"
   echo "  swap               - Swap window positions"
@@ -164,8 +164,9 @@ maximize() {
 }
 
 mirror() {
-  echo "Mirroring windows along $1 axis…"
-  yabai -m space --mirror $1-axis
+  echo "Mirroring windows…"
+  yabai -m space --mirror x-axis
+  yabai -m space --mirror y-axis
 }
 
 move() {

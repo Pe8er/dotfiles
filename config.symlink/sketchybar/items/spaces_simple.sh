@@ -21,7 +21,7 @@ space_properties="[
   {
     \"icon\": \"$ICON_WEB\",
     \"label\": \"\",
-    \"color\": \"teal\"
+    \"color\": \"cyan\"
   },
   {
     \"icon\": \"$ICON_MAIL\",
@@ -36,12 +36,12 @@ space_properties="[
   {
     \"icon\": \"$ICON_TERM\",
     \"label\": \"\",
-    \"color\": \"cyan\"
+    \"color\": \"teal\"
   },
   {
     \"icon\": \"$ICON_MUSIC\",
     \"label\": \"\",
-    \"color\": \"green\"
+    \"color\": \"red\"
   },
   {
     \"icon\": \"$ICON_FIGMA\",
