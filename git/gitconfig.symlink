@@ -34,3 +34,5 @@
 	repo = /Users/pe8er/Developer/marlonrichert/zsh-autocomplete
 	repo = /Users/pe8er/Developer/zsh/znap
 	repo = /Users/pe8er/Developer/zsh/marlonrichert/zsh-autocomplete
+[core]
+	editor = nano

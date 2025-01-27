@@ -58,7 +58,6 @@ notification_defaults=(
 
 bracket_defaults=(
   background.color="$(getcolor black)"
-  # blur_radius=32
 )
 
 menu_defaults=(
