@@ -1,4 +1,5 @@
 #!/bin/bash
+
 source "$CONFIG_DIR/colors.sh"
 source "$CONFIG_DIR/icons.sh"
 
@@ -6,7 +7,7 @@ set_icon() {
   CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
   FRONT_APP_LABEL_COLOR="$(sketchybar --query space.$CURRENT_SID | jq -r ".label.highlight_color")"
   COLOR=$ICON_COLOR
-  WIDTH=28
+  # WIDTH=28
 
   WINDOW=$(yabai -m query --windows is-floating,split-type,has-fullscreen-zoom,is-sticky,stack-index --window)
   read -r FLOATING SPLIT FULLSCREEN STICKY STACK_INDEX <<<$(echo "$WINDOW" | jq -rc '.["is-floating", "split-type", "has-fullscreen-zoom", "is-sticky", "stack-index"]')
@@ -16,7 +17,7 @@ set_icon() {
     ICON=$ICON_YABAI_STACK
     LABEL="$(printf "%s/%s" "$STACK_INDEX" "$LAST_STACK_INDEX")"
     COLOR=$FRONT_APP_LABEL_COLOR
-    WIDTH="dynamic"
+    # WIDTH="dynamic"
   elif [[ $FLOATING == "true" ]]; then
     ICON=$ICON_YABAI_FLOAT
   elif [[ $FULLSCREEN == "true" ]]; then
@@ -29,7 +30,7 @@ set_icon() {
     ICON=$ICON_YABAI_GRID
   fi
 
-  args=(--bar border_color=$COLOR --animate tanh 10 --set $NAME icon=$ICON icon.color=$COLOR width=$WIDTH)
+  args=(--bar border_color=$COLOR --animate tanh 10 --set $NAME icon=$ICON icon.color=$COLOR)
 
   [ -z "$LABEL" ] && args+=(label.drawing=off) ||
     args+=(label.drawing=on label="$LABEL" label.color=$COLOR)

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 render_item() {
   sketchybar --set $NAME label="$(date "+%I:%M %p")" \

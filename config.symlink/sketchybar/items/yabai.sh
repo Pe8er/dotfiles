@@ -2,10 +2,8 @@
 
 yabai=(
   icon=$ICON_YABAI_GRID
-  label.drawing=off
-  width=28
+  icon.padding_right=$PADDINGS
   script="$PLUGIN_DIR/yabai.sh"
-  label.padding_right=$PADDINGS
 )
 
 # Allows my shortcut / workflow in Alfred to trigger things in Sketchybar
@@ -14,6 +12,7 @@ sketchybar --add event update_yabai_icon
 
 sketchybar --add item yabai left                   \
            --set yabai "${yabai[@]}"               \
+           --set yabai "${bracket_defaults[@]}"    \
            --subscribe yabai space_change          \
                              mouse.scrolled.global \
                              mouse.clicked         \
