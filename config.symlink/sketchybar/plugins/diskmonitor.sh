@@ -49,8 +49,8 @@ update() {
     ;;
   esac
 
-  sketchybar --set $NAME icon=$ICON icon.color=$COLOR
-  sketchybar --set $NAME.value label="$PERCENTAGE%"
+  sketchybar --set $NAME icon=$ICON icon.color=$COLOR \
+             --set $NAME.value label="$PERCENTAGE%"
 }
 
 label_toggle() {
@@ -62,8 +62,10 @@ label_toggle() {
     DRAWING="off"
     PADDING="0"
   else
-    DRAWING="on"
-    PADDING="30"
+    if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
+      DRAWING="on"
+      PADDING="30"
+    fi
   fi
 
   sketchybar --set $NAME.value label.drawing=$DRAWING \

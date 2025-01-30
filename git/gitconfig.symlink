@@ -36,3 +36,61 @@
 	repo = /Users/pe8er/Developer/zsh/marlonrichert/zsh-autocomplete
 [core]
 	editor = nano
+[color "status"]
+	branch = 6 normal
+	added = 10 normal
+	updated = 10 normal
+	localbranch = 6 normal
+	changed = 11 normal
+	header = normal
+	remotebranch = 5 normal
+	nobranch = 1 normal italic
+	unmerged = 9 normal
+	untracked = normal dim
+[color "branch"]
+	plain = 6 normal
+	remote = 5 normal
+	current = 6 normal reverse
+	local = 6 normal
+	upstream = 5 normal
+[color "remote"]
+	hint = normal dim
+	success = 2 normal
+	error = 1 normal
+	warning = 3 normal
+[color "interactive"]
+	header = normal dim bold
+	prompt = 15 4
+	help = normal dim
+	error = 1 normal italic
+[color "diff"]
+	commit = 3 normal
+	newMoved = 15 3
+	oldMovedAlternativeDimmed = 7 5 dim
+	frag = normal dim
+	oldMovedAlternative = 7 5
+	contextBold = normal bold
+	newBold = 15 2 bold
+	context = normal
+	oldMoved = 7 3
+	oldBold = 7 1 bold
+	newMovedDimmed = 15 3 dim
+	func = normal dim
+	meta = normal dim
+	newDimmed = 15 2 dim
+	newMovedAlternative = 15 5
+	new = 15 2
+	newMovedAlternativeDimmed = 15 5 dim
+	whitespace = normal 9
+	oldMovedDimmed = 7 3 dim
+	oldDimmed = 7 1 dim
+	old = 7 1
+[color "decorate"]
+	branch = 6 normal
+	tag = 3 normal
+	remotebranch = 5 normal
+	stash = normal dim
+	grafted = 1 normal italic
+	HEAD = 6 normal italic
+[diff]
+	colorMoved = zebra

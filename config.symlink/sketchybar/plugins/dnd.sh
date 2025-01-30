@@ -30,6 +30,7 @@ update_icon() {
       echo "$item $state" >>"$state_file"
       sketchybar --set "$item" drawing="off"
     done
+    open raycast://extensions/raycast/raycast-focus/start-focus-session
   else
     COLOR=$ICON_COLOR_INACTIVE
     while read -r item state; do
@@ -37,6 +38,7 @@ update_icon() {
         sketchybar --set "$item" drawing="on"
       fi
     done <"$state_file"
+    open raycast://extensions/raycast/raycast-focus/toggle-focus-session
   fi
 
   # echo $SENDER $DRAWINGSTATE
