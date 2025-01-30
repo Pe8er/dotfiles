@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
+
 WIDTH=100
 
 detail_on() {
@@ -30,7 +33,7 @@ toggle_devices() {
   CURRENT="$(SwitchAudioSource -t output -c)"
 
   while IFS= read -r device; do
-    COLOR=$WHITE
+    COLOR=$LABEL_COLOR
     ICON=􀆅
     ICON_COLOR=$TRANSPARENT
     

@@ -1,6 +1,7 @@
 #!/bin/bash
 # set -x
 
+
 # Tokyo Night: https://github.com/tokyo-night/tokyo-night-vscode-theme
 TOKYONIGHT=(
   blue "#7aa2f7"
@@ -34,6 +35,7 @@ DRACULA=(
   trueblack "#1c1c1c"
   white "#F8F8F2"
 )
+
 
 # Rose Pine https://rosepinetheme.com/palette/ingredients/
 ROSEPINE=(
@@ -86,8 +88,9 @@ CATPUCCIN=(
 #   white "#"
 # )
 
+COLORS=("${DRACULA[@]}")
+
 getcolor() {
-  COLORS=("${DRACULA[@]}")
   COLOR_NAME=$1
   OPACITY=$2
   local COLOR=""

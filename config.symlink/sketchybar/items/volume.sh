@@ -18,6 +18,7 @@ volume_icon=(
   icon=$ICON_VOLUME_100
   label.drawing=off
   icon.padding_right=1
+  popup.align=right
 )
 
 sketchybar --add slider volume right              \

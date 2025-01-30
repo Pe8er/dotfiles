@@ -6,22 +6,20 @@
 		https://github.com/marlonrichert/zsh-snap.git ~/Developer/zsh/znap
 		source ~/Developer/zsh/znap/znap.zsh
 
-####### Prompt #######
-znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/catppuccin_mocha.omp.json'
+####### Oh-my-posh Prompt #######
+znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/dracula.omp.json'
 
 ####### Settings #######
 zstyle ':znap:*' repos-dir '/Users/pe8er/Developer/zsh'
-source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
 source $HOME/.dotfiles/zsh/path.zsh
 
-####### Plugins #######
 
-znap source marlonrichert/zsh-autocomplete
 # Lazy load Python
 znap function _pyenv pyenv              'eval "$( pyenv init - --no-rehash )"'
 compctl -K    _pyenv pyenv
+
 # Adobe crack
 znap eval rlmenvset '/Users/Shared/rlm/rlmenvset.sh'
 
@@ -33,14 +31,27 @@ chruby ruby-3.3.5 # run chruby to see actual version
 #Brew??
 znap eval brew "$(brew shellenv)"
 
-####### zsh-autocomplete settings #######
+####### Plugins #######
 
+znap source zsh-users/zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4"
+# bindkey '^I' autosuggest-accept
+
+znap source marlonrichert/zsh-autocomplete
 # Override default for all listings
-# $LINES is the number of lines that fit on screen.
-zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
-
+# zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
 # Suggestion colors
-zstyle ':completion:*:descriptions' format '%F{yellow}%d%f'
-
+zstyle ':completion:*:*:descriptions' format $'\033[1;34m%d\033[0m'
 # Automatically show subfolders in current folder
-zstyle ':autocomplete:*' min-input 1
+zstyle ':autocomplete:*' min-input 0
+# This will make Autocomplete behave as if you pressed CtrlR at the start of each new command line:
+# zstyle ':autocomplete:*' default-context ''
+
+# zstyle ':autocomplete:*' insert-unambiguous yes
+# zstyle ':autocomplete:tab:*' insert-unambiguous yes
+zstyle ':autocomplete:*' widget-style menu-select
+zstyle ':completion:*:' tag-order '! ancestor-directories recent-directories recent-files' -
+
+znap source zsh-users/zsh-syntax-highlighting
+
+source $HOME/.dotfiles/zsh/aliases.zsh
