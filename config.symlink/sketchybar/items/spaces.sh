@@ -17,5 +17,5 @@ for SID in "${SPACES[@]}"; do
                    script="$PLUGIN_DIR/app_space.sh $SID" \
                    associated_space=$SID                  \
                    icon=$SID                              \
-             --subscribe space.$SID mouse.clicked front_app_switched space_change update_yabai_icon space_windows_change
+             --subscribe space.$SID mouse.clicked front_app_switched space_change space_windows_change
 done

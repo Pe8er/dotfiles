@@ -20,7 +20,9 @@ get_events() {
         eventTime=${eventItems[0]}
         if [ "$eventTime" '>' "$currentTime" ]; then
           theEvent="$anEvent"
-          DRAWING="on"
+          if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
+            DRAWING="on"
+          fi
           PADDING="12"
           break
         fi
@@ -45,7 +47,7 @@ popup() {
 }
 
 case "$SENDER" in
-"routine" | "forced")
+"routine" | "forced" | "focus_on" | "focus_off")
   update
   ;;
 "mouse.entered")

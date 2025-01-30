@@ -1,0 +1,115 @@
+name = "moonlight"
+author = "Mohamed Achaq"
+description = "A minimal theme with subtle blue-gray tones inspired by moonlit nights"
+
+[colors]
+file = "#C8D3E3"
+directory = "#E2E8F0"
+symlink = "#A9B8D2"
+executable = "#E2E8F0"
+
+size = "#7A8599"
+date = "#7A8599"
+user = "#A9B8D2"
+group = "#677387"
+
+permission_dir = "#E2E8F0"
+permission_read = "#C8D3E3"
+permission_write = "#B4C2D6"
+permission_exec = "#E2E8F0"
+permission_none = "#363B47"
+
+[special_files]
+[special_files.folders]
+"node_modules" = "#363B47"
+"target" = "#363B47"
+"dist" = "#363B47"
+".git" = "#E2E8F0"
+"build" = "#363B47"
+".cache" = "#363B47"
+"coverage" = "#363B47"
+"vendor" = "#363B47"
+
+"*-env" = "#E2E8F0"
+"venv" = "#E2E8F0"
+".env" = "#E2E8F0"
+"env" = "#E2E8F0"
+"*.d" = "#A9B8D2"
+
+"*_cache" = "#363B47"
+"*-cache" = "#363B47"
+".terraform" = "#363B47"
+
+[special_files.dotfiles]
+".gitignore" = "#A9B8D2"
+".env" = "#E2E8F0"
+".dockerignore" = "#A9B8D2"
+".editorconfig" = "#A9B8D2"
+".prettierrc" = "#A9B8D2"
+".eslintrc" = "#A9B8D2"
+".babelrc" = "#A9B8D2"
+".npmrc" = "#A9B8D2"
+".yarnrc" = "#A9B8D2"
+".zshrc" = "#A9B8D2"
+".bashrc" = "#A9B8D2"
+
+[special_files.exact_match]
+"Dockerfile" = "#A9B8D2"
+"docker-compose.yml" = "#A9B8D2"
+"Makefile" = "#E2E8F0"
+"CMakeLists.txt" = "#E2E8F0"
+
+"README.md" = "#E2E8F0"
+"LICENSE" = "#E2E8F0"
+"CHANGELOG.md" = "#E2E8F0"
+"CONTRIBUTING.md" = "#E2E8F0"
+
+"package.json" = "#E2E8F0"
+"package-lock.json" = "#363B47"
+"yarn.lock" = "#363B47"
+"Cargo.toml" = "#E2E8F0"
+"Cargo.lock" = "#363B47"
+"composer.json" = "#E2E8F0"
+"go.mod" = "#A9B8D2"
+"go.sum" = "#363B47"
+
+[special_files.patterns]
+"*rc" = "#A9B8D2"
+"*.config.*" = "#A9B8D2"
+"*.conf" = "#A9B8D2"
+
+"*.min.*" = "#363B47"
+"*.map" = "#363B47"
+"*.lock" = "#363B47"
+
+"*.test.*" = "#E2E8F0"
+"*.spec.*" = "#E2E8F0"
+"*_test.*" = "#E2E8F0"
+"*_spec.*" = "#E2E8F0"
+
+[extensions.groups]
+source = ["rs", "py", "js", "ts", "java", "c", "cpp", "go", "rb", "php", "swift", "kt"]
+config = ["json", "yml", "yaml", "toml", "ini", "conf"]
+doc = ["md", "txt", "pdf", "doc", "docx", "rtf"]
+web = ["html", "css", "scss", "sass"]
+script = ["sh", "bash", "zsh", "fish"]
+data = ["csv", "sql", "db"]
+media = ["jpg", "png", "gif", "mp3", "mp4"]
+archive = ["zip", "tar", "gz", "7z"]
+
+[extensions.colors]
+source = "#C8D3E3"
+config = "#C8D3E3"
+doc = "#C8D3E3"
+web = "#C8D3E3"
+script = "#C8D3E3"
+data = "#C8D3E3"
+media = "#C8D3E3"
+archive = "#C8D3E3"
+
+rs = "#E2E8F0"
+py = "#E2E8F0"
+js = "#E2E8F0"
+ts = "#E2E8F0"
+go = "#E2E8F0"
+java = "#E2E8F0"

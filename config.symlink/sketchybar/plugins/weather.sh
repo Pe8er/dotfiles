@@ -106,14 +106,20 @@ WEATHER_ICONS_NIGHT=(
 )
 
 render_items() {
-  if [ "$TEMP" = "" ]; then
-    args=(--set $NAME icon="􀌏" label.drawing=off click_script="sketchybar --update")
+  if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
+    DRAWING="on"
   else
-    args=(--set $NAME icon="$ICON" icon.color=$AQI_COLOR icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°" label.drawing=on click_script="sketchybar --set weather popup.drawing=toggle")
+    DRAWING="off"
+  fi
+
+  if [ "$TEMP" = "" ]; then
+    args=(--set $NAME drawing=$DRAWING icon="􀌏" label.drawing=off click_script="sketchybar --update")
+  else
+    args=(--set $NAME drawing=$DRAWING icon="$ICON" icon.color=$AQI_COLOR icon.font="Hack Nerd Font:Bold:14.0" label="${TEMP}°" label.drawing=on click_script="sketchybar --set weather popup.drawing=toggle")
   fi
 
   if [[ $AQI_NUMBER -gt 100 ]]; then
-    args+=(--set aqi background.color=$AQI_COLOR label=$AQI_NUMBER drawing=on)
+    args+=(--set aqi background.color=$AQI_COLOR label=$AQI_NUMBER drawing=$DRAWING)
   else
     args+=(--set aqi drawing=off)
   fi

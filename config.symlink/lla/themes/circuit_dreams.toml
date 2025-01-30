@@ -1,0 +1,116 @@
+name = "circuit_dreams"
+author = "Mohamed Achaq"
+description = "A theme inspired by vintage circuit boards and electronic components, featuring copper traces, solder joints, and LED indicators"
+
+[colors]
+file = "#FFD484"
+directory = "#4AE0B8"
+symlink = "#73DFFF"
+executable = "#FF6B97"
+size = "#958993"
+date = "#958993"
+user = "#B79CFF"
+group = "#6B6B6B"
+permission_dir = "#4AE0B8"
+permission_read = "#73DFFF"
+permission_write = "#FFD484"
+permission_exec = "#FF6B97"
+permission_none = "#1F2433"
+
+[special_files]
+[special_files.folders]
+"node_modules" = { h = 0, s = 0, l = 0.15 }
+"target" = "#1F2433"
+"dist" = "#1F2433"
+".git" = "#4AE0B8"
+"build" = "#1F2433"
+".cache" = "#1F2433"
+"coverage" = "#1F2433"
+"vendor" = "#1F2433"
+"*-env" = "#FF6B97"
+"venv" = "#FF6B97"
+".env" = "#FF6B97"
+"env" = "#FF6B97"
+"*.d" = "#73DFFF"
+"*_cache" = "#1F2433"
+"*-cache" = "#1F2433"
+".terraform" = "#1F2433"
+
+[special_files.dotfiles]
+".gitignore" = "#73DFFF"
+".env" = "#FF6B97"
+".dockerignore" = "#73DFFF"
+".editorconfig" = "#73DFFF"
+".prettierrc" = "#73DFFF"
+".eslintrc" = "#73DFFF"
+".babelrc" = "#73DFFF"
+".npmrc" = "#73DFFF"
+".yarnrc" = "#73DFFF"
+".zshrc" = "#73DFFF"
+".bashrc" = "#73DFFF"
+
+[special_files.exact_match]
+"Dockerfile" = "#73DFFF"
+"docker-compose.yml" = "#73DFFF"
+"Makefile" = "#FF6B97"
+"CMakeLists.txt" = "#FF6B97"
+"README.md" = "#4AE0B8"
+"LICENSE" = "#4AE0B8"
+"CHANGELOG.md" = "#4AE0B8"
+"CONTRIBUTING.md" = "#4AE0B8"
+"package.json" = "#4AE0B8"
+"package-lock.json" = "#1F2433"
+"yarn.lock" = "#1F2433"
+"Cargo.toml" = "#FF6B97"
+"Cargo.lock" = "#1F2433"
+"composer.json" = "#4AE0B8"
+"go.mod" = "#73DFFF"
+"go.sum" = "#1F2433"
+
+[special_files.patterns]
+"*rc" = "#73DFFF"
+"*.config.*" = "#73DFFF"
+"*.conf" = "#73DFFF"
+"*.min.*" = "#1F2433"
+"*.map" = "#1F2433"
+"*.lock" = "#1F2433"
+"*.test.*" = "#FF6B97"
+"*.spec.*" = "#FF6B97"
+"*_test.*" = "#FF6B97"
+"*_spec.*" = "#FF6B97"
+
+[extensions.groups]
+logic = ["rs", "cpp", "c", "h", "hpp"]
+compute = ["py", "java", "go", "rb", "php"]
+web = ["js", "ts", "jsx", "tsx"]
+markup = ["html", "xml", "svg", "vue"]
+style = ["css", "scss", "sass", "less"]
+config = ["json", "yaml", "toml", "ini"]
+shell = ["sh", "bash", "zsh", "fish"]
+docs = ["md", "txt", "pdf", "doc"]
+data = ["csv", "sql", "db", "sqlite"]
+media = ["png", "jpg", "mp3", "mp4"]
+archive = ["zip", "tar", "gz", "7z"]
+
+[extensions.colors]
+logic = "#FF6B97"
+compute = "#4AE0B8"
+web = "#FFD484"
+markup = "#B79CFF"
+style = "#73DFFF"
+config = "#4AE0B8"
+shell = "#FF6B97"
+docs = "#FFD484"
+data = "#73DFFF"
+media = "#B79CFF"
+archive = "#FF6B97"
+rs = "#FF6B97"
+cpp = "#FF6B97"
+py = "#4AE0B8"
+js = "#FFD484"
+ts = "#FFD484"
+go = "#4AE0B8"
+html = "#B79CFF"
+css = "#73DFFF"
+md = "#FFD484"
+sql = "#73DFFF"

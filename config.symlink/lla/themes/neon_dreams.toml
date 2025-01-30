@@ -1,0 +1,183 @@
+name = "neon_dreams"
+author = "Mohamed Achaq"
+description = "A vibrant cyberpunk theme featuring electric neons and digital gradients, perfect for those who dream in RGB"
+
+[colors]
+file = "#E0FFFF"
+directory = "#00FFBD"
+symlink = "#00AAFF"
+executable = "#FF3366"
+
+size = "#607D8B"
+date = "#607D8B"
+user = "#FF00FF"
+group = "#455A64"
+
+permission_dir = "#00FFBD"
+permission_read = "#FF3366"
+permission_write = "#FFFF00"
+permission_exec = "#FF00FF"
+permission_none = "#1A1B26"
+
+[special_files]
+[special_files.folders]
+"node_modules" = "#1A1B26"
+"target" = "#1A1B26"
+"dist" = "#1A1B26"
+".git" = "#00FFBD"
+"build" = "#1A1B26"
+".cache" = "#1A1B26"
+"coverage" = "#1A1B26"
+"vendor" = "#1A1B26"
+
+"*-env" = "#FF3366"
+"venv" = "#FF3366"
+".env" = "#FF3366"
+"env" = "#FF3366"
+"*.d" = "#00AAFF"
+
+"*_cache" = "#1A1B26"
+"*-cache" = "#1A1B26"
+".terraform" = "#1A1B26"
+
+[special_files.dotfiles]
+".gitignore" = "#00AAFF"
+".env" = "#FF3366"
+".dockerignore" = "#00AAFF"
+".editorconfig" = "#00AAFF"
+".prettierrc" = "#00AAFF"
+".eslintrc" = "#00AAFF"
+".babelrc" = "#00AAFF"
+".npmrc" = "#00AAFF"
+".yarnrc" = "#00AAFF"
+".zshrc" = "#00AAFF"
+".bashrc" = "#00AAFF"
+
+[special_files.exact_match]
+"Dockerfile" = "#00AAFF"
+"docker-compose.yml" = "#00AAFF"
+"Makefile" = "#FF3366"
+"CMakeLists.txt" = "#FF3366"
+
+"README.md" = "#00FFBD"
+"LICENSE" = "#00FFBD"
+"CHANGELOG.md" = "#00FFBD"
+"CONTRIBUTING.md" = "#00FFBD"
+
+"package.json" = "#00FFBD"
+"package-lock.json" = "#1A1B26"
+"yarn.lock" = "#1A1B26"
+"Cargo.toml" = "#FF3366"
+"Cargo.lock" = "#1A1B26"
+"composer.json" = "#00FFBD"
+"go.mod" = "#00AAFF"
+"go.sum" = "#1A1B26"
+
+"tsconfig.json" = "#00AAFF"
+"webpack.config.js" = "#00AAFF"
+"vite.config.ts" = "#00AAFF"
+"next.config.js" = "#00AAFF"
+"nuxt.config.js" = "#00AAFF"
+"svelte.config.js" = "#00AAFF"
+
+"flake.nix" = "#00FFBD"
+"flake.lock" = "#1A1B26"
+"shell.nix" = "#00FFBD"
+"default.nix" = "#00FFBD"
+
+[special_files.patterns]
+"*rc" = "#00AAFF"
+"*.config.*" = "#00AAFF"
+"*.conf" = "#00AAFF"
+
+"*.min.*" = "#1A1B26"
+"*.map" = "#1A1B26"
+"*.lock" = "#1A1B26"
+
+"*.test.*" = "#FF3366"
+"*.spec.*" = "#FF3366"
+"*_test.*" = "#FF3366"
+"*_spec.*" = "#FF3366"
+
+[extensions.groups]
+rust = ["rs", "toml"]
+python = ["py", "pyi", "pyw", "ipynb"]
+javascript = ["js", "mjs", "cjs", "jsx"]
+typescript = ["ts", "tsx", "d.ts"]
+java = ["java", "jar", "class"]
+csharp = ["cs", "csx"]
+cpp = ["cpp", "cc", "cxx", "c++", "hpp", "hxx", "h++", "h", "c"]
+go = ["go", "mod", "sum"]
+ruby = ["rb", "erb", "gemspec"]
+php = ["php", "phtml", "php.inc"]
+swift = ["swift"]
+kotlin = ["kt", "kts"]
+elixir = ["ex", "exs"]
+haskell = ["hs", "lhs"]
+lua = ["lua"]
+nix = ["nix"]
+
+markup = ["html", "htm", "xhtml", "xml", "svg", "vue", "wasm", "ejs", "jsx", "tsx"]
+style = ["css", "scss", "sass", "less", "styl"]
+web_config = ["json", "json5", "yaml", "yml", "toml", "ini", "conf"]
+
+shell = ["sh", "bash", "zsh", "fish", "ps1", "psm1", "psd1"]
+script = ["pl", "pm", "t", "tcl", "lua", "vim", "vimrc", "r"]
+
+doc = ["md", "rst", "txt", "org", "wiki", "adoc", "tex", "pdf", "epub", "doc", "docx", "rtf"]
+
+image = ["png", "jpg", "jpeg", "gif", "bmp", "tiff", "webp", "ico", "heic", "raw", "cr2", "nef"]
+video = ["mp4", "webm", "mov", "avi", "mkv", "flv", "wmv", "m4v", "3gp"]
+audio = ["mp3", "wav", "ogg", "m4a", "flac", "aac", "wma", "midi"]
+
+data = ["csv", "tsv", "sql", "sqlite", "db", "json", "xml", "yaml", "yml"]
+archive = ["zip", "tar", "gz", "bz2", "xz", "7z", "rar", "iso", "dmg"]
+
+[extensions.colors]
+rust = "#FF3366"
+python = "#00FFBD"
+javascript = "#FFFF00"
+typescript = "#00AAFF"
+java = "#FF3366"
+csharp = "#00FFBD"
+cpp = "#FF3366"
+go = "#00AAFF"
+ruby = "#FF3366"
+php = "#00FFBD"
+swift = "#FF3366"
+kotlin = "#00FFBD"
+elixir = "#FF00FF"
+haskell = "#00AAFF"
+lua = "#00FFBD"
+nix = "#00AAFF"
+
+markup = "#FF00FF"
+style = "#00FFBD"
+web_config = "#00FFBD"
+
+shell = "#00FFBD"
+script = "#00FFBD"
+
+doc = "#E0FFFF"
+image = "#FF1A75"
+video = "#FF1A75"
+audio = "#FF1A75"
+
+data = "#00FFBD"
+archive = "#FF3366"
+
+rs = "#FF3366"
+py = "#00FFBD"
+js = "#FFFF00"
+ts = "#00AAFF"
+jsx = "#FFFF00"
+tsx = "#00AAFF"
+vue = "#00FFBD"
+css = "#00FFBD"
+scss = "#00FFBD"
+html = "#FF00FF"
+md = "#E0FFFF"
+json = "#00FFBD"
+yaml = "#00FFBD"
+toml = "#00FFBD"
+sql = "#00AAFF"

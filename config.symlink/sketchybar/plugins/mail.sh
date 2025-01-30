@@ -3,7 +3,9 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-DRAWING="on"
+if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
+  DRAWING="on"
+fi
 
 COUNT=$(lsappinfo info -only StatusLabel "Mail" | grep -o '"label"="[0-9]*"' | awk -F'"' '{print $4}')
 

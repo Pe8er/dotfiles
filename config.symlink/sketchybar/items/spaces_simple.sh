@@ -68,5 +68,5 @@ for (( SID=1; SID<=SPACE_COUNT; SID++ )); do
                    icon.highlight_color=$SPACE_COLOR                             \
                    label.highlight_color=$SPACE_COLOR                            \
                    script="$PLUGIN_DIR/app_space_simple.sh $SID $SPACE_COLOR"    \
-             --subscribe space.$SID mouse.clicked space_change update_yabai_icon front_app_switched
+             --subscribe space.$SID mouse.clicked space_change front_app_switched
 done

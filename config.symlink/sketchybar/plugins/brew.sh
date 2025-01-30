@@ -4,7 +4,9 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 update_label() {
-  DRAWING="on"
+  if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
+    DRAWING="on"
+  fi
   COUNT=$(brew outdated | wc -l | tr -d ' ')
 
   case "$COUNT" in
