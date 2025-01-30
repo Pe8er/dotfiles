@@ -7,14 +7,10 @@
 		source ~/Developer/zsh/znap/znap.zsh
 
 ####### Prompt #######
-
 znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/catppuccin_mocha.omp.json'
-znap prompt
-
-# zstyle ':znap:*' repos-dir '/Users/Developer/znap/'
 
 ####### Settings #######
-
+zstyle ':znap:*' repos-dir '/Users/pe8er/Developer/zsh'
 source $HOME/.dotfiles/zsh/aliases.zsh
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
@@ -39,20 +35,12 @@ znap eval brew "$(brew shellenv)"
 
 ####### zsh-autocomplete settings #######
 
-# Autocompletion
-zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 20 )) )'
-
-# Override history search
-zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 20
-
-# History menu
-zstyle ':autocomplete:history-search-backward:*' list-lines 20
+# Override default for all listings
+# $LINES is the number of lines that fit on screen.
+zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
 
 # Suggestion colors
 zstyle ':completion:*:descriptions' format '%F{yellow}%d%f'
 
 # Automatically show subfolders in current folder
-# zstyle ':autocomplete:*' min-input 0
-# Created by `pipx` on 2024-11-01 18:00:38
-
-chruby ruby-3.3.5 # run chruby to see actual version
+zstyle ':autocomplete:*' min-input 1

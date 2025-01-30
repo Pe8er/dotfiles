@@ -1,0 +1,183 @@
+name = "cosmic_night"
+author = "Mohamed Achaq"
+description = "A sophisticated dark theme with cosmic-inspired colors, featuring deep space blues and nebula accents for comfortable viewing"
+
+[colors]
+file = "#C9D4FF"
+directory = "#7B93DB"
+symlink = "#84CAFF"
+executable = "#95F2D9"
+
+size = "#8B8FA3"
+date = "#8B8FA3"
+user = "#B488D9"
+group = "#6D7185"
+
+permission_dir = "#7B93DB"
+permission_read = "#95F2D9"
+permission_write = "#FFD479"
+permission_exec = "#FF9CAC"
+permission_none = "#3D3F4D"
+
+[special_files]
+[special_files.folders]
+"node_modules" = "#3D3F4D"
+"target" = "#3D3F4D"
+"dist" = "#3D3F4D"
+".git" = "#7B93DB"
+"build" = "#3D3F4D"
+".cache" = "#3D3F4D"
+"coverage" = "#3D3F4D"
+"vendor" = "#3D3F4D"
+
+"*-env" = "#95F2D9"
+"venv" = "#95F2D9"
+".env" = "#95F2D9"
+"env" = "#95F2D9"
+"*.d" = "#84CAFF"
+
+"*_cache" = "#3D3F4D"
+"*-cache" = "#3D3F4D"
+".terraform" = "#3D3F4D"
+
+[special_files.dotfiles]
+".gitignore" = "#84CAFF"
+".env" = "#95F2D9"
+".dockerignore" = "#84CAFF"
+".editorconfig" = "#84CAFF"
+".prettierrc" = "#84CAFF"
+".eslintrc" = "#84CAFF"
+".babelrc" = "#84CAFF"
+".npmrc" = "#84CAFF"
+".yarnrc" = "#84CAFF"
+".zshrc" = "#84CAFF"
+".bashrc" = "#84CAFF"
+
+[special_files.exact_match]
+"Dockerfile" = "#84CAFF"
+"docker-compose.yml" = "#84CAFF"
+"Makefile" = "#FF9CAC"
+"CMakeLists.txt" = "#FF9CAC"
+
+"README.md" = "#7B93DB"
+"LICENSE" = "#7B93DB"
+"CHANGELOG.md" = "#7B93DB"
+"CONTRIBUTING.md" = "#7B93DB"
+
+"package.json" = "#7B93DB"
+"package-lock.json" = "#3D3F4D"
+"yarn.lock" = "#3D3F4D"
+"Cargo.toml" = "#FF9CAC"
+"Cargo.lock" = "#3D3F4D"
+"composer.json" = "#7B93DB"
+"go.mod" = "#84CAFF"
+"go.sum" = "#3D3F4D"
+
+"tsconfig.json" = "#84CAFF"
+"webpack.config.js" = "#84CAFF"
+"vite.config.ts" = "#84CAFF"
+"next.config.js" = "#84CAFF"
+"nuxt.config.js" = "#84CAFF"
+"svelte.config.js" = "#84CAFF"
+
+"flake.nix" = "#7B93DB"
+"flake.lock" = "#3D3F4D"
+"shell.nix" = "#7B93DB"
+"default.nix" = "#7B93DB"
+
+[special_files.patterns]
+"*rc" = "#84CAFF"
+"*.config.*" = "#84CAFF"
+"*.conf" = "#84CAFF"
+
+"*.min.*" = "#3D3F4D"
+"*.map" = "#3D3F4D"
+"*.lock" = "#3D3F4D"
+
+"*.test.*" = "#95F2D9"
+"*.spec.*" = "#95F2D9"
+"*_test.*" = "#95F2D9"
+"*_spec.*" = "#95F2D9"
+
+[extensions.groups]
+rust = ["rs", "toml"]
+python = ["py", "pyi", "pyw", "ipynb"]
+javascript = ["js", "mjs", "cjs", "jsx"]
+typescript = ["ts", "tsx", "d.ts"]
+java = ["java", "jar", "class"]
+csharp = ["cs", "csx"]
+cpp = ["cpp", "cc", "cxx", "c++", "hpp", "hxx", "h++", "h", "c"]
+go = ["go", "mod", "sum"]
+ruby = ["rb", "erb", "gemspec"]
+php = ["php", "phtml", "php.inc"]
+swift = ["swift"]
+kotlin = ["kt", "kts"]
+elixir = ["ex", "exs"]
+haskell = ["hs", "lhs"]
+lua = ["lua"]
+nix = ["nix"]
+
+markup = ["html", "htm", "xhtml", "xml", "svg", "vue", "wasm", "ejs", "jsx", "tsx"]
+style = ["css", "scss", "sass", "less", "styl"]
+web_config = ["json", "json5", "yaml", "yml", "toml", "ini", "conf"]
+
+shell = ["sh", "bash", "zsh", "fish", "ps1", "psm1", "psd1"]
+script = ["pl", "pm", "t", "tcl", "lua", "vim", "vimrc", "r"]
+
+doc = ["md", "rst", "txt", "org", "wiki", "adoc", "tex", "pdf", "epub", "doc", "docx", "rtf"]
+
+image = ["png", "jpg", "jpeg", "gif", "bmp", "tiff", "webp", "ico", "heic", "raw", "cr2", "nef"]
+video = ["mp4", "webm", "mov", "avi", "mkv", "flv", "wmv", "m4v", "3gp"]
+audio = ["mp3", "wav", "ogg", "m4a", "flac", "aac", "wma", "midi"]
+
+data = ["csv", "tsv", "sql", "sqlite", "db", "json", "xml", "yaml", "yml"]
+archive = ["zip", "tar", "gz", "bz2", "xz", "7z", "rar", "iso", "dmg"]
+
+[extensions.colors]
+rust = "#FF9CAC"
+python = "#95F2D9"
+javascript = "#FFD479"
+typescript = "#84CAFF"
+java = "#FF9CAC"
+csharp = "#95F2D9"
+cpp = "#FF9CAC"
+go = "#84CAFF"
+ruby = "#FF9CAC"
+php = "#95F2D9"
+swift = "#FF9CAC"
+kotlin = "#95F2D9"
+elixir = "#B488D9"
+haskell = "#84CAFF"
+lua = "#7B93DB"
+nix = "#84CAFF"
+
+markup = "#B488D9"
+style = "#95F2D9"
+web_config = "#7B93DB"
+
+shell = "#95F2D9"
+script = "#7B93DB"
+
+doc = "#C9D4FF"
+image = "#FFB07B"
+video = "#FFB07B"
+audio = "#FFB07B"
+
+data = "#7B93DB"
+archive = "#FF9CAC"
+
+rs = "#FF9CAC"
+py = "#95F2D9"
+js = "#FFD479"
+ts = "#84CAFF"
+jsx = "#FFD479"
+tsx = "#84CAFF"
+vue = "#95F2D9"
+css = "#95F2D9"
+scss = "#95F2D9"
+html = "#B488D9"
+md = "#C9D4FF"
+json = "#7B93DB"
+yaml = "#7B93DB"
+toml = "#7B93DB"
+sql = "#84CAFF"

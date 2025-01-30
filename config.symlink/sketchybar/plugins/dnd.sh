@@ -13,7 +13,34 @@ check_state() {
 }
 
 update_icon() {
-  [ "$SENDER" = "focus_off" ] && COLOR=$ICON_COLOR_INACTIVE || COLOR=$ICON_COLOR
+  local items=("weather" "aqi" "reminders" "messages" "brew" "mail" "diskmonitor" "volume_icon" "volume" "wifi" "notifications")
+  local currentSpace=$(yabai -m query --spaces index --space | jq -r '.index')
+      for i in {1..7}; do
+        if [ "$i" -ne "$currentSpace" ]; then
+            items+=("space.$i")
+        fi
+    done
+  local state_file="/tmp/sketchybar_state"
+  echo $SENDER >/tmp/sketchybar_sender
+  if [ "$SENDER" = "focus_on" ]; then
+    COLOR=$ICON_COLOR
+    mv "$state_file" "$state_file.bak" 2>/dev/null || true # Backup old state file if it exists
+    for item in "${items[@]}"; do
+      state=$(sketchybar --query "$item" | jq -r ".geometry.drawing")
+      echo "$item $state" >>"$state_file"
+      sketchybar --set "$item" drawing="off"
+    done
+  else
+    COLOR=$ICON_COLOR_INACTIVE
+    while read -r item state; do
+      if [ "$state" = "on" ]; then
+        sketchybar --set "$item" drawing="on"
+      fi
+    done <"$state_file"
+  fi
+
+  # echo $SENDER $DRAWINGSTATE
+
   sketchybar --set $NAME icon.color=$COLOR
 }
 

@@ -1,0 +1,115 @@
+name = "zen"
+author = "Mohamed Achaq"
+description = "A minimal monochromatic theme emphasizing simplicity and clarity through subtle shades"
+
+[colors]
+file = "#D4D4D4"
+directory = "#FFFFFF"
+symlink = "#A8A8A8"
+executable = "#FFFFFF"
+
+size = "#808080"
+date = "#808080"
+user = "#A8A8A8"
+group = "#707070"
+
+permission_dir = "#FFFFFF"
+permission_read = "#D4D4D4"
+permission_write = "#BEBEBE"
+permission_exec = "#FFFFFF"
+permission_none = "#404040"
+
+[special_files]
+[special_files.folders]
+"node_modules" = "#404040"
+"target" = "#404040"
+"dist" = "#404040"
+".git" = "#FFFFFF"
+"build" = "#404040"
+".cache" = "#404040"
+"coverage" = "#404040"
+"vendor" = "#404040"
+
+"*-env" = "#FFFFFF"
+"venv" = "#FFFFFF"
+".env" = "#FFFFFF"
+"env" = "#FFFFFF"
+"*.d" = "#A8A8A8"
+
+"*_cache" = "#404040"
+"*-cache" = "#404040"
+".terraform" = "#404040"
+
+[special_files.dotfiles]
+".gitignore" = "#A8A8A8"
+".env" = "#FFFFFF"
+".dockerignore" = "#A8A8A8"
+".editorconfig" = "#A8A8A8"
+".prettierrc" = "#A8A8A8"
+".eslintrc" = "#A8A8A8"
+".babelrc" = "#A8A8A8"
+".npmrc" = "#A8A8A8"
+".yarnrc" = "#A8A8A8"
+".zshrc" = "#A8A8A8"
+".bashrc" = "#A8A8A8"
+
+[special_files.exact_match]
+"Dockerfile" = "#A8A8A8"
+"docker-compose.yml" = "#A8A8A8"
+"Makefile" = "#FFFFFF"
+"CMakeLists.txt" = "#FFFFFF"
+
+"README.md" = "#FFFFFF"
+"LICENSE" = "#FFFFFF"
+"CHANGELOG.md" = "#FFFFFF"
+"CONTRIBUTING.md" = "#FFFFFF"
+
+"package.json" = "#FFFFFF"
+"package-lock.json" = "#404040"
+"yarn.lock" = "#404040"
+"Cargo.toml" = "#FFFFFF"
+"Cargo.lock" = "#404040"
+"composer.json" = "#FFFFFF"
+"go.mod" = "#A8A8A8"
+"go.sum" = "#404040"
+
+[special_files.patterns]
+"*rc" = "#A8A8A8"
+"*.config.*" = "#A8A8A8"
+"*.conf" = "#A8A8A8"
+
+"*.min.*" = "#404040"
+"*.map" = "#404040"
+"*.lock" = "#404040"
+
+"*.test.*" = "#FFFFFF"
+"*.spec.*" = "#FFFFFF"
+"*_test.*" = "#FFFFFF"
+"*_spec.*" = "#FFFFFF"
+
+[extensions.groups]
+code = ["rs", "py", "js", "ts", "java", "c", "cpp", "go", "rb", "php", "swift", "kt"]
+markup = ["html", "xml", "md", "yml", "json", "toml"]
+style = ["css", "scss", "sass", "less"]
+shell = ["sh", "bash", "zsh", "fish"]
+data = ["csv", "sql", "sqlite", "db"]
+doc = ["txt", "pdf", "doc", "docx", "rtf"]
+media = ["jpg", "png", "gif", "mp3", "mp4", "wav"]
+archive = ["zip", "tar", "gz", "7z"]
+
+[extensions.colors]
+code = "#D4D4D4"
+markup = "#D4D4D4"
+style = "#D4D4D4"
+shell = "#D4D4D4"
+data = "#D4D4D4"
+doc = "#D4D4D4"
+media = "#D4D4D4"
+archive = "#D4D4D4"
+
+rs = "#FFFFFF"
+py = "#FFFFFF"
+js = "#FFFFFF"
+ts = "#FFFFFF"
+go = "#FFFFFF"
+java = "#FFFFFF"
