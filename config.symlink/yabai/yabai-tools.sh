@@ -17,7 +17,8 @@ help() {
   echo "  balance            - Balance windows on current space"
   echo "  cycle              - Cycle through windows"
   echo "  float              - Float / unfloat active window"
-  echo "  focus [NUM]        - Focus space [NUM]"
+  echo "  focusSpace [NUM]   - Focus space [NUM]"
+  echo "  focusWin [DIR]     - Focus window North | East | South | West"
   echo "  maximize           - Make window full screen or move it back to grid"
   echo "  mirror             - Mirror layout along X or Y axis"
   echo "  move [NUM]         - Move active window to space [NUM]"
@@ -91,7 +92,7 @@ arrange() {
   "bottomright")
     destination="2:2:1:1:1:1"
     ;;
-  "center"|"")
+  "center" | "")
     destination="5:5:1:1:3:3"
     ;;
   esac
@@ -103,17 +104,17 @@ arrange() {
 }
 
 balance() {
-  echo "Balancing windows..."
+  echo "Balancing windows"
   yabai -m space --balance
 }
 
 cycle() {
-  echo "Cycling through windows on current space..."
-  yabai -m query --spaces index --space \
-  | jq -re ".index" \
-  | xargs -I{} yabai -m query --windows --space {} \
-  | jq -sre 'add | map(select(."is-minimized"==false)) | sort_by(.display, .frame.y, .frame.x, .id) | . as $array | length as $array_length | index(map(select(."has-focus"==true))) as $has_index | if $has_index > 0 then nth($has_index - 1).id else nth($array_length - 1).id end' \
-  | xargs -I{} yabai -m window --focus {}
+  echo "Cycling through windows on current space"
+  yabai -m query --spaces index --space |
+    jq -re ".index" |
+    xargs -I{} yabai -m query --windows --space {} |
+    jq -sre 'add | map(select(."is-minimized"==false)) | sort_by(.display, .frame.y, .frame.x, .id) | . as $array | length as $array_length | index(map(select(."has-focus"==true))) as $has_index | if $has_index > 0 then nth($has_index - 1).id else nth($array_length - 1).id end' |
+    xargs -I{} yabai -m window --focus {}
 
   updateSketchybar
 }
@@ -140,10 +141,14 @@ float() {
   updateSketchybar
 }
 
-focus() {
+focusSpace() {
   yabai -m space --focus $1
 
   echo "Welcome to Space $1!"
+}
+
+focusWin() {
+  yabai -m window --focus $1 > /dev/null
 }
 
 maximize() {
@@ -164,7 +169,7 @@ maximize() {
 }
 
 mirror() {
-  echo "Mirroring windows…"
+  echo "Mirroring windows"
   yabai -m space --mirror x-axis
   yabai -m space --mirror y-axis
 }
@@ -205,7 +210,7 @@ resize() {
 }
 
 swap() {
-  echo "Swapping window positions…"
+  echo "Swapping window positions"
   window=$(yabai -m query --windows id --window last | jq '.id')
 
   while :; do
@@ -219,20 +224,18 @@ swap() {
 }
 
 toggleSplit() {
-  echo "Toggling horizontal / vertical split…"
+  echo "Toggling horizontal / vertical split"
   yabai -m window --toggle split
 
   updateSketchybar
 }
 
 toggleLayout() {
-  echo "Toggling stack and bsp layouts…"
-  sketchybar --trigger alfred_trigger
-  sleep 0.5
-  layout=$(yabai -m query --spaces type --space | jq -r .type)
-  echo "Layout changed to $layout"
-  sleep 0.5
-
+  echo "Toggling stack and bsp layouts"
+  currentLayout=$(yabai -m query --spaces type --space | jq -r .type)
+  [[ $currentLayout == "bsp" ]] && setToLayout="stack" || setToLayout="bsp"
+  yabai -m space --layout $setToLayout
+  echo "Layout changed to $setToLayout"
   updateSketchybar
 }
 

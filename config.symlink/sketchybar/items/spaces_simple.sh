@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Load global styles, colors and icons
-source "$CONFIG_DIR/globalstyles.sh"
-
 # Default styles
 spaces=(
   ignore_association=on
@@ -27,11 +24,6 @@ space_properties="[
     \"icon\": \"$ICON_MAIL\",
     \"label\": \"\",
     \"color\": \"orange\"
-  },
-  {
-    \"icon\": \"$ICON_REMINDERS\",
-    \"label\": \"\",
-    \"color\": \"yellow\"
   },
   {
     \"icon\": \"$ICON_TERM\",

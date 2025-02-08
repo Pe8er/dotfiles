@@ -4,9 +4,6 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 check_state() {
-  # DND_ENABLED=$(cat ~/Library/DoNotDisturb/DB/Assertions.json | jq .data[0].storeAssertionRecords)
-
-  # Alternate SLOW method:
   DND_ENABLED=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes")
   [ "$DND_ENABLED" = 0 ] && COLOR=$ICON_COLOR_INACTIVE || COLOR=$ICON_COLOR
   sketchybar --set $NAME icon.color=$COLOR
@@ -30,7 +27,7 @@ update_icon() {
       echo "$item $state" >>"$state_file"
       sketchybar --set "$item" drawing="off"
     done
-    open raycast://extensions/raycast/raycast-focus/start-focus-session
+    # open raycast://extensions/raycast/raycast-focus/toggle-focus-session
   else
     COLOR=$ICON_COLOR_INACTIVE
     while read -r item state; do
@@ -38,7 +35,7 @@ update_icon() {
         sketchybar --set "$item" drawing="on"
       fi
     done <"$state_file"
-    open raycast://extensions/raycast/raycast-focus/toggle-focus-session
+    # open raycast://extensions/raycast/raycast-focus/complete-focus-session
   fi
 
   # echo $SENDER $DRAWINGSTATE

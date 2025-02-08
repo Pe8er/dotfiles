@@ -1,5 +1,4 @@
-# Load global styles, colors and icons
-source "$CONFIG_DIR/globalstyles.sh"
+#!/bin/bash
 
 weather=(
   "${menu_defaults[@]}"
@@ -23,9 +22,9 @@ aqi=(
 )
 
 sketchybar                                       \
-  --add item aqi right                           \
+  --add item aqi $1                              \
   --set aqi "${aqi[@]}"                          \
-  --add item weather right                       \
+  --add item weather $1                          \
   --set weather "${weather[@]}"                  \
   --add item weather.location popup.weather      \
   --add item weather.condition popup.weather     \

@@ -1,4 +1,4 @@
-#!/bin/env/bash
+#!/bin/bash
 
 POPUP_OFF="sketchybar --set wifi popup.drawing=off"
 

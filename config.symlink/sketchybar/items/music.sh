@@ -1,7 +1,4 @@
-#!/bin/env/bash
-
-# Load global styles, colors and icons
-source "$CONFIG_DIR/globalstyles.sh"
+#!/bin/bash
 
 music=(
   background.border_color="$(getcolor grey 50)"

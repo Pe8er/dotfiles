@@ -1,4 +1,4 @@
-#!/bin/env/bash
+#!/bin/bash
 
 date=(
   icon=􀀁

@@ -3,11 +3,11 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
+OUTDATED=$(brew outdated)
+COUNT=$(echo $OUTDATED | wc -w | tr -d ' ')
+# COUNT=4
 update_label() {
-  if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
-    DRAWING="on"
-  fi
-  COUNT=$(brew outdated | wc -l | tr -d ' ')
+  [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ] && DRAWING="on"
 
   case "$COUNT" in
   [7-9] | [1-9][0-9])
@@ -30,6 +30,7 @@ update_label() {
 
 mouse_clicked() {
   sketchybar --set $NAME icon=$ICON_REFRESH
+  $(which terminal-notifier) -title "$NAME" -subtitle "$COUNT outdated packages" -message "$(echo -e "$OUTDATED")"
   $CONFIG_DIR/items/brew_script.sh &
 
   # Wait for the brew process to finish

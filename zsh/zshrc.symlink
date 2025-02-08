@@ -6,15 +6,17 @@
 		https://github.com/marlonrichert/zsh-snap.git ~/Developer/zsh/znap
 		source ~/Developer/zsh/znap/znap.zsh
 
+
 ####### Oh-my-posh Prompt #######
-znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/dracula.omp.json'
+# znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/dracula.omp.json'
+
+source $HOME/.dotfiles/zsh/completion.zsh
+source $HOME/.dotfiles/zsh/config.zsh
+source $HOME/.dotfiles/zsh/secrets.zsh
+source $HOME/.dotfiles/zsh/path.zsh
 
 ####### Settings #######
 zstyle ':znap:*' repos-dir '/Users/pe8er/Developer/zsh'
-source $HOME/.dotfiles/zsh/completion.zsh
-source $HOME/.dotfiles/zsh/config.zsh
-source $HOME/.dotfiles/zsh/path.zsh
-
 
 # Lazy load Python
 znap function _pyenv pyenv              'eval "$( pyenv init - --no-rehash )"'
@@ -32,25 +34,28 @@ chruby ruby-3.3.5 # run chruby to see actual version
 znap eval brew "$(brew shellenv)"
 
 ####### Plugins #######
+znap source mafredri/zsh-async
+znap source sindresorhus/pure # Prompt
+zstyle :prompt:pure:git:stash show yes
+zstyle :prompt:pure:path color magenta
 
 znap source zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4"
 # bindkey '^I' autosuggest-accept
 
 znap source marlonrichert/zsh-autocomplete
+bindkey '\t' menu-select
 # Override default for all listings
 # zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
 # Suggestion colors
 zstyle ':completion:*:*:descriptions' format $'\033[1;34m%d\033[0m'
 # Automatically show subfolders in current folder
 zstyle ':autocomplete:*' min-input 0
-# This will make Autocomplete behave as if you pressed CtrlR at the start of each new command line:
-# zstyle ':autocomplete:*' default-context ''
 
-# zstyle ':autocomplete:*' insert-unambiguous yes
-# zstyle ':autocomplete:tab:*' insert-unambiguous yes
-zstyle ':autocomplete:*' widget-style menu-select
+zstyle ':autocomplete:*' insert-unambiguous yes
+zstyle ':autocomplete:tab:*' insert-unambiguous yes
 zstyle ':completion:*:' tag-order '! ancestor-directories recent-directories recent-files' -
+zstyle ':autocomplete:async' enabled no
 
 znap source zsh-users/zsh-syntax-highlighting
 

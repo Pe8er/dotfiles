@@ -16,10 +16,18 @@ sketchybar --bar "${bar[@]}" --default "${item_defaults[@]}"
 
 # Left
 # source "$ITEM_DIR/apple.sh"
-# source "$ITEM_DIR/yabai.sh"
-# source "$ITEM_DIR/spacer.sh" 3 left
+source "$ITEM_DIR/yabai.sh"
+# source "$ITEM_DIR/spacer.sh" 1 left
 source "$ITEM_DIR/spaces_simple.sh"
-# source "$ITEM_DIR/front_app.sh"
+
+source "$ITEM_DIR/spacer.sh" 2 left
+# source "$ITEM_DIR/spacer.sh" 3 left
+
+source "$ITEM_DIR/weather.sh" left
+source "$ITEM_DIR/reminders.sh" left
+source "$ITEM_DIR/messages.sh" left
+source "$ITEM_DIR/mail.sh" left
+source "$ITEM_DIR/brew.sh" left
 
 # Right
 # source "$ITEM_DIR/control_center.sh"
@@ -29,26 +37,20 @@ source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/diskmonitor.sh"
-
-source "$ITEM_DIR/spacer.sh" 2 right
-
-source "$ITEM_DIR/brew.sh"
-source "$ITEM_DIR/mail.sh"
-source "$ITEM_DIR/messages.sh"
-source "$ITEM_DIR/reminders.sh"
-source "$ITEM_DIR/weather.sh"
-source "$ITEM_DIR/spacer.sh" 1 right
 source "$ITEM_DIR/transmission.sh"
 source "$ITEM_DIR/music.sh"
 
+source "$ITEM_DIR/spacer.sh" 4 right
+
+
 
 # Brackets '/space\..*/'
-sketchybar --add bracket left.side '/space\..*/'                                             \
-           --set left.side "${bracket_defaults[@]}"                                           \
-                                                                                              \
-           --add bracket notifications spacer.1 weather aqi reminders messages brew mail                   \
-           --set notifications "${bracket_defaults[@]}"                                       \
-                                                                                              \
+sketchybar --add bracket left.side '/space\..*/'                                                 \
+           --set left.side "${bracket_defaults[@]}"                                              \
+                                                                                                 \
+          --add bracket notifications weather aqi reminders messages mail brew                   \
+           --set notifications "${bracket_defaults[@]}"                                          \
+                                                                                                 \
            --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd date clock \
            --set status_icons "${bracket_defaults[@]}"
 

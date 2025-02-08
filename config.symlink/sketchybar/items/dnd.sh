@@ -1,4 +1,4 @@
-#!/bin/env/bash
+#!/bin/bash
 
 dnd=(
   script="$PLUGIN_DIR/dnd.sh"

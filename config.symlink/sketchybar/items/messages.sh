@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Load global styles, colors and icons
-source "$CONFIG_DIR/globalstyles.sh"
-
 messages=(
   "${notification_defaults[@]}"
   icon=$ICON_CHAT
@@ -10,6 +7,6 @@ messages=(
   click_script="open -a /System/Applications/Messages.app"
 )
 
-sketchybar --add item  messages right            \
+sketchybar --add item  messages $1               \
            --set       messages "${messages[@]}" \
            --subscribe messages front_app_switched

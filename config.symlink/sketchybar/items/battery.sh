@@ -1,4 +1,4 @@
-#!/bin/env/bash
+#!/bin/bash
 
 battery=(
   icon.font.size=14
