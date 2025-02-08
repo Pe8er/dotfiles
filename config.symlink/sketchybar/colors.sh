@@ -124,7 +124,7 @@ PERCENT2HEX() {
 }
 
 # Color Tokens
-export BAR_COLOR=$(getcolor trueblack)
+export BAR_COLOR=$(getcolor black)
 export BAR_BORDER_COLOR=$(getcolor black 0)
 export HIGHLIGHT=$(getcolor cyan)
 export HIGHLIGHT_75=$(getcolor cyan 75)

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Load global styles, colors and icons
-source "$CONFIG_DIR/globalstyles.sh"
-
 brew=(
   "${notification_defaults[@]}"
   icon=$ICON_PACKAGE
@@ -11,5 +8,5 @@ brew=(
   --subscribe brew mouse.clicked
 )
 
-sketchybar --add item  brew right            \
+sketchybar --add item  brew $1          \
            --set       brew "${brew[@]}"

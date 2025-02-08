@@ -38,7 +38,7 @@ fi
 if [[ "$UP" == "0.0" && "$DOWN" == "0.0" ]]; then
   args+=(background.color=$(getcolor black 50))
 else
-  args+=(background.color=$HIGHLIGHT)
+  args+=(background.color=$HIGHLIGHT label.color=$LABEL_COLOR_NEGATIVE)
 fi
 
 sketchybar --set $NAME "${args[@]}"

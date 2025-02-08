@@ -18,8 +18,8 @@
   },
   "logo": {
     "type": "sixel",
-    "source": "~/.config/fastfetch/profile.jpg",
-    "width": 30
+    "source": "~/.config/fastfetch/rustmesa_pj.gif",
+    "width": 20
 },
   "modules": [
     "title",

@@ -1,5 +1,4 @@
-# Load global styles, colors and icons
-source "$CONFIG_DIR/globalstyles.sh"
+#!/bin/bash
 
 mail=(
   "${notification_defaults[@]}"
@@ -8,6 +7,6 @@ mail=(
   click_script="open -a /System/Applications/Mail.app"
 )
 
-sketchybar --add item  mail right            \
+sketchybar --add item  mail $1           \
            --set       mail "${mail[@]}" \
            --subscribe mail front_app_switched

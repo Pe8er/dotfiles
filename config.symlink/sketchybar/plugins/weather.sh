@@ -136,7 +136,7 @@ render_popup() {
       --set weather.wind label="$WIND km/h $WIND_DIRECTION" icon=""
       --set weather.humidity label="$HUMIDITY%" icon="󰞍"
       --set weather.update label="$LAST_UPDATED minutes ago" icon="$ICON_REFRESH" click_script="sketchybar --update"
-      --set weather.openapp label="More Information…" icon="" click_script="open -a /System/Applications/Weather.app")
+      --set weather.openapp label="More Information…" icon="" click_script="open -a /System/Applications/Weather.app; sketchybar --set weather popup.drawing=off")
   else
     args=(--set '/weather\..*/' drawing=off)
   fi

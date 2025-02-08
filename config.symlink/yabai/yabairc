@@ -54,16 +54,16 @@ yabai_config=(
 yabai -m config ${yabai_config[*]}
 
 # Set up spaces
-setup_space 1 Web "Arc|Discord|Safari|Chrome"
+setup_space 1 Web "Arc|Discord|Safari|Chrome|Firefox"
 setup_space 2 Mail "Mail"
-setup_space 3 Todo "Things|Reminders"
-setup_space 4 Code "VSCodium|iTerm"
-setup_space 5 Media "Music|Popcorn-Time|Spotify|calibre|TIDAL"
-setup_space 6 Design "Figma|Adobe"
-setup_space 7 Presentation "Pages|Keynote|Microsoft"
+# setup_space 3 Todo "Things"
+setup_space 3 Code "VSCodium|iTerm"
+setup_space 4 Media "Music|Popcorn-Time|Spotify|calibre|TIDAL"
+setup_space 5 Design "Figma|Adobe"
+setup_space 6 Presentation "Pages|Keynote|Microsoft"
 
 # Override default layouts
-yabai -m config --space 5 layout stack
+yabai -m config --space 4 layout stack
 
 # Manage apps and windows
 

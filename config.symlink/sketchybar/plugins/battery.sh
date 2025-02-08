@@ -37,6 +37,7 @@ render_item() {
 
   if [[ $CHARGING != "" ]]; then
     ICON="􀢋"
+    COLOR=$(getcolor green)
   fi
 
   sketchybar --set $NAME icon=$ICON icon.color=$COLOR label=$PERCENTAGE% label.color=$LABEL_COLOR label.drawing=$DRAWING

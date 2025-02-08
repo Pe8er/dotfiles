@@ -12,7 +12,6 @@ FONT="JetBrainsMono Nerd Font"
 # Bar Appearance
 bar=(
   color=$TRANSPARENT
-  # color="$(getcolor black 50)"
   position=top
   topmost=off
   sticky=on
@@ -26,22 +25,22 @@ bar=(
 
 # Item Defaults
 item_defaults=(
+  background.corner_radius=4
+  background.height=20
   background.padding_left=$(($PADDINGS / 2))
   background.padding_right=$(($PADDINGS / 2))
-  background.height=20
+  icon.background.corner_radius=4
+  icon.color=$ICON_COLOR
+  icon.font="$FONT:Regular:11"
+  icon.highlight_color=$HIGHLIGHT
   icon.padding_left=0
   icon.padding_right=0
-  icon.background.corner_radius=4
-  icon.font="$FONT:Regular:11"
-  icon.color=$ICON_COLOR
-  icon.highlight_color=$HIGHLIGHT
-  label.font="$FONT:Regular:11"
   label.color=$LABEL_COLOR
+  label.font="$FONT:Regular:11"
   label.highlight_color=$HIGHLIGHT
   label.padding_left=$(($PADDINGS / 2))
-  updates=when_shown
   scroll_texts=on
-  background.corner_radius=4
+  updates=when_shown
 )
 
 icon_defaults=(
@@ -57,7 +56,7 @@ notification_defaults=(
 )
 
 bracket_defaults=(
-  background.color="$(getcolor black)"
+  background.color=$BAR_COLOR
 )
 
 menu_defaults=(
@@ -65,7 +64,7 @@ menu_defaults=(
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.background.corner_radius=$PADDINGS
   popup.background.shadow.drawing=on
-  popup.background.shadow.color=$(getcolor black)
+  popup.background.shadow.color=$BAR_COLOR
   popup.background.shadow.angle=90
   popup.background.shadow.distance=64
 )
