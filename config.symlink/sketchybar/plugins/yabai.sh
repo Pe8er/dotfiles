@@ -1,20 +1,26 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/colors.sh"
-source "$CONFIG_DIR/icons.sh"
+# Load global styles, colors and icons
+source "$CONFIG_DIR/globalstyles.sh"
 
 set_icon() {
-  CURRENT_SID=$(yabai -m query --spaces index --space | jq -r '.index')
+  SPACE=$(yabai -m query --spaces index,type --space)
+  CURRENT_SID=$(echo $SPACE | jq -r '.index')
   FRONT_APP_LABEL_COLOR="$(sketchybar --query space.$CURRENT_SID | jq -r ".label.highlight_color")"
+  LAYOUT=$(echo $SPACE | jq -r '.type')
   COLOR=$ICON_COLOR
 
   WINDOW=$(yabai -m query --windows is-floating,split-type,has-fullscreen-zoom,is-sticky,stack-index --window)
   read -r FLOATING SPLIT FULLSCREEN STICKY STACK_INDEX <<<$(echo "$WINDOW" | jq -rc '.["is-floating", "split-type", "has-fullscreen-zoom", "is-sticky", "stack-index"]')
 
-  if [[ $STACK_INDEX -gt 0 ]]; then
+  if [[ $LAYOUT == "stack" ]]; then
     LAST_STACK_INDEX=$(yabai -m query --windows stack-index --window stack.last | jq '.["stack-index"]')
+    if [[ -n "$LAST_STACK_INDEX" ]]; then
+      LABEL="$(printf "%s/%s" "$STACK_INDEX" "$LAST_STACK_INDEX")"
+    else
+      LABEL=""
+    fi
     ICON=$ICON_YABAI_STACK
-    LABEL="$(printf "%s/%s" "$STACK_INDEX" "$LAST_STACK_INDEX")"
     COLOR=$FRONT_APP_LABEL_COLOR
   elif [[ $FLOATING == "true" ]]; then
     ICON=$ICON_YABAI_FLOAT

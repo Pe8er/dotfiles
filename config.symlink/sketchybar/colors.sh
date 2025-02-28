@@ -1,7 +1,6 @@
 #!/bin/bash
 # set -x
 
-
 # Tokyo Night: https://github.com/tokyo-night/tokyo-night-vscode-theme
 TOKYONIGHT=(
   blue "#7aa2f7"
@@ -35,7 +34,6 @@ DRACULA=(
   trueblack "#1c1c1c"
   white "#F8F8F2"
 )
-
 
 # Rose Pine https://rosepinetheme.com/palette/ingredients/
 ROSEPINE=(
@@ -92,13 +90,13 @@ COLORS=("${DRACULA[@]}")
 
 getcolor() {
   COLOR_NAME=$1
-  OPACITY=$2
   local COLOR=""
 
-  if [[ -z $OPACITY ]]; then
+  if [[ -z $2 ]]; then
     OPACITY=100
+  else
+    OPACITY=$2
   fi
-
 
   # Loop through the array to find the color hex by name
   for ((i = 0; i < ${#COLORS[@]}; i += 2)); do
@@ -124,18 +122,18 @@ PERCENT2HEX() {
 }
 
 # Color Tokens
-export BAR_COLOR=$(getcolor black)
-export BAR_BORDER_COLOR=$(getcolor black 0)
-export HIGHLIGHT=$(getcolor cyan)
-export HIGHLIGHT_75=$(getcolor cyan 75)
-export HIGHLIGHT_50=$(getcolor cyan 50)
-export HIGHLIGHT_25=$(getcolor cyan 25)
-export HIGHLIGHT_10=$(getcolor cyan 10)
-export ICON_COLOR=$(getcolor white)
-export ICON_COLOR_INACTIVE=$(getcolor white 25)
-export LABEL_COLOR=$(getcolor white 75)
-export LABEL_COLOR_NEGATIVE=$(getcolor black)
-export POPUP_BACKGROUND_COLOR=$(getcolor black 75)
-export POPUP_BORDER_COLOR=$(getcolor black 0)
-export SHADOW_COLOR=$(getcolor black)
-export TRANSPARENT=$(getcolor black 0)
+BAR_COLOR=$(getcolor black)
+BAR_BORDER_COLOR=$(getcolor black 0)
+HIGHLIGHT=$(getcolor cyan)
+HIGHLIGHT_75=$(getcolor cyan 75)
+HIGHLIGHT_50=$(getcolor cyan 50)
+HIGHLIGHT_25=$(getcolor cyan 25)
+HIGHLIGHT_10=$(getcolor cyan 10)
+ICON_COLOR=$(getcolor white)
+ICON_COLOR_INACTIVE=$(getcolor white 25)
+LABEL_COLOR=$(getcolor white 75)
+LABEL_COLOR_NEGATIVE=$(getcolor black)
+POPUP_BACKGROUND_COLOR=$(getcolor black 75)
+POPUP_BORDER_COLOR=$(getcolor black 0)
+SHADOW_COLOR=$(getcolor black)
+TRANSPARENT=$(getcolor black 0)

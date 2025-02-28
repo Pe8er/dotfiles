@@ -38,6 +38,11 @@ defaults write com.apple.finder NSUserKeyEquivalents '{
 "Show Package Contents" = "^r";
 }'
 
+defaults write company.thebrowser.Browser NSUserKeyEquivalents '{
+"Next Tab" = "@~\UF701";
+"Previous Tab" = "@~\UF700";
+}'
+
 defaults write com.apple.reminders NSUserKeyEquivalents '{
 "\033Edit\033Priority\033High" = "^1";
 "\033Edit\033Priority\033Medium" = "^2";

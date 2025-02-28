@@ -23,9 +23,9 @@ aqi=(
 
 sketchybar                                       \
   --add item aqi $1                              \
-  --set aqi "${aqi[@]}"                          \
   --add item weather $1                          \
   --set weather "${weather[@]}"                  \
+  --set aqi "${aqi[@]}"                          \
   --add item weather.location popup.weather      \
   --add item weather.condition popup.weather     \
   --add item weather.aqi popup.weather           \

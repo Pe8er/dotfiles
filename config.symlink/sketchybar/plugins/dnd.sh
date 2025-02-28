@@ -10,7 +10,7 @@ check_state() {
 }
 
 update_icon() {
-  local items=("weather" "aqi" "reminders" "messages" "brew" "mail" "diskmonitor" "volume_icon" "volume" "wifi" "notifications")
+  local items=("weather" "aqi" "reminders" "messages" "brew" "mail" "diskmonitor" "volume_icon" "volume" "wifi" "notifications" "stress")
   local currentSpace=$(yabai -m query --spaces index --space | jq -r '.index')
       for i in {1..7}; do
         if [ "$i" -ne "$currentSpace" ]; then

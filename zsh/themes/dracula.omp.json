@@ -10,7 +10,7 @@
     "grey": "#44475A",
     "yellow": "#F1FA8C",
     "orange": "#FFB86C",
-    "red": "#FF5555",
+    "red": "#F1FA8C",
     "purple": "#BD93F9"
   },
   "blocks": [
@@ -52,12 +52,9 @@
             "no_commits_icon": "\uf0c3 ",
             "rebase_icon": "\ue728 ",
             "revert_icon": "\uf0e2 ",
-            "tag_icon": "\uf412 ",
-            "untracked_modes": {
-              "/Users/user/Projects/oh-my-posh/": "no"
-            }
+            "tag_icon": "\uf412 "
           },
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \udbc0\ude0e {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \udbc0\udcf3 {{ .Staging.String }}{{ end }}",
+          "template": "{{ if .Working.Changed }} \udbc0\ude0e {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \udbc0\udcf3 {{ .Staging.String }}{{ end }}",
           "foreground": "p:green",
           "type": "git",
           "style": "plain",

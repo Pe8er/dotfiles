@@ -20,25 +20,31 @@ source "$ITEM_DIR/yabai.sh"
 # source "$ITEM_DIR/spacer.sh" 1 left
 source "$ITEM_DIR/spaces_simple.sh"
 
-source "$ITEM_DIR/spacer.sh" 2 left
 # source "$ITEM_DIR/spacer.sh" 3 left
 
-source "$ITEM_DIR/weather.sh" left
-source "$ITEM_DIR/reminders.sh" left
-source "$ITEM_DIR/messages.sh" left
-source "$ITEM_DIR/mail.sh" left
-source "$ITEM_DIR/brew.sh" left
+
+# Notch
 
 # Right
 # source "$ITEM_DIR/control_center.sh"
 source "$ITEM_DIR/datetime.sh"
 source "$ITEM_DIR/dnd.sh"
 source "$ITEM_DIR/wifi.sh"
-source "$ITEM_DIR/battery.sh"
+# source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/diskmonitor.sh"
+
+source "$ITEM_DIR/spacer.sh" 2 right
+
+source "$ITEM_DIR/brew.sh" right
+source "$ITEM_DIR/reminders.sh" right
+source "$ITEM_DIR/messages.sh" right
+source "$ITEM_DIR/mail.sh" right
+source "$ITEM_DIR/weather.sh" right
+source "$ITEM_DIR/stress.sh" right
+
 source "$ITEM_DIR/transmission.sh"
-source "$ITEM_DIR/music.sh"
+# source "$ITEM_DIR/music.sh"
 
 source "$ITEM_DIR/spacer.sh" 4 right
 
@@ -51,7 +57,7 @@ sketchybar --add bracket left.side '/space\..*/'                                
           --add bracket notifications weather aqi reminders messages mail brew                   \
            --set notifications "${bracket_defaults[@]}"                                          \
                                                                                                  \
-           --add bracket status_icons diskmonitor volume_icon volume battery wifi dnd date clock \
+           --add bracket status_icons diskmonitor volume_icon volume wifi dnd date clock \
            --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --hotload on

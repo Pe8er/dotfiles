@@ -1,0 +1,251 @@
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active {
+  background-color: #202127 !important;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.active.tab-border-top
+  > .tab-border-top-container,
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container
+  > .title
+  .tabs-container
+  > .tab.selected.tab-border-top
+  > .tab-border-top-container {
+  height: 0;
+}
+
+.breadcrumbs-below-tabs {
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+  padding: 0;
+  background: #202127 !important;
+}
+
+.monaco-breadcrumbs {
+  font-size: 0.7rem;
+}
+
+.monaco-editor .sticky-widget {
+  box-shadow: none;
+}
+
+.monaco-editor .scroll-decoration {
+  box-shadow: none;
+}
+
+.monaco-editor .sticky-widget {
+  border-color: #202127;
+}
+
+.monaco-workbench
+  .part.editor
+  > .content
+  .editor-group-container.active
+  > .title
+  .tabs-container
+  > .tab.active {
+  box-shadow: 0 6px 0 0 #202127;
+}
+
+.tabs-and-actions-container:has(.tab.active:first-child) {
+  box-shadow: -20px 5px 0 0 #282a36;
+}
+
+.editor-group-container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.split-view-view.visible {
+  background: #282a36;
+}
+
+.monaco-split-view2.separator-border.vertical
+  > .monaco-scrollable-element
+  > .split-view-container
+  > .split-view-view:not(:first-child):before {
+  background: #282a36 !important;
+}
+
+.monaco-split-view2.separator-border
+  > .monaco-scrollable-element
+  > .split-view-container
+  > .split-view-view:not(:first-child):before {
+  background: #282a36 !important;
+}
+
+.monaco-workbench
+  .part.titlebar
+  > .titlebar-container
+  > .titlebar-center
+  > .window-title
+  > .command-center
+  .action-item.command-center-center {
+  border-radius: 5rem;
+  border: none;
+}
+
+.titlebar-center,
+.titlebar-right {
+  opacity: 0;
+  transition: all 0.15s;
+}
+
+.titlebar-center:hover,
+.titlebar-right:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+
+li.action-item.icon.checked,
+li.action-item.icon:hover {
+  opacity: 1;
+}
+
+li.action-item.icon {
+  transition: all 0.15s;
+  opacity: 0.2;
+}
+
+.monaco-pane-view .pane > .pane-header {
+  padding: 0 6px;
+  border-radius: 5px;
+  margin: 1px 5px 0;
+}
+
+.monaco-workbench .part.sidebar > .title {
+  background: transparent;
+  padding: 0;
+  border-radius: 0.5rem;
+}
+
+.monaco-workbench
+  .pane-composite-part
+  > .header-or-footer
+  > .composite-bar-container
+  > .composite-bar
+  > .monaco-action-bar
+  .action-item.checked
+  .active-item-indicator:before,
+.monaco-workbench
+  .pane-composite-part
+  > .header-or-footer
+  > .composite-bar-container
+  > .composite-bar
+  > .monaco-action-bar
+  .action-item:focus
+  .active-item-indicator:before,
+.monaco-workbench
+  .pane-composite-part
+  > .title
+  > .composite-bar-container
+  > .composite-bar
+  > .monaco-action-bar
+  .action-item.checked
+  .active-item-indicator:before,
+.monaco-workbench
+  .pane-composite-part
+  > .title
+  > .composite-bar-container
+  > .composite-bar
+  > .monaco-action-bar
+  .action-item:focus
+  .active-item-indicator:before {
+  border-top-width: 1px;
+}
+
+.terminal-wrapper.active {
+  background: #1e1f22;
+}
+
+div#terminal {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.monaco-workbench .pane-body.integrated-terminal .terminal-split-pane {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.quick-input-widget {
+  transform: translateY(-50%) !important;
+  top: 50% !important;
+  z-index: 100;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  font-size: 24px !important;
+  box-shadow: 0px 16px 48px rgba(0, 0, 0, 0.45) !important;
+}
+
+.quick-input-titlebar {
+  background-color: transparent !important;
+}
+
+.quick-input-title {
+  font-size: 13px !important;
+}
+
+.quick-input-widget .monaco-list-rows {
+  font-size: 13px !important;
+}
+
+/* Remove background for lists */
+.quick-input-widget .monaco-list-rows {
+  background: transparent !important;
+}
+
+/* List hover */
+.quick-input-widget .monaco-list-row:hover {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Command palette text input */
+.quick-input-filter .monaco-inputbox {
+  border-radius: 12px !important;
+  padding: 12px !important;
+  border: none !important;
+  background-color: rgba(34, 34, 34, 0.4) !important;
+  font-size: 20px !important;
+  margin-bottom: 16px !important;
+}
+
+#command-blur {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: #0000003b !important;
+  top: 0 !important;
+  left: 0 !important;
+  backdrop-filter: blur(10px) !important;
+  z-index: 99 !important;
+}
+
+/* Command palette's input box placeholder. */
+.monaco-inputbox input::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}

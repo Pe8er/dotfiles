@@ -2,7 +2,9 @@
 
 yabai=(
   icon=$ICON_YABAI_GRID
-  icon.padding_right=$PADDINGS
+  icon.padding_left=$PADDINGS
+  icon.padding_right=$((PADDINGS + 2))
+  label.padding_right=$PADDINGS
   script="$PLUGIN_DIR/yabai.sh"
 )
 

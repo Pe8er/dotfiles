@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://www.nerdfonts.com/cheat-sheet
+
 # General Icons
 ICON_LOADING=􀖇
 ICON_APPLE=􀣺
@@ -32,7 +34,6 @@ ICON_YABAI_FLOAT=􀢌
 ICON_YABAI_GRID=􀧍
 ICON_YABAI_SPLIT_VERTICAL=􀘜
 ICON_YABAI_SPLIT_HORIZONTAL=􀧋
-
 
 # Battery Icons
 ICON_BATTERY_100=􀛨
@@ -124,3 +125,5 @@ export ICON_FONTBOOK=
 export ICON_GLM=󰓃
 export ICON_POPCORN=􁐈
 export ICON_DAISYDISK=󰞯
+export ICON_BRAIN=
+export ICON_STRESS=󰠠

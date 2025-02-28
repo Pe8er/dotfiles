@@ -8,7 +8,7 @@
 
 
 ####### Oh-my-posh Prompt #######
-# znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/dracula.omp.json'
+znap eval oh-my-posh 'oh-my-posh init zsh --strict --config $HOME/.dotfiles/zsh/themes/dracula.omp.json'
 
 source $HOME/.dotfiles/zsh/completion.zsh
 source $HOME/.dotfiles/zsh/config.zsh
@@ -35,7 +35,6 @@ znap eval brew "$(brew shellenv)"
 
 ####### Plugins #######
 znap source mafredri/zsh-async
-znap source sindresorhus/pure # Prompt
 zstyle :prompt:pure:git:stash show yes
 zstyle :prompt:pure:path color magenta
 
@@ -45,8 +44,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6272A4"
 
 znap source marlonrichert/zsh-autocomplete
 bindkey '\t' menu-select
-# Override default for all listings
-# zstyle -e ':autocomplete:*:*' list-lines 'reply=( $(( LINES / 3 )) )'
 # Suggestion colors
 zstyle ':completion:*:*:descriptions' format $'\033[1;34m%d\033[0m'
 # Automatically show subfolders in current folder
@@ -58,5 +55,6 @@ zstyle ':completion:*:' tag-order '! ancestor-directories recent-directories rec
 zstyle ':autocomplete:async' enabled no
 
 znap source zsh-users/zsh-syntax-highlighting
+znap source ohmyzsh/ohmyzsh plugins/macos
 
 source $HOME/.dotfiles/zsh/aliases.zsh

@@ -56,6 +56,7 @@ notification_defaults=(
 )
 
 bracket_defaults=(
+  background.corner_radius=6
   background.color=$BAR_COLOR
 )
 
