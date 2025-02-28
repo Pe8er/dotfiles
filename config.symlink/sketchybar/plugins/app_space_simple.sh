@@ -56,10 +56,12 @@ mouse_clicked() {
         set_space_label "$SPACE_LABEL"
       fi
     fi
-  elif [[ "$MODIFIER" == "cmd" ]]; then
-    ~/.config/yabai/cycle_windows.sh
   else
-    yabai -m space --focus $SID
+    if [[ "$SID" != "$CURRENT_SID" ]]; then
+      yabai -m space --focus $SID
+    else
+      ~/.config/yabai/cycle_windows.sh
+    fi
   fi
 }
 

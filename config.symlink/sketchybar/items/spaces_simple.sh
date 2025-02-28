@@ -26,19 +26,24 @@ space_properties="[
     \"color\": \"orange\"
   },
   {
+    \"icon\": \"$ICON_FIGMA\",
+    \"label\": \"\",
+    \"color\": \"green\"
+  },
+  {
+    \"icon\": \"$ICON_FINDER\",
+    \"label\": \"\",
+    \"color\": \"maroon\"
+  },
+  {
     \"icon\": \"$ICON_TERM\",
     \"label\": \"\",
-    \"color\": \"teal\"
+    \"color\": \"yellow\"
   },
   {
     \"icon\": \"$ICON_MUSIC\",
     \"label\": \"\",
     \"color\": \"red\"
-  },
-  {
-    \"icon\": \"$ICON_FIGMA\",
-    \"label\": \"\",
-    \"color\": \"blue\"
   },
   {
     \"icon\": \"$ICON_DOCUMENTS\",

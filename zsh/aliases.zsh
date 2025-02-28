@@ -14,3 +14,4 @@ alias update_yabai="~/.config/yabai/update.sh"
 alias update_znap="znap pull"
 alias \?="~/.dotfiles/bin/cheat_sheet.sh | glow"
 alias bundle="bundle exec jekyll serve --livereload"
+wtf='wtfutil'

@@ -5,9 +5,9 @@ source "$CONFIG_DIR/globalstyles.sh"
 
 OUTDATED=$(brew outdated)
 COUNT=$(echo $OUTDATED | wc -w | tr -d ' ')
-# COUNT=4
+
 update_label() {
-  [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ] && DRAWING="on"
+  [[ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]] && DRAWING="on"
 
   case "$COUNT" in
   [7-9] | [1-9][0-9])
@@ -36,6 +36,7 @@ mouse_clicked() {
   # Wait for the brew process to finish
   wait $!
   echo "Brew update and upgrade are complete."
+  sleep 3
   update_label
   sketchybar --set $NAME icon=$ICON_PACKAGE
 }
