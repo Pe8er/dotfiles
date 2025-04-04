@@ -2,6 +2,32 @@
   "title": "PG Personal",
   "rules": [
     {
+      "description": "Remap Command + Tab to Hyper + Tab",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": ["command"],
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_control",
+                "left_option",
+                "left_shift",
+                "left_command"
+              ]
+            }
+          ]
+        }
+      ]
+    },    
+    {
       "description": "Application > Hyper",
       "manipulators": [
         {

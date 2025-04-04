@@ -55,23 +55,24 @@ update() {
 
 label_toggle() {
   update
-
+  echo "WTF"
   DRAWING_STATE=$(sketchybar --query $NAME.value | jq -r '.label.drawing')
 
   if [[ $DRAWING_STATE == "on" ]]; then
     DRAWING="off"
     PADDING="0"
   else
-    if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
+    if [ "$(cat /tmp/sketchybar_sender)" != "focus_on" ]; then
       DRAWING="on"
       PADDING="30"
     fi
   fi
 
+  echo $NAME.value $DRAWING
+
   sketchybar --set $NAME.value label.drawing=$DRAWING \
     --set $NAME.label label=$FREESPACE'GB' label.drawing=$DRAWING \
     --set $NAME icon.padding_right=$PADDING
-
 }
 
 case "$SENDER" in

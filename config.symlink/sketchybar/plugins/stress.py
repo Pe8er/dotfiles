@@ -25,7 +25,7 @@ dailyStress = garth.DailyStress.list(date.today())[0].overall_stress_level
 weeklyStress = garth.WeeklyStress.list(date.today())[0].value
 # test = garth.DailySteps.list(period=2)
 
-# print(test)
+# print(dailyStress)
 
 if dailyStress:
   stressData = print(f"{dailyStress}/{weeklyStress}")

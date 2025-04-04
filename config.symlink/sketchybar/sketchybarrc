@@ -30,8 +30,8 @@ source "$ITEM_DIR/spaces_simple.sh"
 source "$ITEM_DIR/datetime.sh"
 source "$ITEM_DIR/dnd.sh"
 source "$ITEM_DIR/wifi.sh"
-# source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/diskmonitor.sh"
 
 source "$ITEM_DIR/spacer.sh" 2 right
@@ -48,8 +48,6 @@ source "$ITEM_DIR/transmission.sh"
 
 source "$ITEM_DIR/spacer.sh" 4 right
 
-
-
 # Brackets '/space\..*/'
 sketchybar --add bracket left.side '/space\..*/'                                                 \
            --set left.side "${bracket_defaults[@]}"                                              \
@@ -57,7 +55,7 @@ sketchybar --add bracket left.side '/space\..*/'                                
           --add bracket notifications weather aqi reminders messages mail brew                   \
            --set notifications "${bracket_defaults[@]}"                                          \
                                                                                                  \
-           --add bracket status_icons diskmonitor volume_icon volume wifi dnd date clock \
+           --add bracket status_icons diskmonitor volume_icon volume wifi dnd date clock battery \
            --set status_icons "${bracket_defaults[@]}"
 
 sketchybar --hotload on

@@ -3,9 +3,11 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
-  DRAWING="on"
-fi
+if [ "$(cat /tmp/sketchybar_sender)" == "focus_on" ]; then
+    DRAWING="off"
+  else
+    DRAWING="on"
+  fi
 
 COUNT=$(( $(reminders show-all --due-date today | grep -E "^[a-zA-Z &]+: \d{1,2}: " | wc -l) + 0 ))
 
