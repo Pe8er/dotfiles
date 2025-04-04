@@ -17,7 +17,7 @@ updateWidget() {
 
 mouseClicked() {
   if [[ "$MODIFIER" == "cmd" ]]; then
-    open -a "TIDAL"
+    open -a "$PLAYER"
   elif [[ "$MODIFIER" == "shift" ]]; then
     open raycast://extensions/douo/global-media-key/next
   elif [[ "$MODIFIER" == "none" ]]; then

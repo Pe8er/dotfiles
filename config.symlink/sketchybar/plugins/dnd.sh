@@ -4,13 +4,12 @@
 source "$CONFIG_DIR/globalstyles.sh"
 
 check_state() {
-  DND_ENABLED=$(defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes")
-  [ "$DND_ENABLED" = 0 ] && COLOR=$ICON_COLOR_INACTIVE || COLOR=$ICON_COLOR
-  sketchybar --set $NAME icon.color=$COLOR
+  DND_ENABLED=$(cat ~/Library/DoNotDisturb/DB/Assertions.json | jq .data[0].storeAssertionRecords)
+  [ "$DND_ENABLED" = "null" ] && COLOR=$ICON_COLOR_INACTIVE || COLOR=$ICON_COLOR
 }
 
 update_icon() {
-  local items=("weather" "aqi" "reminders" "messages" "brew" "mail" "diskmonitor" "volume_icon" "volume" "wifi" "notifications" "stress")
+  local items=("weather" "aqi" "reminders" "messages" "brew" "mail" "diskmonitor" "diskmonitor.value" "diskmonitor.label" "volume_icon" "volume" "wifi" "notifications" "stress")
   local currentSpace=$(yabai -m query --spaces index --space | jq -r '.index')
       for i in {1..7}; do
         if [ "$i" -ne "$currentSpace" ]; then
@@ -19,8 +18,8 @@ update_icon() {
     done
   local state_file="/tmp/sketchybar_state"
   echo $SENDER >/tmp/sketchybar_sender
+  check_state
   if [ "$SENDER" = "focus_on" ]; then
-    COLOR=$ICON_COLOR
     mv "$state_file" "$state_file.bak" 2>/dev/null || true # Backup old state file if it exists
     for item in "${items[@]}"; do
       state=$(sketchybar --query "$item" | jq -r ".geometry.drawing")
@@ -29,7 +28,6 @@ update_icon() {
     done
     # open raycast://extensions/raycast/raycast-focus/toggle-focus-session
   else
-    COLOR=$ICON_COLOR_INACTIVE
     while read -r item state; do
       if [ "$state" = "on" ]; then
         sketchybar --set "$item" drawing="on"
@@ -50,6 +48,7 @@ toggle_dnd() {
 case "$SENDER" in
 "routine" | "forced")
   check_state
+  update_icon
   ;;
 "focus_on" | "focus_off")
   update_icon

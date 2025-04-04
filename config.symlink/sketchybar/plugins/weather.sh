@@ -106,10 +106,10 @@ WEATHER_ICONS_NIGHT=(
 )
 
 render_items() {
-  if [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ]; then
-    DRAWING="on"
-  else
+  if [ "$(cat /tmp/sketchybar_sender)" == "focus_on" ]; then
     DRAWING="off"
+  else
+    DRAWING="on"
   fi
 
   if [ "$TEMP" = "" ]; then
@@ -146,8 +146,9 @@ render_popup() {
 
 update() {
   # API key from https://www.weatherapi.com/my/
-  WEATHER_API_KEY="$(cat $CONFIG_DIR/plugins/weather.api)"
-  AQI_API_KEY="$(cat $CONFIG_DIR/plugins/aqi.api)"
+  HOME="/Users/pe8er"
+  WEATHER_API_KEY="$(cat $HOME/.dotfiles/secrets/weather)"
+  AQI_API_KEY="$(cat $HOME/.dotfiles/secrets/aqi)"
   CITY="Wroclaw, Poland"
   CITY_NAME=${CITY%%,*}
   CITY=$(echo -n "$CITY" | perl -MURI::Escape -ne 'print uri_escape($_)')
@@ -209,7 +210,6 @@ update() {
     args=()
 
   fi
-
   render_items
   render_popup
   

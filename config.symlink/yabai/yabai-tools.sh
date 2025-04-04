@@ -13,6 +13,7 @@ help() {
   echo "  status             - Show Yabai service status"
   echo "  updateYabai        - Update Yabai"
   echo "  ——————————————————————————————————————————————"
+  echo "  autoArrange        - Automatically arrange windows depending on their count. Use as signals for window create / destroy events"
   echo "  arrange [POSITION] - Move a floating window to [POSITION] on current space"
   echo "  balance            - Balance windows on current space"
   echo "  cycle              - Cycle through windows"
@@ -56,9 +57,9 @@ restart() {
 
 reloadConfig() {
   echo "Reloading yabai config..."
-  sid=$(yabai -m query --spaces index --space | jq -r '.index')
+  # sid=$(yabai -m query --spaces index --space | jq -r '.index')
   source ~/.dotfiles/config.symlink/yabai/yabairc
-  yabai -m space --focus $sid
+  # yabai -m space --focus $sid
 }
 
 status() {
@@ -326,6 +327,23 @@ updateYabai() {
   # yabai_v=$(yabai --version)
   # echo "your running $yabai_v"
   # echo "yabai update completed successfully."
+}
+
+autoArrange() {
+  windows=$(yabai -m query --windows --display 1 | jq '[.[] | select(."is-visible"==true and ."is-floating"==false)] | length')
+
+  # if [[ $windows == 0 ]]; then
+  #   yabai -m config split_type vertical
+  #   yabai -m space --padding abs:128:128:128:128
+  #   yabai -m space --balance
+  if [[ $windows == 1 || $windows == 2 ]]; then
+    # yabai -m config split_type auto
+    yabai -m space --padding abs:16:16:16:16
+    yabai -m space --balance
+  elif [[ $windows > 2 ]]; then
+    # yabai -m config split_type auto
+    yabai -m space --padding abs:0:0:0:0
+  fi
 }
 
 updateSketchybar() {

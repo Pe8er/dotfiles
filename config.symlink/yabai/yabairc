@@ -1,11 +1,30 @@
 #!/bin/bash
 
+function autoArrange {
+  windows=$(yabai -m query --windows --display 1 | jq '[.[] | select(."is-visible"==true and ."is-floating"==false)] | length')
+
+  # if [[ $windows == 0 ]]; then
+  #   yabai -m config split_type vertical
+  #   yabai -m space --padding abs:128:128:128:128
+  #   yabai -m space --balance
+  if [[ $windows == 1 || $windows == 2 ]]; then
+    yabai -m config split_type auto
+    yabai -m space --padding abs:16:16:16:16
+    yabai -m space --balance
+  elif [[ $windows > 2 ]]; then
+    yabai -m config split_type auto
+    yabai -m space --padding abs:0:0:0:0
+  fi
+}
+
+
 function setup_space {
   local idx="$1"
-  local name="$2"
-  local apps="$3"
+  local layout="$2"
+  local name="$3"
+  local apps="$4"
 
-  echo "Setting up space $idx: $name"
+  echo "Setting up space $idx: $name ($layout) with apps: $apps"
 
   # Check if space exists
   if ! yabai -m query --spaces | jq -e ".[] | select(.index == $idx)" &>/dev/null; then
@@ -13,7 +32,7 @@ function setup_space {
   fi
 
   # Label the space
-  yabai -m space "$idx" --label "$name"
+  yabai -m space "$idx" --label "$name" --layout "$layout"
 
   # Add rule to assign apps to the space
   yabai -m rule --add app="^(${apps})$" space="$name"
@@ -27,14 +46,22 @@ sudo yabai --load-sa
 
 #Setup basic signals
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa" label="loadSa"
+
+# Customize padding based on the number of windows
+# yabai -m signal --add event=dock_did_restart action="~/.dotfiles/config.symlink/yabai/yabai-tools.sh autoArrange" app!="^(Figma|VSCodium)$"
+
 # yabai -m signal --add event=window_created action="sketchybar --trigger space_windows_change" label="sketchybarNewWindowCreated"
 # yabai -m signal --add event=window_destroyed action="sketchybar --trigger space_windows_change" label="sketchybarWindowDestroyed"
 # yabai -m signal --add event=window_created action="/Users/pe8er/.dotfiles/config.symlink/yabai/float_if_one_window.sh"
 # yabai -m signal --add event=window_destroyed action="/Users/pe8er/.dotfiles/config.symlink/yabai/float_if_one_window.sh"
 # if [[ $(yabai -m query --spaces --display | jq '.[-1]."has-focus"') == "false" ]]; then yabai -m window --space next --focus; fi
 
+# Auto arrange windows based on their count
+# yabai -m signal --add event=window_created action="~/.dotfiles/config.symlink/yabai/yabai-tools.sh autoArrange" app!="^(Figma|VSCodium|Adobe InDesign 2025)$"
+# yabai -m signal --add event=window_destroyed action="~/.dotfiles/config.symlink/yabai/yabai-tools.sh autoArrange" app!="^(Figma|VSCodium|Adobe InDesign 2025)$"
+
 # Float small, non-resizable windows
-yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float' label="floatSmallWindows"
+# yabai -m signal --add event=window_created action='yabai -m query --windows --window $yabai_window_id | jq -er ".can-resize == false" || yabai -m window $yabai_window_id --toggle float --layer above --grid 4:4:1:1:2:2'
 
 yabai_config=(
   window_placement          second_child
@@ -49,42 +76,36 @@ yabai_config=(
   left_padding              0
   right_padding             0
   window_gap                8
-  --space 2 layout stack
-  --space 3 layout stack
-  --space 6 layout stack
 )
 
 yabai -m config ${yabai_config[*]}
 
 # Set up spaces
-setup_space 1 Web "Arc|Discord|Safari|Chrome|Firefox"
-setup_space 2 Mail "Mail"
-setup_space 3 Design "Figma|Adobe Photoshop 2024|Adobe InDesign 2025|Adobe Illustrator 2024"
-setup_space 4 Finder "Finder"
-setup_space 5 Code "VSCodium|iTerm"
-setup_space 6 Media "Music|Popcorn-Time|Spotify|calibre|TIDAL"
-setup_space 7 Presentation "Pages|Keynote|Microsoft"
-
-# Override default layouts
-# yabai -m config --space 2 layout stack --space 5 layout stack
-
-# Manage apps and windows
+setup_space 1 bsp Web "Arc|Discord|Safari|Chrome|Firefox"
+setup_space 2 stack Mail "Mail|Microsoft Outlook|Spark|Postbox|Microsoft Teams|Asana"
+setup_space 3 stack Design "Figma|Adobe Photoshop 2025|Adobe InDesign 2025|Adobe Illustrator 2025|Adobe Lightroom"
+setup_space 4 bsp Finder "Finder"
+setup_space 5 bsp Code "VSCodium|iTerm"
+setup_space 6 stack Media "Music|Popcorn-Time|Spotify|calibre|TIDAL"
+setup_space 7 bsp Presentation "Pages|Keynote|Microsoft PowerPoint|Microsoft Word|Numbers"
 
 # Always floating, sticky on all spaces
 yabai -m rule --add label="Notes" app="^(Notes|ADI-2 Remote|Messages|Transmission|Tomito|Reminders)$" sticky=on manage=off sub-layer=above
 
-# Don't manage these
+# Don't manage these apps
 yabai -m rule --add app="^(IINA|Steam Helper|Raycast|Calculator|Software\ Update|Dictionary|VLC|System\ Settings|zoom.us|Photo\ Booth|Archive\ Utility|Clock|Plexamp|Alfred\ Preferences|ImageOptim|The\ Unarchiver|Installer|Hosting\ AU)$" manage=off
 
 # Everything else
 yabai -m rule --add label="Mail messages" app="Mail" title="(New|Message|Re)" sticky=on manage=off sub-layer=above
-yabai -m rule --add label="Small windows" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add label="Small windows" title="(Co(py|nnect)|Move|Info|Pref|General)" manage=off
 yabai -m rule --add app="^(Trash|Copy|Bin|Move|About This Mac|Info|Preferences)$" manage=off sub-layer=above
 yabai -m rule --add label="GLMv4" app="^GLMv4$" title="(Preparations\ for\ Measurements)" manage=off
 yabai -m rule --add label="Cyberduck" app="^Cyberduck$" title="(Transfers)" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About\ This\ Mac" manage=off
 yabai -m rule --add label="Activity Windows" title="^Activity$" manage=off
-yabai -m rule --add app="^Arc$" manage=on
+
+# Force manage
+yabai -m rule --add app="^(Arc|Microsoft Outlook|Microsoft Teams|Adobe Photoshop 2025|Adobe Illustrator 2025|Adobe InDesign 2025)$" role="AXWindow" subrole="AXStandardWindow" manage=on
 
 # Define scratchpads
 # https://github.com/koekeishiya/yabai/issues/2203

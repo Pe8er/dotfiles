@@ -10,22 +10,22 @@ currentStress=$(echo $totalStress | cut -d'/' -f1)
 [ "$(cat /tmp/sketchybar_sender)" = "focus_off" ] && DRAWING="on"
 
 case "$currentStress" in
-"")
-  COLOR=$LABEL_COLOR
-  DRAWING="off"
-  ;;
-[7-9][0-9])
-  COLOR=$(getcolor red)
-  ;;
-[5-6][0-9])
-  COLOR=$(getcolor orange)
+[0-9] | [1-2][0-9])
+  backgroundColor=$(getcolor teal)
   ;;
 [3-4][0-9])
-  COLOR=$(getcolor yellow)
+  backgroundColor=$(getcolor yellow)
   ;;
-[0-2][0-9])
-  COLOR=$(getcolor green)
+[5-6][0-9])
+  backgroundColor=$(getcolor orange)
+  ;;
+[7-9][0-9])
+  backgroundColor=$(getcolor red)
+  ;;
+*)
+  backgroundColor=$LABEL_COLOR
+  DRAWING="off"
   ;;
 esac
 
-sketchybar --animate tanh 20 --set $NAME drawing=$DRAWING label="$totalStress" background.color=$COLOR
+sketchybar --animate tanh 20 --set $NAME drawing=$DRAWING label="$totalStress" background.color=$backgroundColor
