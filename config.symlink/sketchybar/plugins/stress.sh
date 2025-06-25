@@ -7,7 +7,7 @@ python=$(which python3.11)
 totalStress=$($python $HOME/.config/sketchybar/plugins/stress.py)
 currentStress=$(echo $totalStress | cut -d'/' -f1)
 
-[ "$(cat /tmp/sketchybar_sender)" = "focus_off" ] && DRAWING="on"
+DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
 
 case "$currentStress" in
 [0-9] | [1-2][0-9])

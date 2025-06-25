@@ -23,12 +23,13 @@ set -g tide_pwd_color_truncated_dirs yellow
 fish_add_path /usr/local/sbin
 fish_add_path $HOME/.dotfiles/bin
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.config/bin/
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/opt/ruby/bin
 fish_add_path $HOME/.dotfiles/config.symlink/yabai/
-set -x BREW_PREFIX (brew --prefix)
 fish_add_path $BREW_PREFIX/opt/python@3.11/libexec/bin
+set -x BREW_PREFIX (brew --prefix)
 
 # iTerm2 Integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish

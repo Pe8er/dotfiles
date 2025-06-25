@@ -48,14 +48,14 @@ update() {
     COLOR=$HIGHLIGHT
     ;;
   esac
+  DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
 
-  sketchybar --set $NAME icon=$ICON icon.color=$COLOR \
+  sketchybar --set $NAME icon=$ICON icon.color=$COLOR drawing=$DRAWING \
              --set $NAME.value label="$PERCENTAGE%"
 }
 
 label_toggle() {
   update
-  echo "WTF"
   DRAWING_STATE=$(sketchybar --query $NAME.value | jq -r '.label.drawing')
 
   if [[ $DRAWING_STATE == "on" ]]; then
@@ -67,8 +67,6 @@ label_toggle() {
       PADDING="30"
     fi
   fi
-
-  echo $NAME.value $DRAWING
 
   sketchybar --set $NAME.value label.drawing=$DRAWING \
     --set $NAME.label label=$FREESPACE'GB' label.drawing=$DRAWING \

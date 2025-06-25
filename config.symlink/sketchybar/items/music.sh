@@ -1,22 +1,22 @@
 #!/bin/bash
 
 music=(
-  background.border_color="$(getcolor grey 50)"
-  background.border_width=1
-  background.color=$TRANSPARENT
+  ${bracket_defaults[@]}
   background.image.corner_radius=4
-  background.image.scale=0.6
-  icon.padding_right=24
+  background.image.padding_left=2
+  background.image.scale=0.01
   label.max_chars=24
+  label.padding_left=20
   label.padding_right=$PADDINGS
   label.scroll_duration=100
   padding_right=$PADDINGS
   script="$PLUGIN_DIR/music.sh"
   click_script="$PLUGIN_DIR/music.sh"
   updates=on
-  --subscribe music media_change mouse.clicked
+  update_freq=10
+  --subscribe music mouse.clicked
 )
 
 sketchybar \
-  --add item music right \
+  --add item music $1 \
   --set music "${music[@]}"

@@ -11,7 +11,7 @@ stress=(
   label="Loading…"
   script="$PLUGIN_DIR/stress.sh"
   update_freq=1800
-  updates=when_shown
+  # updates=when_shown
 )
 
 sketchybar --add item  stress $1               \

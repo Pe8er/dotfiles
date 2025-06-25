@@ -7,6 +7,10 @@ Host pi
  User pe8er
  Hostname pi.local
 
+Host g3
+ User pe8er
+ Hostname 192.168.1.199
+
 Host ark
  User ark
  Hostname 192.168.1.194
@@ -15,3 +19,7 @@ Host spizarnia
  User piotr
  Hostname spizarnia.local
  Port 666
+
+Host cube
+ User root
+ Hostname 192.168.1.117

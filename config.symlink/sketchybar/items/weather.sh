@@ -4,7 +4,6 @@ weather=(
   "${menu_defaults[@]}"
   "${notification_defaults[@]}"
   update_freq=1800
-  drawing=on
   popup.align=center
   icon.color=$HIGHLIGHT
   script="$PLUGIN_DIR/weather.sh"
