@@ -7,11 +7,7 @@ OUTDATED=$(brew outdated)
 COUNT=$(echo $OUTDATED | wc -w | tr -d ' ')
 
 update_label() {
-  if [ "$(cat /tmp/sketchybar_sender)" == "focus_on" ]; then
-    DRAWING="off"
-  else
-    DRAWING="on"
-  fi
+  DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
 
   case "$COUNT" in
   [7-9] | [1-9][0-9])

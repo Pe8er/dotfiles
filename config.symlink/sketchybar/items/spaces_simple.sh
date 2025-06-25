@@ -41,7 +41,7 @@ space_properties="[
     \"color\": \"yellow\"
   },
   {
-    \"icon\": \"$ICON_MUSIC\",
+    \"icon\": \"$ICON_MEDIA\",
     \"label\": \"\",
     \"color\": \"red\"
   },
@@ -49,6 +49,11 @@ space_properties="[
     \"icon\": \"$ICON_DOCUMENTS\",
     \"label\": \"\",
     \"color\": \"purple\"
+  },
+  {
+    \"icon\": \"$ICON_PHOTOSHOP\",
+    \"label\": \"\",
+    \"color\": \"blue\"
   }
 ]"
 

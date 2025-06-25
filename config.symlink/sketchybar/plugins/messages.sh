@@ -3,11 +3,7 @@
 # Load global styles, colors and icons
 source "$CONFIG_DIR/globalstyles.sh"
 
-if [ "$(cat /tmp/sketchybar_sender)" == "focus_on" ]; then
-    DRAWING="off"
-  else
-    DRAWING="on"
-  fi
+DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
   
 # NEWMESSAGES=$(sqlite3 ~/Library/Messages/chat.db "SELECT text FROM message WHERE is_read=0 AND is_from_me=0 AND text!='' AND date_read=0" | wc -l | awk '{$1=$1};1')
 COUNT=$(sqlite3 ~/Library/Messages/chat.db "SELECT COUNT(guid) FROM message WHERE NOT(is_read) AND NOT(is_from_me) AND NOT text =''")
@@ -29,4 +25,4 @@ case "$COUNT" in
   ;;
 esac
 
-sketchybar --animate tanh 20 --set $NAME drawing=$DRAWING label=$COUNT icon.color=$COLOR
+sketchybar --animate tanh 20 --set messages drawing=$DRAWING label=$COUNT icon.color=$COLOR

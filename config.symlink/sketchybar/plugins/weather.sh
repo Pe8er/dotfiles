@@ -106,11 +106,7 @@ WEATHER_ICONS_NIGHT=(
 )
 
 render_items() {
-  if [ "$(cat /tmp/sketchybar_sender)" == "focus_on" ]; then
-    DRAWING="off"
-  else
-    DRAWING="on"
-  fi
+  DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
 
   if [ "$TEMP" = "" ]; then
     args=(--set $NAME drawing=$DRAWING icon="􀌏" label.drawing=off click_script="sketchybar --update")

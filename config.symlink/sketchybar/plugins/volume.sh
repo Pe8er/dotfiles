@@ -29,8 +29,10 @@ volume_change() {
   *) ICON=$ICON_VOLUME_100 ;;
   esac
 
-  sketchybar --set volume_icon icon=$ICON
-  sketchybar --set $NAME slider.percentage=$INFO --animate tanh 30 --set $NAME slider.width=$WIDTH
+  DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
+
+  sketchybar --set volume_icon icon=$ICON drawing=$DRAWING
+  sketchybar --set $NAME slider.percentage=$INFO --animate tanh 30 --set $NAME slider.width=$WIDTH drawing=$DRAWING
   sleep 2
 
   # Check whether the volume was changed another time while sleeping

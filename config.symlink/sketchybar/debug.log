@@ -1,0 +1,288 @@
+2025-04-14 14:20:49 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:49 [DEBUG] SENDER: media_change
+2025-04-14 14:20:49 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:20:49 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:20:49 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:20:50 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:50 [DEBUG] SENDER: media_change
+2025-04-14 14:20:50 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:20:50 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:20:50 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:20:51 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:51 [DEBUG] SENDER: media_change
+2025-04-14 14:20:51 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:20:51 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:20:51 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:20:52 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:52 [DEBUG] SENDER: forced
+2025-04-14 14:20:52 [DEBUG] INFO: 
+2025-04-14 14:20:52 [DEBUG] PLAYER: 
+2025-04-14 14:20:52 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:20:53 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:53 [DEBUG] SENDER: forced
+2025-04-14 14:20:53 [DEBUG] INFO: 
+2025-04-14 14:20:53 [DEBUG] PLAYER: 
+2025-04-14 14:20:53 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:20:54 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:54 [DEBUG] SENDER: media_change
+2025-04-14 14:20:54 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:20:54 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:20:54 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:20:54 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:54 [DEBUG] SENDER: forced
+2025-04-14 14:20:54 [DEBUG] INFO: 
+2025-04-14 14:20:54 [DEBUG] PLAYER: 
+2025-04-14 14:20:54 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:20:55 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:55 [DEBUG] SENDER: media_change
+2025-04-14 14:20:55 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:20:55 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:20:55 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:20:55 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:55 [DEBUG] SENDER: forced
+2025-04-14 14:20:55 [DEBUG] INFO: 
+2025-04-14 14:20:55 [DEBUG] PLAYER: 
+2025-04-14 14:20:55 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:20:56 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:56 [DEBUG] SENDER: media_change
+2025-04-14 14:20:56 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:20:56 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:20:56 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:20:57 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:57 [DEBUG] SENDER: forced
+2025-04-14 14:20:57 [DEBUG] INFO: 
+2025-04-14 14:20:57 [DEBUG] PLAYER: 
+2025-04-14 14:20:57 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:20:58 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:58 [DEBUG] SENDER: forced
+2025-04-14 14:20:58 [DEBUG] INFO: 
+2025-04-14 14:20:58 [DEBUG] PLAYER: 
+2025-04-14 14:20:58 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:20:59 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:20:59 [DEBUG] SENDER: forced
+2025-04-14 14:20:59 [DEBUG] INFO: 
+2025-04-14 14:20:59 [DEBUG] PLAYER: 
+2025-04-14 14:20:59 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:00 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:00 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:00 [DEBUG] SENDER: media_change
+2025-04-14 14:21:00 [DEBUG] SENDER: forced
+2025-04-14 14:21:00 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:00 [DEBUG] INFO: 
+2025-04-14 14:21:00 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:00 [DEBUG] PLAYER: 
+2025-04-14 14:21:00 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:00 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:02 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:02 [DEBUG] SENDER: media_change
+2025-04-14 14:21:02 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:02 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:02 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:02 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:02 [DEBUG] SENDER: forced
+2025-04-14 14:21:02 [DEBUG] INFO: 
+2025-04-14 14:21:02 [DEBUG] PLAYER: 
+2025-04-14 14:21:02 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:03 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:03 [DEBUG] SENDER: forced
+2025-04-14 14:21:03 [DEBUG] INFO: 
+2025-04-14 14:21:03 [DEBUG] PLAYER: 
+2025-04-14 14:21:03 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:04 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:04 [DEBUG] SENDER: media_change
+2025-04-14 14:21:04 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:04 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:04 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:04 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:04 [DEBUG] SENDER: forced
+2025-04-14 14:21:04 [DEBUG] INFO: 
+2025-04-14 14:21:04 [DEBUG] PLAYER: 
+2025-04-14 14:21:04 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:05 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:05 [DEBUG] SENDER: media_change
+2025-04-14 14:21:05 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:05 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:05 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:06 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:06 [DEBUG] SENDER: forced
+2025-04-14 14:21:06 [DEBUG] INFO: 
+2025-04-14 14:21:06 [DEBUG] PLAYER: 
+2025-04-14 14:21:06 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:07 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:07 [DEBUG] SENDER: media_change
+2025-04-14 14:21:07 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:07 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:07 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:07 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:07 [DEBUG] SENDER: forced
+2025-04-14 14:21:07 [DEBUG] INFO: 
+2025-04-14 14:21:07 [DEBUG] PLAYER: 
+2025-04-14 14:21:07 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:12 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:12 [DEBUG] SENDER: media_change
+2025-04-14 14:21:12 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:12 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:12 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:14 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:14 [DEBUG] SENDER: media_change
+2025-04-14 14:21:14 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:14 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:14 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:15 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:15 [DEBUG] SENDER: media_change
+2025-04-14 14:21:15 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:15 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:15 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:15 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:15 [DEBUG] SENDER: forced
+2025-04-14 14:21:15 [DEBUG] INFO: 
+2025-04-14 14:21:15 [DEBUG] PLAYER: 
+2025-04-14 14:21:15 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:16 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:16 [DEBUG] SENDER: media_change
+2025-04-14 14:21:16 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:16 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:16 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:16 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:16 [DEBUG] SENDER: forced
+2025-04-14 14:21:16 [DEBUG] INFO: 
+2025-04-14 14:21:16 [DEBUG] PLAYER: 
+2025-04-14 14:21:16 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:17 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:17 [DEBUG] SENDER: media_change
+2025-04-14 14:21:17 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:17 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:17 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:18 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:18 [DEBUG] SENDER: forced
+2025-04-14 14:21:18 [DEBUG] INFO: 
+2025-04-14 14:21:18 [DEBUG] PLAYER: 
+2025-04-14 14:21:18 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:19 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:19 [DEBUG] SENDER: media_change
+2025-04-14 14:21:19 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:19 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:19 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:19 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:19 [DEBUG] SENDER: forced
+2025-04-14 14:21:19 [DEBUG] INFO: 
+2025-04-14 14:21:19 [DEBUG] PLAYER: 
+2025-04-14 14:21:19 [DEBUG] PLAYER_STATE: 
+2025-04-14 14:21:20 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:20 [DEBUG] SENDER: media_change
+2025-04-14 14:21:20 [DEBUG] INFO: {
+	"state": "playing",
+	"title": "Running to the Sea [True Electric] (mixed)",
+	"album": "True Electric",
+	"artist": "Röyksopp feat. Susanne Sundfør",
+	"app": "Plexamp"
+}
+2025-04-14 14:21:20 [DEBUG] PLAYER: Plexamp
+2025-04-14 14:21:20 [DEBUG] PLAYER_STATE: playing
+2025-04-14 14:21:20 [DEBUG] --------------------Debug start--------------------
+2025-04-14 14:21:20 [DEBUG] SENDER: forced
+2025-04-14 14:21:20 [DEBUG] INFO: 
+2025-04-14 14:21:20 [DEBUG] PLAYER: 
+2025-04-14 14:21:20 [DEBUG] PLAYER_STATE: 

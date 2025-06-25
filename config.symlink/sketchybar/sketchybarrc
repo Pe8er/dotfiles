@@ -43,8 +43,8 @@ source "$ITEM_DIR/mail.sh" right
 source "$ITEM_DIR/weather.sh" right
 source "$ITEM_DIR/stress.sh" right
 
-source "$ITEM_DIR/transmission.sh"
-# source "$ITEM_DIR/music.sh"
+source "$ITEM_DIR/transmission.sh" right
+source "$ITEM_DIR/music.sh" right
 
 source "$ITEM_DIR/spacer.sh" 4 right
 

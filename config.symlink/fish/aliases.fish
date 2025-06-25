@@ -49,3 +49,7 @@ end
 function weather
   curl wttr.in/?format=$1 2>/dev/null
 end
+
+function a
+    echo $argv | amp
+end

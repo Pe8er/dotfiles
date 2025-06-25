@@ -29,9 +29,11 @@ else
 fi
 
 render_bar_item() {
+  DRAWING=$([ "$(cat /tmp/sketchybar_sender)" == "focus_on" ] && echo "off" || echo "on")
   sketchybar --set $NAME \
     icon.color=$ICON_COLOR \
-    icon=$ICON
+    icon=$ICON \
+    drawing=$DRAWING
 }
 
 render_popup() {

@@ -39,3 +39,6 @@ album.txt
 Get-Artwork.scpt
 secrets.zsh
 private.fish
+
+config.symlink/lib
+config.symlink/share

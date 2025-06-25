@@ -43,6 +43,15 @@ defaults write company.thebrowser.Browser NSUserKeyEquivalents '{
 "Previous Tab" = "@~\UF700";
 }'
 
+defaults write com.microsoft.Powerpoint NSUserKeyEquivalents '{
+"Align Left" = "~a";
+"Align Right" = "~d";
+"Align Center" = "~h";
+"Align Middle" = "~v";
+"Align Top" = "~w";
+"Align Bottom" = "~s";
+}'
+
 defaults write com.apple.reminders NSUserKeyEquivalents '{
 "\033Edit\033Priority\033High" = "^1";
 "\033Edit\033Priority\033Medium" = "^2";
