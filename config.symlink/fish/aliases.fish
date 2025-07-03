@@ -1,30 +1,29 @@
 # Misc abbreviations
 abbr \? '~/.dotfiles/bin/cheat_sheet.sh | glow'
-abbr bundle 'bundle exec jekyll serve --livereload'
+abbr jekyll-start 'bundle exec jekyll serve --livereload'
+abbr e codium
 abbr c codium
+abbr code codium
 abbr cl clear
 abbr cls clear
 abbr cp 'cp -v'
-abbr dirsizes 'du -skh */'
-abbr dotpull 'cd ~/.dotfiles; git pl'
-abbr e nano
-# abbr ls lla
-abbr mdcheat 'open http://j.mp/144z4kR'
+abbr dir-sizes 'du -skh */'
+abbr dot-pull 'cd ~/.dotfiles; git pl'
+abbr md-cheat 'open http://j.mp/144z4kR'
 abbr mv 'mv -v'
 abbr notify 'terminal-notifier -message'
-abbr restart_fish 'source ~/.config/fish/config.fish'
+abbr restart-fish 'source ~/.config/fish/config.fish'
 abbr rm 'rm -v'
-abbr update_hosts 'curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > ~/.dotfiles/macos/hosts; sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
-abbr update_yabai '~/.config/yabai/update.sh'
-abbr update_znap 'znap pull'
-abbr wtf wtfutil
+abbr update-hosts 'curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > ~/.dotfiles/macos/hosts; sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+abbr update-yabai '~/.config/yabai/update.sh'
+abbr ls "eza --color=always --long --git --no-filesize --icons=always --no-permissions --no-user"
+abbr lt "eza --color=always --long --git --no-filesize --icons=always --no-permissions --no-user --tree --level=1"
+abbr la "eza --classify=auto --color --group-directories-first --sort=extension -a -l --octal-permissions --no-permissions"
 
-alias update_brew="brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor"
-alias where=which # sometimes i forget
+abbr update-brew 'brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor'
+abbr where 'which' # sometimes i forget
 
 # time to upgrade `ls`. use eza instead of dealing with coreutils, LS_COLORS blah blah
-alias ls='eza --classify=auto --color --group-directories-first --sort=extension -A'
-alias la='eza --classify=auto --color --group-directories-first --sort=extension -a -l --octal-permissions --no-permissions'
 
 # Navigation
 function ..    ; cd .. ; end
