@@ -33,3 +33,6 @@ set -x BREW_PREFIX (brew --prefix)
 
 # iTerm2 Integration
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# Set up fzf key bindings
+fzf --fish | source

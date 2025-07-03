@@ -1,4 +1,0 @@
-#!/bin/sh
-
-DIR="$( cd "$( dirname "$0" )" && pwd )"
-open $DIR/switch/ns-usbloader-4.3.jar

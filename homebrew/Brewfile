@@ -1,0 +1,248 @@
+tap "alienator88/cask"
+tap "cristianoliveira/tap"
+tap "felixkratz/formulae"
+tap "gbevin/tools"
+tap "jmattaa/laser"
+tap "koekeishiya/formulae"
+tap "mediosz/tap"
+tap "nikitabobko/tap"
+tap "popcorn-official/popcorn-desktop", "https://github.com/popcorn-official/popcorn-desktop.git"
+tap "steamre/tools"
+# Search tool like grep, but optimized for programmers
+brew "ack"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Convert CD images from .bin/.cue to .iso/.cdr
+brew "bchunk"
+# Parser generator
+brew "bison"
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Emacs dependency management
+brew "cask"
+# Ruby environment tool
+brew "chruby"
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+# Thin wrapper around chruby to make it work with the Fish shell
+brew "chruby-fish"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# OpenType text shaping engine
+brew "harfbuzz"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# GNU database manager
+brew "gdbm"
+# Render markdown on the CLI
+brew "glow"
+# Get events and tasks from the macOS calendar database
+brew "ical-buddy"
+# Library for command-line editing
+brew "readline"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Portable Foreign Function Interface library
+brew "libffi"
+# Library for USB device access
+brew "libusb"
+# YAML Parser
+brew "libyaml"
+# High-performance, extensible alternative to ls
+brew "lla"
+# Find your location using Apple's geolocation services
+brew "locateme"
+# List USB devices, just like the Linux lsusb command
+brew "lsusb"
+# Terminal-based visual file manager
+brew "midnight-commander"
+# Interactive cheatsheet tool for the command-line
+brew "navi"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# General-purpose scripting language
+brew "php"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Paste PNG into files
+brew "pngpaste"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Tools for Multiple Arcade Machine Emulator
+brew "rom-tools"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby
+brew "ruby-install"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# Change macOS audio source from the command-line
+brew "switchaudio-osx"
+# Open source continuous file synchronization application
+brew "syncthing", restart_service: :changed
+# User interface to the TELNET protocol
+brew "telnet"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# High-performance, platform-neutral implementation of VNC
+brew "tiger-vnc"
+# Lightweight BitTorrent client
+brew "transmission-cli"
+# Command-line unarchiving tools supporting multiple formats
+brew "unar"
+# Internet file retriever
+brew "wget"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# AeroSpace scratchpad - Scratchpad for AeroSpace WM
+brew "cristianoliveira/tap/aerospace-scratchpad"
+# Custom macOS statusbar with shell plugin, interaction and graph support
+brew "felixkratz/formulae/sketchybar", args: ["HEAD"]
+# Multi-platform command-line tool to monitor and receive MIDI messages
+brew "gbevin/tools/receivemidi"
+# Multi-platform command-line tool to send out MIDI messages
+brew "gbevin/tools/sendmidi"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
+# Chromium based browser
+cask "arc"
+# Manage team projects and tasks
+cask "asana"
+# Steam depot downloader utilizing the SteamKit2 library
+cask "depotdownloader"
+cask "font-3270-nerd-font"
+cask "font-crimson-pro"
+cask "font-departure-mono-nerd-font"
+cask "font-sf-pro"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# Download manager
+cask "jdownloader", args: { appdir: "/Applications" }
+# Menu bar manager
+cask "jordanbaird-ice"
+# Keyboard customiser
+cask "karabiner-elements", args: { appdir: "/Applications" }
+# File archiver
+cask "keka"
+# Create, manage and debug system and user services
+cask "launchcontrol", args: { appdir: "/Applications" }
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Email client
+cask "microsoft-outlook"
+# Meet, chat, call, and collaborate in just one place
+cask "microsoft-teams"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# VPN client
+cask "private-internet-access", args: { appdir: "/Applications" }
+# GUI for rsync
+cask "rsyncui"
+# Utility to control Gatekeeper via a GUI
+cask "sentinel-app"
+# Tool that provides consistent, highly configurable symbols for apps
+cask "sf-symbols"
+# Team communication and collaboration software
+cask "slack"
+# Control your Sonos system
+cask "sonos"
+# SwipeAeroSpace is a tool to switch AeroSpace worksapces by swiping.
+cask "swipeaerospace"
+# Binary releases of VS Code without MS branding/telemetry/licensing
+cask "vscodium"
+# Multiplayer code editor
+cask "zed"
+vscode "anan.jetbrains-darcula-theme"
+vscode "anseki.vscode-color"
+vscode "arcticicestudio.nord-visual-studio-code"
+vscode "bceskavich.theme-dracula-at-night"
+vscode "be5invis.vscode-custom-css"
+vscode "bmalehorn.shell-syntax"
+vscode "bodil.prettier-toml"
+vscode "carlos18mz.cyberpunk-2077-rebuild"
+vscode "catppuccin.catppuccin-vsc"
+vscode "chadalen.vscode-jetbrains-icon-theme"
+vscode "chirtlelovesdolls.nebula-theme"
+vscode "continue.continue"
+vscode "davidanson.vscode-markdownlint"
+vscode "davidbwaters.macos-modern-theme"
+vscode "dedsec727.jekyll-run"
+vscode "dnicolson.binary-plist"
+vscode "donjayamanne.githistory"
+vscode "dracula-theme.theme-dracula"
+vscode "enkia.tokyo-night"
+vscode "esbenp.prettier-vscode"
+vscode "evan-buss.font-switcher"
+vscode "evondev.dracula-high-contrast"
+vscode "fabianlauer.vs-code-xml-format"
+vscode "formulahendry.auto-close-tag"
+vscode "formulahendry.auto-rename-tag"
+vscode "formulahendry.code-runner"
+vscode "foxundermoon.shell-format"
+vscode "gerane.theme-dark-dracula"
+vscode "gerane.theme-dracula"
+vscode "ginfuru.ginfuru-vscode-jekyll-syntax"
+vscode "ginfuru.vscode-jekyll-snippets"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.github-vscode-theme"
+vscode "google.geminicodeassist"
+vscode "idleberg.applescript"
+vscode "janjoerke.align-by-regex"
+vscode "jeanp413.open-remote-ssh"
+vscode "jeff-hykin.better-shellscript-syntax"
+vscode "kargware.vscode-extension-jekyll-kw"
+vscode "kevinrose.vsc-python-indent"
+vscode "konart.ciapre"
+vscode "mathcale.theme-dracula-refined"
+vscode "michelemelluso.code-beautifier"
+vscode "miguelsolorio.fluent-icons"
+vscode "mrmlnc.vscode-duplicate"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "mvllow.rose-pine"
+vscode "naumovs.color-highlight"
+vscode "nguyenhoanglam.beautiful-dracula"
+vscode "oderwat.indent-rainbow"
+vscode "redhat.vscode-xml"
+vscode "sdras.night-owl"
+vscode "shan.code-settings-sync"
+vscode "simonsiefke.svg-preview"
+vscode "spadin.zmk-tools"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "syler.sass-indented"
+vscode "tamasfe.even-better-toml"
+vscode "thang-nm.catppuccin-perfect-icons"
+vscode "tonka3000.raycast"
+vscode "vampire-theme.vampire-theme"
+vscode "xadamxk.open-git-repository"
+vscode "yo1dog.cursor-align"
+vscode "yzhang.markdown-all-in-one"
+vscode "zhuangtongfa.material-theme"
