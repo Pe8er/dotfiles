@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 echo "# Cheat Sheet"
 echo "## Apps"
 echo "* btop      : live system info"

@@ -61,6 +61,10 @@ defaults write com.apple.reminders NSUserKeyEquivalents '{
 "Show Reminder Info" = "@i";
 }'
 
+defaults write com.ableton.live NSUserKeyEquivalents '{
+"Device Slots" = "@~O";
+}'
+
 echo "Shortcuts added successfuly!"
 
 comment="

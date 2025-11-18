@@ -11,8 +11,8 @@
 # @raycast.icon 🎵
 
 # Documentation:
-# @raycast.description Shows currently playing song from Plex in the menubar
-# @raycast.author Pior Gajos
+# @raycast.description Shows currently playing song from Plex
+# @raycast.author Piotr Gajos
 # @raycast.authorURL https://github.com/Pe8er
 
 # Get the output from the original script

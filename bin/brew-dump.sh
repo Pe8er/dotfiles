@@ -1,3 +1,3 @@
 #!/bin/bash
 
-brew bundle dump --force --describe --file="$HOME/.dotfiles/homebrew/Brewfile"
+  brew bundle dump --force --describe --file="$HOME/.dotfiles/homebrew/Brewfile"

@@ -1,12 +1,16 @@
+tap "acrogenesis/macchanger"
 tap "alienator88/cask"
+tap "borgbackup/tap"
 tap "cristianoliveira/tap"
 tap "felixkratz/formulae"
 tap "gbevin/tools"
+tap "jimihford/hendrix"
 tap "jmattaa/laser"
 tap "koekeishiya/formulae"
 tap "mediosz/tap"
 tap "nikitabobko/tap"
 tap "popcorn-official/popcorn-desktop", "https://github.com/popcorn-official/popcorn-desktop.git"
+tap "smudge/smudge"
 tap "steamre/tools"
 # Search tool like grep, but optimized for programmers
 brew "ack"
@@ -16,6 +20,8 @@ brew "xz"
 brew "openssl@3"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Convert CD images from .bin/.cue to .iso/.cdr
 brew "bchunk"
 # Parser generator
@@ -38,6 +44,8 @@ brew "chruby-fish"
 brew "curl"
 # Modern, maintained replacement for ls
 brew "eza"
+# Test various flash cards
+brew "f3"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # OpenType text shaping engine
@@ -46,16 +54,18 @@ brew "harfbuzz"
 brew "tesseract"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU database manager
 brew "gdbm"
 # Render markdown on the CLI
 brew "glow"
 # Get events and tasks from the macOS calendar database
 brew "ical-buddy"
-# Library for command-line editing
-brew "readline"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Tool to create, edit and run self-contained source-only Java programs
+brew "jbang"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Portable Foreign Function Interface library
@@ -64,24 +74,26 @@ brew "libffi"
 brew "libusb"
 # YAML Parser
 brew "libyaml"
-# High-performance, extensible alternative to ls
-brew "lla"
 # Find your location using Apple's geolocation services
 brew "locateme"
 # List USB devices, just like the Linux lsusb command
 brew "lsusb"
+# Control and observe media playback from the command-line
+brew "media-control"
 # Terminal-based visual file manager
 brew "midnight-commander"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Port scanning utility for large networks
 brew "nmap"
-# Platform built on V8 to build network applications
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # General-purpose scripting language
 brew "php"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Paste PNG into files
@@ -102,6 +114,8 @@ brew "ruby-install"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# SOund eXchange: universal sound sample translator
+brew "sox"
 # Change macOS audio source from the command-line
 brew "switchaudio-osx"
 # Open source continuous file synchronization application
@@ -120,14 +134,21 @@ brew "unar"
 brew "wget"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
+brew "acrogenesis/macchanger/macchanger"
+# Deduplicating archiver with compression and authenticated encryption
+brew "borgbackup/tap/borgbackup-fuse"
 # AeroSpace scratchpad - Scratchpad for AeroSpace WM
 brew "cristianoliveira/tap/aerospace-scratchpad"
 # Custom macOS statusbar with shell plugin, interaction and graph support
-brew "felixkratz/formulae/sketchybar", args: ["HEAD"]
+brew "felixkratz/formulae/sketchybar"
 # Multi-platform command-line tool to monitor and receive MIDI messages
 brew "gbevin/tools/receivemidi"
 # Multi-platform command-line tool to send out MIDI messages
 brew "gbevin/tools/sendmidi"
+# NKS and NKX archive unpacker
+brew "jimihford/hendrix/unnks"
+# A CLI for configuring 'Night Shift' on macOS 🌕🌖🌗🌘🌑
+brew "smudge/smudge/nightlight"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
 # Chromium based browser
@@ -136,10 +157,14 @@ cask "arc"
 cask "asana"
 # Steam depot downloader utilizing the SteamKit2 library
 cask "depotdownloader"
+# Integrate Elektron hardware into music software
+cask "elektron-overbridge"
 cask "font-3270-nerd-font"
 cask "font-crimson-pro"
 cask "font-departure-mono-nerd-font"
 cask "font-sf-pro"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # Download manager
@@ -152,6 +177,8 @@ cask "karabiner-elements", args: { appdir: "/Applications" }
 cask "keka"
 # Create, manage and debug system and user services
 cask "launchcontrol", args: { appdir: "/Applications" }
+# File system integration
+cask "macfuse"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Email client
@@ -174,6 +201,8 @@ cask "slack"
 cask "sonos"
 # SwipeAeroSpace is a tool to switch AeroSpace worksapces by swiping.
 cask "swipeaerospace"
+# Desktop Backup Client for Borg
+cask "vorta"
 # Binary releases of VS Code without MS branding/telemetry/licensing
 cask "vscodium"
 # Multiplayer code editor
@@ -189,7 +218,6 @@ vscode "carlos18mz.cyberpunk-2077-rebuild"
 vscode "catppuccin.catppuccin-vsc"
 vscode "chadalen.vscode-jetbrains-icon-theme"
 vscode "chirtlelovesdolls.nebula-theme"
-vscode "continue.continue"
 vscode "davidanson.vscode-markdownlint"
 vscode "davidbwaters.macos-modern-theme"
 vscode "dedsec727.jekyll-run"
@@ -218,8 +246,10 @@ vscode "janjoerke.align-by-regex"
 vscode "jeanp413.open-remote-ssh"
 vscode "jeff-hykin.better-shellscript-syntax"
 vscode "kargware.vscode-extension-jekyll-kw"
+vscode "kelvin.vscode-sshfs"
 vscode "kevinrose.vsc-python-indent"
 vscode "konart.ciapre"
+vscode "legale.dts-formatter"
 vscode "mathcale.theme-dracula-refined"
 vscode "michelemelluso.code-beautifier"
 vscode "miguelsolorio.fluent-icons"
@@ -227,13 +257,13 @@ vscode "mrmlnc.vscode-duplicate"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "mvllow.rose-pine"
 vscode "naumovs.color-highlight"
 vscode "nguyenhoanglam.beautiful-dracula"
 vscode "oderwat.indent-rainbow"
 vscode "redhat.vscode-xml"
 vscode "sdras.night-owl"
-vscode "shan.code-settings-sync"
 vscode "simonsiefke.svg-preview"
 vscode "spadin.zmk-tools"
 vscode "streetsidesoftware.code-spell-checker"
