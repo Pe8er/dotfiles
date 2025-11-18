@@ -1,6 +1,0 @@
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.dotfiles/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="$HOME/.dotfiles/config.symlink/yabai/:$PATH"
-export PATH="$(brew --prefix)/opt/python@3.11/libexec/bin:$PATH"

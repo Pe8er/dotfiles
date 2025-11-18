@@ -29,7 +29,6 @@ album=$(echo "$response" | xmllint --xpath 'string(//Track/@parentTitle)' -)
 artwork=$(echo "$response" | xmllint --xpath 'string(//Track/@parentThumb)' -)
 state=$(echo "$response" | xmllint --xpath 'string(//Track/Player/@state)' -)
 
-
 # Download the artwork image and save it in a temporary folder
 temp_dir=$(mktemp -d)
 artwork_path="$temp_dir/artwork.jpg"

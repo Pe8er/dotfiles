@@ -1,5 +1,5 @@
 # Misc abbreviations
-abbr \? '~/.dotfiles/bin/cheat_sheet.sh | glow'
+abbr \? '~/.dotfiles/bin/cheat-sheet.sh | glow'
 abbr jekyll-start 'bundle exec jekyll serve --livereload'
 abbr e codium
 abbr c codium
@@ -13,6 +13,7 @@ abbr md-cheat 'open http://j.mp/144z4kR'
 abbr mv 'mv -v'
 abbr notify 'terminal-notifier -message'
 abbr restart-fish 'source ~/.config/fish/config.fish'
+abbr reload-fish 'source ~/.config/fish/config.fish'
 abbr rm 'rm -v'
 abbr update-hosts 'curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > ~/.dotfiles/macos/hosts; sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 abbr update-yabai '~/.config/yabai/update.sh'
@@ -22,8 +23,6 @@ abbr la "eza --classify=auto --color --group-directories-first --sort=extension 
 
 abbr update-brew 'brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor'
 abbr where 'which' # sometimes i forget
-
-# time to upgrade `ls`. use eza instead of dealing with coreutils, LS_COLORS blah blah
 
 # Navigation
 function ..    ; cd .. ; end

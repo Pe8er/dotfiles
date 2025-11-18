@@ -31,51 +31,50 @@ automatically-unhide-macos-hidden-apps = false
 # Find an app: mdls -name kMDItemCFBundleIdentifier -r /Applications/App.app
 on-window-detected = [
   # --- Workspace 1: Web ---
-  { if.app-id = 'company.thebrowser.Browser', run = 'move-node-to-workspace 1.Web' },
-  { if.app-id = 'com.discord.discord', run = 'move-node-to-workspace 1.Web' },
-  { if.app-id = 'com.apple.Safari', run = 'move-node-to-workspace 1.Web' },
-  { if.app-id = 'com.google.Chrome', run = 'move-node-to-workspace 1.Web' },
-  { if.app-id = 'org.mozilla.firefox', run = 'move-node-to-workspace 1.Web' },
+  { if.app-id = 'company.thebrowser.Browser', run = 'move-node-to-workspace 1' },
+  { if.app-id = 'com.discord.discord', run = 'move-node-to-workspace 1' },
+  { if.app-id = 'com.apple.Safari', run = 'move-node-to-workspace 1' },
+  { if.app-id = 'com.google.Chrome', run = 'move-node-to-workspace 1' },
+  { if.app-id = 'org.mozilla.firefox', run = 'move-node-to-workspace 1' },
 
   # --- Workspace 2: Communication ---
-  { if.app-id = 'com.apple.mail', run = 'move-node-to-workspace 2.Comms' },
-  { if.app-id = 'com.microsoft.Outlook', run = 'move-node-to-workspace 2.Comms' },
-  { if.app-id = 'com.tinyspeck.slackmacgap', run = 'move-node-to-workspace 2.Comms' },
-  { if.app-id = 'com.microsoft.teams2', run = 'move-node-to-workspace 2.Comms' },
-  { if.app-id = 'com.electron.asana', run = 'move-node-to-workspace 2.Comms' },
+  { if.app-id = 'com.apple.mail', run = 'move-node-to-workspace 2' },
+  { if.app-id = 'com.microsoft.Outlook', run = 'move-node-to-workspace 2' },
+  { if.app-id = 'com.tinyspeck.slackmacgap', run = 'move-node-to-workspace 2' },
+  { if.app-id = 'com.microsoft.teams2', run = 'move-node-to-workspace 2' },
+  { if.app-id = 'com.electron.asana', run = 'move-node-to-workspace 2' },
 
   # --- Workspace 3: Design ---
-  { if.app-id = 'com.figma.Desktop', run = 'move-node-to-workspace 3.Design' },
+  { if.app-id = 'com.figma.Desktop', run = 'move-node-to-workspace 3' },
 
   # --- Workspace 4: Files ---
-  { if.app-id = 'com.apple.finder', run = 'move-node-to-workspace 4.Files' },
-  { if.app-id = 'com.binarynights.ForkLift', run = 'move-node-to-workspace 4.Files' },
+  { if.app-id = 'com.apple.finder', run = 'move-node-to-workspace 4' },
+  { if.app-id = 'com.binarynights.ForkLift', run = 'move-node-to-workspace 4' },
 
-  # --- Workspace 5: Development ---
-  { if.app-id = 'com.microsoft.VSCode', run = 'move-node-to-workspace 5.Code' },
-  { if.app-id = 'com.vscodium', run = 'move-node-to-workspace 5.Code' },
-  { if.app-id = 'com.googlecode.iterm2', run = 'move-node-to-workspace 5.Code' },
+  # --- Workspace 5: Code ---
+  { if.app-id = 'com.microsoft.VSCode', run = 'move-node-to-workspace 5' },
+  { if.app-id = 'com.vscodium', run = 'move-node-to-workspace 5' },
 
-  # --- Workspace 6: Media ---
-  { if.app-id = 'com.apple.Music', run = 'move-node-to-workspace 6.Media' },
-  { if.app-id = 'com.spotify.client', run = 'move-node-to-workspace 6.Media' },
-  { if.app-id = 'com.nw-builder.popcorn-time', run = 'move-node-to-workspace 6.Media' },
-
-  # --- Workspace 7: Office ---
-  { if.app-id = 'com.apple.iWork.Pages', run = 'move-node-to-workspace 7.Presentation' },
-  { if.app-id = 'com.apple.iWork.Keynote', run = 'move-node-to-workspace 7.Presentation' },
-  { if.app-id = 'com.microsoft.Powerpoint', run = 'move-node-to-workspace 7.Presentation' },
-  { if.app-id = 'com.microsoft.Word', run = 'move-node-to-workspace 7.Presentation' },
-  { if.app-id = 'com.apple.iWork.Numbers', run = 'move-node-to-workspace 7.Presentation' },
+  # --- Workspace 6: Documents ---
+  { if.app-id = 'md.obsidian', run = 'move-node-to-workspace 6' },
+  { if.app-id = 'com.apple.iWork.Pages', run = 'move-node-to-workspace 6' },
+  { if.app-id = 'com.apple.iWork.Keynote', run = 'move-node-to-workspace 6' },
+  { if.app-id = 'com.microsoft.Powerpoint', run = 'move-node-to-workspace 6' },
+  { if.app-id = 'com.microsoft.Word', run = 'move-node-to-workspace 6' },
+  { if.app-id = 'com.apple.iWork.Numbers', run = 'move-node-to-workspace 6' },
+  
+  # --- Workspace 7: Media ---
+  { if.app-id = 'com.apple.Music', run = 'move-node-to-workspace 7' },
+  { if.app-id = 'com.spotify.client', run = 'move-node-to-workspace 7' },
+  { if.app-id = 'com.nw-builder.popcorn-time', run = 'move-node-to-workspace 7' },
 
   # --- Workspace 8: Adobe ---
-  { if.app-id = 'com.adobe.Photoshop', run = 'move-node-to-workspace 8.Adobe' },
-  { if.app-id = 'com.adobe.InDesign', run = 'move-node-to-workspace 8.Adobe' },
-  { if.app-id = 'com.adobe.Illustrator', run = 'move-node-to-workspace 8.Adobe' },
-  { if.app-id = 'com.adobe.Lightroom', run = 'move-node-to-workspace 8.Adobe' },
+  { if.app-id = 'com.adobe.Photoshop', run = 'move-node-to-workspace 8' },
+  { if.app-id = 'com.adobe.InDesign', run = 'move-node-to-workspace 8' },
+  { if.app-id = 'com.adobe.Illustrator', run = 'move-node-to-workspace 8' },
+  { if.app-id = 'com.adobe.Lightroom', run = 'move-node-to-workspace 8' },
 
   # --- Float Windows ---
-  { if.app-id = 'com.apple.Notes', run = 'layout floating' },
   { if.app-id = 'com.apple.MobileSMS', run = 'layout floating' },
   { if.app-id = 'tv.plex.plexamp', run = 'layout floating' },
   { if.app-id = 'com.apple.iCal', run = 'layout floating' },
@@ -86,6 +85,8 @@ on-window-detected = [
   { if.app-id = 'com.apple.reminders', run = 'layout floating' },
   { if.app-id = 'com.apple.weather', run = 'layout floating' },
   { if.app-id = 'com.colliderli.iina', run = 'layout floating' },
+  { if.app-id = 'com.bandcamp.iosapp', run = 'layout floating' },
+  { if.app-id = 'com.mitchellh.ghostty', run = 'layout floating' },
   
   # --- Scratchpad ---
 
@@ -104,12 +105,12 @@ on-window-detected = [
 
 # Window gaps configuration
 [gaps]
-  inner.horizontal = 4
-  inner.vertical =   4
-  outer.left =       4
-  outer.bottom =     4
-  outer.top =        4
-  outer.right =      4
+  inner.horizontal = 0
+  inner.vertical =   0
+  outer.left =       0
+  outer.bottom =     0
+  outer.top =        0
+  outer.right =      0
 
 # Main key bindings
 [mode.main.binding]
@@ -119,52 +120,56 @@ on-window-detected = [
   alt-comma = 'layout accordion horizontal vertical'
   alt-f = 'fullscreen'
   alt-b = ['flatten-workspace-tree', 'mode main']
-  alt-shift-space = 'layout floating tiling'
-  alt-tab = 'workspace-back-and-forth'
-  alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+  ctrl-shift-alt-cmd-space = 'layout floating tiling'
+  ctrl-shift-alt-cmd-right = 'workspace next'
+  ctrl-shift-alt-cmd-left = 'workspace prev'
+  # ctrl-shift-alt-cmd-tab = 'workspace-back-and-forth'
+  # alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+  
+  # Window joining
+  ctrl-alt-h = 'join-with up'
+  ctrl-alt-v = 'join-with right'
 
   # Shift to a workspace
-  alt-1 = 'workspace 1.Web'
-  alt-2 = 'workspace 2.Comms'
-  alt-3 = 'workspace 3.Design'
-  alt-4 = 'workspace 4.Files'
-  alt-5 = 'workspace 5.Code'
-  alt-6 = 'workspace 6.Media'
-  alt-7 = 'workspace 7.Presentation'
-  alt-8 = 'workspace 8.Adobe'
+  ctrl-shift-alt-cmd-1 = 'workspace 1' # Web
+  ctrl-shift-alt-cmd-2 = 'workspace 2' # Comms
+  ctrl-shift-alt-cmd-3 = 'workspace 3' # Design
+  ctrl-shift-alt-cmd-4 = 'workspace 4' # Files
+  ctrl-shift-alt-cmd-5 = 'workspace 5' # Code
+  ctrl-shift-alt-cmd-6 = 'workspace 6' # Documents
+  ctrl-shift-alt-cmd-7 = 'workspace 7' # Media
+  ctrl-shift-alt-cmd-8 = 'workspace 8' # Adobe
 
   # Move window to a workspace
-  alt-shift-1 = ['move-node-to-workspace 1.Web', 'workspace 1.Web']
-  alt-shift-2 = ['move-node-to-workspace 2.Comms', 'workspace 2.Comms']
-  alt-shift-3 = ['move-node-to-workspace 3.Design', 'workspace 3.Design']
-  alt-shift-4 = ['move-node-to-workspace 4.Files', 'workspace 4.Files']
-  alt-shift-5 = ['move-node-to-workspace 5.Code', 'workspace 5.Code']
-  alt-shift-6 = ['move-node-to-workspace 6.Media', 'workspace 6.Media']
-  alt-shift-7 = ['move-node-to-workspace 7.Presentation', 'workspace 7.Presentation']
-  alt-shift-8 = ['move-node-to-workspace 8.Adobe', 'workspace 8.Adobe']
+  ctrl-alt-1 = ['move-node-to-workspace 1', 'workspace 1']
+  ctrl-alt-2 = ['move-node-to-workspace 2', 'workspace 2']
+  ctrl-alt-3 = ['move-node-to-workspace 3', 'workspace 3']
+  ctrl-alt-4 = ['move-node-to-workspace 4', 'workspace 4']
+  ctrl-alt-5 = ['move-node-to-workspace 5', 'workspace 5']
+  ctrl-alt-6 = ['move-node-to-workspace 6', 'workspace 6']
+  ctrl-alt-7 = ['move-node-to-workspace 7', 'workspace 7']
+  ctrl-alt-8 = ['move-node-to-workspace 8', 'workspace 8']
 
   #Apps
   ctrl-shift-alt-cmd-a = "exec-and-forget open -a Arc"
-  ctrl-shift-alt-cmd-s = "exec-and-forget open -a Asana"
-  ctrl-shift-alt-cmd-i = "exec-and-forget open -a Mail"
   ctrl-shift-alt-cmd-v = "exec-and-forget open -a VSCodium"
-  ctrl-shift-alt-cmd-t = "exec-and-forget open -a iTerm"
-  ctrl-shift-alt-cmd-f = "exec-and-forget open -a Figma"
-  ctrl-shift-alt-cmd-o = "exec-and-forget open -a ForkLift"
-  ctrl-shift-alt-cmd-d = "exec-and-forget open -a Finder"
+  ctrl-shift-alt-cmd-i = "exec-and-forget open -a iTerm"
+  ctrl-shift-alt-cmd-o = "exec-and-forget open -a Obsidian"
+  ctrl-shift-alt-cmd-m = "mode m"
+  ctrl-shift-alt-cmd-f = "mode f"
 
   # Scratchpads
+  # https://github.com/cristianoliveira/aerospace-scratchpad
   ctrl-shift-alt-cmd-c = "exec-and-forget aerospace-scratchpad show Calendar || open -a Calendar"
-  ctrl-shift-alt-cmd-m = "exec-and-forget aerospace-scratchpad show Messages || open -a Messages"
-  ctrl-shift-alt-cmd-n = "exec-and-forget aerospace-scratchpad show Notes || open -a Notes"
   ctrl-shift-alt-cmd-p = "exec-and-forget aerospace-scratchpad show Plexamp || open -a Plexamp"
-  ctrl-shift-alt-cmd-r = "exec-and-forget aerospace-scratchpad show Reminders || open -a Reminders"
+  ctrl-shift-alt-cmd-b = "exec-and-forget aerospace-scratchpad show Bandcamp || open -a Bandcamp"
+  ctrl-shift-alt-cmd-g = "exec-and-forget aerospace-scratchpad show Ghostty || open -a Ghostty"
   
   # Window focus
-  ctrl-shift-alt-cmd-left = 'focus left'
-  ctrl-shift-alt-cmd-down = 'focus down'
-  ctrl-shift-alt-cmd-up = 'focus up'
-  ctrl-shift-alt-cmd-right = 'focus right'
+  ctrl-alt-left = 'focus left'
+  ctrl-alt-down = 'focus down'
+  ctrl-alt-up = 'focus up'
+  ctrl-alt-right = 'focus right'
 
   # Window movement
   # alt-shift-h = 'move left'
@@ -178,17 +183,13 @@ on-window-detected = [
   alt-minus = 'resize smart -100'
   alt-equal = 'resize smart +100'
 
-  alt-shift-semicolon = 'mode service'
+  ctrl-alt-semicolon = 'mode service'
 
 # Service mode key bindings
 [mode.service.binding]
   semicolon = ['reload-config', 'mode main']
   r = ['flatten-workspace-tree', 'mode main']
   backspace = ['close-all-windows-but-current', 'mode main']
-  
-  # Window joining
-  alt-shift-h = 'join-with up'
-  alt-shift-v = 'join-with right'
 
   # # Window joining
   # alt-shift-h = ['join-with left', 'mode main']
@@ -200,3 +201,12 @@ on-window-detected = [
   down = 'volume down'
   up = 'volume up'
   shift-down = ['volume set 0', 'mode main']
+
+[mode.f.binding]
+  f = ["exec-and-forget open -a Figma", 'mode main']
+  o = ["exec-and-forget open -a ForkLift", 'mode main']
+  i = ["exec-and-forget open -a Finder", 'mode main']
+
+[mode.m.binding]
+  a = ["exec-and-forget open -a Mail", 'mode main']
+  e = ["exec-and-forget aerospace-scratchpad show Messages || open -a Messages", 'mode main']
