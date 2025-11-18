@@ -33,7 +33,7 @@ fish_add_path $BREW_PREFIX/opt/python@3.11/libexec/bin
 fish_add_path $HOME/Library/Python/3.11/bin
 
 # iTerm2 Integration
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+# test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 # Set up fzf key bindings
 fzf --fish | source
