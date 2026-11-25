@@ -2,7 +2,7 @@ function fish_prompt
 end # In case this file gets loaded non-interactively, e.g by conda
 status is-interactive || exit
 
-_tide_remove_unusable_items
+# _tide_remove_unusable_items
 _tide_cache_variables
 _tide_parent_dirs
 source (functions --details _tide_pwd)

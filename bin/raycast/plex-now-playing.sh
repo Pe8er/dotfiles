@@ -21,10 +21,12 @@ output=$(/Users/pe8er/.dotfiles/config.symlink/sketchybar/plugins/plex-now-playi
 # Split the output into components
 IFS='|' read -r status artist title artwork <<< "$output"
 
+
 # Only show output if status is "playing"
 if [ "$status" = "playing" ]; then
   echo "$artist - $title"
 else
   # Return empty output to hide the menubar item
+  echo "Error"
   exit 0
 fi

@@ -12,16 +12,15 @@ abbr dot-pull 'cd ~/.dotfiles; git pl'
 abbr md-cheat 'open http://j.mp/144z4kR'
 abbr mv 'mv -v'
 abbr notify 'terminal-notifier -message'
-abbr restart-fish 'source ~/.config/fish/config.fish'
-abbr reload-fish 'source ~/.config/fish/config.fish'
+abbr fish-reload 'source ~/.config/fish/config.fish'
 abbr rm 'rm -v'
-abbr update-hosts 'curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > ~/.dotfiles/macos/hosts; sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
-abbr update-yabai '~/.config/yabai/update.sh'
+abbr hosts-update 'curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts > ~/.dotfiles/macos/hosts; sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+abbr yabai-update '~/.config/yabai/update.sh'
 abbr ls "eza --color=always --long --git --no-filesize --icons=always --no-permissions --no-user"
 abbr lt "eza --color=always --long --git --no-filesize --icons=always --no-permissions --no-user --tree --level=1"
 abbr la "eza --classify=auto --color --group-directories-first --sort=extension -a -l --octal-permissions --no-permissions"
 
-abbr update-brew 'brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor'
+abbr brew-update 'brew -v update; brew upgrade --force-bottle; brew cleanup; brew doctor'
 abbr where 'which' # sometimes i forget
 
 # Navigation

@@ -4,8 +4,8 @@
 
 options =
   # Choose color theme.
-  verticalPosition    : "bottom"        # top | bottom | center
-  horizontalPosition    : "left"        # left | right | center
+  verticalPosition    : "top"        # top | bottom | center
+  horizontalPosition    : "right"        # left | right | center
 
 command: "osascript NextEvent.widget/NextEvent.applescript"
 

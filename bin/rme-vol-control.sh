@@ -7,37 +7,31 @@
 # GitHub Repository: https://github.com/JolleNo10/RmeAdiVolumeController/
 ################################################################################
 
+
 # Configuration
     # Default log level
     enableLogging=0 # 1 enable, 0 disable
 
     # Global variables
-    defaultVolume=-200 # start/default volume state when you don't know the RME state
-    highVolume=-150 # limit max volume (for protection) will cycle back to defaultVolume
+    defaultVolume=-350 # start/default volume state when you don't know the RME state
+    highVolume=-200 # limit max volume (for protection) will cycle back to defaultVolume
     lowVolume=-1000 # limit min volume (for protection) will cycle back to defaultVolume
-    volumeTick=25 # volume increase per tick
+    volumeTick=5 # volume increase per tick
     volumeTickMultiplierTimeThreshold=500 # time between concurrent ticks for increased/faster volume change
     volumeTickMultiplier=2 # volumeTick multiplier if ticks differ with less than volumeTickMultiplierTimeThreshold, 1 to disable
     defaultMute=0 # start/default mute state when you don't know the RME state
 
-    rmeCurrentVolumeFile="/Users/pe8er/.dotfiles/bin/rmeAdiCurrentVolume" #store virtual RME state (only calculated from relative changes)
-    logfile="/Users/pe8er/.dotfiles/bin/rmeAdiCurrentVolume.log" #log file location
-    rmeAdiMidiControlScript="/Users/pe8er/.dotfiles/bin/rmeAdiMidiControl.sh" #RME ADI MIDI script location
+    rmeCurrentVolumeFile="/Users/pe8er/.dotfiles/bin/rme-current-volume" #store virtual RME state (only calculated from relative changes)
+    logfile="/Users/pe8er/.dotfiles/bin/rme-log" #log file location
+    rmeAdiMidiControlScript="/Users/pe8er/.dotfiles/bin/rme-midi-control.sh" #RME ADI MIDI script location
 
     # Based on https://www.rme-audio.de/downloads/adi2remote_midi_protocol.zip
     midiConfig_device_id=0x71 # 0x71 - ADI-2 DAC # 0x72 - ADI-2 Pro # 0x73 - ADI-2/4 Pro SE
     midiConfig_command_id=0x02 # 0x02 - Send Parameter(s) to device
-    midiConfig_address=3 # 6 - Phones Channel Settings
+    midiConfig_address=6 # 6 - Phones Channel Settings
     midiConfig_index_mute=15 # 15 - Mute
     midiConfig_index_volume=12 # 12 - Volume
 # --
-
-# Ensure sendmidi is installed
-sendmidi="$(which sendmidi)"
-if [[ -z "$sendmidi" ]]; then
-    echo "sendmidi is not installed or not in PATH. Please install it and try again."
-    exit 1
-fi
 
 log() {
     local loglevel="$1"
@@ -64,12 +58,7 @@ log() {
 }
 
 getTimestampWithMillis() {
-    # Use gdate to get seconds and milliseconds
-    epoch_seconds=$(gdate +%s)
-    milliseconds=$(gdate +%N | cut -c1-3)  # Extract the first 3 digits for milliseconds
-
-    # Combine seconds and milliseconds
-    echo "${epoch_seconds}${milliseconds}"
+    date +%s%3N
 }
 
 #Reading state file and sets defaults
@@ -117,6 +106,8 @@ checkVolume() {
 
 adjustVolume() {
     local mode=$1
+
+    # Read state from file and extract currentVolume and currentMute
     readStateFromFile
 
     local value
@@ -124,42 +115,54 @@ adjustVolume() {
     local state
 
     if ([ "$mode" = "up" ] || [ "$mode" = "down" ]); then
+        # Calculate adjusted volume tick based on time difference
         local currentTime=$(getTimestampWithMillis)
         local tsDiff=$(($currentTime - $volumeTimestamp))
         local adjustedVolumeTick
 
+        #Small volume change scaling, adjusting tick with multiplier $volumeTickMultiplier if changing quicker than $volumeTickMultiplierTimeThreshold
         if [ "$tsDiff" -lt $volumeTickMultiplierTimeThreshold ]; then
             adjustedVolumeTick=$(echo "$volumeTick * $volumeTickMultiplier" | bc)
+            log "DEBUG" "Diff, ms since last volume adjust: $tsDiff, less than threshold"
         else
             adjustedVolumeTick=$volumeTick
+            log "DEBUG" "Diff, ms since last volume adjust: $tsDiff, outside threshold"
         fi
+        
+        log "DEBUG" "Adjusting volume $mode volumeTick: $volumeTick, adjustedVolumeTick: $adjustedVolumeTick"
 
+        #Setting new volume
         if [ "$mode" = "up" ]; then
             value=$((currentVolume + adjustedVolumeTick))
         else
             value=$((currentVolume - adjustedVolumeTick))
         fi
 
+        #Check volume value
         if checkVolume "$value"; then
-            log "INFO" "Setting adjusted volume: $value"
+            log "INFO" "All checks ok, setting adjusted volume: $1, volumeTick: $volumeTick, adjustedVolumeTick: $adjustedVolumeTick"
         else
-            log "ERROR" "Volume not valid: $value. Resetting to default: $defaultVolume"
+            log "ERROR" "Volume not valid $value Restting volume to $defaultVolume"
             value=$defaultVolume
         fi
 
+        # 12 - Volume
         midiConfig_index=$midiConfig_index_volume
+
         state="$value $currentMute"
-    elif [ "$mode" = "mute" ]; then
+    elif  [ "$mode" = "mute" ]; then
         value=$((currentMute ^ 1))
+
+        # 15 - Mute
         midiConfig_index=$midiConfig_index_mute
+
         state="$currentVolume $value"
     else
-        log "ERROR" "Invalid input parameter. Please use 'up', 'down', or 'mute'."
+        log "ERROR" "Invalid input parameter. Please provide either 'up', 'down' or 'mute'."
         exit 1
     fi
 
-    # Call the updated rmeAdiMidiControl.sh
-    bash "$rmeAdiMidiControlScript" $value $midiConfig_device_id $midiConfig_command_id $midiConfig_address $midiConfig_index
+    performChange $value $midiConfig_device_id $midiConfig_command_id $midiConfig_address $midiConfig_index
     writeStateToFile $state
 }
 

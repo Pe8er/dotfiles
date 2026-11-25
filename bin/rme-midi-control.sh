@@ -23,6 +23,8 @@ Usage: $(basename "${0}") VALUE DEVICE_ID COMMAND_ID ADDRESSS INDEX [LOGGING LOG
 EOF
 }
 
+
+
 log() {
     local loglevel="$1"
     local logmessage="$2"
@@ -114,49 +116,44 @@ elif [[ "${5}" = "15" ]]; then
     fi
 fi
 
+
 #------------------------------------------------------------------------------------------------------------------
 #The byte conversion is based on a script provided by user danadam at https://www.audiosciencereview.com/forum/index.php?threads/rme-adi-2-remote-app-race-for-the-best-alternative-software-was-started-today.48352/#post-1733256 
 
-# Ensure sendmidi is installed
-sendmidi="$(which sendmidi)"
-if [[ -z "$sendmidi" ]]; then
-    echo "sendmidi is not installed or not in PATH. Please install it and try again."
-    exit 1
-fi
-
-# Replace amidi logic with sendmidi
-# Select first ADI MIDI port
-port="ADI-2 DAC (56680401) Port 1"
-if ! "$sendmidi" dev "$port" system-exclusive syx hex 00 20 0D 71 02 >/dev/null 2>&1; then
+# Select first ADI MIDI port.
+port="$(amidi -l | grep -m1 ADI | tr -s ' ' | cut -d' ' -f2 || true)"
+if [ -z "${port}" ]; then
     log "ERROR" "No ADI MIDI port found"
     exit 1
 else
     log "DEBUG" "ADI MIDI port found at $port"
 fi
 
-# Perform value-to-byte conversions
+
 value=$((value))
+# split "index" into 3 high and 2 low bits
 index_hi_mask=$(( (1 << 3) - 1 ))
 index_lo_mask=$(( (1 << 2) - 1 ))
 index_hi=$(( (index >> 2) & index_hi_mask ))
 index_lo=$(( index & index_lo_mask ))
 
+# split "value" into 5 high and 7 low bits
 value_hi_mask=$(( (1 << 5) - 1 ))
 value_lo_mask=$(( (1 << 7) - 1 ))
 value_hi=$(( (value >> 7) & value_hi_mask ))
 value_lo=$(( value & value_lo_mask ))
 
-byte_1=$(( (address << 3) | index_hi ))
+# combine "address", "index" and "value" into 3 bytes of parameter-transfer
+byte_1=$((  (address << 3) | index_hi ))
 byte_2=$(( (index_lo << 5) | value_hi ))
-byte_3=$(( value_lo ))
+byte_3=$((  value_lo ))
 
-# Build MIDI command
-midi_cmd="00 20 0D $(printf "%02x %02x %02x %02x %02x" ${device_id} ${command_id} ${byte_1} ${byte_2} ${byte_3})"
+midi_cmd="$(printf "F0 00 20 0D %02x %02x %02x %02x %02x F7" ${device_id} ${command_id} ${byte_1} ${byte_2} ${byte_3})"
 
-# Send MIDI command using sendmidi
-log "DEBUG" "Sending MIDI command: $midi_cmd"
-echo "DEBUG" "Sending MIDI command: $midi_cmd"
-"$sendmidi" dev "$port" system-exclusive syx hex $midi_cmd
+#echo $midi_cmd
+set -x
+amidi -p "${port}" -S "${midi_cmd}"
 
-log "INFO" "MIDI command sent successfully"
+log "DEBUG" "amidi -p $port -S \"$midi_cmd\""
+
 exit 0

@@ -42,3 +42,20 @@ private.fish
 
 config.symlink/lib
 config.symlink/share
+
+# --- Junk / machine state (added 2026-11-25) ---
+.DS_Store
+__pycache__/
+*.pyc
+config.symlink/raycast/node-compile-cache/
+config.symlink/raycast/config.json
+config.symlink/karabiner/automatic_backups/
+config.symlink/fish/fish_variables?*
+config.symlink/omniwm/runtime-state.json
+config.symlink/uv/uv-receipt.json
+config.symlink/StardewValley/
+bin/rme-current-volume
+bin/rme-log
+
+# --- Sensitive: borg security cache (repo locations, nonces) ---
+config.symlink/borg/

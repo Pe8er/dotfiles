@@ -160,7 +160,7 @@ on-window-detected = [
 
   # Scratchpads
   # https://github.com/cristianoliveira/aerospace-scratchpad
-  ctrl-shift-alt-cmd-c = "exec-and-forget aerospace-scratchpad show Calendar || open -a Calendar"
+  # ctrl-shift-alt-cmd-c = "exec-and-forget aerospace-scratchpad show Calendar || open -a Calendar"
   ctrl-shift-alt-cmd-p = "exec-and-forget aerospace-scratchpad show Plexamp || open -a Plexamp"
   ctrl-shift-alt-cmd-b = "exec-and-forget aerospace-scratchpad show Bandcamp || open -a Bandcamp"
   ctrl-shift-alt-cmd-g = "exec-and-forget aerospace-scratchpad show Ghostty || open -a Ghostty"

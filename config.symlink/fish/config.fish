@@ -6,7 +6,7 @@ source ~/.config/fish/private.fish
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Chruby
-chruby ruby-3.3.5 # Set ruby version. Run `chruby` to see actual version.
+chruby ruby-3.4.1 # Set ruby version. Run `chruby` to see actual version.
 
 # Greeting
 set -g fish_greeting (set_color yellow)$(weather)\n(set_color FF79C6)
@@ -40,3 +40,17 @@ fzf --fish | source
 
 # Show history-pager on launch
 # fzf-history-widget
+
+# Command duration alert
+set -g __cmd_start_time 0
+
+function __cmd_timer_start --on-event fish_preexec
+    set -g __cmd_start_time (date +%s)
+end
+
+function __cmd_timer_end --on-event fish_postexec
+    set elapsed (math (date +%s) - $__cmd_start_time)
+    if test $elapsed -gt 5
+        afplay /System/Library/Sounds/Glass.aiff
+    end
+end

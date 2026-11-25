@@ -5,32 +5,9 @@
 # a full restart to take effect.
 
 term = xterm-256color
-custom-shader = ~/.config/ghostty/shaders/glitchy.glsl
+# custom-shader = ~/.config/ghostty/shaders/glitchy.glsl
 
-theme = Dracula+
 bold-is-bright = true
-background = #212121
-foreground = #f8f8f2
-selection-background = #f8f8f2
-selection-foreground = #545454
-cursor-color = #eceff4
-cursor-text = #282828
-palette = 0=#21222c
-palette = 1=#ff5555
-palette = 2=#50fa7b
-palette = 3=#ffcb6b
-palette = 4=#82aaff
-palette = 5=#c792ea
-palette = 6=#8be9fd
-palette = 7=#f8f8f2
-palette = 8=#545454
-palette = 9=#ff6e6e
-palette = 10=#69ff94
-palette = 11=#ffcb6b
-palette = 12=#d6acff
-palette = 13=#ff92df
-palette = 14=#a4ffff
-palette = 15=#f8f8f2
 auto-update = check
 auto-update-channel = stable
 macos-icon = blueprint
@@ -39,3 +16,26 @@ macos-titlebar-proxy-icon = hidden
 window-padding-x = 8
 window-padding-y = 8
 window-padding-balance = true
+background-opacity = 1.00
+background-blur = 40
+font-family = "SF Mono"
+
+foreground = #ddeedd
+background = #1c1c1c
+cursor-color = #e2bbef
+palette = 0=#3d352a
+palette = 1=#cd5c5c
+palette = 2=#86af80
+palette = 3=#e8ae5b
+palette = 4=#6495ed
+palette = 5=#deb887
+palette = 6=#b0c4de
+palette = 7=#bbaa99
+palette = 8=#554444
+palette = 9=#cc5533
+palette = 10=#88aa22
+palette = 11=#ffa75d
+palette = 12=#87ceeb
+palette = 13=#996600
+palette = 14=#b0c4de
+palette = 15=#ddccbb
